@@ -2,6 +2,11 @@
 
 Next.js 16 (App Router) + TypeScript + Tailwind 4 + next-intl + MDX. Facts and rules: `PROJECT-BRIEF.md`, `CLAUDE.md`. Open items: `content/TODO.md`.
 
+## Live site and repository
+- Live (pre-launch, hidden from search engines): https://dr-rama-website.vercel.app
+- Code: https://github.com/krish2105/Dr-Rama-Website- (branch `main`). Every push to `main` deploys to Vercel production automatically.
+- Vercel project: `dr-rama-website` (account krishnamathur008-1499). Until Supabase and the email keys are added, the booking form shows a "not switched on yet" message with a prefilled WhatsApp message and a Call button.
+
 ## Run locally
 ```bash
 npm install

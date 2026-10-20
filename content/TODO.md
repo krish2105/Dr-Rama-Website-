@@ -33,7 +33,8 @@ Nothing below may be invented. Placeholders show in development only; production
 
 ## 3. Accounts and launch
 - [ ] Domain: the card prints rajeshhomoeohome.in. Confirm the clinic owns it, then point it at Vercel and set `NEXT_PUBLIC_SITE_URL=https://rajeshhomoeohome.in`.
-- [ ] Vercel project. Supabase project (run `supabase/migrations/0001_bookings.sql`; add URL and service-role key). Email-alert provider (Resend) and the clinic address that receives alerts. GA4 measurement ID.
+- [x] GitHub repo (krish2105/Dr-Rama-Website-) and Vercel project (dr-rama-website) are set up; pushes to `main` deploy automatically. Live at https://dr-rama-website.vercel.app (blocked from search engines until `NEXT_PUBLIC_INDEXABLE=true`).
+- [ ] Supabase project (run `supabase/migrations/0001_bookings.sql`; add URL and service-role key). Email-alert provider (Resend) and the clinic address that receives alerts. GA4 measurement ID.
 - [ ] Google Maps: paste the Share link as `mapsUrl` and the embed `src` as `mapsEmbedUrl` in `content/site.json` (steps in the guide). The Visit section and Contact page show a dev-only reminder until then.
 - [ ] Decide how long booking data is kept and who handles deletion requests by email (the Privacy page shows a dev-only reminder).
 - [ ] Add Vercel Firewall rate limiting on `/api/booking`.
