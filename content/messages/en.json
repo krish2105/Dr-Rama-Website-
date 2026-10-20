@@ -45,7 +45,8 @@
     "rights": "Rajesh Homeo Home",
     "explore": "Explore",
     "visit": "Visit",
-    "dataNote": "To ask for your booking data to be deleted, email us."
+    "dataNote": "To ask for your booking data to be deleted, email us.",
+    "regNo": "No."
   },
   "home": {
     "eyebrow": "Rajesh Homeo Home · Banipark, Jaipur",
@@ -132,7 +133,8 @@
     "slot_afternoon": "Afternoon",
     "slot_evening": "Evening",
     "slot_any": "Any time",
-    "successWhatsappMsg": "Hello, I have requested an appointment at Rajesh Homeo Home. Name: {name}. Preferred: {date}, {slot}."
+    "successWhatsappMsg": "Hello, I have requested an appointment at Rajesh Homeo Home. Name: {name}. Preferred: {date}, {slot}.",
+    "appointmentNote": "Consultation is with a prior appointment. Send a request here, call or message on WhatsApp, and the clinic will confirm a time."
   },
   "pages": {
     "comingTitle": "Coming soon",
@@ -145,7 +147,8 @@
     "memberships": "Memberships",
     "conferences": "Conferences attended",
     "community": "Community work",
-    "portraitTodo": "Doctor portrait photo is missing (content/TODO.md)."
+    "portraitTodo": "Doctor portrait photo is missing (content/TODO.md).",
+    "registration": "Registration: {council}, No. {number}"
   },
   "services": {
     "title": "Services",
@@ -189,7 +192,8 @@
     "emailLabel": "Email",
     "privacyNote": "How we use your details",
     "openNow": "Open now",
-    "closedNow": "Closed now"
+    "closedNow": "Closed now",
+    "landline": "Landline"
   },
   "privacy": {
     "title": "Privacy and disclaimer",
@@ -218,7 +222,8 @@
       "fri": "Friday",
       "sat": "Saturday",
       "sun": "Sunday"
-    }
+    },
+    "byAppointment": "Consultation is with a prior appointment."
   },
   "careAreas": {
     "title": "Care areas",

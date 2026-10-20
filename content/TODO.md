@@ -1,67 +1,51 @@
-# TODO: facts and assets still missing
+# What remains (updated 20 Oct 2026)
 
-Nothing below may be invented. Each item shows a dev-only placeholder on the site until supplied. Tick when received and entered in `/content`.
+Nothing below may be invented. Placeholders show in development only; production builds never show a fake fact.
 
-## Facts the brief says are missing
-- [ ] State council name and registration number (shown in footer once received)
-- [ ] CONFIRM clinic timings: taken from the printed handout (daily 10:30 am to 2:00 pm and 6:00 pm to 8:30 pm; Sunday 10:30 am to 2:00 pm, Sunday evening closed). Then set `timingsConfirmed: true` in `content/site.json`.
-- [ ] Consultation fees and payment methods
-- [ ] Google Maps link / place ID
-- [ ] WhatsApp number, if different from +91 94143 62499
-- [ ] Appointment policy (appointment only, or walk-in); the handout does not say
-- [ ] Localities patients come from
-- [ ] Doctor portrait photo
-- [ ] Logo (`/source/brand`)
+## Done
+- Name, doctor facts, qualifications, experience (32 years), RIICO service record, memberships, conferences, community work
+- Phone, landline, email, address, website domain, hours (business card), appointment policy (prior appointment)
+- State council registration: Rajasthan Board of Homoeopathic Medicine, No. 3780 (shown in the footer and on About)
+- Portrait and consultation-room photo, approved blue-pottery artwork, share image
 
-## Confirmations needed before publishing (CONFIRM in brief)
-- [ ] Phone +91 94143 62499 may be public (Call and WhatsApp buttons)
-- [ ] Email rama_mathur@yahoo.com may be public; or a clinic email, which is preferred
-- [ ] Address (202, 2nd Floor, Rajvilas Apartment, Meera Marg, Banipark, Jaipur 302016) is the clinic address and may be published
+## 1. Needed from the doctor
+- [ ] **Current registration.** The renewal slip we have was valid only until 19/5/2020. Send the latest renewal. The site shows the number only and does not state a validity date.
+- [ ] **Re-confirm the hours.** The site uses the business card (daily 6:00 pm to 8:30 pm; Sunday 10:00 am to 2:30 pm). The handout listed extra morning hours (10:30 am to 2:00 pm). The live "Open now" label follows the card.
+- [ ] **Approve the DRAFT pages:** About (EN + HI), Services, Care areas, the 3 blog posts, FAQ, Privacy. Native Hindi review of all Hindi text.
+- [ ] Care areas: the handout names diseases (several on the Drugs and Magic Remedies Act 1954 schedule). The site uses broad categories only. Decide whether to reprint the handout without disease claims.
+- [ ] Confirm the address line "Rajvilas Apartment I" (the card says "Appartment I", the registration slip omits the "I").
+- [ ] Pin code: the card and brief say 302016; the registration slip says 302006. The site uses 302016.
+- [ ] Fees and payment methods (none supplied; nothing is shown).
+- [ ] Localities patients come from (optional).
+- [ ] WhatsApp number: the site assumes it is the same as +91 94143 62499.
+- [ ] Doctor to confirm the current portrait (white coat; AI-assisted from a real photo) is a faithful likeness.
+- [ ] Confirm the "Honoured by Rajasthan Patrika" line (2012) may be published.
 
-## Source material not yet received
-- [ ] `/source/photos`: real clinic and consultation-room photos, with permission to publish. The folder does not exist yet; owner will supply later.
-- [ ] `/source/cv`: three CV photos, to cross-check the facts typed in the brief (not published). Only the typed brief has been used so far.
-- [ ] `/source/brand`: logo files
+## 2. Photos and brand
+- [ ] Real close-up photos: display cabinet, certificate and plaque wall, glass desk with chairs (shoot list in Prompt Pack v3). The generated versions were rejected because they alter the room and invent certificate text.
+- [ ] Real photo of the flat's entrance door and nameplate (Rajvilas Apartment, 2nd floor).
+- [ ] A studio-quality portrait (window light, plain wall) to replace the current one.
+- [ ] Logo. The business card uses a cross and an Om-swastika symbol, no wordmark. Until a logo is supplied the site uses a simple rosette mark.
+- [ ] Medical-camp photos (5) sit in `source/photos/_pending-consent/`. Each person shown must consent before any is published.
+- [ ] Patient experience stories with recorded consent (the page shows an empty state).
 
-## Content the brief does not provide
-- [ ] Services and care-areas list in the doctor's own words (the brief lists none; no condition-specific claims)
-- [ ] FAQ answers in the doctor's words
-- [ ] Patient experience stories with recorded consent (none exist; page shows an empty state)
-- [ ] Doctor approval of DRAFT About text (EN + HI) and the 3 DRAFT blog posts
-- [ ] Native Hindi review of all Hindi text, including the footer disclaimer
+## 3. Accounts and launch
+- [ ] Domain: the card prints rajeshhomoeohome.in. Confirm the clinic owns it, then point it at Vercel and set `NEXT_PUBLIC_SITE_URL=https://rajeshhomoeohome.in`.
+- [ ] Vercel project. Supabase project (run `supabase/migrations/0001_bookings.sql`; add URL and service-role key). Email-alert provider (Resend) and the clinic address that receives alerts. GA4 measurement ID.
+- [ ] Google Maps link or place ID (the Visit section and Contact page show a dev-only reminder until supplied).
+- [ ] Decide how long booking data is kept and who handles deletion requests by email (the Privacy page shows a dev-only reminder).
+- [ ] Add Vercel Firewall rate limiting on `/api/booking`.
+- [ ] Run `npm run check-content -- --strict`, then Lighthouse on the live URL, then submit the sitemap in Search Console.
+- [ ] Create the Google Business Profile and upload `source/brand/google-business-profile-cover.png`.
 
-## Accounts and operations
-- [ ] Domain name
-- [ ] Vercel account / project
-- [ ] Supabase project (URL, anon key, service role key)
-- [ ] Email-alert provider and the clinic email that receives booking alerts
-- [ ] GA4 measurement ID
-- [ ] Who handles data-deletion requests by email, and how long booking data is kept
+## 4. Compliance review before launch
+- [ ] A qualified person reviews the final copy against the Drugs and Magic Remedies Act 1954, the Digital Personal Data Protection Act 2023 and Rules 2025, and her council's advertising rules.
+- [ ] Ask whether the council issued advertising guidance for registered practitioners.
 
-## Compliance follow-up
-- [ ] Ask whether her state council issued advertising guidance for registered practitioners
-- [ ] Qualified review of the final copy (Drugs and Magic Remedies Act 1954, DPDP Act 2023 and Rules 2025)
+## 5. Left for a later phase
+- [ ] Online consultation (Phase 2 placeholder page exists).
+- [ ] Publish the blog posts and set their status from DRAFT to PUBLISHED after approval.
+- [ ] Switch Services, Care areas and Experiences from noindex once approved and filled.
 
-## Added during build
-- [ ] Decide how long booking data is kept (privacy page shows a dev-only TODO until stated)
-- [ ] Doctor to confirm the "Honoured by Rajasthan Patrika for outstanding service and dedication" line may be published (wording is from the brief; reported honour, not self-praise)
-- [ ] Services, Care areas, Experiences and Online consultation pages are `noindex` and out of the sitemap until they have real content
-- [ ] Recheck Lighthouse on the live domain (lab scores: English 94 to 95, Hindi 91 to 92)
-- [ ] Replace the wordmark/leaf mark with the real logo when supplied
-- [ ] After photos arrive: run `npm run photos`, write EN + HI alt text, check the hero, About and gallery layouts with the real images
-
-## From the printed handout and photos (20 Oct 2026)
-- [x] Experience is 32 years (confirmed by the owner 20 Oct 2026; the CV said 31). Site updated.
-- [ ] CONFLICT: the brief says "2nd Floor", the handout says "1st". The site says 2nd Floor. Doctor to confirm.
-- [ ] Doctor to approve the DRAFT Care areas and Services pages. The handout lists many named conditions; the site uses broad categories only (no diabetes, blood pressure, menstrual disorders, stones or other named diseases). Ask whether the doctor wants the handout reprinted without disease claims.
-- [ ] Doctor portrait: the current portrait is a 560 px crop from a medical-camp photo. Replace with a proper portrait (window light, plain wall).
-- [ ] Consultation-room photo is the original wide-angle shot, cropped to the lower part. Reshoot per the checklist in Prompt Pack v3 for a better gallery.
-- [ ] Photo of the flat's entrance door and nameplate (Rajvilas Apartment, 2nd floor), so visitors can find it.
-- [ ] Five medical-camp photos are held in `source/photos/_pending-consent/` (they show patients and other people). Each person needs to consent before any is published. Decide which, if any, to use for the Community work section. Also confirm what the honour-handover photo shows before using it.
-- [ ] Doctor to confirm the website may show her portrait and the room photo.
-
-## From the generated image pack (20 Oct 2026)
-- [ ] Real close-up photos for the About and Visit galleries: display cabinet, certificate and plaque wall, glass desk with chairs (shot per the checklist in Prompt Pack v3). The generated versions (04 to 08) were not used because they alter the room and invent certificate text.
-- [ ] Real photo of the flat's entrance door and nameplate. The generated entrance images (09, 10) were not used.
-- [ ] Doctor to confirm the current portrait (white coat, plain wall; AI-assisted from a real photo) is a faithful likeness and that she is happy with it. Replace with a studio photo when available.
-- [ ] Upload `source/brand/google-business-profile-cover.png` to the Google Business Profile once the profile exists.
+## Never publish
+Date of birth, gender, nationality, hobbies, personal objective, declaration, management skills, governance or harassment trainings, her internal committee roles at RIICO, the name of her spouse or father on the registration slip, the CV, the printed handout and the registration slip images. The card title "Homoeopathic Advisor" is not used; the site uses M.D. (Homoeopathy) from her CV.

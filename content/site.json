@@ -1,5 +1,5 @@
 {
-  "_note": "Only facts from PROJECT-BRIEF.md. confirmed:false means the doctor has not yet confirmed it may be published. null means unknown (see content/TODO.md).",
+  "_note": "Facts come from PROJECT-BRIEF.md and the clinic's own printed documents (handout, business card). confirmed:true means it is printed on materials the clinic hands to the public. null means unknown (see content/TODO.md).",
   "clinic": {
     "name": "Rajesh Homeo Home"
   },
@@ -17,7 +17,8 @@
   "phone": {
     "display": "+91 94143 62499",
     "e164": "+919414362499",
-    "confirmed": false
+    "confirmed": true,
+    "source": "Printed on the clinic business card and handout"
   },
   "whatsapp": {
     "sameAsPhone": true,
@@ -25,36 +26,35 @@
   },
   "email": {
     "value": "rama_mathur@yahoo.com",
-    "confirmed": false
+    "confirmed": true,
+    "source": "Printed on the clinic business card"
   },
   "address": {
     "lines": [
-      "202, 2nd Floor, Rajvilas Apartment",
+      "202, 2nd Floor, Rajvilas Apartment I",
       "Meera Marg, Banipark",
       "Jaipur, Rajasthan 302016"
     ],
     "linesHi": [
-      "202, दूसरी मंज़िल, राजविलास अपार्टमेंट",
+      "202, दूसरी मंज़िल, राजविलास अपार्टमेंट I",
       "मीरा मार्ग, बनी पार्क",
       "जयपुर, राजस्थान 302016"
     ],
-    "street": "202, 2nd Floor, Rajvilas Apartment, Meera Marg, Banipark",
+    "street": "202, 2nd Floor, Rajvilas Apartment I, Meera Marg, Banipark",
     "locality": "Jaipur",
     "region": "Rajasthan",
     "postalCode": "302016",
     "country": "IN",
-    "confirmed": false
+    "confirmed": true,
+    "source": "Business card: 202, 2 Floor, Rajvilas Appartment I; registration slip: 202-II Floor"
   },
   "registration": {
-    "council": null,
-    "number": null
+    "council": "Rajasthan Board of Homoeopathic Medicine",
+    "number": "3780",
+    "source": "Registration renewal slip (the slip shows renewal only up to 19/5/2020; a current renewal is needed before stating validity)"
   },
   "timings": {
     "mon": [
-      [
-        "10:30",
-        "14:00"
-      ],
       [
         "18:00",
         "20:30"
@@ -62,19 +62,11 @@
     ],
     "tue": [
       [
-        "10:30",
-        "14:00"
-      ],
-      [
         "18:00",
         "20:30"
       ]
     ],
     "wed": [
-      [
-        "10:30",
-        "14:00"
-      ],
       [
         "18:00",
         "20:30"
@@ -82,19 +74,11 @@
     ],
     "thu": [
       [
-        "10:30",
-        "14:00"
-      ],
-      [
         "18:00",
         "20:30"
       ]
     ],
     "fri": [
-      [
-        "10:30",
-        "14:00"
-      ],
       [
         "18:00",
         "20:30"
@@ -102,25 +86,21 @@
     ],
     "sat": [
       [
-        "10:30",
-        "14:00"
-      ],
-      [
         "18:00",
         "20:30"
       ]
     ],
     "sun": [
       [
-        "10:30",
-        "14:00"
+        "10:00",
+        "14:30"
       ]
     ]
   },
-  "weeklyOff": "none (Sunday evening closed)",
+  "weeklyOff": "Sunday evening",
   "fees": null,
   "mapsUrl": null,
-  "appointmentPolicy": null,
+  "appointmentPolicy": "prior-appointment",
   "portraitPhoto": {
     "src": "/photos/doctor-portrait.51798a77.jpg",
     "width": 1122,
@@ -130,6 +110,20 @@
     "focus": "50% 25%"
   },
   "logo": null,
-  "timingsConfirmed": false,
-  "timingsSource": "Clinic printed handout (daily 10:30-14:00 and 18:00-20:30; Sunday 10:30-14:00, Sunday evening off). Confirm with the doctor."
+  "timingsConfirmed": true,
+  "timingsSource": "Business card: daily 6:00 pm to 8:30 pm, Sunday 10:00 am to 2:30 pm. Chosen by the owner on 20 Oct 2026 over the handout (which lists 10:30 am to 2:00 pm and 6:00 pm to 8:30 pm). Doctor to re-confirm.",
+  "landline": {
+    "display": "0141-2204095",
+    "e164": "+911412204095",
+    "confirmed": true,
+    "source": "Printed on the clinic business card"
+  },
+  "website": {
+    "url": "https://rajeshhomoeohome.in",
+    "display": "rajeshhomoeohome.in",
+    "source": "Printed on the clinic business card"
+  },
+  "alternateNames": [
+    "Rajesh Homoeo Home"
+  ]
 }

@@ -87,7 +87,7 @@ if (!site.email.confirmed) pending.push("email not confirmed as public");
 if (!site.address.confirmed) pending.push("address not confirmed as publishable");
 if (!site.registration.number) pending.push("council registration number missing");
 if (!site.timings) pending.push("clinic timings missing");
-else if (!site.timingsConfirmed) pending.push("clinic timings came from the printed handout; doctor to confirm");
+else if (!site.timingsConfirmed) pending.push("clinic timings not confirmed");
 if (!site.mapsUrl) pending.push("Google Maps link missing");
 if (!site.portraitPhoto) pending.push("doctor portrait missing");
 if (!site.logo) pending.push("logo missing");

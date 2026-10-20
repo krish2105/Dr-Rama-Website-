@@ -8,7 +8,11 @@
     },
     {
       "q": "Where is the clinic?",
-      "a": "Rajesh Homeo Home is at 202, 2nd Floor, Rajvilas Apartment, Meera Marg, Banipark, Jaipur, Rajasthan 302016."
+      "a": "Rajesh Homeo Home is at 202, 2nd Floor, Rajvilas Apartment I, Meera Marg, Banipark, Jaipur, Rajasthan 302016."
+    },
+    {
+      "q": "Do I need an appointment?",
+      "a": "Yes. Consultation is with a prior appointment. Use the booking form, call the clinic or message on WhatsApp, and the clinic will confirm a time with you."
     },
     {
       "q": "How can I book a visit?",

@@ -21,6 +21,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "contact" });
   const c = await getTranslations({ locale, namespace: "common" });
+  const h = await getTranslations({ locale, namespace: "hours" });
   const lines = locale === "hi" ? SITE.address.linesHi : SITE.address.lines;
   const timings = SITE.timings as Timings | null;
   return (
@@ -37,6 +38,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           <div className="card p-6">
             <div className="flex items-center gap-3"><IconBadge name="phone" /><p className="t-eyebrow">{c("phone")}</p></div>
             <p className="mt-2 text-lg">{SITE.phone.display}</p>
+            <p className="mt-1 text-sm text-muted">{t("landline")}: <a className="underline" href={`tel:${SITE.landline.e164}`}>{SITE.landline.display}</a></p>
             <div className="mt-4 flex flex-wrap gap-3">
               <ExternalButton href={telHref}>{c("call")}</ExternalButton>
               <ExternalButton href={waHref(c("whatsappPrefill"))} target="_blank" rel="noopener noreferrer" variant="secondary">{c("whatsapp")}</ExternalButton>
@@ -50,6 +52,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               <div className="mt-3 space-y-4">
                 <OpenNow timings={timings} />
                 <HoursList timings={timings} />
+                <p className="text-sm text-muted">{h("byAppointment")}</p>
               </div>
             ) : <div className="mt-3"><DevTodo>{t("hoursTodo")}</DevTodo></div>}
           </div>

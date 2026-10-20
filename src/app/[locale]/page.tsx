@@ -20,6 +20,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "home" });
   const c = await getTranslations({ locale, namespace: "common" });
+  const h = await getTranslations({ locale, namespace: "hours" });
   const about = getAbout(locale);
   const timings = SITE.timings as Timings | null;
   const lines = locale === "hi" ? SITE.address.linesHi : SITE.address.lines;
@@ -147,7 +148,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               <IconBadge name="clock" />
               <div>
                 <p className="mb-2 font-semibold text-ink">{t("visitHours")}</p>
-                {timings ? <HoursList timings={timings} /> : <DevTodo>{t("timingsMissing")} Timings and weekly off day are in content/TODO.md.</DevTodo>}
+                {timings ? <><HoursList timings={timings} /><p className="mt-2 text-sm text-muted">{h("byAppointment")}</p></> : <DevTodo>{t("timingsMissing")} Timings and weekly off day are in content/TODO.md.</DevTodo>}
               </div>
             </li>
             <li className="flex gap-4">

@@ -19,6 +19,7 @@ export function clinicSchema(locale: string) {
     knowsLanguage: ["hi", "en"],
     alumniOf: { "@type": "CollegeOrUniversity", name: "Rajasthan University" },
     worksFor: { "@id": `${SITE_URL}/#clinic` },
+    ...(SITE.registration.number ? { identifier: { "@type": "PropertyValue", name: `${SITE.registration.council} registration number`, value: SITE.registration.number } } : {}),
     ...(address ? { address } : {}),
   };
   const clinic = {
@@ -26,7 +27,8 @@ export function clinicSchema(locale: string) {
     "@id": `${SITE_URL}/#clinic`,
     name: SITE.clinic.name,
     url,
-    ...(SITE.phone.confirmed ? { telephone: SITE.phone.e164 } : {}),
+    ...(SITE.alternateNames?.length ? { alternateName: SITE.alternateNames } : {}),
+    ...(SITE.phone.confirmed ? { telephone: [SITE.phone.e164, ...(SITE.landline?.confirmed ? [SITE.landline.e164] : [])] } : {}),
     ...(SITE.email.confirmed ? { email: SITE.email.value } : {}),
     ...(address ? { address } : {}),
     availableLanguage: ["Hindi", "English"],

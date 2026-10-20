@@ -35,6 +35,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <div className="mt-6 grid gap-8 md:grid-cols-[1.4fr_1fr]">
           <div className="space-y-4 text-lg">
             {a.intro.map((p) => <p key={p}>{p}</p>)}
+            {SITE.registration.number ? (
+              <p className="rounded-xl bg-soft px-4 py-3 text-sm text-ink">{t("registration", { council: SITE.registration.council ?? "", number: SITE.registration.number })}</p>
+            ) : null}
           </div>
           <div>
             {portrait ? (

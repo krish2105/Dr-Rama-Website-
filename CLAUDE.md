@@ -33,9 +33,11 @@ Bilingual website for Dr. Rama Mathur, M.D. (Homoeopathy), Rajesh Homeo Home, Ja
 - `source/reference/` holds the printed handout and the original room photo. They are private and never published. The handout lists named diseases and says "इलाज"; do not copy that wording. Take only plain facts from it (hours, address, phone).
 - Named diseases are never published as treated conditions. Several (diabetes, blood pressure, menstrual flow disorders, kidney and gall stones) are on the schedule of the Drugs and Magic Remedies Act 1954. Care areas stay broad categories. `npm run check-content` fails on a list of named diseases.
 - Photos showing patients or other people stay in `source/photos/_pending-consent/` until each person consents. Never send such photos to an AI tool.
-- Hours come from the handout and are marked unconfirmed (`timingsConfirmed: false` in `content/site.json`).
+- Hours come from the business card (daily 6:00 pm to 8:30 pm; Sunday 10:00 am to 2:30 pm), chosen by the owner over the handout. Consultation is by prior appointment. Registration: Rajasthan Board of Homoeopathic Medicine, No. 3780 (the slip we hold was valid only to 19/5/2020; never state a validity date).
+- The English name stays "Rajesh Homeo Home" (the owner's choice) although the card and domain spell "Homoeo"; "Rajesh Homoeo Home" is kept as `alternateName` in JSON-LD.
 - Experience is **32 years** (confirmed by the owner 2026-10-20; the CV said 31, the handout says 32).
-- Open conflict: "2nd Floor" (brief) vs "1st" (handout). Keep the brief's value until the doctor confirms.
+- Floor: the slip and card say 2nd floor; the handout's "1st" means Apartment I. Address reads "202, 2nd Floor, Rajvilas Apartment I".
+- `source/reference/` also holds the business card and registration slip (private, never published; the slip names a family member).
 
 ## Do NOT publish
 Date of birth, gender, nationality, hobbies, "personal objective", the declaration, management skills, governance or harassment-prevention trainings, her internal committee roles at RIICO. The CV itself is never published.

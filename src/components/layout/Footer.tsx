@@ -24,7 +24,7 @@ export function Footer() {
               {locale === "hi" ? SITE.doctor.nameHi : SITE.doctor.name}, {locale === "hi" ? SITE.doctor.degreeHi : SITE.doctor.degree}
             </p>
             <div className="mt-4 text-sm">
-              {reg.number ? <p>{t("footer.registration")}: {reg.council} {reg.number}</p> : <DevTodo>State council name and registration number are missing (content/TODO.md).</DevTodo>}
+              {reg.number ? <p>{t("footer.registration")}: {reg.council}, {t("footer.regNo")} {reg.number}</p> : <DevTodo>State council name and registration number are missing (content/TODO.md).</DevTodo>}
             </div>
           </div>
           <div>
