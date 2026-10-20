@@ -60,7 +60,7 @@ Date of birth, gender, nationality, hobbies, "personal objective", the declarati
 - Floating UI: floating glass pill header, floating contact dock on mobile (Call / WhatsApp / Book), floating round buttons on desktop, floating chips and cards around the portrait ring, tilted floating gallery cards. Gentle float only; respect `prefers-reduced-motion`.
 - Signature: a tall portrait card with a brass offset frame and a faint blue-pottery rosette. Rosettes and dot rules are vector decoration only.
 - Theme: Light / Dark / System toggle, no flash, WCAG AA in both. Mobile-first; check at 360px.
-- RIICO service record has its own section on Home (full corporation name, 24 years, "Empanelled homoeopathic doctor"). The owner (21 Oct 2026) removed the dates (1999 to 2023) and the retirement / Deputy General Manager line; do not add them back. Never publish her internal committee roles at RIICO.
+- RIICO service record has its own section on Home (24 years, "Empanelled homoeopathic doctor, RIICO"; the owner, 21 Oct 2026, removed the "Service record" label and the full corporation name, so write just "RIICO"). The owner (21 Oct 2026) removed the dates (1999 to 2023) and the retirement / Deputy General Manager line; do not add them back. Never publish her internal committee roles at RIICO.
 
 ## Added with Phase 1.5 (2026-10-20)
 - Booking times are **requests**, never confirmations; wording must say so. Booking forms collect: patient name, guardian name (child or other person), phone, slot, visit type chosen from a list, consent. No free-text health reason. GA4 events carry none of it.

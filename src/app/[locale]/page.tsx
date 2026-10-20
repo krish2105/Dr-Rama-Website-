@@ -84,9 +84,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               <p className="mt-2 text-sm font-semibold uppercase tracking-[0.1em] opacity-90">{t("riicoYears")}</p>
             </div>
             <div className="md:border-s md:border-white/25 md:ps-12">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] opacity-80">{t("riicoKicker")}</p>
-              <h2 id="riico" className="mt-2 text-2xl md:text-3xl">{t("riicoTitle")}</h2>
-              <p className="mt-1 text-sm opacity-85">{t("riicoOrg")}</p>
+              <h2 id="riico" className="text-2xl md:text-3xl">{t("riicoTitle")}</h2>
             </div>
           </div>
         </div>
