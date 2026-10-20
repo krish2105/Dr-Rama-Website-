@@ -58,7 +58,7 @@ Date of birth, gender, nationality, hobbies, "personal objective", the declarati
 
 ## Added with Phase 1.5 (2026-10-20)
 - Booking times are **requests**, never confirmations; wording must say so. Booking forms collect: patient name, guardian name (child or other person), phone, slot, visit type chosen from a list, consent. No free-text health reason. GA4 events carry none of it.
-- Generated or drawn illustrations (for example the globules bowl) are labelled "Illustration". No remedy labels or brand names in them.
+- Generated or drawn illustrations (for example the tube-and-globules picture in `HomeoArt.tsx`, redrawn from the clinic business card) are labelled "Illustration". No remedy labels or brand names in them.
 - Motion: `data-motion` is full / lite / off, set before paint; honour `prefers-reduced-motion` and data-saver; never hide content behind an animation. Provide the Aa display controls on every page.
 - The QR code encodes `SITE_URL`; regenerate `public/downloads` (`npm run pdfs`) whenever the domain changes.
 

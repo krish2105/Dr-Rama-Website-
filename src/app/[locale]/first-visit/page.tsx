@@ -5,7 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { pageMeta } from "@/lib/meta";
 import { CaseHead } from "@/components/ui/CaseHead";
 import { ButtonLink } from "@/components/ui/Button";
-import { Globules } from "@/components/ui/Globules";
+import { GlobuleVial } from "@/components/ui/HomeoArt";
 import { QrCode } from "@/components/ui/QrCode";
 import { PrintButton } from "@/components/ui/PrintButton";
 import { HoursList } from "@/components/sections/HoursList";
@@ -61,8 +61,8 @@ export default async function FirstVisitPage({ params }: { params: Promise<{ loc
               {(["expect1", "expect2", "expect3", "expect4"] as const).map((k) => <li key={k}>{t(k)}</li>)}
             </ul>
           </div>
-          <figure className="mx-auto w-44 sm:w-48">
-            <Globules className="h-auto w-full" />
+          <figure className="mx-auto w-52 sm:w-56">
+            <GlobuleVial className="h-auto w-full" />
             <figcaption className="mt-1 text-center text-xs text-muted">{t("globulesCaption")}</figcaption>
           </figure>
         </section>

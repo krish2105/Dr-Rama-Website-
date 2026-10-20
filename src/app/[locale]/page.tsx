@@ -8,6 +8,7 @@ import { ButtonLink, ExternalButton, buttonClass } from "@/components/ui/Button"
 import { DevTodo } from "@/components/ui/DevTodo";
 import { HeroVisual } from "@/components/sections/Portrait";
 import { Gallery, hasPhotos } from "@/components/sections/ClinicPhoto";
+import { GlobuleVial } from "@/components/ui/HomeoArt";
 import { CampFloat } from "@/components/sections/CampFloat";
 import Image from "next/image";
 import { ArtBackdrop } from "@/components/ui/ArtBackdrop";
@@ -113,6 +114,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               </li>
             ))}
           </ul>
+          <GlobuleVial className="pointer-events-none absolute -bottom-4 end-4 hidden h-44 w-auto opacity-90 md:block" />
           <ButtonLink href="/about" variant="secondary" className="mt-8">{t("aboutLink")}</ButtonLink>
         </div>
       </section>
@@ -181,6 +183,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="relative overflow-hidden rounded-2xl bg-soft px-6 py-10 text-center sm:px-12 sm:py-12">
           <Rosette className="pointer-events-none absolute -start-10 -top-10 h-44 w-44 text-primary opacity-[0.1]" />
           <Rosette className="pointer-events-none absolute -bottom-12 -end-10 h-52 w-52 text-primary opacity-[0.1]" />
+          <GlobuleVial className="relative mx-auto mb-2 h-28 w-auto" />
           <h2 className="t-h2 relative">{t("ctaTitle")}</h2>
           <p className="t-lead relative mx-auto mt-3 max-w-xl">{t("ctaBody")}</p>
           <ButtonLink href="/book" className="relative mt-7">{c("book")}</ButtonLink>

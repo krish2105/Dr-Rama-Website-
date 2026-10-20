@@ -4,6 +4,7 @@ import { getJson } from "@/lib/content";
 import { pageMeta } from "@/lib/meta";
 import { CaseHead } from "@/components/ui/CaseHead";
 import { ButtonLink } from "@/components/ui/Button";
+import { GlobuleScatter, HOMEO_GLYPHS, HomeoGlyph } from "@/components/ui/HomeoArt";
 import { ArtBackdrop } from "@/components/ui/ArtBackdrop";
 
 type Care = { _status: string; title: string; items: { title: string; concerns: string[] }[] };
@@ -28,19 +29,22 @@ export default async function CareAreasPage({ params }: { params: Promise<{ loca
       <CaseHead as="h1" title={d.title} />
       <p className="mt-6 text-lg text-muted">{t("lead")}</p>
       <ul className="mt-10 grid items-start gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {d.items.map((x) => (
-          <li key={x.title} className="float-card min-h-24 p-5">
-            <div className="flex items-center gap-3">
-              <span aria-hidden="true" className="h-3 w-3 shrink-0 rounded-full bg-accent" />
+        {d.items.map((x, i) => (
+          <li key={x.title} className="float-card relative min-h-32 overflow-hidden p-5">
+            <GlobuleScatter className="pointer-events-none absolute -bottom-3 -end-3 h-20 w-28 opacity-60" />
+            <div className="relative flex items-center gap-3">
+              <span aria-hidden="true" className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-primary/35 bg-soft text-primary">
+                <HomeoGlyph name={HOMEO_GLYPHS[i % HOMEO_GLYPHS.length]} />
+              </span>
               <h2 className="font-display text-lg font-semibold text-ink">{x.title}</h2>
             </div>
             {x.concerns.length ? (
-              <>
+              <div className="relative">
                 <p className="mt-3 text-xs font-semibold uppercase tracking-[0.1em] text-muted">{t("concernsLabel")}</p>
                 <ul className="mt-2 flex flex-wrap gap-2">
                   {x.concerns.map((k) => <li key={k} className="rounded-lg bg-soft px-2.5 py-1 text-sm text-ink">{k}</li>)}
                 </ul>
-              </>
+              </div>
             ) : null}
           </li>
         ))}
