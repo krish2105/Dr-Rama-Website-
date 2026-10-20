@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { ThemeToggle } from "./ThemeToggle";
@@ -47,8 +48,8 @@ export function MobileNav() {
           {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
         </svg>
       </button>
-      {open ? (
-        <nav id="mobile-menu" aria-label={t("common.menu")} className="fixed inset-x-3 top-[4.5rem] bottom-24 z-40 overflow-y-auto rounded-2xl border border-line bg-surface p-4 shadow-[var(--shadow-float)]">
+      {open ? createPortal(
+        <nav id="mobile-menu" aria-label={t("common.menu")} className="fixed inset-x-3 top-[4.5rem] bottom-24 z-40 overflow-y-auto rounded-2xl xl:hidden border border-line bg-surface p-4 shadow-[var(--shadow-float)]">
           <ul className="mx-auto max-w-md">
             {ITEMS.map(([key, href]) => (
               <li key={key} className="border-b border-line">
@@ -67,7 +68,8 @@ export function MobileNav() {
             <span className="text-muted">{t("common.theme")}</span>
             <ThemeToggle />
           </div>
-        </nav>
+        </nav>,
+        document.body,
       ) : null}
     </div>
   );
