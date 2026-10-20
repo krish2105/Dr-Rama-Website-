@@ -19,6 +19,7 @@ source/art/*
 
 # Word files and lock files stay local (prompt packs are for the owner)
 *.docx
+!docs/*.docx
 ~$*
 *.zip
 .vercel

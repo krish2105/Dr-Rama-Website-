@@ -8,11 +8,12 @@
     "nameHi": "डॉ. रमा माथुर",
     "degree": "M.D. (Homoeopathy)",
     "degreeHi": "एम.डी. (होम्योपैथी)",
-    "experienceYears": 32,
+    "experienceYears": 35,
     "languages": [
       "Hindi",
       "English"
-    ]
+    ],
+    "practisingSince": 1991
   },
   "phone": {
     "display": "+91 94143 62499",

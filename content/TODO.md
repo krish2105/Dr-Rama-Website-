@@ -5,10 +5,11 @@ How to do each item, plus the Instagram and Google Business setup: `docs/LAUNCH-
 Nothing below may be invented. Placeholders show in development only; production builds never show a fake fact.
 
 ## Done
-- Name, doctor facts, qualifications, experience (32 years), RIICO service record, memberships, conferences, community work
+- Name, doctor facts, qualifications, experience (35+ years, since 1991), RIICO service record, memberships, conferences, community work
 - Phone, landline, email, address, website domain, hours (business card), appointment policy (prior appointment)
 - State council registration: Rajasthan Board of Homoeopathic Medicine, No. 3780 (shown in the footer and on About)
 - Portrait and consultation-room photo, approved blue-pottery artwork, share image
+- Social launch pack (Word) and templates in `social/templates/`
 
 ## 1. Needed from the doctor
 - [ ] **Current registration.** The renewal slip we have was valid only until 19/5/2020. Send the latest renewal. The site shows the number only and does not state a validity date.
@@ -52,3 +53,8 @@ Nothing below may be invented. Placeholders show in development only; production
 
 ## Never publish
 Date of birth, gender, nationality, hobbies, personal objective, declaration, management skills, governance or harassment trainings, her internal committee roles at RIICO, the name of her spouse or father on the registration slip, the CV, the printed handout and the registration slip images. The card title "Homoeopathic Advisor" is not used; the site uses M.D. (Homoeopathy) from her CV.
+
+## Social launch
+- [ ] Doctor approves posts 1 to 6 and ads A1 to A3 in the Word pack; keep an approval log.
+- [ ] Create the Instagram account, Facebook Page, Meta Business Suite, WhatsApp Business (steps in the Word pack).
+- [ ] Replace [Maps link] in the saved replies once the Google Maps link exists.

@@ -15,7 +15,7 @@ export function clinicSchema(locale: string) {
     "@id": `${SITE_URL}/#physician`,
     name: SITE.doctor.name,
     honorificPrefix: "Dr.",
-    description: `${SITE.doctor.degree}. ${SITE.doctor.experienceYears} years of clinical experience.`,
+    description: `${SITE.doctor.degree}. ${SITE.doctor.experienceYears}+ years of clinical experience.`,
     knowsLanguage: ["hi", "en"],
     alumniOf: { "@type": "CollegeOrUniversity", name: "Rajasthan University" },
     worksFor: { "@id": `${SITE_URL}/#clinic` },

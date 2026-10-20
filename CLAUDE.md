@@ -2,7 +2,7 @@
 
 **Name correction (owner, 2026-10-20): the name is "Rajesh Homeo Home", not "Rajesh Homeo Clinic" as written in PROJECT-BRIEF.md. Hindi: "राजेश होम्यो होम". Never write "Rajesh Homeo Clinic".**
 
-Bilingual website for Dr. Rama Mathur, M.D. (Homoeopathy), Rajesh Homeo Home, Jaipur. Source of truth: `PROJECT-BRIEF.md`. Goal: turn a mobile visitor into a call, WhatsApp message or booking in under 30 seconds, and make her 32 years and qualifications easy to trust.
+Bilingual website for Dr. Rama Mathur, M.D. (Homoeopathy), Rajesh Homeo Home, Jaipur. Source of truth: `PROJECT-BRIEF.md`. Goal: turn a mobile visitor into a call, WhatsApp message or booking in under 30 seconds, and make her 35+ years and qualifications easy to trust.
 
 ## Rule 1: Never invent facts
 - Use only facts in `PROJECT-BRIEF.md` or `/source` (cv, photos, brand). Nothing from memory, the web or assumptions.
@@ -35,7 +35,7 @@ Bilingual website for Dr. Rama Mathur, M.D. (Homoeopathy), Rajesh Homeo Home, Ja
 - Photos showing patients or other people stay in `source/photos/_pending-consent/` until each person consents. Never send such photos to an AI tool.
 - Hours come from the business card (daily 6:00 pm to 8:30 pm; Sunday 10:00 am to 2:30 pm), chosen by the owner over the handout. Consultation is by prior appointment. Registration: Rajasthan Board of Homoeopathic Medicine, No. 3780 (the slip we hold was valid only to 19/5/2020; never state a validity date).
 - The English name stays "Rajesh Homeo Home" (the owner's choice) although the card and domain spell "Homoeo"; "Rajesh Homoeo Home" is kept as `alternateName` in JSON-LD.
-- Experience is **32 years** (confirmed by the owner 2026-10-20; the CV said 31, the handout says 32).
+- Experience is **35+ years of clinical experience, since 1991** (owner, 2026-10-20; earlier the CV said 31 and the handout 32). Always write "35+", never an exact figure.
 - Floor: the slip and card say 2nd floor; the handout's "1st" means Apartment I. Address reads "202, 2nd Floor, Rajvilas Apartment I".
 - `source/reference/` also holds the business card and registration slip (private, never published; the slip names a family member).
 

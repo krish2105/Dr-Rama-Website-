@@ -7,6 +7,19 @@ Next.js 16 (App Router) + TypeScript + Tailwind 4 + next-intl + MDX. Facts and r
 - Code: https://github.com/krish2105/Dr-Rama-Website- (branch `main`). Every push to `main` deploys to Vercel production automatically.
 - Vercel project: `dr-rama-website` (account krishnamathur008-1499). Until Supabase and the email keys are added, the booking form shows a "not switched on yet" message with a prefilled WhatsApp message and a Call button.
 
+## What is in this repository
+| Path | What |
+|---|---|
+| `src/` | The Next.js site (English and Hindi under `/en` and `/hi`) |
+| `content/` | All clinic text as JSON and MDX so the doctor can edit it: `site.json` (facts), `messages/` (page text), `en/` and `hi/` (About, FAQ, Privacy, Services, Care areas), `blog/` |
+| `public/` | Optimised photos, artwork, fonts and the share image |
+| `social/templates/` | Blue-pottery templates for Instagram, Facebook and ads, at posting sizes |
+| `docs/` | `LAUNCH-AND-INSTAGRAM-GUIDE.md`, the Word pack `Rajesh-Homeo-Home-Instagram-Meta-Ads-Launch-Pack.docx` (setup, 24 posts with captions, Reels, 6 ads, rules) and the image-decision notes |
+| `scripts/` | `npm run photos` (import photos) and `npm run check-content` (compliance check) |
+| `content/TODO.md` | Everything still open |
+
+Key facts on the site: Dr. Rama Mathur, M.D. (Homoeopathy), 35+ years of clinical experience (since 1991), Hindi and English, by prior appointment, hours from the clinic card (every day 6:00 to 8:30 pm, Sunday 10:00 am to 2:30 pm), Rajasthan Board of Homoeopathic Medicine registration No. 3780.
+
 ## Run locally
 ```bash
 npm install

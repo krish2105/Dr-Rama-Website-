@@ -2,6 +2,8 @@
 
 Written 20 Oct 2026. Open items are also in `content/TODO.md`. Nothing here is legal advice: have a qualified person review the final copy and the social plan.
 
+> For the full social launch (Instagram, Facebook, WhatsApp, ads, 24 posts with captions, Reels, rules), use the Word pack `docs/Rajesh-Homeo-Home-Instagram-Meta-Ads-Launch-Pack.docx` and the templates in `social/templates/`. This file is the shorter version.
+
 ## A. What is remaining, in the order to do it
 
 ### This week (needs the doctor or the owner, no developer)
@@ -71,7 +73,7 @@ Check that the pin sits on the right building.
 ## D. What to post
 
 ### Content pillars (aim for 3 feed posts and 3 to 5 Stories a week, 1 to 2 Reels a week)
-1. **Meet the doctor:** real portrait, her qualifications as facts, languages, 32 years of experience, her RIICO service record, the community work (with consent).
+1. **Meet the doctor:** real portrait, her qualifications as facts, languages, 35+ years of experience, her RIICO service record, the community work (with consent).
 2. **Know the clinic:** hours, how to book, what to bring on a first visit, where to find the flat.
 3. **Everyday health tips (general only):** drink water, sleep, seasonal habits for monsoon, winter and summer. No disease names, no promises.
 4. **Homeopathy explained simply:** what a consultation is, why records are kept, when to see a specialist or go to hospital.
@@ -81,7 +83,7 @@ Check that the pin sits on the right building.
 ### First 4 weeks, ready to use
 | Week | Post | Format | Caption idea (check each against section E) |
 |---|---|---|---|
-| 1 | Meet Dr. Rama Mathur | Photo (portrait) | "M.D. (Homoeopathy). 32 years of clinical experience. Hindi and English. Consultation in Banipark, Jaipur, by appointment." |
+| 1 | Meet Dr. Rama Mathur | Photo (portrait) | "M.D. (Homoeopathy). 35+ years of clinical experience. Hindi and English. Consultation in Banipark, Jaipur, by appointment." |
 | 1 | Hours and location card | Image | Hours, address, phone, "Consultation is with a prior appointment." |
 | 1 | How to book in 3 steps | Reel or carousel | Call, WhatsApp, or the website form |
 | 2 | What to bring on your first visit | 4-slide carousel | Earlier reports, list of current medicines, questions |
