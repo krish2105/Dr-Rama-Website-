@@ -6,6 +6,7 @@ import { DevTodo } from "@/components/ui/DevTodo";
 import { ExternalButton, ButtonLink } from "@/components/ui/Button";
 import { SITE, telHref, waHref, mapsDirectionsHref } from "@/lib/site";
 import type { Timings } from "@/lib/openNow";
+import { IconBadge } from "@/components/ui/Icon";
 import { OpenNow } from "@/components/sections/OpenNow";
 import { HoursList } from "@/components/sections/HoursList";
 
@@ -29,22 +30,22 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       <div className="mt-10 grid gap-8 md:grid-cols-2">
         <div className="space-y-6">
           <div className="card p-6">
-            <p className="marginalia">{c("address")}</p>
+            <div className="flex items-center gap-3"><IconBadge name="pin" /><p className="t-eyebrow">{c("address")}</p></div>
             <address className="mt-2 text-lg not-italic">{lines.map((l) => <span key={l} className="block">{l}</span>)}</address>
             <ExternalButton href={mapsDirectionsHref()} target="_blank" rel="noopener noreferrer" variant="secondary" className="mt-4">{c("directions")}</ExternalButton>
           </div>
           <div className="card p-6">
-            <p className="marginalia">{c("phone")}</p>
+            <div className="flex items-center gap-3"><IconBadge name="phone" /><p className="t-eyebrow">{c("phone")}</p></div>
             <p className="mt-2 text-lg">{SITE.phone.display}</p>
             <div className="mt-4 flex flex-wrap gap-3">
               <ExternalButton href={telHref}>{c("call")}</ExternalButton>
               <ExternalButton href={waHref(c("whatsappPrefill"))} target="_blank" rel="noopener noreferrer" variant="secondary">{c("whatsapp")}</ExternalButton>
             </div>
-            <p className="marginalia mt-6">{t("emailLabel")}</p>
+            <p className="t-eyebrow mt-6">{t("emailLabel")}</p>
             <a className="mt-1 inline-flex min-h-12 items-center text-lg text-primary underline" href={`mailto:${SITE.email.value}`}>{SITE.email.value}</a>
           </div>
           <div className="card p-6">
-            <p className="marginalia">{t("hours")}</p>
+            <div className="flex items-center gap-3"><IconBadge name="clock" /><p className="t-eyebrow">{t("hours")}</p></div>
             {timings ? (
               <div className="mt-3 space-y-4">
                 <OpenNow timings={timings} />
@@ -55,7 +56,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           <ButtonLink href="/book">{c("book")}</ButtonLink>
         </div>
         <div>
-          <p className="marginalia mb-2">{t("map")}</p>
+          <p className="t-eyebrow mb-2">{t("map")}</p>
           {SITE.mapsUrl ? (
             <iframe
               title={t("map")}

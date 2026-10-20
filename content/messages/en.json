@@ -96,7 +96,11 @@
     "riicoRole": "Retired as Deputy General Manager",
     "qualTitle": "Qualifications",
     "visitTodoMap": "Map shows here once the link is supplied.",
-    "visitHours": "Clinic hours"
+    "visitHours": "Clinic hours",
+    "bannerKicker": "Jaipur",
+    "bannerTitle": "Find Dr. Mathur in Banipark",
+    "bannerBody": "Rajesh Homeo Home is at Rajvilas Apartment, Meera Marg, Banipark. Call ahead or send a booking request.",
+    "entranceTodo": "Photo of the flat's entrance door and nameplate (real photo) to be added. Do not use a generated entrance image."
   },
   "book": {
     "title": "Book a visit",

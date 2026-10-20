@@ -139,6 +139,10 @@
 .pottery-dots::after { content: ""; position: absolute; right: -2.5rem; top: -2.5rem; width: 8rem; height: 8rem; border-radius: 50%; border: 10px dotted rgb(255 255 255 / .16); pointer-events: none; }
 :root[data-theme="dark"] .pottery-dots::after { border-color: rgb(13 22 48 / .2); }
 
+/* Decorative artwork sits on ivory, so it is hidden in dark mode. */
+:root[data-theme="dark"] .art-light { display: none !important; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme]) .art-light { display: none !important; } }
+
 /* ---------- Motion: gentle only ---------- */
 @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 .fade-in { animation: rise .7s ease-out both; }

@@ -4,6 +4,7 @@ import { getJson } from "@/lib/content";
 import { pageMeta } from "@/lib/meta";
 import { CaseHead } from "@/components/ui/CaseHead";
 import { ButtonLink } from "@/components/ui/Button";
+import { ArtBackdrop } from "@/components/ui/ArtBackdrop";
 
 type Services = { _status: string; title: string; items: { title: string; text: string }[] };
 
@@ -19,7 +20,9 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
   const d = getJson<Services>(locale, "services");
   const c = await getTranslations({ locale, namespace: "common" });
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 md:py-14">
+    <div className="relative">
+      <ArtBackdrop src="/art/services-bg.webp" className="inset-x-0 -top-24 h-[28rem]" opacity={0.8} />
+      <div className="relative z-10 mx-auto max-w-3xl px-4 py-10 sm:px-6 md:py-14">
       <CaseHead as="h1" title={d.title} />
       {d._status === "DRAFT" ? <p className="mt-4 inline-block rounded-full bg-accent/15 px-3 py-1 text-sm font-semibold text-accentink">{c("draft")}</p> : null}
       <ul className="mt-10 space-y-5">
@@ -31,6 +34,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
         ))}
       </ul>
       <ButtonLink href="/book" className="mt-8">{c("book")}</ButtonLink>
+      </div>
     </div>
   );
 }

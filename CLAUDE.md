@@ -13,6 +13,7 @@ Bilingual website for Dr. Rama Mathur, M.D. (Homoeopathy), Rajesh Homeo Home, Ja
 - Anything showing the clinic or the doctor uses real photos from `/source/photos` only. Never generate, stylise or replace them.
 - Do not redraw, retype or alter certificates or plaques visible in photos.
 - Vector decoration (rosettes, dot rules) is allowed as decoration only, never as a stand-in for a clinic or doctor photo.
+- Generated artwork (blue-pottery patterns, banner, backgrounds, share image) is allowed **only as decoration** with no people and no clinic scenes; it lives in `public/art`, originals in `source/art` (git-ignored). AI re-renders of the room, certificates, plaques, cabinet or entrance are never used, even as a "concept". See `docs/IMAGE-INTEGRATION-PROMPT.md` for the image decisions.
 - Photo workflow: put real photos in `source/photos` (name the doctor portrait `doctor-...jpg`), run `npm run photos` (resizes, strips EXIF/GPS, writes `public/photos`, `content/gallery.json`, `content/site.json`), then write alt text in EN + HI. `npm run check-content` fails until alt text exists.
 - Every image has alt text in English and Hindi. Use `next/image`. Reserve dimensions (no layout shift).
 - No before/after images.

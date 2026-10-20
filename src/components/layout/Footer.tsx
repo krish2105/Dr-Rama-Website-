@@ -2,7 +2,6 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { SITE, telHref, mapsDirectionsHref } from "@/lib/site";
 import { DevTodo } from "@/components/ui/DevTodo";
-import { Rosette } from "@/components/ui/Motif";
 
 const LINKS: [string, string][] = [
   ["about", "/about"], ["services", "/services"], ["careAreas", "/care-areas"], ["book", "/book"], ["online", "/online-consultation"],
@@ -17,7 +16,7 @@ export function Footer() {
   return (
     <footer className="mx-3 mb-28 mt-24 sm:mx-5 md:mb-8">
       <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-line bg-surface2">
-        <Rosette className="pointer-events-none absolute -end-16 -top-16 h-72 w-72 text-primary opacity-[0.07]" />
+        <div aria-hidden="true" className="h-6 w-full opacity-60" style={{ backgroundImage: "url(/art/tile-band.webp)", backgroundSize: "auto 100%", backgroundRepeat: "repeat-x" }} />
         <div className="relative grid gap-10 px-6 py-10 sm:px-10 md:grid-cols-3">
           <div>
             <p className="font-display text-xl font-semibold text-ink">{t("meta.siteName")}</p>

@@ -37,8 +37,10 @@ for (const f of files) {
   const text = fs.readFileSync(f, "utf8");
   // Ignore code identifiers: only scan quoted strings and MDX body text.
   const scan = rel.endsWith(".tsx") || rel.endsWith(".ts") ? (text.match(/(["'`])(?:(?!\1).)*[A-Za-zऀ-ॿ]{3,}(?:(?!\1).)*\1/g) ?? []).join("\n").replace(/\[[^\]]*\]/g, "") : text; // drop Tailwind arbitrary values like h-[calc(100%-2rem)]
-  for (const w of BANNED_EN) if (new RegExp(`(^|[^A-Za-z])${w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^A-Za-z]|$)`, "i").test(scan)) errors.push(`${rel}: banned word "${w}"`);
-  for (const w of BANNED_HI) if (scan.includes(w)) errors.push(`${rel}: banned Hindi word "${w}"`);
+  // "100%" in code is CSS (sizes, masks), not a claim; it is still banned in content files.
+  const claimWords = (list: string[]) => (rel.startsWith("src") ? list.filter((w) => w !== "100%") : list);
+  for (const w of claimWords(BANNED_EN)) if (new RegExp(`(^|[^A-Za-z])${w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^A-Za-z]|$)`, "i").test(scan)) errors.push(`${rel}: banned word "${w}"`);
+  for (const w of claimWords(BANNED_HI)) if (scan.includes(w)) errors.push(`${rel}: banned Hindi word "${w}"`);
   for (const w of REVIEW) if (!rel.startsWith("src") && (new RegExp(`(^|[^A-Za-z])${w}([^A-Za-z]|$)`, "i").test(scan) || (/[ऀ-ॿ]/.test(w) && scan.includes(w)))) warnings.push(`${rel}: review wording "${w}" (allowed only as a reported honour)`);
   for (const w of NAMED_DISEASES) if (!rel.startsWith("src") && scan.toLowerCase().includes(w)) errors.push(`${rel}: named disease "${w}" (no named-disease claims)`);
   for (const w of DO_NOT_PUBLISH) if (scan.toLowerCase().includes(w)) errors.push(`${rel}: do-not-publish topic "${w}"`);

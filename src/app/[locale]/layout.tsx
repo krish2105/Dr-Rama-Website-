@@ -35,7 +35,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: { default: t("siteName"), template: `%s | ${t("siteName")}` },
     description: t("defaultDescription"),
     alternates: { canonical: `/${locale}`, languages: { en: "/en", hi: "/hi", "x-default": "/en" } },
-    openGraph: { siteName: t("siteName"), locale: locale === "hi" ? "hi_IN" : "en_IN", type: "website" },
+    openGraph: {
+      siteName: t("siteName"),
+      locale: locale === "hi" ? "hi_IN" : "en_IN",
+      type: "website",
+      title: t("siteName"),
+      description: t("defaultDescription"),
+      images: [{ url: "/og/share.jpg", width: 1200, height: 630, alt: t("siteName") }],
+    },
+    twitter: { card: "summary_large_image", title: t("siteName"), description: t("defaultDescription"), images: ["/og/share.jpg"] },
   };
 }
 

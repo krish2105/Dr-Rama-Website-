@@ -59,3 +59,9 @@ Nothing below may be invented. Each item shows a dev-only placeholder on the sit
 - [ ] Photo of the flat's entrance door and nameplate (Rajvilas Apartment, 2nd floor), so visitors can find it.
 - [ ] Five medical-camp photos are held in `source/photos/_pending-consent/` (they show patients and other people). Each person needs to consent before any is published. Decide which, if any, to use for the Community work section. Also confirm what the honour-handover photo shows before using it.
 - [ ] Doctor to confirm the website may show her portrait and the room photo.
+
+## From the generated image pack (20 Oct 2026)
+- [ ] Real close-up photos for the About and Visit galleries: display cabinet, certificate and plaque wall, glass desk with chairs (shot per the checklist in Prompt Pack v3). The generated versions (04 to 08) were not used because they alter the room and invent certificate text.
+- [ ] Real photo of the flat's entrance door and nameplate. The generated entrance images (09, 10) were not used.
+- [ ] Doctor to confirm the lit portrait (03) is a faithful likeness of her.
+- [ ] Upload `source/brand/google-business-profile-cover.png` to the Google Business Profile once the profile exists.

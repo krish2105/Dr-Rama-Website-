@@ -8,6 +8,9 @@ import { ButtonLink, ExternalButton, buttonClass } from "@/components/ui/Button"
 import { DevTodo } from "@/components/ui/DevTodo";
 import { HeroVisual } from "@/components/sections/Portrait";
 import { Gallery, hasPhotos } from "@/components/sections/ClinicPhoto";
+import Image from "next/image";
+import { ArtBackdrop } from "@/components/ui/ArtBackdrop";
+import { IconBadge } from "@/components/ui/Icon";
 import { OpenNow } from "@/components/sections/OpenNow";
 import { HoursList } from "@/components/sections/HoursList";
 import type { Timings } from "@/lib/openNow";
@@ -25,7 +28,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     <>
       {/* Hero */}
       <section className="relative overflow-x-clip">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 pb-14 pt-6 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:pb-20 lg:pt-12">
+        <ArtBackdrop src="/art/hero-pottery.webp" className="inset-0" opacity={0.38} position="right center" desktopOnly fade="to left" priority={false} />
+        <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-4 pb-14 pt-6 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:pb-20 lg:pt-12">
           <div>
             <p className="fade-in t-eyebrow">{t("eyebrow")}</p>
             <h1 className="t-h1 mt-3 max-w-xl">{t("title")}</h1>
@@ -109,34 +113,58 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
-      {/* Gallery: real photos only */}
-      {hasPhotos() || isDev ? (
-        <section aria-labelledby="gallery" className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
-          <CaseHead id="gallery" eyebrow={t("galleryNote")} title={t("galleryTitle")} />
-          <div className="mt-10"><Gallery limit={5} /></div>
-        </section>
-      ) : null}
-
-      {/* Visit */}
-      <section aria-labelledby="visit" className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
-        <div className="grid gap-8 md:grid-cols-2">
-          <div>
-            <CaseHead id="visit" title={t("visitTitle")} />
-            <p className="mt-6 text-muted">{t("visitBody")}</p>
-            <address className="mt-4 text-base not-italic">{lines.map((x) => <span key={x} className="block">{x}</span>)}</address>
+      {/* Jaipur identity: one full-width visual break. Text is real HTML on the artwork's clean left side. */}
+      <section aria-labelledby="banner" className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
+        <div className="relative overflow-hidden rounded-2xl border border-line bg-[#f6ead7] text-[#13203f]">
+          <div className="relative h-40 w-full sm:h-48 md:absolute md:inset-0 md:h-auto">
+            <Image src="/art/jaipur-banner.webp" alt="" fill sizes="(min-width:1152px) 1152px, 100vw" quality={72} className="object-cover object-right" />
+          </div>
+          <div className="relative p-6 sm:p-8 md:max-w-[56%] md:py-14 md:ps-12">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#85601d]">{t("bannerKicker")}</p>
+            <h2 id="banner" className="t-h2 mt-2 !text-[#13203f]">{t("bannerTitle")}</h2>
+            <p className="mt-3 max-w-md text-base text-[#3f4a63]">{t("bannerBody")}</p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <ExternalButton href={mapsDirectionsHref()} target="_blank" rel="noopener noreferrer" variant="secondary">{c("directions")}</ExternalButton>
-              <ExternalButton href={telHref} variant="ghost">{SITE.phone.display}</ExternalButton>
+              <a href={mapsDirectionsHref()} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center rounded-full bg-[#1d4e9f] px-5 text-[0.9375rem] font-semibold text-white hover:brightness-110">{c("directions")}</a>
+              <Link href="/book" className="inline-flex min-h-12 items-center rounded-full border border-[#1d4e9f]/50 px-5 text-[0.9375rem] font-semibold text-[#1d4e9f] hover:bg-white/50">{c("book")}</Link>
             </div>
           </div>
-          <div className="space-y-3">
-            {timings ? (
-              <div className="float-card p-6">
-                <p className="t-eyebrow mb-3">{t("visitHours")}</p>
-                <HoursList timings={timings} />
+        </div>
+      </section>
+
+      {/* Visit the clinic: details with icons, then real photos only */}
+      <section aria-labelledby="visit" className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
+        <CaseHead id="visit" title={t("visitTitle")} />
+        <div className="mt-9 grid gap-8 md:grid-cols-2">
+          <ul className="space-y-6">
+            <li className="flex gap-4">
+              <IconBadge name="pin" />
+              <div>
+                <p className="font-semibold text-ink">{c("address")}</p>
+                <address className="text-muted not-italic">{lines.map((x) => <span key={x} className="block">{x}</span>)}</address>
               </div>
-            ) : <DevTodo>{t("timingsMissing")} Timings and weekly off day are in content/TODO.md.</DevTodo>}
+            </li>
+            <li className="flex gap-4">
+              <IconBadge name="clock" />
+              <div>
+                <p className="mb-2 font-semibold text-ink">{t("visitHours")}</p>
+                {timings ? <HoursList timings={timings} /> : <DevTodo>{t("timingsMissing")} Timings and weekly off day are in content/TODO.md.</DevTodo>}
+              </div>
+            </li>
+            <li className="flex gap-4">
+              <IconBadge name="phone" />
+              <div>
+                <p className="font-semibold text-ink">{c("phone")}</p>
+                <a href={telHref} data-evt="click_call" className="inline-flex min-h-12 items-center text-primary underline">{SITE.phone.display}</a>
+              </div>
+            </li>
+          </ul>
+          <div className="space-y-4">
+            {hasPhotos() ? <Gallery limit={6} /> : isDev ? <Gallery /> : null}
+            {isDev ? <DevTodo>{t("entranceTodo")}</DevTodo> : null}
             {!SITE.mapsUrl ? <DevTodo>{t("visitTodoMap")} Directions button uses a search link for now.</DevTodo> : null}
+            <ExternalButton href={mapsDirectionsHref()} target="_blank" rel="noopener noreferrer" variant="secondary">
+              {c("directions")}
+            </ExternalButton>
           </div>
         </div>
       </section>

@@ -4,6 +4,7 @@ import { getJson } from "@/lib/content";
 import { pageMeta } from "@/lib/meta";
 import { CaseHead } from "@/components/ui/CaseHead";
 import { ButtonLink } from "@/components/ui/Button";
+import { ArtBackdrop } from "@/components/ui/ArtBackdrop";
 
 type Care = { _status: string; title: string; items: string[] };
 
@@ -20,7 +21,9 @@ export default async function CareAreasPage({ params }: { params: Promise<{ loca
   const t = await getTranslations({ locale, namespace: "careAreas" });
   const c = await getTranslations({ locale, namespace: "common" });
   return (
-    <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 md:py-14">
+    <div className="relative">
+      <ArtBackdrop src="/art/services-bg.webp" className="inset-x-0 -top-24 h-[28rem]" opacity={0.8} />
+      <div className="relative z-10 mx-auto max-w-4xl px-4 py-10 sm:px-6 md:py-14">
       <CaseHead as="h1" title={d.title} />
       {d._status === "DRAFT" ? <p className="mt-4 inline-block rounded-full bg-accent/15 px-3 py-1 text-sm font-semibold text-accentink">{c("draft")}</p> : null}
       <p className="mt-6 text-lg text-muted">{t("lead")}</p>
@@ -35,6 +38,7 @@ export default async function CareAreasPage({ params }: { params: Promise<{ loca
       <p className="mt-8 text-muted">{t("referral")}</p>
       <p className="mt-2 font-semibold text-ink">{t("urgent")}</p>
       <ButtonLink href="/book" className="mt-8">{c("book")}</ButtonLink>
+      </div>
     </div>
   );
 }

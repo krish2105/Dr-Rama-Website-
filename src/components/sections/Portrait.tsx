@@ -17,7 +17,7 @@ export function HeroVisual() {
 
   return (
     <div className="relative mx-auto w-full max-w-[18rem] sm:max-w-[22rem] lg:max-w-[26rem]">
-      <Rosette className="pointer-events-none absolute -end-20 -top-20 h-80 w-80 text-primary opacity-[0.07]" />
+      <Rosette className="pointer-events-none absolute -end-20 -top-20 h-80 w-80 text-primary opacity-[0.07] md:hidden" />
       <div aria-hidden="true" className="absolute inset-0 translate-x-3 translate-y-3 rounded-[22px] border border-accent/70" />
       <div className="relative aspect-[4/5] overflow-hidden rounded-[22px] border border-line bg-soft shadow-[var(--shadow-float)]">
         {portrait ? (

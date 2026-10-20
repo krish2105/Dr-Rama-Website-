@@ -13,3 +13,6 @@ source/reference/*
 source/photos/_pending-consent/*
 !source/reference/.gitkeep
 !source/photos/_pending-consent/.gitkeep
+# Large originals of generated artwork (optimised copies live in public/art)
+source/art/*
+!source/art/.gitkeep

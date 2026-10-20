@@ -1,14 +1,10 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { telHref, waHref } from "@/lib/site";
+import { Icon } from "@/components/ui/Icon";
 
-const ico = "h-5 w-5 shrink-0";
-const PhoneIcon = () => (
-  <svg className={ico} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" /></svg>
-);
-const WaIcon = () => (
-  <svg className={ico} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 20l1.3-4.1A8 8 0 1 1 8.2 18.8L4 20Z" /><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-.8.7a3.5 3.5 0 0 1-1.9-1.9l.7-.8-1-2L9 9.5Z" /></svg>
-);
+const PhoneIcon = () => <Icon name="phone" className="h-5 w-5 shrink-0" />;
+const WaIcon = () => <Icon name="whatsapp" className="h-5 w-5 shrink-0" />;
 
 /**
  * Mobile: a floating dock above the bottom edge (Call / WhatsApp / Book).
