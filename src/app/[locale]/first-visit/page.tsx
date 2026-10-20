@@ -12,12 +12,11 @@ import { HoursList } from "@/components/sections/HoursList";
 import { SITE, SITE_URL, telHref } from "@/lib/site";
 import type { Timings } from "@/lib/openNow";
 
-const DRAFT = true; // flip to false once the doctor approves the wording (and the Hindi is reviewed)
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "visit" });
-  return pageMeta(locale, "/first-visit", t("title"), { description: t("lead"), noindex: DRAFT });
+  return pageMeta(locale, "/first-visit", t("title"), { description: t("lead") });
 }
 
 export default async function FirstVisitPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -36,7 +35,6 @@ export default async function FirstVisitPage({ params }: { params: Promise<{ loc
         <Image src="/art/first-visit-header.webp" alt="" fill priority sizes="(min-width:768px) 768px, 100vw" className="object-cover object-top" />
       </div>
       <CaseHead as="h1" title={t("title")} />
-      {DRAFT ? <p className="no-print mt-4 inline-block rounded-full bg-accent/15 px-3 py-1 text-sm font-semibold text-accentink">{t("draftNote")}</p> : null}
       <p className="t-lead mt-5">{t("lead")}</p>
 
       <div className="mt-8 space-y-6">

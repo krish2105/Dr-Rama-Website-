@@ -71,7 +71,7 @@
     "cred1Big": "35+",
     "cred1": "years of clinical experience",
     "cred2Big": "M.D.",
-    "cred2": "Homoeopathy, Rajasthan University, 2001",
+    "cred2": "Homoeopathy, Rajasthan University",
     "cred3Big": "2",
     "cred3": "languages: Hindi and English",
     "cred4Big": "24",
@@ -82,7 +82,6 @@
     "practice2": "Refers patients to other health practitioners when appropriate.",
     "practice3": "Communicates clearly with patients.",
     "aboutTitle": "About Dr. Rama Mathur",
-    "aboutBody": "M.D. (Homoeopathy) from Rajasthan University (2001), NDDY from the Gandhi National Academy of Naturopathy (2004) and an MBA (HR) (2010). She has served as a medical officer, a guest faculty member and an empanelled homoeopathic doctor, and founded a women's welfare society in Jaipur.",
     "aboutLink": "Read her full profile",
     "galleryTitle": "The consultation room",
     "galleryNote": "Photos of the real clinic.",
@@ -277,7 +276,8 @@
     "title": "Care areas",
     "lead": "Areas Dr. Mathur consults on. This list does not promise any result.",
     "referral": "Dr. Mathur refers patients to other health practitioners when appropriate.",
-    "urgent": "Homeopathic care does not replace emergency or specialist medical treatment. For urgent symptoms, go to the nearest hospital or call 112."
+    "urgent": "Homeopathic care does not replace emergency or specialist medical treatment. For urgent symptoms, go to the nearest hospital or call 112.",
+    "concernsLabel": "Common concerns people consult about"
   },
   "servicesPage": {
     "title": "Services"
@@ -342,5 +342,9 @@
   "empty": {
     "blog": "No articles yet.",
     "experiencesTitle": "No experiences published yet"
+  },
+  "camp": {
+    "title": "Medical camps and events",
+    "lead": "Photographs from medical camps and events where Dr. Mathur has consulted and been honoured. The people shown have agreed to appear here."
   }
 }

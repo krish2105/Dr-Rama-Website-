@@ -39,7 +39,6 @@ export function Gallery({ limit }: { limit?: number }) {
                 className="object-cover"
               />
             </div>
-            {p.ai ? <figcaption className="px-4 py-2 text-xs text-muted">{t("aiEnhanced")}</figcaption> : null}
           </figure>
         </li>
       ))}

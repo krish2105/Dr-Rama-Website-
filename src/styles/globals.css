@@ -256,3 +256,10 @@ html:lang(hi)[data-textsize="large"] { font-size: 18.5px; } html:lang(hi)[data-t
   .art-dark { display: none !important; }
   .card, .float-card { box-shadow: none !important; break-inside: avoid; }
 }
+
+/* Floating camp photo cards: static tilt always; gentle drift only when motion is full */
+.camp-card { transform: rotate(var(--tilt, 0deg)); }
+@keyframes camp-drift { 0%, 100% { transform: translateY(0) rotate(var(--tilt, 0deg)); } 50% { transform: translateY(-7px) rotate(calc(var(--tilt, 0deg) * .6)); } }
+:root[data-motion="full"] .camp-card { animation: camp-drift 7s ease-in-out infinite; animation-delay: var(--delay, 0s); }
+@media (hover: hover) { .camp-card:hover { z-index: 2; } }
+@media print { .camp-card { animation: none !important; } }

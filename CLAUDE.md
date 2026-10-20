@@ -62,6 +62,15 @@ Date of birth, gender, nationality, hobbies, "personal objective", the declarati
 - Motion: `data-motion` is full / lite / off, set before paint; honour `prefers-reduced-motion` and data-saver; never hide content behind an animation. Provide the Aa display controls on every page.
 - The QR code encodes `SITE_URL`; regenerate `public/downloads` (`npm run pdfs`) whenever the domain changes.
 
+## Owner decisions, 21 Oct 2026 round (these override earlier lines above where they differ)
+- **AI caption:** the visible "Image enhanced with AI from a real photograph." caption was removed on the owner's instruction. `ai: true` stays in `content/gallery.json` as a record. Never present an AI image of a certificate, plaque, cabinet or entrance as real.
+- **DRAFT labels** were removed from every page and the content statuses set to PUBLISHED on the owner's instruction. The doctor's written approval and the native Hindi review are still outstanding (see `content/TODO.md`); do not claim they are done.
+- **Camp photos:** the 5 photos in `content/camp-gallery.json` show patients and guests. The owner confirmed in chat that every person agreed to appear. Keep the written consents in the clinic's records; if anyone withdraws, remove the photo. Originals stay out of git (`source/photos/camp-*`).
+- **Care areas** now list common complaints taken from the printed handout, **excluding** anything on the Schedule of the Drugs and Magic Remedies Act 1954 (for example diabetes, blood pressure, stones, menstrual disorders, leucoderma, fevers in general). The list is framed as concerns people consult about, with no result promised. Do not add Schedule items.
+- **Qualification years** are not shown in the About points, Home card or hero. Degree order: M.D. (Homoeopathy), MBA (HR), NDDY.
+- **Testimonials:** never write or generate patient reviews or stories. Only real ones with recorded consent (Rule 3). The Experiences page stays empty until then.
+- **Map:** `mapsEmbedUrl` is a Google embed of the written address (not an exact pin). Verify the pin or replace it with the Share > Embed src.
+
 ## Stack
 Next.js App Router + TypeScript + Tailwind; next-intl (en, hi; `/en`, `/hi`); MDX blog; Supabase for bookings; Vercel. Secrets only in env vars (`.env.example` documents them).
 

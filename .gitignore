@@ -26,3 +26,6 @@ source/art/*
 .env*
 
 supabase/.temp/
+
+# Originals of medical-camp photos keep camera metadata; only the stripped copies in public/photos are published
+source/photos/camp-*

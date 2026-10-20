@@ -1,15 +1,67 @@
 {
-  "_status": "DRAFT",
+  "_status": "PUBLISHED",
   "title": "Care areas",
   "items": [
-    "Allergy and sinus concerns",
-    "Skin concerns",
-    "Joint, back and muscle pain",
-    "Women's health",
-    "Children's health",
-    "Digestive health",
-    "Seasonal illnesses",
-    "Mental and emotional wellbeing",
-    "Care after COVID-19"
+    {
+      "title": "Allergy and sinus concerns",
+      "concerns": [
+        "Asthma",
+        "Allergies",
+        "Sinusitis",
+        "Nasal polyp"
+      ]
+    },
+    {
+      "title": "Skin concerns",
+      "concerns": [
+        "Acne",
+        "Pigmentation and freckles",
+        "Moles and warts",
+        "Eczema",
+        "Ringworm",
+        "Itching",
+        "Psoriasis"
+      ]
+    },
+    {
+      "title": "Joint, back and muscle pain",
+      "concerns": [
+        "Back pain",
+        "Spondylitis",
+        "Heel pain",
+        "Knee pain",
+        "Joint pain and swelling",
+        "Joint pain after chikungunya"
+      ]
+    },
+    {
+      "title": "Women's health",
+      "concerns": []
+    },
+    {
+      "title": "Children's health",
+      "concerns": []
+    },
+    {
+      "title": "Digestive health",
+      "concerns": [
+        "Constipation",
+        "Gas and bloating",
+        "Acidity",
+        "Piles"
+      ]
+    },
+    {
+      "title": "Seasonal illnesses",
+      "concerns": []
+    },
+    {
+      "title": "Mental and emotional wellbeing",
+      "concerns": []
+    },
+    {
+      "title": "Care after COVID-19",
+      "concerns": []
+    }
   ]
 }

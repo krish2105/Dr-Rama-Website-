@@ -23,7 +23,6 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
   return (
     <div className="mx-auto max-w-2xl px-4 py-10 sm:px-6 md:py-14">
       <CaseHead as="h1" title={d.title} />
-      <p className="mt-4 inline-block rounded-full bg-accent/15 px-3 py-1 text-sm font-semibold text-accentink">{d._status}</p>
       <JumpTo label={nav("jump")} items={d.sections.map((s, i) => ({ id: `p${i}`, label: s.h }))} />
       <div className="prose-clinic mt-8">
         {d.sections.map((s, i) => (

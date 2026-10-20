@@ -26,7 +26,6 @@ export default async function BlogIndex({ params }: { params: Promise<{ locale: 
           {posts.map((p) => (
             <li key={p.slug}>
               <Link href={`/blog/${p.slug}`} className="card block p-6 transition-transform hover:-translate-y-0.5">
-                {p.status === "DRAFT" ? <span className="mb-2 inline-block rounded-full bg-accent/15 px-3 py-0.5 text-xs font-semibold text-accentink">{t("draftTag")}</span> : null}
                 <h2 className="text-2xl font-semibold text-primary">{p.title}</h2>
                 <p className="mt-2 text-muted">{p.description}</p>
               </Link>

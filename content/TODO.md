@@ -34,6 +34,13 @@ Nothing below may be invented. Placeholders show in development only; production
 - [ ] After the real domain is live: run `SITE_URL=https://rajeshhomoeohome.in npm run pdfs`, commit, and only then print the QR poster.
 - [ ] The globules picture is our own blue-pottery illustration, captioned as an illustration. A real photo of globules can replace it if the doctor wants one.
 
+### Added 21 Oct 2026 (after the owner's changes)
+- [ ] Keep the **written consent** of each person in the 5 camp photos (shown on Home and About). The owner confirmed in chat that all agreed.
+- [ ] **Doctor's written approval** of the pages whose DRAFT labels were removed (About, Services, Care areas, FAQ, Privacy, First visit, blog posts), plus native Hindi review. Labels are gone; approval is not recorded yet.
+- [ ] Care areas now list common complaints from the handout (Schedule items left out). Ask a qualified reviewer to confirm the wording is acceptable under the NCH circular and the 1954 Act before launch.
+- [ ] Check the **map pin** on Contact, Home and How to reach. It searches the written address; if the pin is off, paste the Share > Embed src into `mapsEmbedUrl`.
+- [ ] Patient testimonials: none exist. To add real ones, get a signed consent from each person for the exact words and keep results out of them. The Experiences page shows an empty state until then.
+
 ## 2. Photos and brand
 - [ ] Real close-up photos: display cabinet, certificate and plaque wall (shoot list in Prompt Pack v3). The generated versions (07, 08) are not used because they invent certificate text. The room images on the site (05, 06) are AI-enhanced and carry a disclosure caption; replace them with real photos when available.
 - [ ] Real photo of the flat's entrance door and nameplate (Rajvilas Apartment, 2nd floor).

@@ -8,6 +8,7 @@ import { ButtonLink, ExternalButton, buttonClass } from "@/components/ui/Button"
 import { DevTodo } from "@/components/ui/DevTodo";
 import { HeroVisual } from "@/components/sections/Portrait";
 import { Gallery, hasPhotos } from "@/components/sections/ClinicPhoto";
+import { CampFloat } from "@/components/sections/CampFloat";
 import Image from "next/image";
 import { ArtBackdrop } from "@/components/ui/ArtBackdrop";
 import { HeroTilt } from "@/components/ui/HeroTilt";
@@ -105,17 +106,19 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="float-card relative overflow-hidden p-6 sm:p-9">
           <Rosette className="pointer-events-none absolute -end-12 -top-12 h-56 w-56 text-primary opacity-[0.08]" />
           <CaseHead id="about" title={t("aboutTitle")} />
-          <p className="mt-5 max-w-2xl text-base">{t("aboutBody")}</p>
-          <ul className="mt-6 flex flex-wrap gap-2.5" aria-label={t("qualTitle")}>
-            {about.qualifications.map((q) => (
-              <li key={q.title} className="rounded-lg bg-soft px-3 py-1.5 text-sm font-semibold text-primary">
-                {q.title} <span className="font-normal text-muted">· {q.when}</span>
+          <ul className="mt-6 max-w-2xl space-y-3" aria-label={t("qualTitle")}>
+            {about.homePoints.map((x) => (
+              <li key={x} className="flex gap-3 text-base">
+                <span aria-hidden="true" className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-accent" />
+                {x}
               </li>
             ))}
           </ul>
           <ButtonLink href="/about" variant="secondary" className="mt-8">{t("aboutLink")}</ButtonLink>
         </div>
       </section>
+
+      <div className="reveal"><CampFloat /></div>
 
       {/* Jaipur identity: one full-width visual break. Text is real HTML on the artwork's clean left side. */}
       <section aria-labelledby="banner" className="mx-auto mt-20 max-w-6xl px-4 sm:px-6 reveal">

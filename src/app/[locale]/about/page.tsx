@@ -8,6 +8,7 @@ import Image from "next/image";
 import { portrait, altFor } from "@/lib/photos";
 import { ButtonLink } from "@/components/ui/Button";
 import { SITE } from "@/lib/site";
+import { CampFloat } from "@/components/sections/CampFloat";
 import { JumpTo } from "@/components/layout/JumpTo";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
@@ -37,10 +38,16 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <header className="relative">
         <Rosette className="pointer-events-none absolute -end-10 -top-10 hidden h-64 w-64 text-primary opacity-[0.08] md:block" />
         <CaseHead as="h1" title={a.title} eyebrow={locale === "hi" ? SITE.doctor.degreeHi : SITE.doctor.degree} />
-        <p className="mt-4 inline-block rounded-full bg-accent/15 px-3 py-1 text-sm font-semibold text-accentink">{c("draft")}</p>
         <div className="mt-6 grid gap-8 md:grid-cols-[1.4fr_1fr]">
           <div className="space-y-4 text-lg">
-            {a.intro.map((p) => <p key={p}>{p}</p>)}
+            <ul className="space-y-3">
+              {a.points.map((x) => (
+                <li key={x} className="flex gap-3">
+                  <span aria-hidden="true" className="mt-3 h-2.5 w-2.5 shrink-0 rounded-full bg-accent" />
+                  {x}
+                </li>
+              ))}
+            </ul>
             {SITE.registration.number ? (
               <p className="rounded-xl bg-soft px-4 py-3 text-sm text-ink">{t("registration", { council: SITE.registration.council ?? "", number: SITE.registration.number })}</p>
             ) : null}
@@ -62,7 +69,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <li key={q.title} className="card p-5">
               <p className="font-display text-xl font-semibold text-primary">{q.title}</p>
               {q.org ? <p className="mt-1 text-muted">{q.org}</p> : null}
-              <p className="mt-3 text-sm font-semibold uppercase tracking-wider text-wood">{q.when}</p>
             </li>
           ))}
         </ul>
@@ -120,6 +126,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           ))}
         </ul>
       </section>
+
+      <CampFloat headingId="camp" />
 
       <div className="float-card mt-16 bg-primary px-6 py-10 text-center text-onprimary">
         <h2 className="text-2xl font-semibold">{home("ctaTitle")}</h2>

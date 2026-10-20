@@ -33,11 +33,9 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
   const post = getPost(locale, slug);
   if (!post) notFound();
   const t = await getTranslations({ locale, namespace: "blog" });
-  const c = await getTranslations({ locale, namespace: "common" });
   return (
     <article className="mx-auto max-w-2xl px-4 py-10 sm:px-6 md:py-14">
       <Link href="/blog" className="inline-flex min-h-12 items-center text-primary underline">← {t("back")}</Link>
-      {post.status === "DRAFT" ? <p className="mt-2 inline-block rounded-full bg-accent/15 px-3 py-1 text-sm font-semibold text-accentink">{c("draft")}</p> : null}
       <CaseHead as="h1" title={post.title} className="mt-3" />
       <div className="prose-clinic mt-8">
         <MDXRemote source={post.body} />
