@@ -87,7 +87,7 @@ Check that the pin sits on the right building.
 | 1 | Hours and location card | Image | Hours, address, phone, "Consultation is with a prior appointment." |
 | 1 | How to book in 3 steps | Reel or carousel | Call, WhatsApp, or the website form |
 | 2 | What to bring on your first visit | 4-slide carousel | Earlier reports, list of current medicines, questions |
-| 2 | Her service record | Carousel | Empanelled homoeopathic doctor at RIICO, 1999 to 2023, retired as Deputy General Manager |
+| 2 | Her service record | Carousel | Empanelled homoeopathic doctor at RIICO for 24 years |
 | 2 | When to go to a hospital | Image | "Homeopathic care does not replace emergency or specialist medical treatment. In an emergency call 112." |
 | 3 | Monsoon habits | Illustration | General tips only |
 | 3 | Why we keep detailed notes | Reel | From her own practice wording: keeps detailed clinical notes, refers patients when appropriate, communicates clearly |

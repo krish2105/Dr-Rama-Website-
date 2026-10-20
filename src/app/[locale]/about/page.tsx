@@ -82,7 +82,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           {a.experience.map((e) => (
             <li key={e.role + e.when} className="relative">
               <span aria-hidden="true" className="absolute -start-[1.95rem] top-2 h-3 w-3 rounded-full bg-accent ring-4 ring-bg" />
-              <p className="text-sm font-semibold uppercase tracking-wider text-wood">{e.when}</p>
+              {e.when ? <p className="text-sm font-semibold uppercase tracking-wider text-wood">{e.when}</p> : null}
               <p className="font-display text-xl font-semibold text-primary">{e.role}</p>
               <p className="text-muted">{e.org}</p>
               {e.note ? <p className="mt-1">{e.note}</p> : null}
