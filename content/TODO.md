@@ -24,6 +24,16 @@ Nothing below may be invented. Placeholders show in development only; production
 - [ ] Doctor to confirm the current portrait (white coat; AI-assisted from a real photo) is a faithful likeness.
 - [ ] Confirm the "Honoured by Rajasthan Patrika" line (2012) may be published.
 
+### Booking v2 questions (Phase 1.5)
+- [ ] Slot length (the form uses 20 minutes) and how many patients per slot (the form assumes 1). Edit `content/availability.json`.
+- [ ] Who answers the phone and WhatsApp during clinic hours, and who confirms booking requests.
+- [ ] Landmark near Rajvilas Apartment I, parking, and whether there is a lift (How to reach page shows a dev-only note until supplied).
+- [ ] ABDM Healthcare Professional Registry ID, if the doctor has one (not shown until supplied).
+- [ ] Existing online listings (Google, Practo, Justdial, Facebook) so `profiles` can be filled in `content/site.json` for structured data.
+- [ ] Approve the First visit page text (it is DRAFT and noindex) and the new Privacy wording (child booking, call-back, source note).
+- [ ] After the real domain is live: run `SITE_URL=https://rajeshhomoeohome.in npm run pdfs`, commit, and only then print the QR poster.
+- [ ] The globules picture is our own blue-pottery illustration, captioned as an illustration. A real photo of globules can replace it if the doctor wants one.
+
 ## 2. Photos and brand
 - [ ] Real close-up photos: display cabinet, certificate and plaque wall (shoot list in Prompt Pack v3). The generated versions (07, 08) are not used because they invent certificate text. The room images on the site (05, 06) are AI-enhanced and carry a disclosure caption; replace them with real photos when available.
 - [ ] Real photo of the flat's entrance door and nameplate (Rajvilas Apartment, 2nd floor).
@@ -35,7 +45,7 @@ Nothing below may be invented. Placeholders show in development only; production
 ## 3. Accounts and launch
 - [ ] Domain: the card prints rajeshhomoeohome.in. Confirm the clinic owns it, then point it at Vercel and set `NEXT_PUBLIC_SITE_URL=https://rajeshhomoeohome.in`.
 - [x] GitHub repo (krish2105/Dr-Rama-Website-) and Vercel project (dr-rama-website) are set up; pushes to `main` deploy automatically. Live at https://dr-rama-website.vercel.app (blocked from search engines until `NEXT_PUBLIC_INDEXABLE=true`).
-- [ ] Supabase project (run `supabase/migrations/0001_bookings.sql`; add URL and service-role key). Email-alert provider (Resend) and the clinic address that receives alerts. GA4 measurement ID.
+- [ ] Supabase project (run `supabase/migrations/0001_bookings.sql` then `0002_phase15.sql` (the booking form needs both); add URL and service-role key). Email-alert provider (Resend) and the clinic address that receives alerts. GA4 measurement ID.
 - [ ] Google Maps: paste the Share link as `mapsUrl` and the embed `src` as `mapsEmbedUrl` in `content/site.json` (steps in the guide). The Visit section and Contact page show a dev-only reminder until then.
 - [ ] Decide how long booking data is kept and who handles deletion requests by email (the Privacy page shows a dev-only reminder).
 - [ ] Add Vercel Firewall rate limiting on `/api/booking`.
@@ -47,6 +57,7 @@ Nothing below may be invented. Placeholders show in development only; production
 - [ ] Ask whether the council issued advertising guidance for registered practitioners.
 
 ## 5. Left for a later phase
+- [ ] Phase 1.5 items that need the clinic's Supabase account: staff admin screen, one-booking-per-slot enforcement, reminders, booking-data retention job (migration `0002_phase15.sql` ready, not applied). Also WebGL hero and 360 tour.
 - [ ] Online consultation (Phase 2 placeholder page exists).
 - [ ] Publish the blog posts and set their status from DRAFT to PUBLISHED after approval.
 - [ ] Switch Services, Care areas and Experiences from noindex once approved and filled.

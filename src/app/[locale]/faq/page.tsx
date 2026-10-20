@@ -3,6 +3,9 @@ import { setRequestLocale } from "next-intl/server";
 import { getJson } from "@/lib/content";
 import { pageMeta } from "@/lib/meta";
 import { CaseHead } from "@/components/ui/CaseHead";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { getTranslations } from "next-intl/server";
 
 type Faq = { title: string; items: { q: string; a: string }[] };
 
@@ -15,8 +18,10 @@ export default async function FaqPage({ params }: { params: Promise<{ locale: st
   const { locale } = await params;
   setRequestLocale(locale);
   const faq = getJson<Faq>(locale, "faq");
+  const nav = await getTranslations({ locale, namespace: "nav" });
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 md:py-14">
+      <JsonLd data={{ "@graph": [faqSchema(faq.items), breadcrumbSchema(locale, [{ name: nav("home"), route: "" }, { name: faq.title, route: "/faq" }])] }} />
       <CaseHead as="h1" title={faq.title} />
       <div className="mt-8 space-y-3">
         {faq.items.map((i) => (

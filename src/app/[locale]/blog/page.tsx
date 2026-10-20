@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import { pageMeta } from "@/lib/meta";
 import { getPosts } from "@/lib/content";
+import Image from "next/image";
 import { CaseHead } from "@/components/ui/CaseHead";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -20,7 +21,7 @@ export default async function BlogIndex({ params }: { params: Promise<{ locale: 
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 md:py-14">
       <CaseHead as="h1" title={t("title")} />
       <p className="mt-6 text-lg text-muted">{t("lead")}</p>
-      {posts.length === 0 ? <p className="mt-8">{t("none")}</p> : (
+      {posts.length === 0 ? <div className="mt-8 text-center"><Image src="/art/empty-clipboard.webp" alt="" width={104} height={104} className="mx-auto mb-3 h-24 w-24" /><p>{t("none")}</p></div> : (
         <ul className="mt-8 space-y-5">
           {posts.map((p) => (
             <li key={p.slug}>

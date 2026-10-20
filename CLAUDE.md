@@ -56,6 +56,12 @@ Date of birth, gender, nationality, hobbies, "personal objective", the declarati
 - Theme: Light / Dark / System toggle, no flash, WCAG AA in both. Mobile-first; check at 360px.
 - RIICO service record has its own section on Home (full corporation name, 24 years, 1999 to 2023, retired as Deputy General Manager). Never publish her internal committee roles at RIICO.
 
+## Added with Phase 1.5 (2026-10-20)
+- Booking times are **requests**, never confirmations; wording must say so. Booking forms collect: patient name, guardian name (child or other person), phone, slot, visit type chosen from a list, consent. No free-text health reason. GA4 events carry none of it.
+- Generated or drawn illustrations (for example the globules bowl) are labelled "Illustration". No remedy labels or brand names in them.
+- Motion: `data-motion` is full / lite / off, set before paint; honour `prefers-reduced-motion` and data-saver; never hide content behind an animation. Provide the Aa display controls on every page.
+- The QR code encodes `SITE_URL`; regenerate `public/downloads` (`npm run pdfs`) whenever the domain changes.
+
 ## Stack
 Next.js App Router + TypeScript + Tailwind; next-intl (en, hi; `/en`, `/hi`); MDX blog; Supabase for bookings; Vercel. Secrets only in env vars (`.env.example` documents them).
 

@@ -5,6 +5,7 @@ import { pageMeta } from "@/lib/meta";
 import { CaseHead } from "@/components/ui/CaseHead";
 import { DevTodo } from "@/components/ui/DevTodo";
 import { SITE } from "@/lib/site";
+import { JumpTo } from "@/components/layout/JumpTo";
 
 type Priv = { title: string; _status: string; sections: { h: string; p: string[] }[] };
 
@@ -18,13 +19,15 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
   setRequestLocale(locale);
   const d = getJson<Priv>(locale, "privacy");
   const t = await getTranslations({ locale, namespace: "privacy" });
+  const nav = await getTranslations({ locale, namespace: "nav" });
   return (
     <div className="mx-auto max-w-2xl px-4 py-10 sm:px-6 md:py-14">
       <CaseHead as="h1" title={d.title} />
       <p className="mt-4 inline-block rounded-full bg-accent/15 px-3 py-1 text-sm font-semibold text-accentink">{d._status}</p>
+      <JumpTo label={nav("jump")} items={d.sections.map((s, i) => ({ id: `p${i}`, label: s.h }))} />
       <div className="prose-clinic mt-8">
-        {d.sections.map((s) => (
-          <section key={s.h}>
+        {d.sections.map((s, i) => (
+          <section key={s.h} id={`p${i}`} className="scroll-mt-24">
             <h2>{s.h}</h2>
             {s.p.map((x) => (x === "TODO_RETENTION" ? <DevTodo key={x}>{t("retentionTodo")}</DevTodo> : <p key={x}>{x}</p>))}
           </section>

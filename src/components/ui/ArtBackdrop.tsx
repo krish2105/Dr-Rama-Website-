@@ -12,6 +12,7 @@ export function ArtBackdrop({
   desktopOnly = false,
   fade = "to bottom",
   priority = false,
+  dark = false,
 }: {
   src: string;
   className?: string;
@@ -20,12 +21,13 @@ export function ArtBackdrop({
   desktopOnly?: boolean;
   fade?: string;
   priority?: boolean;
+  dark?: boolean;
 }) {
   const mask = `linear-gradient(${fade}, #000 35%, transparent)`;
   return (
     <div
       aria-hidden="true"
-      className={`art-light pointer-events-none absolute z-0 overflow-hidden ${desktopOnly ? "hidden md:block" : ""} ${className}`}
+      className={`${dark ? "art-dark" : "art-light"} pointer-events-none absolute z-0 overflow-hidden ${desktopOnly && !dark ? "hidden md:block" : ""} ${className}`}
       style={{ WebkitMaskImage: mask, maskImage: mask, opacity }}
     >
       <Image src={src} alt="" fill sizes="(min-width:1280px) 1280px, 100vw" quality={70} priority={priority} className="object-cover" style={{ objectPosition: position }} />

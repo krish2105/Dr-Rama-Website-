@@ -26,9 +26,9 @@ export function Gallery({ limit }: { limit?: number }) {
     );
   }
   return (
-    <ul className={list.length === 1 ? "mx-auto max-w-md" : "columns-1 gap-5 sm:columns-2"}>
+    <ul className={list.length === 1 ? "mx-auto max-w-md" : "-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:block sm:columns-2 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0"}>
       {list.map((p) => (
-        <li key={p.src} className="mb-5 break-inside-avoid">
+        <li key={p.src} className="min-w-[82%] snap-center sm:mb-5 sm:min-w-0 sm:break-inside-avoid">
           <figure className="overflow-hidden rounded-[18px] border border-line bg-surface shadow-[var(--shadow-float)]">
             <div className="relative w-full" style={{ aspectRatio: `${p.width} / ${p.height}` }}>
               <Image

@@ -44,6 +44,13 @@ export function Analytics() {
     return () => { document.removeEventListener("click", onClick); window.removeEventListener("clinic:booking-submitted", onSubmitted); };
   }, [choice]);
 
+  useEffect(() => {
+    const r = document.documentElement;
+    if (choice === "unset" && GA_ID) r.dataset.banner = "1";
+    else delete r.dataset.banner;
+    return () => { delete r.dataset.banner; };
+  }, [choice]);
+
   function decide(c: Choice) {
     try { localStorage.setItem("analytics-consent", c); } catch {}
     setChoice(c);
@@ -60,7 +67,7 @@ export function Analytics() {
         </>
       ) : null}
       {choice === "unset" ? (
-        <div role="region" aria-label={t("text")} className="fixed inset-x-3 bottom-[5.5rem] z-50 mx-auto max-w-xl rounded-3xl border border-line bg-surface p-4 shadow-[var(--shadow)] md:bottom-4">
+        <div role="region" aria-label={t("text")} className="fixed inset-x-3 bottom-3 z-[60] mx-auto max-w-xl rounded-3xl border border-line bg-surface p-4 shadow-[var(--shadow)] md:bottom-4">
           <p className="text-[0.95rem]">{t("text")} <Link href="/privacy" className="text-primary underline">{t("more")}</Link></p>
           <div className="mt-3 flex gap-3">
             <button type="button" onClick={() => decide("granted")} className="min-h-12 rounded-full bg-primary px-6 font-semibold text-onprimary">{t("accept")}</button>

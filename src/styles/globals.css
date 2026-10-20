@@ -139,18 +139,96 @@
 .pottery-dots::after { content: ""; position: absolute; right: -2.5rem; top: -2.5rem; width: 8rem; height: 8rem; border-radius: 50%; border: 10px dotted rgb(255 255 255 / .16); pointer-events: none; }
 :root[data-theme="dark"] .pottery-dots::after { border-color: rgb(13 22 48 / .2); }
 
+/* Dark-mode artwork: shown only in dark mode and only from tablet width up. */
+.art-dark { display: none; }
+@media (min-width: 768px) {
+  :root[data-theme="dark"] .art-dark { display: block; }
+}
+@media (min-width: 768px) and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .art-dark { display: block; }
+}
+
 /* Decorative artwork sits on ivory, so it is hidden in dark mode. */
 :root[data-theme="dark"] .art-light { display: none !important; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme]) .art-light { display: none !important; } }
 
-/* ---------- Motion: gentle only ---------- */
+/* ---------- Motion system (Phase 1.6) ----------
+   data-motion on <html>: full | lite | off. Set before paint by the inline script in the layout
+   (off when the OS asks for reduced motion, the visitor switches animations off, or NEXT_PUBLIC_MOTION_LEVEL=off).
+   Rules: transform and opacity only, content visible by default, nothing loops past 5 seconds, no flashing. */
+:root {
+  --dur-micro: 150ms; --dur-ui: 280ms; --dur-reveal: 500ms; --dur-hero: 700ms;
+  --ease-out: cubic-bezier(.2, .8, .2, 1); --ease-std: cubic-bezier(.4, 0, .2, 1);
+  --z-header: 50; --z-notice: 45; --z-dock: 40; --z-banner: 60;
+}
 @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
-.fade-in { animation: rise .7s ease-out both; }
-.fade-in.d1 { animation-delay: .08s; } .fade-in.d2 { animation-delay: .16s; } .fade-in.d3 { animation-delay: .24s; }
+@keyframes reveal { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes hdr { to { transform: scale(.985); box-shadow: 0 10px 26px -10px rgb(19 32 63 / .28); } }
+@keyframes pulse-dot { 0% { transform: scale(1); opacity: 1; } 60% { transform: scale(1.7); opacity: .25; } 100% { transform: scale(1); opacity: 1; } }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+
+:root[data-motion="full"] .fade-in { animation: rise var(--dur-hero) var(--ease-out) both; }
+:root[data-motion="full"] .fade-in.d1 { animation-delay: .06s; } :root[data-motion="full"] .fade-in.d2 { animation-delay: .12s; } :root[data-motion="full"] .fade-in.d3 { animation-delay: .18s; }
+:root[data-motion="lite"] .fade-in { animation: rise var(--dur-ui) var(--ease-out) both; }
+
+/* scroll-driven reveals and header: only where supported, never hiding content by default */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    :root[data-motion="full"] .reveal { animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% entry 40%; }
+  }
+  @supports (animation-timeline: scroll()) {
+    :root[data-motion="full"] .hdr-inner { animation: hdr linear both; animation-timeline: scroll(); animation-range: 0 140px; }
+  }
+}
+@media print { .reveal { animation: none !important; opacity: 1 !important; transform: none !important; } }
+
+/* press, hover and open-now feedback */
+.press { transition: transform var(--dur-micro) var(--ease-out), background-color var(--dur-micro) var(--ease-std), filter var(--dur-micro) var(--ease-std); }
+:root:not([data-motion="off"]) .press:active { transform: scale(.98); }
+.lift { transition: transform var(--dur-ui) var(--ease-out), box-shadow var(--dur-ui) var(--ease-out); }
+:root:not([data-motion="off"]) .lift:hover { transform: translateY(-2px); }
+:root:not([data-motion="off"]) .pulse-dot { animation: pulse-dot 1.6s var(--ease-std) 3; }
+:root:not([data-motion="off"]) body, :root:not([data-motion="off"]) .card, :root:not([data-motion="off"]) .float-card, :root:not([data-motion="off"]) .glass {
+  transition: background-color var(--dur-ui) var(--ease-std), color var(--dur-ui) var(--ease-std), border-color var(--dur-ui) var(--ease-std);
+}
+.draw-check { stroke-dasharray: 40; stroke-dashoffset: 40; }
+:root:not([data-motion="off"]) .draw-check { animation: draw 520ms var(--ease-out) 120ms forwards; }
+:root[data-motion="off"] .draw-check { stroke-dashoffset: 0; }
+
+/* 3D tilt and layered depth (pointer devices, full motion only; set by HeroTilt) */
+.tilt-stage { perspective: 900px; }
+.tilt-card { transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform 140ms var(--ease-out); will-change: transform; }
+.depth-1 { transform: translate3d(calc(var(--px, 0) * 8px), calc(var(--py, 0) * 8px), 0); transition: transform 200ms var(--ease-out); }
+.depth-2 { transform: translate3d(calc(var(--px, 0) * -5px), calc(var(--py, 0) * -5px), 0); transition: transform 240ms var(--ease-out); }
+
+/* floating dock helpers */
+:root[data-banner="1"] .dock { transform: translateY(140%); opacity: 0; pointer-events: none; }
+body:has(input:focus, select:focus, textarea:focus) .dock { transform: translateY(140%); opacity: 0; pointer-events: none; }
+.dock { transition: transform var(--dur-ui) var(--ease-out), opacity var(--dur-ui) var(--ease-std); }
+.dock-label { display: inline-block; max-width: 6rem; overflow: hidden; white-space: nowrap; transition: max-width var(--dur-ui) var(--ease-out), opacity var(--dur-ui) var(--ease-std); }
+:root[data-scrolling="fast"] .dock-label { max-width: 0; opacity: 0; }
+.fab-label { max-width: 0; opacity: 0; overflow: hidden; white-space: nowrap; transition: max-width var(--dur-ui) var(--ease-out), opacity var(--dur-ui) var(--ease-std); }
+.fab:hover .fab-label, .fab:focus-visible .fab-label { max-width: 8rem; opacity: 1; }
+
+/* text size (A- / A+), remembered per visitor */
+html[data-textsize="large"] { font-size: 18px; }
+html[data-textsize="xlarge"] { font-size: 20px; }
+@media (min-width: 768px) { html[data-textsize="large"] { font-size: 19px; } html[data-textsize="xlarge"] { font-size: 21px; } }
+html:lang(hi)[data-textsize="large"] { font-size: 18.5px; } html:lang(hi)[data-textsize="xlarge"] { font-size: 20.5px; }
+
+/* motion off: nothing animates or transitions */
+:root[data-motion="off"] *, :root[data-motion="off"] *::before, :root[data-motion="off"] *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .fade-in { animation: none; }
+  .fade-in, .reveal { animation: none !important; }
   * { transition-duration: .001ms !important; }
+}
+
+/* print: patients print directions and the first-visit page */
+@media print {
+  header, .dock, .fab-wrap, footer, .no-print { display: none !important; }
+  main { padding-top: 0 !important; }
+  body { background: #fff !important; }
 }
 
 /* dev-only placeholder block (never rendered in production) */
@@ -165,3 +243,16 @@
 .prose-clinic li::marker { color: var(--accent); }
 .prose-clinic em { color: var(--muted); }
 .prose-clinic a { color: var(--primary); text-decoration: underline; }
+
+/* QR codes render as inline SVG sized by their wrapper */
+.qr svg { display: block; width: 100%; height: auto; }
+/* Printing is always on paper-light colours, whatever the screen theme */
+@media print {
+  :root:root:root {
+    --bg: #ffffff; --surface: #ffffff; --surface-2: #f6f1e4; --ink: #13203f; --muted: #46526e; --line: #ddd6bf;
+    --primary: #1d4e9f; --on-primary: #ffffff; --primary-soft: #e3ebf8; --accent: #b58a33; --accent-ink: #85601d; --glass: #ffffff;
+    color-scheme: light;
+  }
+  .art-dark { display: none !important; }
+  .card, .float-card { box-shadow: none !important; break-inside: avoid; }
+}

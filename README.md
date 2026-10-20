@@ -20,6 +20,15 @@ Next.js 16 (App Router) + TypeScript + Tailwind 4 + next-intl + MDX. Facts and r
 
 Key facts on the site: Dr. Rama Mathur, M.D. (Homoeopathy), 35+ years of clinical experience (since 1991), Hindi and English, by prior appointment, hours from the clinic card (every day 6:00 to 8:30 pm, Sunday 10:00 am to 2:30 pm), Rajasthan Board of Homoeopathic Medicine registration No. 3780.
 
+## Phase 1.5 (built from `docs/PHASE-1.5-FEATURE-PLAN.md`, no database needed)
+- **Booking v2** (`/book`): 3 steps (who is it for, pick a time, details), time chips grouped Morning / Afternoon / Evening, "Request a call back" tab, booking for a child or another person (guardian name + confirmation), visit type from a short list (no free-text health reason), `.ics` calendar file, WhatsApp confirm, how the visitor found the site (UTM, whitelist only). Slots are **requests** the clinic confirms; they come from `content/site.json` timings and `content/availability.json` (slot length, days ahead, blocked dates).
+- **New pages:** `/how-to-reach`, `/first-visit` (printable, PDF download, QR, globules illustration; DRAFT, noindex until approved), `/qr-poster` (A4 poster with the QR; noindex).
+- **PDFs and QR codes:** `SITE_URL=https://rajeshhomoeohome.in npm run pdfs` rebuilds `public/downloads/first-visit-{en,hi}.pdf` and `qr-poster-{en,hi}.pdf` (needs Google Chrome). **Re-run it with the real domain before printing anything**: the QR encodes `SITE_URL/<locale>/book?utm_source=qr&utm_medium=print`. The committed PDFs point at the Vercel address.
+- **Display controls** ("Aa" menu, and in the mobile menu): theme, text size (A / A+ / A++), animations On / Off. **Motion system:** scroll-driven reveals, header shrink, press and lift feedback, hero tilt on desktop. Reduced-motion and data-saver visitors get less; `NEXT_PUBLIC_MOTION_LEVEL=off` turns all motion off site-wide.
+- **Floating dock v2** with open-now and next-slot status; **notice banner** from `content/notices.json` (date window, dismissible); **Jump to** menu on About and Privacy; empty-state artwork; print styles.
+- **Structured data:** MedicalClinic + Physician + ReserveAction (site-wide), FAQPage and BreadcrumbList (FAQ, About, How to reach). `sameAs` appears only after `profiles` URLs are added to `content/site.json`.
+- **Not built yet (needs the clinic's Supabase account):** staff admin screen, slot capacity enforcement, reminders, retention job. `supabase/migrations/0002_phase15.sql` is prepared but **not applied**. Also deferred: WebGL hero, 360 tour.
+
 ## Run locally
 ```bash
 npm install
@@ -42,7 +51,7 @@ Before any deploy run `npm run check-content -- --strict`; it fails while facts 
 Set `confirmed: true` in `site.json` only after the doctor confirms in writing. JSON-LD only includes confirmed facts.
 
 ## Bookings (Supabase + email alert)
-1. Create a Supabase project and run `supabase/migrations/0001_bookings.sql`.
+1. Create a Supabase project and run `supabase/migrations/0001_bookings.sql` and then `0002_phase15.sql`.
 2. Set `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` (server only), and for the email alert `RESEND_API_KEY`, `BOOKING_ALERT_TO`, `BOOKING_ALERT_FROM`.
 3. Without these, development logs a mock success; production returns an error so no request is silently lost.
 

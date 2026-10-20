@@ -24,3 +24,5 @@ source/art/*
 *.zip
 .vercel
 .env*
+
+supabase/.temp/

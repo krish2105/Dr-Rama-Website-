@@ -8,6 +8,9 @@ import Image from "next/image";
 import { portrait, altFor } from "@/lib/photos";
 import { ButtonLink } from "@/components/ui/Button";
 import { SITE } from "@/lib/site";
+import { JumpTo } from "@/components/layout/JumpTo";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -25,9 +28,12 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const t = await getTranslations({ locale, namespace: "about" });
   const c = await getTranslations({ locale, namespace: "common" });
   const home = await getTranslations({ locale, namespace: "home" });
+  const nav = await getTranslations({ locale, namespace: "nav" });
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-14">
+      <JsonLd data={breadcrumbSchema(locale, [{ name: nav("home"), route: "" }, { name: a.title, route: "/about" }])} />
+      <JumpTo label={nav("jump")} items={[["quals", t("qualifications")], ["exp", t("experience")], ["mem", t("memberships")], ["conf", t("conferences")], ["comm", t("community")]].map(([id, label]) => ({ id, label }))} />
       <header className="relative">
         <Rosette className="pointer-events-none absolute -end-10 -top-10 hidden h-64 w-64 text-primary opacity-[0.08] md:block" />
         <CaseHead as="h1" title={a.title} eyebrow={locale === "hi" ? SITE.doctor.degreeHi : SITE.doctor.degree} />

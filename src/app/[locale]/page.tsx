@@ -10,6 +10,8 @@ import { HeroVisual } from "@/components/sections/Portrait";
 import { Gallery, hasPhotos } from "@/components/sections/ClinicPhoto";
 import Image from "next/image";
 import { ArtBackdrop } from "@/components/ui/ArtBackdrop";
+import { HeroTilt } from "@/components/ui/HeroTilt";
+import { CountUp } from "@/components/ui/CountUp";
 import { IconBadge } from "@/components/ui/Icon";
 import { OpenNow } from "@/components/sections/OpenNow";
 import { HoursList } from "@/components/sections/HoursList";
@@ -30,6 +32,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       {/* Hero */}
       <section className="relative overflow-x-clip">
         <ArtBackdrop src="/art/hero-pottery.webp" className="inset-0" opacity={0.38} position="right center" desktopOnly fade="to left" priority={false} />
+        <ArtBackdrop dark src="/art/dark-hero.webp" className="inset-0" opacity={0.7} position="right center" fade="to left" />
         <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-4 pb-14 pt-6 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:pb-20 lg:pt-12">
           <div>
             <p className="fade-in t-eyebrow">{t("eyebrow")}</p>
@@ -62,17 +65,17 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               ))}
             </dl>
           </div>
-          <div className="pb-4"><HeroVisual /></div>
+          <div className="pb-4"><HeroTilt><HeroVisual /></HeroTilt></div>
         </div>
       </section>
 
       {/* RIICO service record */}
-      <section aria-labelledby="riico" className="mx-auto mt-4 max-w-6xl px-4 sm:px-6">
+      <section aria-labelledby="riico" className="mx-auto mt-4 max-w-6xl px-4 sm:px-6 reveal">
         <div className="relative overflow-hidden rounded-2xl bg-primary px-6 py-8 text-onprimary sm:px-10 sm:py-10">
           <Rosette className="pointer-events-none absolute -bottom-16 -end-10 h-64 w-64 opacity-[0.1]" />
           <div className="relative grid items-center gap-6 md:grid-cols-[auto_1fr] md:gap-12">
             <div>
-              <p className="font-display text-6xl font-medium leading-none md:text-7xl">{t("riicoNum")}</p>
+              <p className="font-display text-6xl font-medium leading-none md:text-7xl"><CountUp value={24} /></p>
               <p className="mt-2 text-sm font-semibold uppercase tracking-[0.1em] opacity-90">{t("riicoYears")}</p>
             </div>
             <div className="md:border-s md:border-white/25 md:ps-12">
@@ -86,7 +89,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       {/* How she practises: wording from her CV only */}
-      <section aria-labelledby="practice" className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
+      <section aria-labelledby="practice" className="mx-auto mt-20 max-w-6xl px-4 sm:px-6 reveal">
         <CaseHead id="practice" eyebrow={t("practiceMargin")} title={t("practiceTitle")} />
         <ol className="mt-9 grid gap-5 md:grid-cols-3">
           {[1, 2, 3].map((n) => (
@@ -98,7 +101,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       {/* About preview with qualifications */}
-      <section aria-labelledby="about" className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
+      <section aria-labelledby="about" className="mx-auto mt-20 max-w-6xl px-4 sm:px-6 reveal">
         <div className="float-card relative overflow-hidden p-6 sm:p-9">
           <Rosette className="pointer-events-none absolute -end-12 -top-12 h-56 w-56 text-primary opacity-[0.08]" />
           <CaseHead id="about" title={t("aboutTitle")} />
@@ -115,7 +118,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       {/* Jaipur identity: one full-width visual break. Text is real HTML on the artwork's clean left side. */}
-      <section aria-labelledby="banner" className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
+      <section aria-labelledby="banner" className="mx-auto mt-20 max-w-6xl px-4 sm:px-6 reveal">
         <div className="relative overflow-hidden rounded-2xl border border-line bg-[#f6ead7] text-[#13203f]">
           <div className="relative h-40 w-full sm:h-48 md:absolute md:inset-0 md:h-auto">
             <Image src="/art/jaipur-banner.webp" alt="" fill sizes="(min-width:1152px) 1152px, 100vw" quality={72} className="object-cover object-right" />
@@ -133,7 +136,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       {/* Visit the clinic: details with icons, then real photos only */}
-      <section aria-labelledby="visit" className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
+      <section aria-labelledby="visit" className="mx-auto mt-20 max-w-6xl px-4 sm:px-6 reveal">
         <CaseHead id="visit" title={t("visitTitle")} />
         <div className="mt-9 grid gap-8 md:grid-cols-2">
           <ul className="space-y-6">
@@ -172,7 +175,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       {/* Book CTA */}
-      <section className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
+      <section className="reveal mx-auto mt-20 max-w-6xl px-4 sm:px-6">
         <div className="relative overflow-hidden rounded-2xl bg-soft px-6 py-10 text-center sm:px-12 sm:py-12">
           <Rosette className="pointer-events-none absolute -start-10 -top-10 h-44 w-44 text-primary opacity-[0.1]" />
           <Rosette className="pointer-events-none absolute -bottom-12 -end-10 h-52 w-52 text-primary opacity-[0.1]" />

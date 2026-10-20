@@ -4,11 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-import { ThemeToggle } from "./ThemeToggle";
+import { DisplayControls } from "./DisplayControls";
 
 const ITEMS = [
   ["home", "/"], ["about", "/about"], ["services", "/services"], ["careAreas", "/care-areas"],
-  ["book", "/book"], ["online", "/online-consultation"], ["experiences", "/experiences"],
+  ["book", "/book"], ["reach", "/how-to-reach"], ["firstVisit", "/first-visit"], ["online", "/online-consultation"], ["experiences", "/experiences"],
   ["blog", "/blog"], ["faq", "/faq"], ["contact", "/contact"], ["privacy", "/privacy"],
 ] as const;
 
@@ -64,9 +64,8 @@ export function MobileNav() {
               </li>
             ))}
           </ul>
-          <div className="mx-auto mt-6 flex max-w-md items-center justify-between sm:hidden">
-            <span className="text-muted">{t("common.theme")}</span>
-            <ThemeToggle />
+          <div className="mx-auto mt-6 max-w-md border-t border-line pt-5">
+            <DisplayControls />
           </div>
         </nav>,
         document.body,

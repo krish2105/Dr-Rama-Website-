@@ -1,0 +1,8 @@
+{
+  "_note": "Booking slots are REQUESTS: the clinic confirms each one. Slot length and capacity are placeholders until the doctor confirms (see content/TODO.md). Hours themselves come from site.json timings. Add dates as YYYY-MM-DD to blockedDates (festivals, travel); they disappear from the booking form.",
+  "slotMinutes": 20,
+  "capacityPerSlot": 1,
+  "bookAheadDays": 14,
+  "minLeadMinutes": 60,
+  "blockedDates": []
+}

@@ -11,14 +11,16 @@
     {
       "h": "What we collect and why",
       "p": [
-        "When you request an appointment we collect your name, phone number, preferred date and time, and a one-line reason. We use them only to contact you about that appointment.",
-        "Please do not put detailed medical information in the booking form."
+        "When you request an appointment we collect the patient's name, your phone number, the day and time you chose and the kind of visit you picked from a short list. If you book for a child or another person, we also ask for the name of the parent, guardian or person booking, and for your confirmation that you may book for them. We use these only to contact you about that appointment.",
+        "If you ask for a call back, we collect your name, phone number and the time of day you prefer.",
+        "We also note, in general terms, how you found the site (for example Instagram, Google or a printed QR code). This is not tied to your name and holds no health information.",
+        "Please do not put detailed medical information in any form. A request is not a confirmed appointment until the clinic contacts you."
       ]
     },
     {
       "h": "Your consent",
       "p": [
-        "The booking form has a consent box that you must tick yourself. You can withdraw consent at any time by emailing the clinic."
+        "Each form has a consent box that you must tick yourself. You can withdraw consent at any time by emailing the clinic."
       ]
     },
     {

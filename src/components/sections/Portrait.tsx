@@ -17,9 +17,9 @@ export function HeroVisual() {
 
   return (
     <div className="relative mx-auto w-full max-w-[18rem] sm:max-w-[22rem] lg:max-w-[26rem]">
-      <Rosette className="pointer-events-none absolute -end-20 -top-20 h-80 w-80 text-primary opacity-[0.07] md:hidden" />
-      <div aria-hidden="true" className="absolute inset-0 translate-x-3 translate-y-3 rounded-[22px] border border-accent/70" />
-      <div className="relative aspect-[4/5] overflow-hidden rounded-[22px] border border-line bg-soft shadow-[var(--shadow-float)]">
+      <div className="depth-1 pointer-events-none absolute -end-20 -top-20"><Rosette className="h-80 w-80 text-primary opacity-[0.07] md:hidden" /></div>
+      <div aria-hidden="true" className="depth-2 absolute inset-0 translate-x-3 translate-y-3 rounded-[22px] border border-accent/70" />
+      <div className="tilt-card relative aspect-[4/5] overflow-hidden rounded-[22px] border border-line bg-soft shadow-[var(--shadow-float)]">
         {portrait ? (
           <Image
             src={portrait.src}
@@ -37,7 +37,7 @@ export function HeroVisual() {
           </div>
         )}
       </div>
-      <div className="glass absolute -bottom-4 -start-3 rounded-xl px-4 py-2.5 shadow-[var(--shadow-float)] sm:-start-6">
+      <div className="glass depth-1 absolute -bottom-4 -start-3 rounded-xl px-4 py-2.5 shadow-[var(--shadow-float)] sm:-start-6">
         <p className="font-display text-base font-semibold leading-tight text-ink">{locale === "hi" ? SITE.doctor.nameHi : SITE.doctor.name}</p>
         <p className="text-xs text-muted">{locale === "hi" ? SITE.doctor.degreeHi : SITE.doctor.degree}</p>
       </div>

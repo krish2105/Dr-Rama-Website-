@@ -4,6 +4,7 @@ import { getJson } from "@/lib/content";
 import { pageMeta } from "@/lib/meta";
 import { CaseHead } from "@/components/ui/CaseHead";
 import { ButtonLink } from "@/components/ui/Button";
+import { Globules } from "@/components/ui/Globules";
 import { ArtBackdrop } from "@/components/ui/ArtBackdrop";
 
 type Services = { _status: string; title: string; items: { title: string; text: string }[] };
@@ -19,6 +20,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
   setRequestLocale(locale);
   const d = getJson<Services>(locale, "services");
   const c = await getTranslations({ locale, namespace: "common" });
+  const v = await getTranslations({ locale, namespace: "visit" });
   return (
     <div className="relative">
       <ArtBackdrop src="/art/services-bg.webp" className="inset-x-0 -top-24 h-[28rem]" opacity={0.8} />
@@ -33,6 +35,10 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
           </li>
         ))}
       </ul>
+      <figure className="mx-auto mt-10 w-44">
+        <Globules className="h-auto w-full" />
+        <figcaption className="mt-1 text-center text-xs text-muted">{v("globulesCaption")}</figcaption>
+      </figure>
       <ButtonLink href="/book" className="mt-8">{c("book")}</ButtonLink>
       </div>
     </div>

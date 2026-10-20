@@ -1,0 +1,4 @@
+{
+  "_note": "Floating notice under the header. Add items like { \"id\": \"diwali-2026\", \"textEn\": \"Clinic closed 8 to 10 Nov\", \"textHi\": \"...\", \"from\": \"2026-11-01\", \"to\": \"2026-11-10\" } (dates inclusive, India time). Empty list = no banner.",
+  "notices": []
+}

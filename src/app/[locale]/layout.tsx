@@ -11,6 +11,9 @@ import { FloatingContact } from "@/components/layout/FloatingContact";
 import { INDEXABLE, SITE_URL } from "@/lib/site";
 import { clinicSchema } from "@/lib/schema";
 import { Analytics } from "@/components/layout/Analytics";
+import { ScrollState } from "@/components/layout/ScrollState";
+import { NoticeBanner } from "@/components/layout/NoticeBanner";
+import { UtmCapture } from "@/components/booking/UtmCapture";
 import "@/styles/globals.css";
 
 const display = Newsreader({ subsets: ["latin"], weight: ["500", "600"], variable: "--font-display", display: "swap" });
@@ -49,7 +52,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 // Runs before paint: no flash of the wrong theme.
-const themeInit = `(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark')t='system';var d=t==='dark'||(t==='system'&&matchMedia('(prefers-color-scheme: dark)').matches);var r=document.documentElement;r.dataset.theme=d?'dark':'light';r.dataset.themePref=t}catch(e){}})()`;
+const MOTION_ENV = process.env.NEXT_PUBLIC_MOTION_LEVEL === "off" ? "off" : "";
+const themeInit = `(function(){var r=document.documentElement;try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark')t='system';var d=t==='dark'||(t==='system'&&matchMedia('(prefers-color-scheme: dark)').matches);r.dataset.theme=d?'dark':'light';r.dataset.themePref=t}catch(e){}try{var m=null;try{m=localStorage.getItem('motion')}catch(e){}var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;var c=navigator.connection;var lite=(c&&c.saveData)||(navigator.deviceMemory&&navigator.deviceMemory<=4)||(navigator.hardwareConcurrency&&navigator.hardwareConcurrency<=4);var lvl='${MOTION_ENV}'==='off'||rm||m==='off'?'off':(m==='on'?'full':(lite?'lite':'full'));r.dataset.motion=lvl;r.dataset.motionPref=m==='on'||m==='off'?m:'auto';var ts=null;try{ts=localStorage.getItem('textsize')}catch(e){}if(ts==='large'||ts==='xlarge')r.dataset.textsize=ts}catch(e){r.dataset.motion='off'}})()`;
 
 export default async function LocaleLayout({
   children,
@@ -77,10 +81,13 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <a href="#main" className="skip-link">{t("skip")}</a>
           <Header />
+          <NoticeBanner />
           <main id="main" className="pt-24">{children}</main>
           <Footer />
           <FloatingContact />
           <Analytics />
+          <ScrollState />
+          <UtmCapture />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(clinicSchema(locale)) }} />
         </NextIntlClientProvider>
       </body>
