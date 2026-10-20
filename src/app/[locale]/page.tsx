@@ -1,6 +1,6 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { SITE, telHref, waHref, mapsDirectionsHref, isDev } from "@/lib/site";
+import { SITE, telHref, waHref, mapsDirectionsHref, mapsEmbedUrl, isDev } from "@/lib/site";
 import { getAbout } from "@/lib/content";
 import { Rosette } from "@/components/ui/Motif";
 import { CaseHead } from "@/components/ui/CaseHead";
@@ -161,7 +161,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </ul>
           <div className="space-y-4">
             {hasPhotos() ? <Gallery limit={6} /> : isDev ? <Gallery /> : null}
-            {!SITE.mapsUrl ? <DevTodo>{t("visitTodoMap")} Directions button uses a search link for now.</DevTodo> : null}
+            {mapsEmbedUrl ? (
+              <iframe title={c("directions")} src={mapsEmbedUrl} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="aspect-[4/3] w-full rounded-2xl border border-line" />
+            ) : isDev ? <DevTodo>{t("visitTodoMap")} Directions button uses a search link for now.</DevTodo> : null}
             <ExternalButton href={mapsDirectionsHref()} target="_blank" rel="noopener noreferrer" variant="secondary">
               {c("directions")}
             </ExternalButton>

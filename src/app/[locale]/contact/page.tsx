@@ -4,7 +4,7 @@ import { pageMeta } from "@/lib/meta";
 import { CaseHead } from "@/components/ui/CaseHead";
 import { DevTodo } from "@/components/ui/DevTodo";
 import { ExternalButton, ButtonLink } from "@/components/ui/Button";
-import { SITE, telHref, waHref, mapsDirectionsHref } from "@/lib/site";
+import { SITE, telHref, waHref, mapsDirectionsHref, mapsEmbedUrl } from "@/lib/site";
 import type { Timings } from "@/lib/openNow";
 import { IconBadge } from "@/components/ui/Icon";
 import { OpenNow } from "@/components/sections/OpenNow";
@@ -60,10 +60,10 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
         </div>
         <div>
           <p className="t-eyebrow mb-2">{t("map")}</p>
-          {SITE.mapsUrl ? (
+          {mapsEmbedUrl ? (
             <iframe
               title={t("map")}
-              src={SITE.mapsUrl}
+              src={mapsEmbedUrl}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="aspect-[4/3] w-full rounded-2xl border border-line"

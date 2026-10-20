@@ -16,6 +16,8 @@ export function waHref(message?: string): string {
   return message ? `${base}?text=${encodeURIComponent(message)}` : base;
 }
 
+export const mapsEmbedUrl = (site.mapsEmbedUrl ?? null) as string | null;
+
 export function mapsDirectionsHref(): string {
   if (site.mapsUrl) return site.mapsUrl;
   const q = [site.clinic.name, site.address.street, site.address.locality, site.address.postalCode].join(", ");

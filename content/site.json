@@ -125,5 +125,7 @@
   },
   "alternateNames": [
     "Rajesh Homoeo Home"
-  ]
+  ],
+  "mapsEmbedUrl": null,
+  "_mapsHelp": "mapsUrl = the Google Maps Share link (opens in the Maps app for Get directions). mapsEmbedUrl = only the src value from Share > Embed a map (https://www.google.com/maps/embed?pb=...). Paste both when you have them."
 }

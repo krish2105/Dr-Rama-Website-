@@ -1,5 +1,7 @@
 # What remains (updated 20 Oct 2026)
 
+How to do each item, plus the Instagram and Google Business setup: `docs/LAUNCH-AND-INSTAGRAM-GUIDE.md`.
+
 Nothing below may be invented. Placeholders show in development only; production builds never show a fake fact.
 
 ## Done
@@ -32,7 +34,7 @@ Nothing below may be invented. Placeholders show in development only; production
 ## 3. Accounts and launch
 - [ ] Domain: the card prints rajeshhomoeohome.in. Confirm the clinic owns it, then point it at Vercel and set `NEXT_PUBLIC_SITE_URL=https://rajeshhomoeohome.in`.
 - [ ] Vercel project. Supabase project (run `supabase/migrations/0001_bookings.sql`; add URL and service-role key). Email-alert provider (Resend) and the clinic address that receives alerts. GA4 measurement ID.
-- [ ] Google Maps link or place ID (the Visit section and Contact page show a dev-only reminder until supplied).
+- [ ] Google Maps: paste the Share link as `mapsUrl` and the embed `src` as `mapsEmbedUrl` in `content/site.json` (steps in the guide). The Visit section and Contact page show a dev-only reminder until then.
 - [ ] Decide how long booking data is kept and who handles deletion requests by email (the Privacy page shows a dev-only reminder).
 - [ ] Add Vercel Firewall rate limiting on `/api/booking`.
 - [ ] Run `npm run check-content -- --strict`, then Lighthouse on the live URL, then submit the sitemap in Search Console.
