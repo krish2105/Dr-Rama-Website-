@@ -80,7 +80,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <CaseHead id="exp" title={t("experience")} />
         <ol className="relative mt-8 space-y-6 border-s-2 border-line ps-6">
           {a.experience.map((e) => (
-            <li key={e.role + e.when} className="relative">
+            <li key={e.role + e.org} className="relative">
               <span aria-hidden="true" className="absolute -start-[1.95rem] top-2 h-3 w-3 rounded-full bg-accent ring-4 ring-bg" />
               {e.when ? <p className="text-sm font-semibold uppercase tracking-wider text-wood">{e.when}</p> : null}
               <p className="font-display text-xl font-semibold text-primary">{e.role}</p>
@@ -95,7 +95,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <CaseHead id="mem" title={t("memberships")} />
         <ul className="mt-8 grid gap-4 md:grid-cols-2">
           {a.memberships.map((m) => (
-            <li key={m.name} className="specimen p-5" data-label={m.when}>
+            <li key={m.name} className="specimen p-5" data-label="•">
               <p className="text-lg">{m.name}</p>
             </li>
           ))}
@@ -111,7 +111,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           </summary>
           <ol className="mt-4 list-decimal space-y-2 ps-6 marker:text-wood">
             {a.conferences.map((cf) => (
-              <li key={cf.name + cf.when}>{cf.name}, {cf.where} ({cf.when})</li>
+              <li key={cf.name + cf.where}>{cf.name}, {cf.where}</li>
             ))}
           </ol>
         </details>
