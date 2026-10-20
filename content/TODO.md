@@ -63,5 +63,5 @@ Nothing below may be invented. Each item shows a dev-only placeholder on the sit
 ## From the generated image pack (20 Oct 2026)
 - [ ] Real close-up photos for the About and Visit galleries: display cabinet, certificate and plaque wall, glass desk with chairs (shot per the checklist in Prompt Pack v3). The generated versions (04 to 08) were not used because they alter the room and invent certificate text.
 - [ ] Real photo of the flat's entrance door and nameplate. The generated entrance images (09, 10) were not used.
-- [ ] Doctor to confirm the lit portrait (03) is a faithful likeness of her.
+- [ ] Doctor to confirm the current portrait (white coat, plain wall; AI-assisted from a real photo) is a faithful likeness and that she is happy with it. Replace with a studio photo when available.
 - [ ] Upload `source/brand/google-business-profile-cover.png` to the Google Business Profile once the profile exists.

@@ -122,11 +122,12 @@
   "mapsUrl": null,
   "appointmentPolicy": null,
   "portraitPhoto": {
-    "src": "/photos/doctor-portrait.e552b98b.jpg",
+    "src": "/photos/doctor-portrait.51798a77.jpg",
     "width": 1122,
     "height": 1402,
-    "altEn": "Dr. Rama Mathur in a cream and pink outfit with a stethoscope around her neck, seated at a table.",
-    "altHi": "डॉ. रमा माथुर, गले में स्टेथोस्कोप पहने, क्रीम और गुलाबी परिधान में मेज़ पर बैठी हुई।"
+    "altEn": "Dr. Rama Mathur in a white coat with a stethoscope around her neck, standing in front of a plain light wall.",
+    "altHi": "डॉ. रमा माथुर, सफ़ेद कोट में गले में स्टेथोस्कोप पहने, सादी हल्की दीवार के सामने खड़ी हुई।",
+    "focus": "50% 25%"
   },
   "logo": null,
   "timingsConfirmed": false,
