@@ -23,7 +23,8 @@
     "phone": "Phone",
     "email": "Email",
     "photoPlaceholder": "Real clinic photo to be added",
-    "whatsappPrefill": "Hello, I would like to ask about an appointment at Rajesh Homeo Home."
+    "whatsappPrefill": "Hello, I would like to ask about an appointment at Rajesh Homeo Home.",
+    "aiEnhanced": "Image enhanced with AI from a real photograph."
   },
   "nav": {
     "home": "Home",
@@ -100,8 +101,7 @@
     "visitHours": "Clinic hours",
     "bannerKicker": "Jaipur",
     "bannerTitle": "Find Dr. Mathur in Banipark",
-    "bannerBody": "Rajesh Homeo Home is at Rajvilas Apartment, Meera Marg, Banipark. Call ahead or send a booking request.",
-    "entranceTodo": "Photo of the flat's entrance door and nameplate (real photo) to be added. Do not use a generated entrance image."
+    "bannerBody": "Rajesh Homeo Home is at Rajvilas Apartment, Meera Marg, Banipark. Call ahead or send a booking request."
   },
   "book": {
     "title": "Book a visit",

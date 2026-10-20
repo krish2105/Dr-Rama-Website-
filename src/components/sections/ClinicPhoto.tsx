@@ -7,9 +7,11 @@ export function hasPhotos() {
   return clinicPhotos.length > 0;
 }
 
-
-
-/** Real photos only, shown as floating cards. With none supplied: dev placeholder, nothing in production. */
+/**
+ * Gallery of real photos (and AI-enhanced real photos, which carry a disclosure caption).
+ * Each card keeps its own aspect ratio, so portrait and square images are never cropped badly.
+ * With none supplied: dev placeholder, nothing in production.
+ */
 export function Gallery({ limit }: { limit?: number }) {
   const locale = useLocale();
   const t = useTranslations("common");
@@ -23,24 +25,22 @@ export function Gallery({ limit }: { limit?: number }) {
       </div>
     );
   }
-  const single = list.length === 1;
   return (
-    <ul className={single ? "mx-auto max-w-3xl" : "grid gap-5 sm:grid-cols-2 lg:grid-cols-3"}>
-      {list.map((p, i) => (
-        <li
-          key={p.src}
-          className={`overflow-hidden rounded-[18px] border border-line bg-surface shadow-[var(--shadow-float)] ${i === 0 && list.length >= 3 ? "lg:col-span-2 lg:row-span-2" : ""}`}
-        >
-          <div className={`relative h-full min-h-48 w-full ${single ? "aspect-[4/3] sm:aspect-[16/10]" : "aspect-[4/3]"}`}>
-            <Image
-              src={p.src}
-              alt={altFor(p, locale)}
-              fill
-              sizes={i === 0 && list.length >= 3 ? "(min-width:1024px) 66vw, (min-width:640px) 50vw, 100vw" : "(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"}
-              className="object-cover"
-              style={p.focus ? { objectPosition: p.focus } : undefined}
-            />
-          </div>
+    <ul className={list.length === 1 ? "mx-auto max-w-md" : "columns-1 gap-5 sm:columns-2"}>
+      {list.map((p) => (
+        <li key={p.src} className="mb-5 break-inside-avoid">
+          <figure className="overflow-hidden rounded-[18px] border border-line bg-surface shadow-[var(--shadow-float)]">
+            <div className="relative w-full" style={{ aspectRatio: `${p.width} / ${p.height}` }}>
+              <Image
+                src={p.src}
+                alt={altFor(p, locale)}
+                fill
+                sizes="(min-width:1024px) 400px, (min-width:640px) 45vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            {p.ai ? <figcaption className="px-4 py-2 text-xs text-muted">{t("aiEnhanced")}</figcaption> : null}
+          </figure>
         </li>
       ))}
     </ul>

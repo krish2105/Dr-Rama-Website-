@@ -22,7 +22,7 @@ Nothing below may be invented. Placeholders show in development only; production
 - [ ] Confirm the "Honoured by Rajasthan Patrika" line (2012) may be published.
 
 ## 2. Photos and brand
-- [ ] Real close-up photos: display cabinet, certificate and plaque wall, glass desk with chairs (shoot list in Prompt Pack v3). The generated versions were rejected because they alter the room and invent certificate text.
+- [ ] Real close-up photos: display cabinet, certificate and plaque wall (shoot list in Prompt Pack v3). The generated versions (07, 08) are not used because they invent certificate text. The room images on the site (05, 06) are AI-enhanced and carry a disclosure caption; replace them with real photos when available.
 - [ ] Real photo of the flat's entrance door and nameplate (Rajvilas Apartment, 2nd floor).
 - [ ] A studio-quality portrait (window light, plain wall) to replace the current one.
 - [ ] Logo. The business card uses a cross and an Om-swastika symbol, no wordmark. Until a logo is supplied the site uses a simple rosette mark.

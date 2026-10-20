@@ -1,13 +1,23 @@
 {
-  "_note": "Add real photos from /source/photos to public/photos and list them here with alt text in both languages. Do not edit certificates or plaques in photos.",
+  "_note": "Real photos from /source/photos via npm run photos. ai:true marks an image enhanced with AI from a real photograph; the site shows a disclosure caption on it. Never use AI images of certificates, plaques or the entrance.",
   "photos": [
     {
-      "src": "/photos/clinic-consultation-room.82246227.jpg",
-      "width": 1400,
-      "height": 1020,
-      "altEn": "Consultation room with a glass-top desk, two wooden chairs with blue floral cushions, a black leather chair, bamboo window blinds and a wall cabinet with glass doors.",
+      "src": "/photos/clinic-room.dd622f92.jpg",
+      "width": 1122,
+      "height": 1402,
+      "altEn": "Consultation room with a glass-top desk, two wooden chairs with blue floral cushions, a black leather chair, bamboo window blinds and a glass-door wall cabinet.",
       "altHi": "परामर्श कक्ष: काँच की टॉप वाली मेज़, नीले फूलों वाले कुशन की दो लकड़ी की कुर्सियाँ, काली चमड़े की कुर्सी, खिड़की पर बाँस की चिक और काँच के दरवाज़ों वाली दीवार की अलमारी।",
-      "focus": "50% 65%"
+      "ai": true,
+      "focus": "50% 62%"
+    },
+    {
+      "src": "/photos/clinic-desk-and-chairs.89a90f7e.jpg",
+      "width": 1254,
+      "height": 1254,
+      "altEn": "Glass-top desk with two wooden chairs with blue floral cushions, a black leather chair and a blue stool, beside a window with a bamboo blind.",
+      "altHi": "काँच की टॉप वाली मेज़, नीले फूलों वाले कुशन की दो लकड़ी की कुर्सियाँ, काली चमड़े की कुर्सी और नीला स्टूल, बाँस की चिक वाली खिड़की के पास।",
+      "ai": true,
+      "focus": "50% 55%"
     }
   ]
 }

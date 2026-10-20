@@ -161,7 +161,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </ul>
           <div className="space-y-4">
             {hasPhotos() ? <Gallery limit={6} /> : isDev ? <Gallery /> : null}
-            {isDev ? <DevTodo>{t("entranceTodo")}</DevTodo> : null}
             {!SITE.mapsUrl ? <DevTodo>{t("visitTodoMap")} Directions button uses a search link for now.</DevTodo> : null}
             <ExternalButton href={mapsDirectionsHref()} target="_blank" rel="noopener noreferrer" variant="secondary">
               {c("directions")}

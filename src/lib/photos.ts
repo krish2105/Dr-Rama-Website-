@@ -1,7 +1,7 @@
 import site from "../../content/site.json";
 import gallery from "../../content/gallery.json";
 
-export type Photo = { src: string; width: number; height: number; altEn: string; altHi: string; focus?: string };
+export type Photo = { src: string; width: number; height: number; altEn: string; altHi: string; focus?: string; ai?: boolean };
 
 /** Real photos only. Both are empty until files from /source/photos are imported (npm run photos). */
 export const portrait = (site.portraitPhoto ?? null) as Photo | null;

@@ -23,9 +23,9 @@ All 18 are AI generated. They fall into two groups.
 | # | Image | Decision and reason |
 |---|---|---|
 | 03 | Doctor portrait | Already live. Pixel-near-identical to the portrait supplied earlier (mean difference 2.3 of 255). Doctor must confirm it is a faithful likeness |
-| 04 | Room, perspective corrected | **Not used.** Re-rendered, not corrected: the window view changed (a leafy tree now), the desk etching and fittings were redrawn |
-| 05 | Room, decluttered | **Not used.** Same reason as 04 |
-| 06 | Glass desk and chairs crop | **Not used.** Same reason: desk pattern, window and objects differ from the real room |
+| 04 | Room, perspective corrected | Not used: near-duplicate of 05 (05 is the same view with the clutter removed) |
+| 05 | Room, decluttered | **Used on the owner's instruction (20 Oct 2026)** in Visit the clinic and the hero inset, with the caption "Image enhanced with AI from a real photograph." Certificate and plaque text in it is illegible pseudo-text |
+| 06 | Glass desk and chairs crop | **Used on the owner's instruction (20 Oct 2026)** in Visit the clinic, with the same AI caption |
 | 07 | Certificate and plaque wall | **Not used.** Certificate and plaque text is invented pseudo-text. Hard rule: never invent, rewrite or enhance certificate text |
 | 08 | Display cabinet crop | **Not used.** A certificate now reads "Patient's Health Clinic ... Foundation Course in Classical Homeopathy". That text is not in the real photo |
 | 09 | Entrance, storefront | **Not used.** The practice is inside a flat; there is no storefront |
@@ -51,3 +51,6 @@ Review the existing website first and preserve its structure, content, functiona
 9. **Image engineering.** `next/image`, correct `sizes`, WebP, no layout shift, lazy below the fold, hero portrait `priority`, EN and HI alt text for photos, empty alt for decoration, never stretch faces. Files hashed by `npm run photos`.
 10. **Responsive QA.** 360, 390, 768, 1024, 1440 px. No horizontal overflow. Decorative patterns reduced on phones.
 11. **Rules.** Do not alter facts, claims, registration, phones, timings, URLs or credentials. Run typecheck, lint, production build, `npm run check-content`, responsive QA, an accessibility check and Lighthouse, then report: images used and where, images not shown and why, files changed, performance impact, remaining real-photo TODOs.
+
+## Update, 20 Oct 2026
+The owner asked for the generated room images to replace the cropped real photo. Done for 05 and 06 with a visible AI disclosure caption and `ai: true` in `content/gallery.json`. Still not used, and why: 07 and 08 (invented certificate text, which could mislead patients about credentials), 09 and 10 (invented entrances), 02, 11, 01.

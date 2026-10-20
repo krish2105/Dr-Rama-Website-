@@ -17,7 +17,7 @@ const outDir = path.join(root, "public/photos");
 const sitePath = path.join(root, "content/site.json");
 const galleryPath = path.join(root, "content/gallery.json");
 
-type Photo = { src: string; width: number; height: number; altEn: string; altHi: string; focus?: string };
+type Photo = { src: string; width: number; height: number; altEn: string; altHi: string; focus?: string; ai?: boolean };
 
 async function main() {
   fs.mkdirSync(outDir, { recursive: true });
@@ -43,7 +43,7 @@ const existing = new Map<string, Photo>((gallery.photos ?? []).map((p: Photo) =>
     fs.writeFileSync(path.join(outDir, outName), data);
     const src = `/photos/${outName}`;
     const prev = isPortrait ? site.portraitPhoto : existing.get(slug);
-    const entry: Photo = { src, width: info.width, height: info.height, altEn: prev?.altEn ?? "", altHi: prev?.altHi ?? "", ...(prev?.focus ? { focus: prev.focus } : {}) };
+    const entry: Photo = { src, width: info.width, height: info.height, altEn: prev?.altEn ?? "", altHi: prev?.altHi ?? "", ...(prev?.focus ? { focus: prev.focus } : {}), ...(prev?.ai ? { ai: true } : {}) };
     if (isPortrait) site.portraitPhoto = entry;
     else photos.push(entry);
     console.log(`${isPortrait ? "portrait" : "gallery "} ${f} -> public${src} (${info.width}x${info.height})${entry.altEn && entry.altHi ? "" : "  alt text needed"}`);
