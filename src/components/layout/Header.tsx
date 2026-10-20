@@ -17,7 +17,7 @@ export function Header() {
         <Link href="/" className="flex min-h-12 items-center gap-2.5" aria-label={`${t("meta.siteName")}: ${t("nav.home")}`}>
           <LogoMark className="h-8 w-8 shrink-0 text-primary max-[400px]:hidden" />
           <span className="leading-tight">
-            <span className="block font-display text-base font-semibold text-ink whitespace-nowrap min-[400px]:text-[1.0625rem]">{t("meta.siteName")}</span>
+            <span className="block font-display text-[0.9375rem] font-semibold text-ink whitespace-nowrap min-[400px]:text-[1.0625rem]">{t("meta.siteName")}</span>
             <span className="hidden text-[0.6875rem] font-medium tracking-[0.06em] text-muted sm:block">{SITE.doctor.degree}</span>
           </span>
         </Link>
@@ -32,8 +32,8 @@ export function Header() {
             ))}
           </ul>
         </nav>
-        <div className="ms-auto flex items-center gap-1.5 sm:gap-2">
-          <ThemeQuick />
+        <div className="ms-auto flex items-center gap-1 sm:gap-2">
+          <div className="max-[339px]:hidden"><ThemeQuick /></div>
           <div className="hidden md:block"><DisplayMenu /></div>
           <LangToggle />
           <div className="hidden md:block">

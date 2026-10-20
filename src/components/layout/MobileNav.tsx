@@ -41,7 +41,7 @@ export function MobileNav() {
         aria-expanded={open}
         aria-controls="mobile-menu"
         onClick={() => setOpen((o) => !o)}
-        className="grid h-12 w-12 place-items-center rounded-xl text-ink hover:bg-soft"
+        className="grid h-11 w-11 place-items-center rounded-xl text-ink hover:bg-soft sm:h-12 sm:w-12"
         aria-label={open ? t("common.close") : t("common.menu")}
       >
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">

@@ -24,7 +24,7 @@ export function Footer() {
               {locale === "hi" ? SITE.doctor.nameHi : SITE.doctor.name}, {locale === "hi" ? SITE.doctor.degreeHi : SITE.doctor.degree}
             </p>
             <div className="mt-4 text-sm">
-              {reg.number ? <p>{t("footer.registration")}: {reg.council}, {t("footer.regNo")} {reg.number}</p> : <DevTodo>State council name and registration number are missing (content/TODO.md).</DevTodo>}
+              {reg.number ? <p>{t("footer.registration")}: {locale === "hi" ? reg.councilHi : reg.council}, {t("footer.regNo")} {reg.number}</p> : <DevTodo>State council name and registration number are missing (content/TODO.md).</DevTodo>}
             </div>
           </div>
           <div>
@@ -39,7 +39,7 @@ export function Footer() {
             <p className="t-eyebrow mb-2">{t("footer.explore")}</p>
             <ul className="grid grid-cols-2 gap-x-4">
               {LINKS.map(([k, href]) => (
-                <li key={k}><Link href={href} className="inline-flex min-h-12 items-center text-ink hover:text-primary hover:underline">{t(`nav.${k}`)}</Link></li>
+                <li key={k}><Link href={href} className="-mx-2 inline-flex min-h-12 min-w-11 items-center px-2 text-ink hover:text-primary hover:underline">{t(`nav.${k}`)}</Link></li>
               ))}
             </ul>
           </div>

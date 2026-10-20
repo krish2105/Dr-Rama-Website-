@@ -15,7 +15,7 @@ export function LangToggle() {
         hrefLang="en"
         lang="en"
         aria-current={locale === "en" ? "true" : undefined}
-        className={`grid h-10 min-w-10 place-items-center rounded-[10px] px-2.5 ${locale === "en" ? "bg-primary text-onprimary" : "text-muted hover:bg-surface"}`}
+        className={`grid h-10 min-w-9 place-items-center rounded-[10px] px-2 sm:min-w-10 sm:px-2.5 ${locale === "en" ? "bg-primary text-onprimary" : "text-muted hover:bg-surface"}`}
       >
         EN
       </Link>
@@ -25,7 +25,7 @@ export function LangToggle() {
         hrefLang="hi"
         lang="hi"
         aria-current={locale === "hi" ? "true" : undefined}
-        className={`grid h-10 min-w-10 place-items-center rounded-[10px] px-2.5 ${locale === "hi" ? "bg-primary text-onprimary" : "text-muted hover:bg-surface"}`}
+        className={`grid h-10 min-w-9 place-items-center rounded-[10px] px-2 sm:min-w-10 sm:px-2.5 ${locale === "hi" ? "bg-primary text-onprimary" : "text-muted hover:bg-surface"}`}
       >
         हिं
       </Link>

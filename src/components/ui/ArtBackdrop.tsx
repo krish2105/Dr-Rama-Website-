@@ -1,8 +1,8 @@
-import Image from "next/image";
-
 /**
- * Subtle decorative artwork behind a section. Purely decorative (empty alt, aria-hidden), faded at the edges so text stays on a clean
- * ground, hidden in dark mode (the artwork is on ivory) and, when `desktopOnly`, hidden on phones.
+ * Subtle decorative artwork behind a section, drawn as a CSS background so the browser finds it early (it is often the largest
+ * thing on screen) and never downloads the version for the other theme: hidden elements do not fetch their backgrounds.
+ * Phones get the smaller "-sm" file. Purely decorative (aria-hidden), faded at the edges so text stays on a clean ground.
+ * Light art sits on ivory and is hidden in dark mode; `dark` art shows only in dark mode. `desktopOnly` hides it on phones.
  */
 export function ArtBackdrop({
   src,
@@ -11,7 +11,6 @@ export function ArtBackdrop({
   position = "center",
   desktopOnly = false,
   fade = "to bottom",
-  priority = false,
   dark = false,
 }: {
   src: string;
@@ -20,17 +19,15 @@ export function ArtBackdrop({
   position?: string;
   desktopOnly?: boolean;
   fade?: string;
-  priority?: boolean;
   dark?: boolean;
 }) {
   const mask = `linear-gradient(${fade}, #000 35%, transparent)`;
+  const small = src.replace(/\.webp$/, "-sm.webp");
   return (
     <div
       aria-hidden="true"
-      className={`${dark ? "art-dark" : "art-light"} pointer-events-none absolute z-0 overflow-hidden ${desktopOnly && !dark ? "hidden md:block" : ""} ${className}`}
-      style={{ WebkitMaskImage: mask, maskImage: mask, opacity }}
-    >
-      <Image src={src} alt="" fill sizes="(min-width:1280px) 1280px, 100vw" quality={70} priority={priority} className="object-cover" style={{ objectPosition: position }} />
-    </div>
+      className={`art-bg ${dark ? "art-dark" : "art-light"} pointer-events-none absolute z-0 overflow-hidden ${desktopOnly && !dark ? "hidden md:block" : ""} ${className}`}
+      style={{ WebkitMaskImage: mask, maskImage: mask, opacity, backgroundPosition: position, ["--bg" as string]: `url(${src})`, ["--bg-sm" as string]: `url(${small})` }}
+    />
   );
 }

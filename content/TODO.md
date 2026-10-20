@@ -46,7 +46,7 @@ Nothing below may be invented. Placeholders show in development only; production
 - [ ] Decide how long booking data is kept and who handles deletion requests by email (the Privacy page shows a dev-only reminder).
 - [ ] Add Vercel Firewall rate limiting on `/api/booking`.
 - [ ] Run `npm run check-content -- --strict`, then Lighthouse on the live URL, then submit the sitemap in Search Console.
-- [ ] Native Hindi review of all Hindi text.
+- [ ] Native Hindi review of all Hindi text, including the Hindi name of the registration council ("राजस्थान होम्योपैथिक चिकित्सा बोर्ड"; confirm the official Hindi name).
 - [ ] Create the Google Business Profile and upload `source/brand/google-business-profile-cover.png`.
 
 ## 4. Compliance review before launch

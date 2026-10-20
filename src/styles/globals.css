@@ -261,3 +261,7 @@ html:lang(hi)[data-textsize="large"] { font-size: 18.5px; } html:lang(hi)[data-t
 :root[data-motion="full"] .camp-card { animation: camp-drift 7s ease-in-out infinite; animation-delay: var(--delay, 0s); }
 @media (hover: hover) { .camp-card:hover { z-index: 2; } }
 @media print { .camp-card { animation: none !important; } }
+
+/* Decorative backdrops (ArtBackdrop): small file on phones, full file from tablet width up */
+.art-bg { background-repeat: no-repeat; background-size: cover; background-image: var(--bg-sm); }
+@media (min-width: 768px) { .art-bg { background-image: var(--bg); } }

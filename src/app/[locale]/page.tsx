@@ -36,7 +36,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     <>
       {/* Hero */}
       <section className="relative overflow-x-clip">
-        <ArtBackdrop src="/art/hero-pottery.webp" className="inset-0" opacity={0.38} position="right center" desktopOnly fade="to left" priority={false} />
+        <ArtBackdrop src="/art/hero-pottery.webp" className="inset-0" opacity={0.38} position="right center" desktopOnly fade="to left" />
         <ArtBackdrop dark src="/art/dark-hero.webp" className="inset-0" opacity={0.7} position="right center" fade="to left" />
         <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-4 pb-14 pt-6 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:pb-20 lg:pt-12">
           <div>

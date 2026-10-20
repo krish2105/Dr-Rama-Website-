@@ -23,6 +23,7 @@ export default async function PosterPage({ params }: { params: Promise<{ locale:
   const lines = hi ? SITE.address.linesHi : SITE.address.lines;
   return (
     <div className="poster-page px-4 py-8">
+      <h1 className="sr-only">{t("title")}</h1>
       <style>{"@page{size:A4;margin:0}@media print{html,body{background:#FBF5E6!important}.poster-page{padding:0!important}.poster{max-width:none!important;width:198mm!important;height:297mm!important;margin:0 auto!important;border-radius:0!important;box-shadow:none!important}}"}</style>
       <div className="poster-wrap">
         <div className="poster relative mx-auto aspect-[2/3] w-full max-w-[560px] overflow-hidden rounded-2xl bg-[#FBF5E6] text-[#13203F] shadow-[var(--shadow-float)]" style={{ containerType: "inline-size" }}>

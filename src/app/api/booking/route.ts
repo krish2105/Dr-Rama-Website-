@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { bookingSchema, callbackSchema, fieldErrors } from "@/lib/booking";
+import { getSlotDays } from "@/lib/slots";
+import availability from "../../../../content/availability.json";
 
 export const runtime = "nodejs";
 
@@ -57,6 +59,12 @@ export async function POST(req: Request) {
   if (!parsed.success) return NextResponse.json({ ok: false, error: "invalid", fields: fieldErrors(parsed.error) }, { status: 422 });
   const b = parsed.data as Record<string, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
   if (b.website) return NextResponse.json({ ok: true }); // honeypot filled: pretend success, store nothing
+
+  // The slot must be one the form could have offered. The lead time is waived so a slow submit is not rejected.
+  if (kind === "booking") {
+    const open = getSlotDays(new Date(Date.now() - availability.minLeadMinutes * 60_000));
+    if (!open.some((d) => d.date === b.date && d.slots.includes(b.time))) return NextResponse.json({ ok: false, error: "invalid", fields: { slot: true } }, { status: 422 });
+  }
 
   const configured = Boolean(process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY);
   if (!configured) {

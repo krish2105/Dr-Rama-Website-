@@ -360,5 +360,9 @@
     "goodTitle": "Good to know",
     "byAppointment": "Consultation is by prior appointment. A time you pick here is a request until it is confirmed.",
     "languages": "Dr. Mathur consults in Hindi and English."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "The page you are looking for is not here. Go to the home page or book a visit."
   }
 }

@@ -51,7 +51,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               ))}
             </ul>
             {SITE.registration.number ? (
-              <p className="rounded-xl bg-soft px-4 py-3 text-sm text-ink">{t("registration", { council: SITE.registration.council ?? "", number: SITE.registration.number })}</p>
+              <p className="rounded-xl bg-soft px-4 py-3 text-sm text-ink">{t("registration", { council: (locale === "hi" ? SITE.registration.councilHi : SITE.registration.council) ?? "", number: SITE.registration.number })}</p>
             ) : null}
           </div>
           <div>

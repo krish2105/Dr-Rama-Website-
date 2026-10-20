@@ -34,8 +34,9 @@ export function CountUp({ value, suffix = "", className = "" }: { value: number;
   }, [value]);
 
   return (
-    <span ref={ref} className={className} aria-label={`${value}${suffix}`}>
+    <span ref={ref} className={className}>
       <span aria-hidden="true">{shown}{suffix}</span>
+      <span className="sr-only">{value}{suffix}</span>
     </span>
   );
 }
