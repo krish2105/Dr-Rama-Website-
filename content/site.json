@@ -23,7 +23,9 @@
   },
   "whatsapp": {
     "sameAsPhone": true,
-    "e164": null
+    "e164": null,
+    "confirmed": true,
+    "source": "Owner confirmed on 21 Oct 2026 that WhatsApp is the same number"
   },
   "email": {
     "value": "rama_mathur@yahoo.com",
@@ -47,12 +49,13 @@
     "postalCode": "302016",
     "country": "IN",
     "confirmed": true,
-    "source": "Business card: 202, 2 Floor, Rajvilas Appartment I; registration slip: 202-II Floor"
+    "source": "Business card: 202, 2 Floor, Rajvilas Appartment I; registration slip: 202-II Floor. Pin code 302016 confirmed by the owner on 21 Oct 2026."
   },
   "registration": {
     "council": "Rajasthan Board of Homoeopathic Medicine",
     "number": "3780",
-    "source": "Registration renewal slip (the slip shows renewal only up to 19/5/2020; a current renewal is needed before stating validity)"
+    "source": "Registration renewal slip. The owner confirmed on 21 Oct 2026 that the registration is current and valid. The site still shows the number only and states no validity date.",
+    "validityConfirmed": true
   },
   "timings": {
     "mon": [
@@ -99,7 +102,15 @@
     ]
   },
   "weeklyOff": "Sunday evening",
-  "fees": null,
+  "fees": {
+    "consultation": {
+      "amount": 800,
+      "currency": "INR",
+      "display": "₹800"
+    },
+    "confirmed": true,
+    "source": "Owner, 21 Oct 2026: consultation fee 800 INR"
+  },
   "mapsUrl": null,
   "appointmentPolicy": "prior-appointment",
   "portraitPhoto": {
@@ -112,7 +123,7 @@
   },
   "logo": null,
   "timingsConfirmed": true,
-  "timingsSource": "Business card: daily 6:00 pm to 8:30 pm, Sunday 10:00 am to 2:30 pm. Chosen by the owner on 20 Oct 2026 over the handout (which lists 10:30 am to 2:00 pm and 6:00 pm to 8:30 pm). Doctor to re-confirm.",
+  "timingsSource": "Business card: daily 6:00 pm to 8:30 pm, Sunday 10:00 am to 2:30 pm. Confirmed by the owner on 21 Oct 2026.",
   "landline": {
     "display": "0141-2204095",
     "e164": "+911412204095",
@@ -128,5 +139,14 @@
     "Rajesh Homoeo Home"
   ],
   "mapsEmbedUrl": "https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1sRajvilas+Apartment+I,+Meera+Marg,+Bani+Park,+Jaipur,+Rajasthan+302016",
-  "_mapsHelp": "mapsEmbedUrl currently searches the written address (not an exact pin). Check the pin sits on Rajvilas Apartment I; if not, paste the exact Share > Embed a map src from Google Maps. mapsUrl = the Google Maps Share link for Get directions (when null, directions search by address)."
+  "_mapsHelp": "mapsEmbedUrl currently searches the written address (not an exact pin). Check the pin sits on Rajvilas Apartment I; if not, paste the exact Share > Embed a map src from Google Maps. mapsUrl = the Google Maps Share link for Get directions (when null, directions search by address).",
+  "payment": {
+    "methods": [
+      "upi",
+      "cash"
+    ],
+    "confirmed": true,
+    "source": "Owner, 21 Oct 2026: UPI and cash. No UPI ID is published."
+  },
+  "contentApproval": "Owner reported on 21 Oct 2026 that Dr. Mathur approved the site text. Keep her written approval with the clinic's records."
 }

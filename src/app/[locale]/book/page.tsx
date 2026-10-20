@@ -4,6 +4,7 @@ import { BookingForm } from "@/components/booking/BookingForm";
 import { CaseHead } from "@/components/ui/CaseHead";
 import { Rosette } from "@/components/ui/Motif";
 import { SITE, telHref, waHref } from "@/lib/site";
+import { feeLine } from "@/components/ui/FeeNote";
 import { PageBackdrop } from "@/components/ui/PageBackdrop";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -17,6 +18,7 @@ export default async function BookPage({ params }: { params: Promise<{ locale: s
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "book" });
   const c = await getTranslations({ locale, namespace: "common" });
+  const fee = await feeLine(locale);
   return (
     <PageBackdrop>
     <div className="relative mx-auto max-w-3xl px-4 py-10 sm:px-6 md:py-14">
@@ -24,6 +26,7 @@ export default async function BookPage({ params }: { params: Promise<{ locale: s
       <CaseHead as="h1" title={t("title")} />
       <p id="form-lead" className="t-lead mt-5 max-w-xl">{t("lead")}</p>
       <p className="mt-3 max-w-xl rounded-xl bg-soft px-4 py-3 text-sm text-ink">{t("appointmentNote")}</p>
+      {fee ? <p className="mt-3 max-w-xl rounded-xl border border-line px-4 py-3 text-sm text-ink">{fee}</p> : null}
       <div className="mt-8"><BookingForm /></div>
       <p className="mt-8 text-muted">
         <a className="inline-flex min-h-12 items-center text-primary underline" href={telHref}>{c("call")}: {SITE.phone.display}</a>

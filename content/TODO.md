@@ -10,33 +10,27 @@ Nothing below may be invented. Placeholders show in development only; production
 - State council registration: Rajasthan Board of Homoeopathic Medicine, No. 3780 (shown in the footer and on About)
 - Portrait and consultation-room photo, approved blue-pottery artwork, share image
 - Social launch pack (Word) and templates in `social/templates/`
+- Confirmed by the owner on 21 Oct 2026: registration No. 3780 is current and valid (the site still states no validity date); hours as on the website; pin code 302016; WhatsApp is the same number; slot length 20 minutes with one patient per slot; consultation fee ₹800; payment by UPI or cash (no UPI ID is published); Dr. Mathur approved the site text
 
 ## 1. Needed from the doctor
-- [ ] **Current registration.** The renewal slip we have was valid only until 19/5/2020. Send the latest renewal. The site shows the number only and does not state a validity date.
-- [ ] **Re-confirm the hours.** The site uses the business card (daily 6:00 pm to 8:30 pm; Sunday 10:00 am to 2:30 pm). The handout listed extra morning hours (10:30 am to 2:00 pm). The live "Open now" label follows the card.
 - [ ] **Approve the DRAFT pages:** About (EN + HI), Services, Care areas, the 3 blog posts, FAQ, Privacy. Native Hindi review of all Hindi text.
 - [ ] Care areas: the handout names diseases (several on the Drugs and Magic Remedies Act 1954 schedule). The site uses broad categories only. Decide whether to reprint the handout without disease claims.
 - [ ] Confirm the address line "Rajvilas Apartment I" (the card says "Appartment I", the registration slip omits the "I").
-- [ ] Pin code: the card and brief say 302016; the registration slip says 302006. The site uses 302016.
-- [ ] Fees and payment methods (none supplied; nothing is shown).
 - [ ] Localities patients come from (optional).
-- [ ] WhatsApp number: the site assumes it is the same as +91 94143 62499.
 - [ ] Doctor to confirm the current portrait (white coat; AI-assisted from a real photo) is a faithful likeness.
 - [ ] Confirm the "Honoured by Rajasthan Patrika" line (2012) may be published.
 
 ### Booking v2 questions (Phase 1.5)
-- [ ] Slot length (the form uses 20 minutes) and how many patients per slot (the form assumes 1). Edit `content/availability.json`.
 - [ ] Who answers the phone and WhatsApp during clinic hours, and who confirms booking requests.
 - [ ] Landmark near Rajvilas Apartment I, parking, and whether there is a lift (How to reach page shows a dev-only note until supplied).
 - [ ] ABDM Healthcare Professional Registry ID, if the doctor has one (not shown until supplied).
 - [ ] Existing online listings (Google, Practo, Justdial, Facebook) so `profiles` can be filled in `content/site.json` for structured data.
-- [ ] Approve the First visit page text (it is DRAFT and noindex) and the new Privacy wording (child booking, call-back, source note).
 - [ ] After the real domain is live: run `SITE_URL=https://rajeshhomoeohome.in npm run pdfs`, commit, and only then print the QR poster.
 - [ ] The globules picture is our own blue-pottery illustration, captioned as an illustration. A real photo of globules can replace it if the doctor wants one.
 
 ### Added 21 Oct 2026 (after the owner's changes)
 - [ ] Keep the **written consent** of each person in the 5 camp photos (shown on Home and About). The owner confirmed in chat that all agreed.
-- [ ] **Doctor's written approval** of the pages whose DRAFT labels were removed (About, Services, Care areas, FAQ, Privacy, First visit, blog posts), plus native Hindi review. Labels are gone; approval is not recorded yet.
+- [ ] Keep Dr. Mathur's **written approval** of the site text on file (the owner reports she approved it on 21 Oct 2026). A native Hindi review is still worth doing.
 - [ ] Care areas now list common complaints from the handout (Schedule items left out). Ask a qualified reviewer to confirm the wording is acceptable under the NCH circular and the 1954 Act before launch.
 - [ ] Check the **map pin** on Contact, Home and How to reach. It searches the written address; if the pin is off, paste the Share > Embed src into `mapsEmbedUrl`.
 - [ ] Patient testimonials: none exist. To add real ones, get a signed consent from each person for the exact words and keep results out of them. The Experiences page shows an empty state until then.

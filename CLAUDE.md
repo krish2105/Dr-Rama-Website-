@@ -39,6 +39,11 @@ Bilingual website for Dr. Rama Mathur, M.D. (Homoeopathy), Rajesh Homeo Home, Ja
 - Floor: the slip and card say 2nd floor; the handout's "1st" means Apartment I. Address reads "202, 2nd Floor, Rajvilas Apartment I".
 - `source/reference/` also holds the business card and registration slip (private, never published; the slip names a family member).
 
+## Confirmed 21 Oct 2026 (owner)
+- Consultation fee ₹800; payment by UPI or cash. Show them as plain facts (Contact, Home, Book, First visit, FAQ, schema). Never publish a UPI ID, QR code for payment, discounts or follow-up pricing unless supplied.
+- Registration No. 3780 is current and valid; still show the number only, no validity date. Hours as on the site. WhatsApp = the main number. Pin code 302016. Slot length 20 minutes, one patient per slot.
+- Dr. Mathur approved the site text (reported by the owner); keep her written approval on file.
+
 ## Do NOT publish
 Date of birth, gender, nationality, hobbies, "personal objective", the declaration, management skills, governance or harassment-prevention trainings, her internal committee roles at RIICO. The CV itself is never published.
 

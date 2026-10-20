@@ -7,6 +7,7 @@ import { ExternalButton, ButtonLink } from "@/components/ui/Button";
 import { SITE, telHref, waHref, mapsDirectionsHref, mapsEmbedUrl } from "@/lib/site";
 import type { Timings } from "@/lib/openNow";
 import { IconBadge } from "@/components/ui/Icon";
+import { feeLine } from "@/components/ui/FeeNote";
 import { OpenNow } from "@/components/sections/OpenNow";
 import { HoursList } from "@/components/sections/HoursList";
 import { PageBackdrop } from "@/components/ui/PageBackdrop";
@@ -23,6 +24,8 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   const t = await getTranslations({ locale, namespace: "contact" });
   const c = await getTranslations({ locale, namespace: "common" });
   const h = await getTranslations({ locale, namespace: "hours" });
+  const fees = await getTranslations({ locale, namespace: "fees" });
+  const fee = await feeLine(locale);
   const lines = locale === "hi" ? SITE.address.linesHi : SITE.address.lines;
   const timings = SITE.timings as Timings | null;
   return (
@@ -58,6 +61,15 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               </div>
             ) : <div className="mt-3"><DevTodo>{t("hoursTodo")}</DevTodo></div>}
           </div>
+          {fee ? (
+            <div className="card p-6">
+              <div className="flex items-center gap-3"><IconBadge name="rupee" /><p className="t-eyebrow">{fees("title")}</p></div>
+              <dl className="mt-3 space-y-1 text-lg">
+                <div className="flex flex-wrap gap-x-2"><dt className="text-muted">{fees("fee")}:</dt><dd className="font-semibold text-ink">{SITE.fees.consultation.display}</dd></div>
+                <div className="flex flex-wrap gap-x-2"><dt className="text-muted">{fees("pay")}:</dt><dd>{fees("methods")}</dd></div>
+              </dl>
+            </div>
+          ) : null}
           <ButtonLink href="/book">{c("book")}</ButtonLink>
         </div>
         <div>

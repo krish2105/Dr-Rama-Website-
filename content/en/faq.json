@@ -19,12 +19,16 @@
       "a": "Use the booking form, call the clinic or message on WhatsApp. The clinic will confirm the time with you."
     },
     {
+      "q": "What is the consultation fee and how can I pay?",
+      "a": "The consultation fee is ₹800. You can pay by UPI or cash."
+    },
+    {
       "q": "Does homeopathic care replace emergency or specialist treatment?",
       "a": "No. Homeopathic care does not replace emergency or specialist medical treatment. In an emergency, go to the nearest hospital or call 112."
     },
     {
       "q": "What personal information do you collect when I book?",
-      "a": "Only your name, phone number, preferred date and time, a one-line reason for the visit, and your consent. You can ask for it to be deleted by emailing the clinic."
+      "a": "Only the patient's name, your phone number, the day and time you chose, and the kind of visit you picked from a short list. If you book for a child or another person, we also ask the name of the parent, guardian or person booking. We also keep your consent. You can ask for it to be deleted by emailing the clinic."
     }
   ]
 }

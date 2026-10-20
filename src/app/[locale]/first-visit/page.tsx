@@ -10,6 +10,7 @@ import { QrCode } from "@/components/ui/QrCode";
 import { PrintButton } from "@/components/ui/PrintButton";
 import { HoursList } from "@/components/sections/HoursList";
 import { SITE, SITE_URL, telHref } from "@/lib/site";
+import { feeLine } from "@/components/ui/FeeNote";
 import type { Timings } from "@/lib/openNow";
 import { PageBackdrop } from "@/components/ui/PageBackdrop";
 
@@ -26,6 +27,7 @@ export default async function FirstVisitPage({ params }: { params: Promise<{ loc
   const t = await getTranslations({ locale, namespace: "visit" });
   const c = await getTranslations({ locale, namespace: "common" });
   const f = await getTranslations({ locale, namespace: "footer" });
+  const fee = await feeLine(locale);
   const lines = locale === "hi" ? SITE.address.linesHi : SITE.address.lines;
   const timings = SITE.timings as Timings | null;
   const bookUrl = `${SITE_URL}/${locale}/book?utm_source=qr&utm_medium=print`;
@@ -44,6 +46,7 @@ export default async function FirstVisitPage({ params }: { params: Promise<{ loc
           <h2 className="text-2xl text-ink">{t("beforeTitle")}</h2>
           <p className="mt-2 text-lg">{t("beforeText")}</p>
           {timings ? <div className="mt-4"><HoursList timings={timings} /></div> : null}
+          {fee ? <p className="mt-4 text-lg font-medium text-ink">{fee}</p> : null}
           <p className="mt-4 text-lg"><a className="font-semibold text-primary underline" href={telHref}>{SITE.phone.display}</a></p>
         </section>
 

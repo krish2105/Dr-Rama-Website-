@@ -74,6 +74,7 @@ function PreferCall() {
 function Wizard() {
   const t = useTranslations("book");
   const c = useTranslations("common");
+  const f = useTranslations("fees");
   const locale = useLocale();
   const days = useSyncExternalStore(noop, getDays, () => null);
   const [step, setStep] = useState(1);
@@ -168,6 +169,7 @@ function Wizard() {
           <dd>{when}</dd>
           <dd className="text-muted">{SITE.address.lines.join(", ")}</dd>
         </dl>
+        {SITE.fees?.confirmed && SITE.payment?.confirmed ? <p className="mt-3 text-sm text-muted">{f("line", { amount: SITE.fees.consultation.display })}</p> : null}
         {mode === "dev" ? <p className="dev-todo mt-4">{t("devNote")}</p> : null}
         <div className="mt-5 flex flex-wrap gap-3">
           <a href={waHref(msg)} target="_blank" rel="noopener noreferrer" className="press inline-flex min-h-12 items-center rounded-full bg-primary px-5 font-semibold text-onprimary">{t("successWhatsapp")}</a>

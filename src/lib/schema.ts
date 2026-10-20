@@ -35,6 +35,8 @@ export function clinicSchema(locale: string) {
     ...(SITE.email.confirmed ? { email: SITE.email.value } : {}),
     ...(address ? { address } : {}),
     availableLanguage: ["Hindi", "English"],
+    ...(SITE.fees?.confirmed ? { priceRange: `INR ${SITE.fees.consultation.amount}` } : {}),
+    ...(SITE.payment?.confirmed ? { paymentAccepted: "UPI, Cash", currenciesAccepted: "INR" } : {}),
     ...(SITE.timingsConfirmed && SITE.timings
       ? {
           openingHoursSpecification: DAYS.flatMap((d) =>

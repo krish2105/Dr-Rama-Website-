@@ -6,6 +6,7 @@ const paths: Record<string, React.ReactNode> = {
   pin: <><path d="M12 21s7-6.1 7-11.2A7 7 0 0 0 5 9.8C5 14.9 12 21 12 21Z" /><circle cx="12" cy="9.8" r="2.4" /></>,
   clock: <><circle cx="12" cy="12" r="9" /><path d="M12 7v5.2l3.2 2" /></>,
   directions: <path d="M4 11.5 20 4l-7.5 16-2.2-6.3L4 11.5Z" />,
+  rupee: <><path d="M7 5.5h10M7 9.5h10" /><path d="M9 5.5c4.5 0 4.5 6 0 6H7.5l7 7" /></>,
   clipboard: <><rect x="5.5" y="4.5" width="13" height="16.5" rx="2.2" /><path d="M9 4.5V3.2h6v1.3" /><path d="M9 10h6M9 13.5h3" /></>,
   question: <><circle cx="12" cy="12" r="9" /><path d="M9.6 9.6a2.5 2.5 0 1 1 3.6 2.2c-.8.4-1.2.9-1.2 1.8" /><path d="M12 16.9h.01" /></>,
 };

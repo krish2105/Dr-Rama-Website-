@@ -44,7 +44,8 @@
     "aboutShort": "About",
     "reach": "How to reach",
     "firstVisit": "First visit",
-    "jump": "Jump to"
+    "jump": "Jump to",
+    "fees": "Fees and payment"
   },
   "footer": {
     "disclaimer": "Homeopathic care does not replace emergency or specialist medical treatment.",
@@ -344,5 +345,12 @@
   "camp": {
     "title": "Medical camps and events",
     "lead": "Photographs from medical camps and events where Dr. Mathur has consulted and been honoured. The people shown have agreed to appear here."
+  },
+  "fees": {
+    "title": "Fees and payment",
+    "fee": "Consultation fee",
+    "pay": "Payment",
+    "methods": "UPI or cash",
+    "line": "Consultation fee {amount}. Payment: UPI or cash."
   }
 }

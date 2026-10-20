@@ -8,6 +8,7 @@ import { ButtonLink, ExternalButton, buttonClass } from "@/components/ui/Button"
 import { DevTodo } from "@/components/ui/DevTodo";
 import { HeroVisual } from "@/components/sections/Portrait";
 import { Gallery, hasPhotos } from "@/components/sections/ClinicPhoto";
+import { feeLine } from "@/components/ui/FeeNote";
 import { GlobuleVial } from "@/components/ui/HomeoArt";
 import { CampFloat } from "@/components/sections/CampFloat";
 import Image from "next/image";
@@ -26,6 +27,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const c = await getTranslations({ locale, namespace: "common" });
   const h = await getTranslations({ locale, namespace: "hours" });
   const about = getAbout(locale);
+  const fee = await feeLine(locale);
+  const feeT = await getTranslations({ locale, namespace: "fees" });
   const timings = SITE.timings as Timings | null;
   const lines = locale === "hi" ? SITE.address.linesHi : SITE.address.lines;
 
@@ -158,6 +161,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 {timings ? <><HoursList timings={timings} /><p className="mt-2 text-sm text-muted">{h("byAppointment")}</p></> : <DevTodo>{t("timingsMissing")} Timings and weekly off day are in content/TODO.md.</DevTodo>}
               </div>
             </li>
+            {fee ? (
+              <li className="flex gap-4">
+                <IconBadge name="rupee" />
+                <div>
+                  <p className="font-semibold text-ink">{feeT("title")}</p>
+                  <p className="text-muted">{fee}</p>
+                </div>
+              </li>
+            ) : null}
             <li className="flex gap-4">
               <IconBadge name="phone" />
               <div>
