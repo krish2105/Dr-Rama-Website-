@@ -1,27 +1,35 @@
-import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getJson } from "@/lib/content";
 import { pageMeta } from "@/lib/meta";
 import { CaseHead } from "@/components/ui/CaseHead";
-import { DevTodo } from "@/components/ui/DevTodo";
 import { ButtonLink } from "@/components/ui/Button";
-import { isDev } from "@/lib/site";
+
+type Services = { _status: string; title: string; items: { title: string; text: string }[] };
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "services" });
-  return pageMeta(locale, "/services", t("title"), { noindex: true }); // thin until the doctor supplies the list
+  const d = getJson<Services>(locale, "services");
+  return pageMeta(locale, "/services", d.title, { noindex: d._status === "DRAFT" });
 }
 
 export default async function ServicesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations({ locale, namespace: "services" });
+  const d = getJson<Services>(locale, "services");
   const c = await getTranslations({ locale, namespace: "common" });
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 md:py-14">
-      <CaseHead as="h1" title={t("title")} />
-      <p className="mt-6 text-lg">{t("lead")}</p>
-      <div className="mt-6">{isDev ? <DevTodo>{t("todo")}</DevTodo> : <p className="text-muted">{t("prod")}</p>}</div>
+      <CaseHead as="h1" title={d.title} />
+      {d._status === "DRAFT" ? <p className="mt-4 inline-block rounded-full bg-accent/15 px-3 py-1 text-sm font-semibold text-accentink">{c("draft")}</p> : null}
+      <ul className="mt-10 space-y-5">
+        {d.items.map((i) => (
+          <li key={i.title} className="float-card p-6">
+            <h2 className="text-2xl text-ink">{i.title}</h2>
+            <p className="mt-2 text-lg text-muted">{i.text}</p>
+          </li>
+        ))}
+      </ul>
       <ButtonLink href="/book" className="mt-8">{c("book")}</ButtonLink>
     </div>
   );

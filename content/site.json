@@ -1,20 +1,43 @@
 {
   "_note": "Only facts from PROJECT-BRIEF.md. confirmed:false means the doctor has not yet confirmed it may be published. null means unknown (see content/TODO.md).",
-  "clinic": { "name": "Rajesh Homeo Home" },
+  "clinic": {
+    "name": "Rajesh Homeo Home"
+  },
   "doctor": {
     "name": "Dr. Rama Mathur",
     "nameHi": "डॉ. रमा माथुर",
     "degree": "M.D. (Homoeopathy)",
     "degreeHi": "एम.डी. (होम्योपैथी)",
-    "experienceYears": 31,
-    "languages": ["Hindi", "English"]
+    "experienceYears": 32,
+    "languages": [
+      "Hindi",
+      "English"
+    ]
   },
-  "phone": { "display": "+91 94143 62499", "e164": "+919414362499", "confirmed": false },
-  "whatsapp": { "sameAsPhone": true, "e164": null },
-  "email": { "value": "rama_mathur@yahoo.com", "confirmed": false },
+  "phone": {
+    "display": "+91 94143 62499",
+    "e164": "+919414362499",
+    "confirmed": false
+  },
+  "whatsapp": {
+    "sameAsPhone": true,
+    "e164": null
+  },
+  "email": {
+    "value": "rama_mathur@yahoo.com",
+    "confirmed": false
+  },
   "address": {
-    "lines": ["202, 2nd Floor, Rajvilas Apartment", "Meera Marg, Banipark", "Jaipur, Rajasthan 302016"],
-    "linesHi": ["202, दूसरी मंज़िल, राजविलास अपार्टमेंट", "मीरा मार्ग, बनी पार्क", "जयपुर, राजस्थान 302016"],
+    "lines": [
+      "202, 2nd Floor, Rajvilas Apartment",
+      "Meera Marg, Banipark",
+      "Jaipur, Rajasthan 302016"
+    ],
+    "linesHi": [
+      "202, दूसरी मंज़िल, राजविलास अपार्टमेंट",
+      "मीरा मार्ग, बनी पार्क",
+      "जयपुर, राजस्थान 302016"
+    ],
     "street": "202, 2nd Floor, Rajvilas Apartment, Meera Marg, Banipark",
     "locality": "Jaipur",
     "region": "Rajasthan",
@@ -22,12 +45,90 @@
     "country": "IN",
     "confirmed": false
   },
-  "registration": { "council": null, "number": null },
-  "timings": null,
-  "weeklyOff": null,
+  "registration": {
+    "council": null,
+    "number": null
+  },
+  "timings": {
+    "mon": [
+      [
+        "10:30",
+        "14:00"
+      ],
+      [
+        "18:00",
+        "20:30"
+      ]
+    ],
+    "tue": [
+      [
+        "10:30",
+        "14:00"
+      ],
+      [
+        "18:00",
+        "20:30"
+      ]
+    ],
+    "wed": [
+      [
+        "10:30",
+        "14:00"
+      ],
+      [
+        "18:00",
+        "20:30"
+      ]
+    ],
+    "thu": [
+      [
+        "10:30",
+        "14:00"
+      ],
+      [
+        "18:00",
+        "20:30"
+      ]
+    ],
+    "fri": [
+      [
+        "10:30",
+        "14:00"
+      ],
+      [
+        "18:00",
+        "20:30"
+      ]
+    ],
+    "sat": [
+      [
+        "10:30",
+        "14:00"
+      ],
+      [
+        "18:00",
+        "20:30"
+      ]
+    ],
+    "sun": [
+      [
+        "10:30",
+        "14:00"
+      ]
+    ]
+  },
+  "weeklyOff": "none (Sunday evening closed)",
   "fees": null,
   "mapsUrl": null,
   "appointmentPolicy": null,
-  "portraitPhoto": null,
-  "logo": null
+  "portraitPhoto": {
+    "src": "/photos/doctor-portrait.a1786669.jpg",
+    "width": 560,
+    "height": 560,
+    "altEn": "Dr. Rama Mathur in a cream and pink outfit with a stethoscope around her neck, seated at a table.",
+    "altHi": "डॉ. रमा माथुर, गले में स्टेथोस्कोप पहने, क्रीम और गुलाबी परिधान में मेज़ पर बैठी हुई।"
+  },
+  "logo": null,
+  "timingsConfirmed": false,
+  "timingsSource": "Clinic printed handout (daily 10:30-14:00 and 18:00-20:30; Sunday 10:30-14:00, Sunday evening off). Confirm with the doctor."
 }

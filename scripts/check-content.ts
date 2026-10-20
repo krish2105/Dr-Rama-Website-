@@ -14,7 +14,9 @@ const warnings: string[] = [];
 const BANNED_EN = ["cure", "cured", "cures", "curing", "guarantee", "guaranteed", "100%", "best", "exceptional", "superior", "strong", "miracle", "miraculous", "permanent relief", "no side effects", "success rate"];
 const BANNED_HI = ["गारंटी", "चमत्कार", "सर्वश्रेष्ठ", "सबसे अच्छ", "100%", "पक्का इलाज", "जड़ से"];
 // Allowed only as a quote of a real honour (reported, not self-praise); review by hand.
-const REVIEW = ["outstanding", "उत्कृष्ट", "top", "leading", "renowned"];
+const REVIEW = ["outstanding", "उत्कृष्ट", "leading", "renowned"];
+// Named diseases must not appear as treated conditions (brief + Drugs and Magic Remedies Act 1954 schedule). Review by hand if one is needed.
+const NAMED_DISEASES = ["diabetes", "blood pressure", "hypertension", "cancer", "kidney stone", "gall stone", "epilepsy", "paralysis", "डायबिटीज", "डायबिटिज", "ब्लड प्रेशर", "कैंसर", "पथरी", "मिर्गी", "लकवा"];
 // Brief: do not publish.
 const DO_NOT_PUBLISH = ["date of birth", "nationality", "hobbies", "personal objective", "declaration", "management skills", "harassment", "internal committee", "जन्म तिथि", "राष्ट्रीयता"];
 
@@ -38,6 +40,7 @@ for (const f of files) {
   for (const w of BANNED_EN) if (new RegExp(`(^|[^A-Za-z])${w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^A-Za-z]|$)`, "i").test(scan)) errors.push(`${rel}: banned word "${w}"`);
   for (const w of BANNED_HI) if (scan.includes(w)) errors.push(`${rel}: banned Hindi word "${w}"`);
   for (const w of REVIEW) if (!rel.startsWith("src") && (new RegExp(`(^|[^A-Za-z])${w}([^A-Za-z]|$)`, "i").test(scan) || (/[ऀ-ॿ]/.test(w) && scan.includes(w)))) warnings.push(`${rel}: review wording "${w}" (allowed only as a reported honour)`);
+  for (const w of NAMED_DISEASES) if (!rel.startsWith("src") && scan.toLowerCase().includes(w)) errors.push(`${rel}: named disease "${w}" (no named-disease claims)`);
   for (const w of DO_NOT_PUBLISH) if (scan.toLowerCase().includes(w)) errors.push(`${rel}: do-not-publish topic "${w}"`);
 }
 
@@ -81,7 +84,8 @@ if (!site.phone.confirmed) pending.push("phone not confirmed as public");
 if (!site.email.confirmed) pending.push("email not confirmed as public");
 if (!site.address.confirmed) pending.push("address not confirmed as publishable");
 if (!site.registration.number) pending.push("council registration number missing");
-if (!site.timings) pending.push("clinic timings / weekly off missing");
+if (!site.timings) pending.push("clinic timings missing");
+else if (!site.timingsConfirmed) pending.push("clinic timings came from the printed handout; doctor to confirm");
 if (!site.mapsUrl) pending.push("Google Maps link missing");
 if (!site.portraitPhoto) pending.push("doctor portrait missing");
 if (!site.logo) pending.push("logo missing");

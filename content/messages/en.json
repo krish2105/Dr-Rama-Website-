@@ -1,7 +1,7 @@
 {
   "meta": {
     "siteName": "Rajesh Homeo Home",
-    "defaultDescription": "Rajesh Homeo Home, Banipark, Jaipur. Homeopathic consultations with Dr. Rama Mathur, M.D. (Homoeopathy), 31 years of clinical experience. Hindi and English."
+    "defaultDescription": "Rajesh Homeo Home, Banipark, Jaipur. Homeopathic consultations with Dr. Rama Mathur, M.D. (Homoeopathy), 32 years of clinical experience. Hindi and English."
   },
   "common": {
     "skip": "Skip to content",
@@ -51,7 +51,7 @@
     "eyebrow": "Rajesh Homeo Home · Banipark, Jaipur",
     "title": "Homeopathic care from Dr. Rama Mathur",
     "titleSub": "M.D. (Homoeopathy)",
-    "lead": "31 years of clinical experience. Consultations in Hindi and English, in Banipark, Jaipur.",
+    "lead": "32 years of clinical experience. Consultations in Hindi and English, in Banipark, Jaipur.",
     "actionsLabel": "Reach the clinic",
     "actionCall": "Call the clinic",
     "actionCallNote": "Speak to the clinic",
@@ -60,7 +60,7 @@
     "actionBook": "Request an appointment",
     "actionBookNote": "Takes about a minute",
     "credTitle": "Training and experience",
-    "cred1Big": "31",
+    "cred1Big": "32",
     "cred1": "years of clinical experience",
     "cred2Big": "M.D.",
     "cred2": "Homoeopathy, Rajasthan University, 2001",
@@ -95,7 +95,8 @@
     "riicoPeriod": "1999 to 2023",
     "riicoRole": "Retired as Deputy General Manager",
     "qualTitle": "Qualifications",
-    "visitTodoMap": "Map shows here once the link is supplied."
+    "visitTodoMap": "Map shows here once the link is supplied.",
+    "visitHours": "Clinic hours"
   },
   "book": {
     "title": "Book a visit",
@@ -196,5 +197,32 @@
     "accept": "Accept",
     "decline": "Decline",
     "more": "Privacy"
+  },
+  "hours": {
+    "open": "Open now",
+    "closed": "Closed now",
+    "closesAt": "closes at {time}",
+    "opensAt": "opens at {time}",
+    "opensTomorrow": "opens tomorrow at {time}",
+    "to": "to",
+    "and": "and",
+    "days": {
+      "mon": "Monday",
+      "tue": "Tuesday",
+      "wed": "Wednesday",
+      "thu": "Thursday",
+      "fri": "Friday",
+      "sat": "Saturday",
+      "sun": "Sunday"
+    }
+  },
+  "careAreas": {
+    "title": "Care areas",
+    "lead": "Areas Dr. Mathur consults on. This list does not promise any result.",
+    "referral": "Dr. Mathur refers patients to other health practitioners when appropriate.",
+    "urgent": "Homeopathic care does not replace emergency or specialist medical treatment. For urgent symptoms, go to the nearest hospital or call 112."
+  },
+  "servicesPage": {
+    "title": "Services"
   }
 }

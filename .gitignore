@@ -8,3 +8,8 @@ next-env.d.ts
 # Real clinic photos and the CV are private source material; publish only via public/photos after approval
 source/cv/*
 !source/cv/.gitkeep
+# Private until the people in them consent / not for publication
+source/reference/*
+source/photos/_pending-consent/*
+!source/reference/.gitkeep
+!source/photos/_pending-consent/.gitkeep

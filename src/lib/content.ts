@@ -39,7 +39,7 @@ export function getPost(locale: string, slug: string): Post | undefined {
   return getPosts(locale).find((p) => p.slug === slug);
 }
 
-export function getJson<T>(locale: string, name: "faq" | "privacy"): T {
+export function getJson<T>(locale: string, name: "faq" | "privacy" | "care-areas" | "services"): T {
   const file = path.join(process.cwd(), "content", locale === "hi" ? "hi" : "en", `${name}.json`);
   return JSON.parse(fs.readFileSync(file, "utf8")) as T;
 }

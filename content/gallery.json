@@ -1,4 +1,13 @@
 {
   "_note": "Add real photos from /source/photos to public/photos and list them here with alt text in both languages. Do not edit certificates or plaques in photos.",
-  "photos": []
+  "photos": [
+    {
+      "src": "/photos/clinic-consultation-room.82246227.jpg",
+      "width": 1400,
+      "height": 1020,
+      "altEn": "Consultation room with a glass-top desk, two wooden chairs with blue floral cushions, a black leather chair, bamboo window blinds and a wall cabinet with glass doors.",
+      "altHi": "परामर्श कक्ष: काँच की टॉप वाली मेज़, नीले फूलों वाले कुशन की दो लकड़ी की कुर्सियाँ, काली चमड़े की कुर्सी, खिड़की पर बाँस की चिक और काँच के दरवाज़ों वाली दीवार की अलमारी।",
+      "focus": "50% 65%"
+    }
+  ]
 }

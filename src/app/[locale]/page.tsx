@@ -8,6 +8,9 @@ import { ButtonLink, ExternalButton } from "@/components/ui/Button";
 import { DevTodo } from "@/components/ui/DevTodo";
 import { HeroVisual } from "@/components/sections/Portrait";
 import { Gallery, hasPhotos } from "@/components/sections/ClinicPhoto";
+import { OpenNow } from "@/components/sections/OpenNow";
+import { HoursList } from "@/components/sections/HoursList";
+import type { Timings } from "@/lib/openNow";
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -15,6 +18,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale, namespace: "home" });
   const c = await getTranslations({ locale, namespace: "common" });
   const about = getAbout(locale);
+  const timings = SITE.timings as Timings | null;
   const lines = locale === "hi" ? SITE.address.linesHi : SITE.address.lines;
 
   const action = "flex min-h-[4.25rem] items-center justify-between gap-4 rounded-full px-6 py-2 text-start transition-transform hover:-translate-y-0.5";
@@ -29,6 +33,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <h1 className="mt-3 max-w-xl text-[2.35rem] text-ink md:text-[3.6rem]">{t("title")}</h1>
             <p className="mt-2 text-xl font-semibold text-primary md:text-2xl">{t("titleSub")}</p>
             <p className="mt-5 max-w-lg text-lg text-muted">{t("lead")}</p>
+            {timings ? <div className="mt-4"><OpenNow timings={timings} /></div> : null}
 
             <div className="float-card fade-in d2 mt-8 max-w-xl space-y-2.5 p-2.5" role="group" aria-label={t("actionsLabel")}>
               <a href={telHref} data-evt="click_call" className={`${action} bg-primary text-onprimary`}>
@@ -131,7 +136,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </div>
           </div>
           <div className="space-y-3">
-            {!SITE.timings ? <DevTodo>{t("timingsMissing")} Timings and weekly off day are in content/TODO.md.</DevTodo> : null}
+            {timings ? (
+              <div className="float-card p-6">
+                <p className="marginalia mb-3">{t("visitHours")}</p>
+                <HoursList timings={timings} />
+              </div>
+            ) : <DevTodo>{t("timingsMissing")} Timings and weekly off day are in content/TODO.md.</DevTodo>}
             {!SITE.mapsUrl ? <DevTodo>{t("visitTodoMap")} Directions button uses a search link for now.</DevTodo> : null}
           </div>
         </div>

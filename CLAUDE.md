@@ -2,7 +2,7 @@
 
 **Name correction (owner, 2026-10-20): the name is "Rajesh Homeo Home", not "Rajesh Homeo Clinic" as written in PROJECT-BRIEF.md. Hindi: "राजेश होम्यो होम". Never write "Rajesh Homeo Clinic".**
 
-Bilingual website for Dr. Rama Mathur, M.D. (Homoeopathy), Rajesh Homeo Home, Jaipur. Source of truth: `PROJECT-BRIEF.md`. Goal: turn a mobile visitor into a call, WhatsApp message or booking in under 30 seconds, and make her 31 years and qualifications easy to trust.
+Bilingual website for Dr. Rama Mathur, M.D. (Homoeopathy), Rajesh Homeo Home, Jaipur. Source of truth: `PROJECT-BRIEF.md`. Goal: turn a mobile visitor into a call, WhatsApp message or booking in under 30 seconds, and make her 32 years and qualifications easy to trust.
 
 ## Rule 1: Never invent facts
 - Use only facts in `PROJECT-BRIEF.md` or `/source` (cv, photos, brand). Nothing from memory, the web or assumptions.
@@ -26,6 +26,15 @@ Bilingual website for Dr. Rama Mathur, M.D. (Homoeopathy), Rajesh Homeo Home, Ja
 - Patient stories only with recorded consent, about the care experience, never results.
 - GA4 events must carry no health details (no reason text, no condition names).
 - Not legal advice: recommend a qualified review before launch (Drugs and Magic Remedies Act 1954, DPDP Act 2023 / Rules 2025, council advertising rules).
+
+## Added after the printed handout and photos (2026-10-20)
+- The practice is inside a flat (202, Rajvilas Apartment). No storefront or street-signboard imagery.
+- `source/reference/` holds the printed handout and the original room photo. They are private and never published. The handout lists named diseases and says "इलाज"; do not copy that wording. Take only plain facts from it (hours, address, phone).
+- Named diseases are never published as treated conditions. Several (diabetes, blood pressure, menstrual flow disorders, kidney and gall stones) are on the schedule of the Drugs and Magic Remedies Act 1954. Care areas stay broad categories. `npm run check-content` fails on a list of named diseases.
+- Photos showing patients or other people stay in `source/photos/_pending-consent/` until each person consents. Never send such photos to an AI tool.
+- Hours come from the handout and are marked unconfirmed (`timingsConfirmed: false` in `content/site.json`).
+- Experience is **32 years** (confirmed by the owner 2026-10-20; the CV said 31, the handout says 32).
+- Open conflict: "2nd Floor" (brief) vs "1st" (handout). Keep the brief's value until the doctor confirms.
 
 ## Do NOT publish
 Date of birth, gender, nationality, hobbies, "personal objective", the declaration, management skills, governance or harassment-prevention trainings, her internal committee roles at RIICO. The CV itself is never published.

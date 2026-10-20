@@ -1,4 +1,7 @@
 import { SITE, SITE_URL } from "./site";
+import { DAYS, type Timings } from "./openNow";
+
+const SCHEMA_DAY = { mon: "Monday", tue: "Tuesday", wed: "Wednesday", thu: "Thursday", fri: "Friday", sat: "Saturday", sun: "Sunday" } as const;
 
 /** JSON-LD from confirmed facts only. Anything with confirmed:false or null is left out. */
 export function clinicSchema(locale: string) {
@@ -27,6 +30,13 @@ export function clinicSchema(locale: string) {
     ...(SITE.email.confirmed ? { email: SITE.email.value } : {}),
     ...(address ? { address } : {}),
     availableLanguage: ["Hindi", "English"],
+    ...(SITE.timingsConfirmed && SITE.timings
+      ? {
+          openingHoursSpecification: DAYS.flatMap((d) =>
+            ((SITE.timings as Timings)[d] ?? []).map(([opens, closes]) => ({ "@type": "OpeningHoursSpecification", dayOfWeek: SCHEMA_DAY[d], opens, closes })),
+          ),
+        }
+      : {}),
     employee: { "@id": `${SITE_URL}/#physician` },
   };
   return { "@context": "https://schema.org", "@graph": [clinic, physician] };

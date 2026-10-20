@@ -5,7 +5,9 @@ import { CaseHead } from "@/components/ui/CaseHead";
 import { DevTodo } from "@/components/ui/DevTodo";
 import { ExternalButton, ButtonLink } from "@/components/ui/Button";
 import { SITE, telHref, waHref, mapsDirectionsHref } from "@/lib/site";
-import { isOpenNow, type Timings } from "@/lib/openNow";
+import type { Timings } from "@/lib/openNow";
+import { OpenNow } from "@/components/sections/OpenNow";
+import { HoursList } from "@/components/sections/HoursList";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -19,7 +21,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   const t = await getTranslations({ locale, namespace: "contact" });
   const c = await getTranslations({ locale, namespace: "common" });
   const lines = locale === "hi" ? SITE.address.linesHi : SITE.address.lines;
-  const open = isOpenNow(SITE.timings as Timings | null);
+  const timings = SITE.timings as Timings | null;
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 md:py-14">
       <CaseHead as="h1" title={t("title")} />
@@ -43,9 +45,12 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           </div>
           <div className="card p-6">
             <p className="marginalia">{t("hours")}</p>
-            {open === null ? <div className="mt-3"><DevTodo>{t("hoursTodo")}</DevTodo></div> : (
-              <p className="mt-2 text-lg font-semibold">{open ? t("openNow") : t("closedNow")}</p>
-            )}
+            {timings ? (
+              <div className="mt-3 space-y-4">
+                <OpenNow timings={timings} />
+                <HoursList timings={timings} />
+              </div>
+            ) : <div className="mt-3"><DevTodo>{t("hoursTodo")}</DevTodo></div>}
           </div>
           <ButtonLink href="/book">{c("book")}</ButtonLink>
         </div>

@@ -23,20 +23,22 @@ export function Gallery({ limit }: { limit?: number }) {
       </div>
     );
   }
+  const single = list.length === 1;
   return (
-    <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <ul className={single ? "mx-auto max-w-3xl" : "grid gap-5 sm:grid-cols-2 lg:grid-cols-3"}>
       {list.map((p, i) => (
         <li
           key={p.src}
           className={`overflow-hidden rounded-[28px] border-[6px] border-surface bg-surface shadow-[var(--shadow-float)] transition-transform hover:-translate-y-1 ${tilt[i % tilt.length]} ${i === 0 && list.length >= 3 ? "lg:col-span-2 lg:row-span-2" : ""}`}
         >
-          <div className="relative aspect-[4/3] h-full min-h-48 w-full">
+          <div className={`relative h-full min-h-48 w-full ${single ? "aspect-[4/3] sm:aspect-[16/10]" : "aspect-[4/3]"}`}>
             <Image
               src={p.src}
               alt={altFor(p, locale)}
               fill
               sizes={i === 0 && list.length >= 3 ? "(min-width:1024px) 66vw, (min-width:640px) 50vw, 100vw" : "(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"}
               className="object-cover"
+              style={p.focus ? { objectPosition: p.focus } : undefined}
             />
           </div>
         </li>
