@@ -1,6 +1,6 @@
 # What remains (updated 20 Oct 2026)
 
-How to do each item, plus the Instagram and Google Business setup: `docs/LAUNCH-AND-INSTAGRAM-GUIDE.md`.
+How to do each item, plus the Instagram and Google Business setup: `docs/LAUNCH-AND-INSTAGRAM-GUIDE.md`. For the clinic (non-technical, Hinglish, costs in INR): `docs/Rajesh-Homeo-Home-Go-Live-Guide-Hinglish.pdf`.
 
 Nothing below may be invented. Placeholders show in development only; production builds never show a fake fact.
 

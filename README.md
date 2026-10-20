@@ -14,7 +14,7 @@ Next.js 16 (App Router) + TypeScript + Tailwind 4 + next-intl + MDX. Facts and r
 | `content/` | All clinic text as JSON and MDX so the doctor can edit it: `site.json` (facts), `messages/` (page text), `en/` and `hi/` (About, FAQ, Privacy, Services, Care areas), `blog/` |
 | `public/` | Optimised photos, artwork, fonts and the share image |
 | `social/templates/` | Blue-pottery templates for Instagram, Facebook and ads, at posting sizes |
-| `docs/` | `LAUNCH-AND-INSTAGRAM-GUIDE.md`, the Word pack `Rajesh-Homeo-Home-Instagram-Meta-Ads-Launch-Pack.docx` (setup, 24 posts with captions, Reels, 6 ads, rules) and the image-decision notes |
+| `docs/` | `LAUNCH-AND-INSTAGRAM-GUIDE.md`, the Word pack `Rajesh-Homeo-Home-Instagram-Meta-Ads-Launch-Pack.docx` (setup, 24 posts with captions, Reels, 6 ads, rules), the Hinglish go-live guide for the clinic `Rajesh-Homeo-Home-Go-Live-Guide-Hinglish` (.docx and .pdf: what is missing, costs in INR, step by step) and the image-decision notes |
 | `scripts/` | `npm run photos` (import photos) and `npm run check-content` (compliance check) |
 | `content/TODO.md` | Everything still open |
 
