@@ -24,6 +24,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
   return (
     <div className="relative">
       <ArtBackdrop src="/art/services-bg.webp" className="inset-x-0 -top-24 h-[28rem]" opacity={0.8} />
+      <ArtBackdrop src="/art/dark-pattern.webp" dark className="inset-x-0 -top-24 h-[22rem]" opacity={0.3} />
       <div className="relative z-10 mx-auto max-w-3xl px-4 py-10 sm:px-6 md:py-14">
       <CaseHead as="h1" title={d.title} />
       <ul className="mt-10 space-y-5">

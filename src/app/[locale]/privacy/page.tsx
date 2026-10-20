@@ -6,6 +6,7 @@ import { CaseHead } from "@/components/ui/CaseHead";
 import { DevTodo } from "@/components/ui/DevTodo";
 import { SITE } from "@/lib/site";
 import { JumpTo } from "@/components/layout/JumpTo";
+import { PageBackdrop } from "@/components/ui/PageBackdrop";
 
 type Priv = { title: string; _status: string; sections: { h: string; p: string[] }[] };
 
@@ -21,6 +22,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
   const t = await getTranslations({ locale, namespace: "privacy" });
   const nav = await getTranslations({ locale, namespace: "nav" });
   return (
+    <PageBackdrop>
     <div className="mx-auto max-w-2xl px-4 py-10 sm:px-6 md:py-14">
       <CaseHead as="h1" title={d.title} />
       <JumpTo label={nav("jump")} items={d.sections.map((s, i) => ({ id: `p${i}`, label: s.h }))} />
@@ -37,5 +39,6 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
         </p>
       </div>
     </div>
+    </PageBackdrop>
   );
 }

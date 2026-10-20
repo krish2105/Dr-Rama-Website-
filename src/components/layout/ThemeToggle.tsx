@@ -19,10 +19,17 @@ const icons: Record<Pref, React.ReactNode> = {
 
 const listeners = new Set<() => void>();
 const subscribe = (cb: () => void) => { listeners.add(cb); return () => { listeners.delete(cb); }; };
-const getPref = (): Pref => {
+export const subscribeTheme = subscribe;
+export const getPref = (): Pref => {
   const v = document.documentElement.dataset.themePref;
   return v === "light" || v === "dark" ? v : "system";
 };
+
+export function setThemePref(p: Pref) {
+  try { localStorage.setItem("theme", p); } catch {}
+  apply(p);
+  listeners.forEach((l) => l());
+}
 
 export function ThemeToggle() {
   const t = useTranslations("common");
@@ -35,11 +42,7 @@ export function ThemeToggle() {
     return () => mq.removeEventListener("change", onChange);
   }, []);
 
-  function choose(p: Pref) {
-    try { localStorage.setItem("theme", p); } catch {}
-    apply(p);
-    listeners.forEach((l) => l());
-  }
+  const choose = setThemePref;
 
   const labels: Record<Pref, string> = { light: t("themeLight"), dark: t("themeDark"), system: t("themeSystem") };
 

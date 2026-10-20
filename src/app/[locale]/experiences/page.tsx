@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { pageMeta } from "@/lib/meta";
 import Image from "next/image";
 import { CaseHead } from "@/components/ui/CaseHead";
+import { PageBackdrop } from "@/components/ui/PageBackdrop";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -15,6 +16,7 @@ export default async function ExperiencesPage({ params }: { params: Promise<{ lo
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "experiences" });
   return (
+    <PageBackdrop>
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 md:py-14">
       <CaseHead as="h1" title={t("title")} />
       <p className="mt-6 text-lg">{t("lead")}</p>
@@ -23,5 +25,6 @@ export default async function ExperiencesPage({ params }: { params: Promise<{ lo
         <p>{t("empty")}</p>
       </div>
     </div>
+    </PageBackdrop>
   );
 }

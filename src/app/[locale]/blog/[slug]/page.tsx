@@ -6,6 +6,7 @@ import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { getPost, getPosts } from "@/lib/content";
 import { CaseHead } from "@/components/ui/CaseHead";
+import { PageBackdrop } from "@/components/ui/PageBackdrop";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) => getPosts(locale).map((p) => ({ locale, slug: p.slug })));
@@ -34,6 +35,7 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
   if (!post) notFound();
   const t = await getTranslations({ locale, namespace: "blog" });
   return (
+    <PageBackdrop>
     <article className="mx-auto max-w-2xl px-4 py-10 sm:px-6 md:py-14">
       <Link href="/blog" className="inline-flex min-h-12 items-center text-primary underline">← {t("back")}</Link>
       <CaseHead as="h1" title={post.title} className="mt-3" />
@@ -41,5 +43,6 @@ export default async function PostPage({ params }: { params: Promise<{ locale: s
         <MDXRemote source={post.body} />
       </div>
     </article>
+    </PageBackdrop>
   );
 }

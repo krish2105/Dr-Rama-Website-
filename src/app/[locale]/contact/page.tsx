@@ -9,6 +9,7 @@ import type { Timings } from "@/lib/openNow";
 import { IconBadge } from "@/components/ui/Icon";
 import { OpenNow } from "@/components/sections/OpenNow";
 import { HoursList } from "@/components/sections/HoursList";
+import { PageBackdrop } from "@/components/ui/PageBackdrop";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -25,6 +26,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   const lines = locale === "hi" ? SITE.address.linesHi : SITE.address.lines;
   const timings = SITE.timings as Timings | null;
   return (
+    <PageBackdrop>
     <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 md:py-14">
       <CaseHead as="h1" title={t("title")} />
       <p className="mt-6 text-lg text-muted">{t("lead")}</p>
@@ -72,5 +74,6 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
         </div>
       </div>
     </div>
+    </PageBackdrop>
   );
 }

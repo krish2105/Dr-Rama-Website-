@@ -139,12 +139,10 @@
 .pottery-dots::after { content: ""; position: absolute; right: -2.5rem; top: -2.5rem; width: 8rem; height: 8rem; border-radius: 50%; border: 10px dotted rgb(255 255 255 / .16); pointer-events: none; }
 :root[data-theme="dark"] .pottery-dots::after { border-color: rgb(13 22 48 / .2); }
 
-/* Dark-mode artwork: shown only in dark mode and only from tablet width up. */
+/* Dark-mode artwork: shown only in dark mode, on phones and desktops. */
 .art-dark { display: none; }
-@media (min-width: 768px) {
-  :root[data-theme="dark"] .art-dark { display: block; }
-}
-@media (min-width: 768px) and (prefers-color-scheme: dark) {
+:root[data-theme="dark"] .art-dark { display: block; }
+@media (prefers-color-scheme: dark) {
   :root:not([data-theme]) .art-dark { display: block; }
 }
 

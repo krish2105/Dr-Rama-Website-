@@ -11,6 +11,7 @@ import { PrintButton } from "@/components/ui/PrintButton";
 import { HoursList } from "@/components/sections/HoursList";
 import { SITE, SITE_URL, telHref } from "@/lib/site";
 import type { Timings } from "@/lib/openNow";
+import { PageBackdrop } from "@/components/ui/PageBackdrop";
 
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -29,6 +30,7 @@ export default async function FirstVisitPage({ params }: { params: Promise<{ loc
   const timings = SITE.timings as Timings | null;
   const bookUrl = `${SITE_URL}/${locale}/book?utm_source=qr&utm_medium=print`;
   return (
+    <PageBackdrop>
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 md:py-14">
       <style>{"@page{size:A4;margin:14mm}"}</style>
       <div aria-hidden="true" className="relative mb-8 h-14 overflow-hidden rounded-2xl sm:h-20">
@@ -92,5 +94,6 @@ export default async function FirstVisitPage({ params }: { params: Promise<{ loc
         <a href={`/downloads/first-visit-${locale}.pdf`} download className="press inline-flex min-h-12 items-center rounded-full border border-primary/50 px-5 font-semibold text-primary hover:bg-soft">{c("downloadPdf")}</a>
       </div>
     </div>
+    </PageBackdrop>
   );
 }

@@ -5,6 +5,7 @@ import { pageMeta } from "@/lib/meta";
 import { getPosts } from "@/lib/content";
 import Image from "next/image";
 import { CaseHead } from "@/components/ui/CaseHead";
+import { PageBackdrop } from "@/components/ui/PageBackdrop";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -18,6 +19,7 @@ export default async function BlogIndex({ params }: { params: Promise<{ locale: 
   const t = await getTranslations({ locale, namespace: "blog" });
   const posts = getPosts(locale);
   return (
+    <PageBackdrop>
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 md:py-14">
       <CaseHead as="h1" title={t("title")} />
       <p className="mt-6 text-lg text-muted">{t("lead")}</p>
@@ -34,5 +36,6 @@ export default async function BlogIndex({ params }: { params: Promise<{ locale: 
         </ul>
       )}
     </div>
+    </PageBackdrop>
   );
 }

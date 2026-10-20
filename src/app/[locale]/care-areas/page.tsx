@@ -23,6 +23,7 @@ export default async function CareAreasPage({ params }: { params: Promise<{ loca
   return (
     <div className="relative">
       <ArtBackdrop src="/art/services-bg.webp" className="inset-x-0 -top-24 h-[28rem]" opacity={0.8} />
+      <ArtBackdrop src="/art/dark-pattern.webp" dark className="inset-x-0 -top-24 h-[22rem]" opacity={0.3} />
       <div className="relative z-10 mx-auto max-w-4xl px-4 py-10 sm:px-6 md:py-14">
       <CaseHead as="h1" title={d.title} />
       <p className="mt-6 text-lg text-muted">{t("lead")}</p>

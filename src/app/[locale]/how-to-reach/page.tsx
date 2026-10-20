@@ -10,6 +10,7 @@ import { SITE, telHref, waHref, mapsDirectionsHref, mapsEmbedUrl } from "@/lib/s
 import { OpenNow } from "@/components/sections/OpenNow";
 import { HoursList } from "@/components/sections/HoursList";
 import type { Timings } from "@/lib/openNow";
+import { PageBackdrop } from "@/components/ui/PageBackdrop";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -27,6 +28,7 @@ export default async function ReachPage({ params }: { params: Promise<{ locale: 
   const lines = locale === "hi" ? SITE.address.linesHi : SITE.address.lines;
   const timings = SITE.timings as Timings | null;
   return (
+    <PageBackdrop>
     <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 md:py-14">
       <JsonLd data={breadcrumbSchema(locale, [{ name: nav("home"), route: "" }, { name: t("title"), route: "/how-to-reach" }])} />
       <CaseHead as="h1" title={t("title")} />
@@ -72,5 +74,6 @@ export default async function ReachPage({ params }: { params: Promise<{ locale: 
         </div>
       </div>
     </div>
+    </PageBackdrop>
   );
 }

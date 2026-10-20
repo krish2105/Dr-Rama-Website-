@@ -12,6 +12,7 @@ import { CampFloat } from "@/components/sections/CampFloat";
 import { JumpTo } from "@/components/layout/JumpTo";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
+import { PageBackdrop } from "@/components/ui/PageBackdrop";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -32,6 +33,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const nav = await getTranslations({ locale, namespace: "nav" });
 
   return (
+    <PageBackdrop>
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-14">
       <JsonLd data={breadcrumbSchema(locale, [{ name: nav("home"), route: "" }, { name: a.title, route: "/about" }])} />
       <JumpTo label={nav("jump")} items={[["quals", t("qualifications")], ["exp", t("experience")], ["mem", t("memberships")], ["conf", t("conferences")], ["comm", t("community")]].map(([id, label]) => ({ id, label }))} />
@@ -134,5 +136,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <ButtonLink href="/book" variant="secondary" className="mt-5 !border-onprimary !text-onprimary hover:!bg-white/10">{c("book")}</ButtonLink>
       </div>
     </div>
+    </PageBackdrop>
   );
 }
