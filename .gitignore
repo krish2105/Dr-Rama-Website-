@@ -1,0 +1,10 @@
+node_modules
+.next
+.env
+.env.local
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+# Real clinic photos and the CV are private source material; publish only via public/photos after approval
+source/cv/*
+!source/cv/.gitkeep

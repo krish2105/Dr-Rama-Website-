@@ -1,0 +1,135 @@
+{
+  "_status": "DRAFT",
+  "_note": "Written only from PROJECT-BRIEF.md facts. DRAFT until Dr. Mathur approves. Hindi needs native review.",
+  "title": "About Dr. Rama Mathur",
+  "intro": [
+    "Dr. Rama Mathur is a homoeopathic doctor in Jaipur with 31 years of clinical experience. She sees patients at Rajesh Homeo Clinic in Banipark, in Hindi and English.",
+    "She holds an M.D. (Homoeopathy) from Rajasthan University (2001), an NDDY from the Gandhi National Academy of Naturopathy (2004) and an MBA in HR (2010).",
+    "She keeps detailed clinical notes and records for each patient, refers patients to other health practitioners when appropriate, and communicates clearly with patients."
+  ],
+  "qualifications": [
+    {
+      "title": "M.D. (Homoeopathy)",
+      "org": "Rajasthan University",
+      "when": "2001"
+    },
+    {
+      "title": "NDDY",
+      "org": "Gandhi National Academy of Naturopathy",
+      "when": "May 2004"
+    },
+    {
+      "title": "MBA (HR)",
+      "org": "",
+      "when": "June 2010"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Medical Officer",
+      "org": "Khandelwal Vaishya Sewa Sangh, Shastri Nagar, Jaipur",
+      "when": "1996 to 2005",
+      "note": ""
+    },
+    {
+      "role": "Empanelled homoeopathic doctor",
+      "org": "RIICO (Rajasthan State Industrial Development & Investment Corporation Ltd), Jaipur",
+      "when": "1999 to 2023",
+      "note": "24 years of service. Retired as Deputy General Manager."
+    },
+    {
+      "role": "Guest faculty (Assistant Professor)",
+      "org": "SKHMC & RC",
+      "when": "2005",
+      "note": ""
+    },
+    {
+      "role": "Medical Officer",
+      "org": "Orange Cross, engaged by Kamla Poddar Institute, Banipark, Jaipur",
+      "when": "2010",
+      "note": "Managed their health care and wellness programme."
+    }
+  ],
+  "memberships": [
+    {
+      "name": "Liga International Homoeopathic Medical League, Delhi",
+      "when": "2016"
+    },
+    {
+      "name": "Life Member, Rajasthan Swasthya Yog Parishad",
+      "when": "1992"
+    }
+  ],
+  "conferences": [
+    {
+      "name": "National Conference on Homoeopathy",
+      "where": "Nainital, Uttarakhand",
+      "when": "2019"
+    },
+    {
+      "name": "18th National Homoeopathic Conference",
+      "where": "Jammu and Kashmir",
+      "when": "2019"
+    },
+    {
+      "name": "International Conference Liga",
+      "where": "New Delhi",
+      "when": "2016"
+    },
+    {
+      "name": "Rajasthan Homoeo Physician Association",
+      "where": "Jaipur",
+      "when": "2010"
+    },
+    {
+      "name": "State Campaign of Homoeopathy for Mother and Child Care",
+      "where": "Jaipur",
+      "when": "2009"
+    },
+    {
+      "name": "11th Homoeopathic Conference",
+      "where": "Agra",
+      "when": "2009"
+    },
+    {
+      "name": "Department of AYUSH, Ministry of Health and Family Welfare",
+      "where": "Jaipur",
+      "when": "2005"
+    },
+    {
+      "name": "International Yoga Conference \"YOGACON\"",
+      "where": "Jaipur",
+      "when": "2004"
+    },
+    {
+      "name": "International Homoeopathic Conference",
+      "where": "Agra",
+      "when": "2003"
+    },
+    {
+      "name": "14th AHML International Homoeopathic Conference",
+      "where": "New Delhi",
+      "when": "2003"
+    },
+    {
+      "name": "Homoeopathy Millennium Conference",
+      "where": "Jaipur",
+      "when": "2001"
+    },
+    {
+      "name": "9th International Homoeopathic Conference",
+      "where": "Jaipur",
+      "when": "1997"
+    },
+    {
+      "name": "National Homoeopathic Conference",
+      "where": "Jaipur",
+      "when": "1994"
+    }
+  ],
+  "community": [
+    "Founder and Chairperson, Abhilasha Women's Welfare Society, Jaipur (registered NGO with the Government of Rajasthan since 2006).",
+    "Honoured by Rajasthan Patrika for outstanding service and dedication at a medical camp (2012).",
+    "Contributed to a blood donation camp organised by Swasthya Kalyan Blood Bank, Jaipur."
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "siteName": "Rajesh Homeo Clinic",
+    "defaultDescription": "Rajesh Homeo Clinic, Banipark, Jaipur. Homeopathic consultations with Dr. Rama Mathur, M.D. (Homoeopathy), 31 years of clinical experience. Hindi and English."
+  },
+  "common": {
+    "skip": "Skip to content",
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "book": "Book a visit",
+    "bookShort": "Book",
+    "menu": "Menu",
+    "close": "Close",
+    "language": "Language",
+    "theme": "Theme",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "themeSystem": "Auto",
+    "draft": "DRAFT: awaiting the doctor's approval",
+    "readMore": "Read more",
+    "directions": "Get directions",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "photoPlaceholder": "Real clinic photo to be added",
+    "whatsappPrefill": "Hello, I would like to ask about an appointment at Rajesh Homeo Clinic."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About the doctor",
+    "services": "Services",
+    "careAreas": "Care areas",
+    "book": "Book",
+    "online": "Online consultation",
+    "experiences": "Patient experiences",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "privacy": "Privacy and disclaimer"
+  },
+  "footer": {
+    "disclaimer": "Homeopathic care does not replace emergency or specialist medical treatment.",
+    "registration": "Registration",
+    "rights": "Rajesh Homeo Clinic",
+    "explore": "Explore",
+    "visit": "Visit",
+    "dataNote": "To ask for your booking data to be deleted, email us."
+  },
+  "home": {
+    "eyebrow": "Rajesh Homeo Clinic · Banipark, Jaipur",
+    "title": "Homeopathic care from Dr. Rama Mathur",
+    "titleSub": "M.D. (Homoeopathy)",
+    "lead": "31 years of clinical experience. Consultations in Hindi and English, in Banipark, Jaipur.",
+    "actionsLabel": "Reach the clinic",
+    "actionCall": "Call the clinic",
+    "actionCallNote": "Speak to the clinic",
+    "actionWhatsapp": "Message on WhatsApp",
+    "actionWhatsappNote": "Ask about a visit",
+    "actionBook": "Request an appointment",
+    "actionBookNote": "Takes about a minute",
+    "credTitle": "Training and experience",
+    "cred1Big": "31",
+    "cred1": "years of clinical experience",
+    "cred2Big": "M.D.",
+    "cred2": "Homoeopathy, Rajasthan University, 2001",
+    "cred3Big": "2",
+    "cred3": "languages: Hindi and English",
+    "cred4Big": "24",
+    "cred4": "years as an empanelled homoeopathic doctor at RIICO, Jaipur (1999 to 2023)",
+    "practiceTitle": "How Dr. Mathur practises",
+    "practiceMargin": "from her own record of practice",
+    "practice1": "Keeps detailed clinical notes and records for each patient.",
+    "practice2": "Refers patients to other health practitioners when appropriate.",
+    "practice3": "Communicates clearly with patients.",
+    "aboutTitle": "About Dr. Rama Mathur",
+    "aboutBody": "M.D. (Homoeopathy) from Rajasthan University (2001), NDDY from the Gandhi National Academy of Naturopathy (2004) and an MBA (HR) (2010). She has served as a medical officer, a guest faculty member and an empanelled homoeopathic doctor, and founded a women's welfare society in Jaipur.",
+    "aboutLink": "Read her full profile",
+    "galleryTitle": "The consultation room",
+    "galleryNote": "Photos of the real clinic.",
+    "visitTitle": "Visit the clinic",
+    "visitBody": "Rajesh Homeo Clinic is on the second floor of Rajvilas Apartment, Meera Marg, Banipark.",
+    "timingsMissing": "Clinic timings will be shown here once confirmed.",
+    "ctaTitle": "Ready to book a visit?",
+    "ctaBody": "Send your name, phone number and a preferred time. The clinic will get back to you."
+  },
+  "book": {
+    "title": "Book a visit",
+    "lead": "Share a few details and the clinic will confirm the time with you. We ask only for what is needed.",
+    "name": "Your name",
+    "phone": "Phone number",
+    "phoneHint": "10-digit mobile number. Add +91 if you like.",
+    "date": "Preferred date",
+    "time": "Preferred time",
+    "reason": "Reason for the visit, in one line",
+    "reasonHint": "Keep it brief. Please do not share detailed medical information here.",
+    "consent": "I agree that the clinic may use these details to contact me about this appointment.",
+    "consentLink": "Read how we use your data",
+    "submit": "Send request",
+    "sending": "Sending…",
+    "errName": "Please enter your name.",
+    "errPhone": "Please enter a valid phone number.",
+    "errDate": "Please choose a date.",
+    "errTime": "Please choose a time.",
+    "errReason": "Please add a short reason.",
+    "errConsent": "Please tick the consent box to continue.",
+    "errGeneric": "Something went wrong. Please call the clinic instead.",
+    "successTitle": "Request received",
+    "successBody": "Thank you. The clinic will contact you to confirm the time. You can also message the clinic on WhatsApp.",
+    "successWhatsapp": "Confirm on WhatsApp",
+    "devNote": "Development mode: this request is logged, not saved.",
+    "deletion": "To have your data deleted, email the clinic and mention your phone number.",
+    "slot_morning": "Morning",
+    "slot_afternoon": "Afternoon",
+    "slot_evening": "Evening",
+    "slot_any": "Any time",
+    "successWhatsappMsg": "Hello, I have requested an appointment at Rajesh Homeo Clinic. Name: {name}. Preferred: {date}, {slot}."
+  },
+  "pages": {
+    "comingTitle": "Coming soon",
+    "comingBody": "This page is being prepared.",
+    "backHome": "Back to home"
+  },
+  "about": {
+    "qualifications": "Qualifications",
+    "experience": "Experience",
+    "memberships": "Memberships",
+    "conferences": "Conferences attended",
+    "community": "Community work",
+    "portraitTodo": "Doctor portrait photo is missing (content/TODO.md)."
+  },
+  "services": {
+    "title": "Services",
+    "lead": "Homeopathic consultation with Dr. Rama Mathur, M.D. (Homoeopathy), in Hindi or English, at Rajesh Homeo Clinic, Banipark, Jaipur.",
+    "todo": "The detailed list of services needs the doctor's own wording (content/TODO.md).",
+    "prod": "A fuller description of services is being prepared. To ask a question, please call or message the clinic."
+  },
+  "care": {
+    "title": "Care areas",
+    "lead": "This page will describe the areas of care Dr. Mathur works in.",
+    "todo": "Care areas must come from the doctor, with no outcome claims about any named disease (content/TODO.md).",
+    "prod": "This page is being prepared. To ask whether the clinic can help with your concern, please call or message the clinic."
+  },
+  "online": {
+    "title": "Online consultation",
+    "lead": "Online consultation is planned for a later phase and is not available yet.",
+    "body": "For now, you can book a visit at the clinic, call, or message on WhatsApp."
+  },
+  "experiences": {
+    "title": "Patient experiences",
+    "lead": "Stories will appear here only with the patient's recorded consent, and will describe the experience of care, never results.",
+    "empty": "No stories have been published yet."
+  },
+  "blog": {
+    "title": "Blog",
+    "lead": "Short, plain-language notes from the clinic.",
+    "draftTag": "DRAFT",
+    "back": "All posts",
+    "none": "No posts yet."
+  },
+  "faq": {
+    "title": "Frequently asked questions"
+  },
+  "contact": {
+    "title": "Contact",
+    "lead": "Call, message or visit.",
+    "hours": "Clinic hours",
+    "hoursTodo": "Clinic timings and weekly off day are missing (content/TODO.md). The open-now label needs them.",
+    "map": "Map",
+    "mapTodo": "Google Maps embed needs the map link (content/TODO.md).",
+    "emailLabel": "Email",
+    "privacyNote": "How we use your details",
+    "openNow": "Open now",
+    "closedNow": "Closed now"
+  },
+  "privacy": {
+    "title": "Privacy and disclaimer",
+    "contactLine": "To ask for your data to be seen, corrected or deleted, email:",
+    "retentionTodo": "Retention period is not decided yet (content/TODO.md). It must be stated here before launch."
+  },
+  "consent": {
+    "text": "We use Google Analytics, only if you agree, to count visits and clicks. No health details are sent.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "more": "Privacy"
+  }
+}

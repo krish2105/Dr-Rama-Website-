@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+/* ---------- Design tokens: "Apothecary & case-notes" ---------- */
+:root {
+  --cream: #faf7f0;
+  --green: #1f4d3a;
+  --sage: #8fae8b;
+  --sandstone: #c8704f;
+  --wood: #6b4a32;
+
+  --bg: #faf7f0;
+  --surface: #fffdf8;
+  --surface-2: #f2ede1;
+  --ink: #1d2a23;
+  --muted: #4a5850;
+  --line: #ddd5c3;
+  --primary: #1f4d3a;
+  --on-primary: #faf7f0;
+  --primary-soft: #e3ece1;
+  --accent: #c8704f;
+  --accent-ink: #94452a;
+  --wood-ink: #6b4a32;
+  --focus: #1f4d3a;
+  --shadow: 0 1px 2px rgb(31 77 58 / 0.06), 0 8px 24px rgb(31 77 58 / 0.08);
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #0f2219;
+  --surface: #15301f;
+  --surface-2: #1b3a2a;
+  --ink: #f3eddd;
+  --muted: #b9c6b8;
+  --line: #34503f;
+  --primary: #8fae8b;
+  --on-primary: #0f2219;
+  --primary-soft: #1d3d2c;
+  --accent: #e0916f;
+  --accent-ink: #efa586;
+  --wood-ink: #c79a73;
+  --focus: #e8d9b5;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 10px 30px rgb(0 0 0 / 0.35);
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg: #0f2219; --surface: #15301f; --surface-2: #1b3a2a; --ink: #f3eddd; --muted: #b9c6b8;
+    --line: #34503f; --primary: #8fae8b; --on-primary: #0f2219; --primary-soft: #1d3d2c;
+    --accent: #e0916f; --accent-ink: #efa586; --wood-ink: #c79a73; --focus: #e8d9b5;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-primary: var(--primary);
+  --color-onprimary: var(--on-primary);
+  --color-soft: var(--primary-soft);
+  --color-accent: var(--accent);
+  --color-accentink: var(--accent-ink);
+  --color-wood: var(--wood-ink);
+  --color-sage: var(--sage);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
+}
+
+/* ---------- Base ---------- */
+html { font-size: 17px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (min-width: 768px) { html { font-size: 18px; } }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), var(--font-deva), system-ui, sans-serif;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+}
+h1, h2, h3, h4, .font-display { font-family: var(--font-display), var(--font-deva), serif; font-optical-sizing: auto; letter-spacing: -0.01em; line-height: 1.2; }
+:lang(hi) { line-height: 1.8; }
+:lang(hi) h1, :lang(hi) h2, :lang(hi) h3, :lang(hi) .font-display { font-family: var(--font-deva), system-ui, sans-serif; font-weight: 600; letter-spacing: 0; line-height: 1.4; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+::selection { background: var(--sage); color: #0f2219; }
+a { text-underline-offset: 3px; }
+
+.skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 100; background: var(--primary); color: var(--on-primary); padding: .75rem 1rem; border-radius: .5rem; }
+.skip-link:focus { top: 1rem; }
+
+/* ---------- Signature: case-notes ---------- */
+.case-head { position: relative; padding-bottom: .6rem; }
+.case-head::after {
+  content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 6px;
+  background:
+    linear-gradient(var(--wood-ink), var(--wood-ink)) 0 0 / 3rem 2px no-repeat,
+    repeating-linear-gradient(90deg, var(--line) 0 6px, transparent 6px 10px) 3.4rem 0 / calc(100% - 3.4rem) 1px no-repeat;
+  opacity: .9;
+}
+.marginalia { font-family: var(--font-display), serif; font-style: italic; color: var(--accent-ink); }
+:lang(hi) .marginalia { font-style: normal; }
+
+/* wood-grain hairline echoing her real furniture */
+.wood-edge { height: 6px; background: repeating-linear-gradient(90deg, #6b4a32 0 14px, #7a5539 14px 19px, #5f4129 19px 31px, #70492f 31px 34px); opacity: .85; border-radius: 3px; }
+
+/* prescription-pad card */
+.rx-pad {
+  position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  --rx-margin: 0.8rem;
+  box-shadow: var(--shadow); padding: 2.25rem 1rem 1.5rem 1.6rem;
+  background-image:
+    linear-gradient(90deg, transparent var(--rx-margin), color-mix(in srgb, var(--accent) 55%, transparent) var(--rx-margin) calc(var(--rx-margin) + 0.06rem), transparent calc(var(--rx-margin) + 0.06rem)),
+    repeating-linear-gradient(transparent 0 2.2rem, color-mix(in srgb, var(--line) 70%, transparent) 2.2rem calc(2.2rem + 1px));
+}
+@media (min-width: 640px) { .rx-pad { --rx-margin: 2.25rem; padding: 2.75rem 2rem 2rem 3.25rem; } }
+.rx-pad::before {
+  content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 14px;
+  background: radial-gradient(circle at 10px 0, var(--bg) 6px, transparent 7px) 0 0 / 20px 14px repeat-x;
+}
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
+.specimen { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); position: relative; }
+.specimen::before { content: attr(data-label); position: absolute; top: -.7rem; left: 1rem; background: var(--bg); color: var(--wood-ink); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; padding: 0 .5rem; }
+
+/* ---------- Motion: gentle only ---------- */
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.fade-in { animation: rise .7s ease-out both; }
+.fade-in.d1 { animation-delay: .08s; } .fade-in.d2 { animation-delay: .16s; } .fade-in.d3 { animation-delay: .24s; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .fade-in { animation: none; }
+  * { transition-duration: .001ms !important; }
+}
+
+/* dev-only placeholder block (never rendered in production) */
+.dev-todo { border: 2px dashed var(--accent); border-radius: 12px; padding: 1rem; color: var(--accent-ink); background: color-mix(in srgb, var(--accent) 8%, transparent); font-size: .9rem; }
+
+/* ---------- Long-form (blog / privacy) ---------- */
+.prose-clinic { font-size: 1.05rem; }
+.prose-clinic > * + * { margin-top: 1.1rem; }
+.prose-clinic h2 { font-size: 1.5rem; color: var(--primary); margin-top: 2rem; font-weight: 600; }
+.prose-clinic ul { list-style: disc; padding-inline-start: 1.4rem; }
+.prose-clinic li + li { margin-top: .4rem; }
+.prose-clinic li::marker { color: var(--wood-ink); }
+.prose-clinic em { color: var(--muted); }
+.prose-clinic a { color: var(--primary); text-decoration: underline; }

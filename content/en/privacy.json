@@ -1,0 +1,50 @@
+{
+  "title": "Privacy and disclaimer",
+  "_status": "DRAFT: needs review by a qualified person before launch",
+  "sections": [
+    {
+      "h": "Who we are",
+      "p": [
+        "Rajesh Homeo Clinic, Banipark, Jaipur, run by Dr. Rama Mathur, decides how the details you send are used."
+      ]
+    },
+    {
+      "h": "What we collect and why",
+      "p": [
+        "When you request an appointment we collect your name, phone number, preferred date and time, and a one-line reason. We use them only to contact you about that appointment.",
+        "Please do not put detailed medical information in the booking form."
+      ]
+    },
+    {
+      "h": "Your consent",
+      "p": [
+        "The booking form has a consent box that you must tick yourself. You can withdraw consent at any time by emailing the clinic."
+      ]
+    },
+    {
+      "h": "How long we keep it",
+      "p": [
+        "TODO_RETENTION"
+      ]
+    },
+    {
+      "h": "Your rights",
+      "p": [
+        "You can ask to see, correct or delete the details you sent. Email the clinic from the address below and give the phone number you used. You can also complain to the Data Protection Board of India under the Digital Personal Data Protection Act, 2023."
+      ]
+    },
+    {
+      "h": "Analytics",
+      "p": [
+        "If you accept, we use Google Analytics to count visits and button clicks such as Call and WhatsApp. We never send names, phone numbers, reasons for a visit or any health details to analytics. If you decline, analytics stays off."
+      ]
+    },
+    {
+      "h": "Disclaimer",
+      "p": [
+        "Homeopathic care does not replace emergency or specialist medical treatment. In an emergency, go to the nearest hospital or call 112.",
+        "Information on this website is general and is not medical advice for your individual situation. No result is promised or implied; people respond differently."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Frequently asked questions",
+  "_status": "DRAFT",
+  "items": [
+    {
+      "q": "Which languages does Dr. Mathur consult in?",
+      "a": "Hindi and English."
+    },
+    {
+      "q": "Where is the clinic?",
+      "a": "Rajesh Homeo Clinic is at 202, 2nd Floor, Rajvilas Apartment, Meera Marg, Banipark, Jaipur, Rajasthan 302016."
+    },
+    {
+      "q": "How can I book a visit?",
+      "a": "Use the booking form, call the clinic or message on WhatsApp. The clinic will confirm the time with you."
+    },
+    {
+      "q": "Does homeopathic care replace emergency or specialist treatment?",
+      "a": "No. Homeopathic care does not replace emergency or specialist medical treatment. In an emergency, go to the nearest hospital or call 112."
+    },
+    {
+      "q": "What personal information do you collect when I book?",
+      "a": "Only your name, phone number, preferred date and time, a one-line reason for the visit, and your consent. You can ask for it to be deleted by emailing the clinic."
+    }
+  ]
+}

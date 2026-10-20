@@ -1,0 +1,33 @@
+{
+  "_note": "Only facts from PROJECT-BRIEF.md. confirmed:false means the doctor has not yet confirmed it may be published. null means unknown (see content/TODO.md).",
+  "clinic": { "name": "Rajesh Homeo Clinic" },
+  "doctor": {
+    "name": "Dr. Rama Mathur",
+    "nameHi": "डॉ. रमा माथुर",
+    "degree": "M.D. (Homoeopathy)",
+    "degreeHi": "एम.डी. (होम्योपैथी)",
+    "experienceYears": 31,
+    "languages": ["Hindi", "English"]
+  },
+  "phone": { "display": "+91 94143 62499", "e164": "+919414362499", "confirmed": false },
+  "whatsapp": { "sameAsPhone": true, "e164": null },
+  "email": { "value": "rama_mathur@yahoo.com", "confirmed": false },
+  "address": {
+    "lines": ["202, 2nd Floor, Rajvilas Apartment", "Meera Marg, Banipark", "Jaipur, Rajasthan 302016"],
+    "linesHi": ["202, दूसरी मंज़िल, राजविलास अपार्टमेंट", "मीरा मार्ग, बनी पार्क", "जयपुर, राजस्थान 302016"],
+    "street": "202, 2nd Floor, Rajvilas Apartment, Meera Marg, Banipark",
+    "locality": "Jaipur",
+    "region": "Rajasthan",
+    "postalCode": "302016",
+    "country": "IN",
+    "confirmed": false
+  },
+  "registration": { "council": null, "number": null },
+  "timings": null,
+  "weeklyOff": null,
+  "fees": null,
+  "mapsUrl": null,
+  "appointmentPolicy": null,
+  "portraitPhoto": null,
+  "logo": null
+}

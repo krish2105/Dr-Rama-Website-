@@ -1,0 +1,115 @@
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getAbout } from "@/lib/content";
+import { CaseHead } from "@/components/ui/CaseHead";
+import { DevTodo } from "@/components/ui/DevTodo";
+import { Sprig } from "@/components/ui/Sprig";
+import { ButtonLink } from "@/components/ui/Button";
+import { SITE } from "@/lib/site";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const a = getAbout(locale);
+  return {
+    title: a.title,
+    alternates: { canonical: `/${locale}/about`, languages: { en: "/en/about", hi: "/hi/about", "x-default": "/en/about" } },
+  };
+}
+
+export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const a = getAbout(locale);
+  const t = await getTranslations({ locale, namespace: "about" });
+  const c = await getTranslations({ locale, namespace: "common" });
+  const home = await getTranslations({ locale, namespace: "home" });
+
+  return (
+    <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-14">
+      <header className="relative">
+        <Sprig className="pointer-events-none absolute -right-4 -top-4 hidden h-60 text-sage opacity-40 md:block" />
+        <CaseHead as="h1" title={a.title} eyebrow={locale === "hi" ? SITE.doctor.degreeHi : SITE.doctor.degree} />
+        <p className="mt-4 inline-block rounded-full bg-accent/15 px-3 py-1 text-sm font-semibold text-accentink">{c("draft")}</p>
+        <div className="mt-6 grid gap-8 md:grid-cols-[1.4fr_1fr]">
+          <div className="space-y-4 text-lg">
+            {a.intro.map((p) => <p key={p}>{p}</p>)}
+          </div>
+          <div>
+            {SITE.portraitPhoto ? null : <DevTodo>{t("portraitTodo")}</DevTodo>}
+          </div>
+        </div>
+      </header>
+
+      <section aria-labelledby="quals" className="mt-16">
+        <CaseHead id="quals" title={t("qualifications")} />
+        <ul className="mt-8 grid gap-4 md:grid-cols-3">
+          {a.qualifications.map((q) => (
+            <li key={q.title} className="card p-5">
+              <p className="font-display text-2xl font-semibold text-primary">{q.title}</p>
+              {q.org ? <p className="mt-1 text-muted">{q.org}</p> : null}
+              <p className="mt-3 text-sm font-semibold uppercase tracking-wider text-wood">{q.when}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="exp" className="mt-16">
+        <CaseHead id="exp" title={t("experience")} />
+        <ol className="relative mt-8 space-y-6 border-s-2 border-line ps-6">
+          {a.experience.map((e) => (
+            <li key={e.role + e.when} className="relative">
+              <span aria-hidden="true" className="absolute -start-[1.95rem] top-2 h-3 w-3 rounded-full bg-accent ring-4 ring-bg" />
+              <p className="text-sm font-semibold uppercase tracking-wider text-wood">{e.when}</p>
+              <p className="font-display text-xl font-semibold text-primary">{e.role}</p>
+              <p className="text-muted">{e.org}</p>
+              {e.note ? <p className="mt-1">{e.note}</p> : null}
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby="mem" className="mt-16">
+        <CaseHead id="mem" title={t("memberships")} />
+        <ul className="mt-8 grid gap-4 md:grid-cols-2">
+          {a.memberships.map((m) => (
+            <li key={m.name} className="specimen p-5" data-label={m.when}>
+              <p className="text-lg">{m.name}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="conf" className="mt-16">
+        <CaseHead id="conf" title={t("conferences")} />
+        <details className="card group mt-8 p-5">
+          <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between font-display text-lg font-semibold text-primary">
+            {t("conferences")} ({a.conferences.length})
+            <span aria-hidden="true" className="text-accent transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <ol className="mt-4 list-decimal space-y-2 ps-6 marker:text-wood">
+            {a.conferences.map((cf) => (
+              <li key={cf.name + cf.when}>{cf.name}, {cf.where} ({cf.when})</li>
+            ))}
+          </ol>
+        </details>
+      </section>
+
+      <section aria-labelledby="comm" className="mt-16">
+        <CaseHead id="comm" title={t("community")} />
+        <ul className="mt-8 space-y-3">
+          {a.community.map((x) => (
+            <li key={x} className="flex gap-3 text-lg">
+              <span aria-hidden="true" className="mt-3 h-2.5 w-2.5 shrink-0 rounded-full bg-sage" />
+              {x}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <div className="mt-16 rounded-3xl bg-primary px-6 py-10 text-center text-onprimary">
+        <h2 className="text-2xl font-semibold">{home("ctaTitle")}</h2>
+        <ButtonLink href="/book" variant="secondary" className="mt-5 !border-onprimary !text-onprimary hover:!bg-white/10">{c("book")}</ButtonLink>
+      </div>
+    </div>
+  );
+}
