@@ -46,5 +46,6 @@ Nothing below may be invented. Each item shows a dev-only placeholder on the sit
 - [ ] Decide how long booking data is kept (privacy page shows a dev-only TODO until stated)
 - [ ] Doctor to confirm the "Honoured by Rajasthan Patrika for outstanding service and dedication" line may be published (wording is from the brief; reported honour, not self-praise)
 - [ ] Services, Care areas, Experiences and Online consultation pages are `noindex` and out of the sitemap until they have real content
-- [ ] Hindi Lighthouse performance is about 87 to 89 in the lab (target 90+); recheck on the live domain and on real devices
+- [ ] Recheck Lighthouse on the live domain (lab scores: English 94 to 95, Hindi 91 to 92)
 - [ ] Replace the wordmark/leaf mark with the real logo when supplied
+- [ ] After photos arrive: run `npm run photos`, write EN + HI alt text, check the hero, About and gallery layouts with the real images

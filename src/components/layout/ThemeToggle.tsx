@@ -44,7 +44,7 @@ export function ThemeToggle() {
   const labels: Record<Pref, string> = { light: t("themeLight"), dark: t("themeDark"), system: t("themeSystem") };
 
   return (
-    <div role="radiogroup" aria-label={t("theme")} className="inline-flex rounded-full border border-line bg-surface p-1">
+    <div role="radiogroup" aria-label={t("theme")} className="inline-flex rounded-full bg-soft p-1">
       {(["light", "system", "dark"] as Pref[]).map((p) => (
         <button
           key={p}
@@ -55,7 +55,7 @@ export function ThemeToggle() {
           title={labels[p]}
           onClick={() => choose(p)}
           className={`grid h-10 w-10 place-items-center rounded-full transition-colors ${
-            pref === p ? "bg-primary text-onprimary" : "text-muted hover:bg-soft"
+            pref === p ? "bg-primary text-onprimary" : "text-muted hover:bg-surface"
           }`}
         >
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

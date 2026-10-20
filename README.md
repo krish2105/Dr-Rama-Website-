@@ -1,4 +1,4 @@
-# Rajesh Homeo Clinic website (English + Hindi)
+# Rajesh Homeo Home website (English + Hindi)
 
 Next.js 16 (App Router) + TypeScript + Tailwind 4 + next-intl + MDX. Facts and rules: `PROJECT-BRIEF.md`, `CLAUDE.md`. Open items: `content/TODO.md`.
 
@@ -19,7 +19,7 @@ Before any deploy run `npm run check-content -- --strict`; it fails while facts 
 | About page | `content/en/about.json`, `content/hi/about.json` |
 | FAQ, Privacy | `content/{en,hi}/faq.json`, `privacy.json` |
 | Blog posts | `content/blog/{en,hi}/*.mdx` (`status: "DRAFT"` until approved, then `"PUBLISHED"`) |
-| Real photos | copy to `public/photos/`, list in `content/gallery.json` with `altEn` and `altHi` |
+| Real photos | put files in `source/photos/` (portrait named `doctor-...`), run `npm run photos`, then add `altEn` / `altHi` in `content/gallery.json` and `content/site.json` |
 
 Set `confirmed: true` in `site.json` only after the doctor confirms in writing. JSON-LD only includes confirmed facts.
 

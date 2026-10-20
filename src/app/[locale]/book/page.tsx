@@ -2,7 +2,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { BookingForm } from "@/components/booking/BookingForm";
 import { CaseHead } from "@/components/ui/CaseHead";
-import { Sprig } from "@/components/ui/Sprig";
+import { Rosette } from "@/components/ui/Motif";
 import { SITE, telHref, waHref } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -18,7 +18,7 @@ export default async function BookPage({ params }: { params: Promise<{ locale: s
   const c = await getTranslations({ locale, namespace: "common" });
   return (
     <div className="relative mx-auto max-w-3xl px-4 py-10 sm:px-6 md:py-14">
-      <Sprig className="pointer-events-none absolute -right-10 top-4 hidden h-60 text-sage opacity-40 lg:block" />
+      <Rosette className="pointer-events-none absolute -end-24 top-2 hidden h-64 w-64 text-primary opacity-[0.08] lg:block" />
       <CaseHead as="h1" title={t("title")} />
       <p id="form-lead" className="mt-5 max-w-xl text-lg text-muted">{t("lead")}</p>
       <div className="mt-8"><BookingForm /></div>

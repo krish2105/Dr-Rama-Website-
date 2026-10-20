@@ -26,7 +26,6 @@ export const NAV = [
   { key: "about", href: "/about" },
   { key: "services", href: "/services" },
   { key: "careAreas", href: "/care-areas" },
-  { key: "experiences", href: "/experiences" },
   { key: "blog", href: "/blog" },
   { key: "faq", href: "/faq" },
   { key: "contact", href: "/contact" },

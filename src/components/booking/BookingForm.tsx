@@ -10,7 +10,7 @@ type Errors = Partial<Record<FieldKey, true>>;
 type Status = "idle" | "sending" | "done" | "error";
 
 const field =
-  "mt-1 block min-h-12 w-full rounded-lg border border-line bg-bg/70 px-3 text-base text-ink placeholder:text-muted focus:border-primary";
+  "mt-1 block min-h-12 w-full rounded-2xl border border-line bg-bg px-4 text-base text-ink placeholder:text-muted focus:border-primary";
 // Set when the field is focused, so the server render and the browser never disagree on "today".
 function setMinToday(el: HTMLInputElement) {
   if (el.min) return;
@@ -68,8 +68,8 @@ export function BookingForm() {
     // The WhatsApp message carries name, date and slot only: never the reason (health detail).
     const msg = `${t("successWhatsappMsg", { name: summary.name, date: summary.date, slot: t(`slot_${summary.time}`) })}`;
     return (
-      <div className="rx-pad" role="status">
-        <h2 className="text-2xl font-semibold text-primary">{t("successTitle")}</h2>
+      <div className="form-card" role="status">
+        <h2 className="text-2xl text-primary">{t("successTitle")}</h2>
         <p className="mt-3 text-lg">{t("successBody")}</p>
         {mode === "dev" ? <p className="dev-todo mt-4">{t("devNote")}</p> : null}
         <div className="mt-6 flex flex-wrap gap-3">
@@ -93,7 +93,7 @@ export function BookingForm() {
   const aria = (k: FieldKey) => ({ "aria-invalid": errors[k] ? true : undefined, "aria-describedby": errors[k] ? `${k}-err` : undefined });
 
   return (
-    <form onSubmit={onSubmit} noValidate className="rx-pad space-y-5" aria-describedby="form-lead">
+    <form onSubmit={onSubmit} noValidate className="form-card space-y-5" aria-describedby="form-lead">
       {/* honeypot: hidden from people, visible to bots */}
       <div className="absolute -left-[9999px]" aria-hidden="true">
         <label>Website<input type="text" name="website" tabIndex={-1} autoComplete="off" /></label>

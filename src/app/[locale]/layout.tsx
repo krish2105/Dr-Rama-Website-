@@ -1,20 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter, Noto_Sans_Devanagari } from "next/font/google";
+import { Bricolage_Grotesque, DM_Sans } from "next/font/google";
+import { preload } from "react-dom";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { StickyContactBar } from "@/components/layout/StickyContactBar";
+import { FloatingContact } from "@/components/layout/FloatingContact";
 import { SITE_URL } from "@/lib/site";
 import { clinicSchema } from "@/lib/schema";
 import { Analytics } from "@/components/layout/Analytics";
 import "@/styles/globals.css";
 
-const display = Fraunces({ subsets: ["latin"], variable: "--font-display", display: "swap" });
-const body = Inter({ subsets: ["latin"], variable: "--font-body", display: "swap" });
-const deva = Noto_Sans_Devanagari({ subsets: ["devanagari"], weight: ["400", "600"], variable: "--font-deva", display: "swap", preload: false });
+const display = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-display", display: "swap" });
+const body = DM_Sans({ subsets: ["latin"], variable: "--font-body", display: "swap" });
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -22,8 +22,8 @@ export function generateStaticParams() {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#faf7f0" },
-    { media: "(prefers-color-scheme: dark)", color: "#0f2219" },
+    { media: "(prefers-color-scheme: light)", color: "#f6f1e4" },
+    { media: "(prefers-color-scheme: dark)", color: "#0d1630" },
   ],
 };
 
@@ -52,10 +52,15 @@ export default async function LocaleLayout({
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
+  // Devanagari webfont is self-hosted and fetched only on Hindi pages (English pages never download it).
+  if (locale === "hi") {
+    preload("/fonts/mukta-devanagari-700.woff2", { as: "font", type: "font/woff2", crossOrigin: "anonymous" });
+    preload("/fonts/mukta-devanagari-400.woff2", { as: "font", type: "font/woff2", crossOrigin: "anonymous" });
+  }
   const t = await getTranslations({ locale, namespace: "common" });
 
   return (
-    <html lang={locale} suppressHydrationWarning className={`${display.variable} ${body.variable} ${deva.variable}`}>
+    <html lang={locale} suppressHydrationWarning className={`${display.variable} ${body.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
       </head>
@@ -63,9 +68,9 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <a href="#main" className="skip-link">{t("skip")}</a>
           <Header />
-          <main id="main">{children}</main>
+          <main id="main" className="pt-24">{children}</main>
           <Footer />
-          <StickyContactBar />
+          <FloatingContact />
           <Analytics />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(clinicSchema(locale)) }} />
         </NextIntlClientProvider>

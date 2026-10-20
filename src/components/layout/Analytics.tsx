@@ -60,7 +60,7 @@ export function Analytics() {
         </>
       ) : null}
       {choice === "unset" ? (
-        <div role="region" aria-label={t("text")} className="fixed inset-x-3 bottom-[4.5rem] z-50 mx-auto max-w-xl rounded-2xl border border-line bg-surface p-4 shadow-[var(--shadow)] md:bottom-4">
+        <div role="region" aria-label={t("text")} className="fixed inset-x-3 bottom-[5.5rem] z-50 mx-auto max-w-xl rounded-3xl border border-line bg-surface p-4 shadow-[var(--shadow)] md:bottom-4">
           <p className="text-[0.95rem]">{t("text")} <Link href="/privacy" className="text-primary underline">{t("more")}</Link></p>
           <div className="mt-3 flex gap-3">
             <button type="button" onClick={() => decide("granted")} className="min-h-12 rounded-full bg-primary px-6 font-semibold text-onprimary">{t("accept")}</button>

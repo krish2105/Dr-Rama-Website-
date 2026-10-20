@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rajesh Homeo Home: design options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Tiro+Devanagari+Hindi&family=Mukta:wght@400;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:wght@400;600&family=Cormorant+Garamond:wght@500;600;700&family=Eczar:wght@500;700&family=Source+Sans+3:wght@400;600&family=Hind:wght@400;600&family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Noto+Serif+Devanagari:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--page:#eceae6;--pink:#1d1b19;--mut:#5b5650;--card:#fff;--line:#d8d3cb}
+:root[data-ui="dark"]{--page:#151412;--pink:#f1ece4;--mut:#aaa39a;--card:#201e1b;--line:#38342f}
+*{box-sizing:border-box;margin:0}
+body{font:16px/1.5 Inter,system-ui,sans-serif;background:var(--page);color:var(--pink);padding:24px 16px 80px}
+.wrap{max-width:1500px;margin:0 auto}
+header.top{display:flex;flex-wrap:wrap;gap:16px;align-items:end;justify-content:space-between;margin-bottom:8px}
+h1.board{font:600 28px/1.15 Inter;letter-spacing:-.01em}
+.sub{color:var(--mut);max-width:62ch;margin-top:6px;font-size:15px}
+.ctrls{display:flex;gap:10px;flex-wrap:wrap}
+.seg{display:inline-flex;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:3px}
+.seg button{font:600 14px Inter;border:0;background:none;color:var(--mut);padding:9px 16px;border-radius:999px;cursor:pointer;min-height:40px}
+.seg button[aria-pressed=true]{background:var(--pink);color:var(--page)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:36px 28px;margin-top:28px;justify-items:center}
+.opt{width:100%;max-width:400px}
+.opt h2{font:600 18px Inter;display:flex;gap:10px;align-items:baseline}
+.opt h2 b{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--pink);color:var(--page);font-size:15px}
+.mood{color:var(--mut);font-size:14px;margin:6px 0 10px}
+.sw{display:flex;gap:6px;margin:0 0 12px;align-items:center;font-size:12px;color:var(--mut);flex-wrap:wrap}
+.sw i{width:26px;height:26px;border-radius:50%;border:1px solid #0002;display:inline-block}
+.phone{width:376px;max-width:100%;height:760px;border:10px solid #111;border-radius:34px;overflow:hidden;position:relative;background:#000;box-shadow:0 20px 50px #0003}
+.screen{height:100%;overflow-y:auto;overflow-x:hidden;background:var(--bg);color:var(--ink);scrollbar-width:thin}
+.fonts{font-size:12px;color:var(--mut);margin-top:10px}
+/* ---------- shared mock ---------- */
+.screen{font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.brand{line-height:1.15}.brand b{display:block;font-size:17px}.brand small{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.pills{display:flex;gap:6px;align-items:center}.pill{font:600 12px Inter,sans-serif;border:1px solid var(--line);border-radius:999px;padding:7px 10px;color:var(--ink);background:var(--surface)}
+.pill.on{background:var(--primary);color:var(--on-primary);border-color:var(--primary)}
+.sec{padding:28px 18px}
+.eyebrow{font-size:13px;color:var(--accent-ink,var(--primary));margin-bottom:8px}
+h3.h{font-size:30px;line-height:1.12;margin-bottom:10px}
+.lead{color:var(--muted);margin-bottom:16px}
+.photo{border:2px dashed var(--line);display:grid;place-items:center;text-align:center;color:var(--muted);font-size:13px;padding:12px;background:color-mix(in srgb,var(--surface) 70%,transparent)}
+.acts{display:grid;gap:10px;margin-top:16px}
+.btn{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:52px;padding:10px 16px;font-weight:600;border:2px solid var(--primary);color:var(--primary);background:transparent}
+.btn small{font-weight:400;font-size:12px;opacity:.85;display:block}
+.btn.p{background:var(--primary);color:var(--on-primary)}
+.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.stat{padding:12px 8px;text-align:center}.stat b{display:block;font-size:30px;line-height:1.1}.stat span{font-size:12px;color:var(--muted);line-height:1.3;display:block;margin-top:4px}
+.riico .big{font-size:64px;line-height:1}.riico p{margin-top:6px}
+.riico .org{font-size:13px;opacity:.92}
+.addr{color:var(--muted);font-size:14px;margin-top:6px}
+.sticky{position:sticky;bottom:0;display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid var(--line);background:var(--surface);z-index:5}
+.sticky span{padding:15px 4px;text-align:center;font-weight:600;font-size:14px;color:var(--primary)}
+.sticky span:last-child{background:var(--primary);color:var(--on-primary)}
+/* ---------- A: Pink City heritage ---------- */
+.A{--bg:#fbf3e9;--surface:#fffdf9;--ink:#2b1d18;--muted:#5b463d;--primary:#b5482f;--on-primary:#fff8ee;--accent:#f0a92e;--accent-ink:#9a3a24;--line:#ecdcc8}
+.dark .A{--bg:#1c1310;--surface:#2a1c17;--ink:#f8ebdd;--muted:#d2bbaa;--primary:#f08c6c;--on-primary:#2a120b;--accent:#f5b843;--accent-ink:#f5b98e;--line:#4a3329}
+.A{font-family:Mukta,sans-serif}.A h3,.A .brand b,.A .big,.A .stat b{font-family:Gloock,serif;font-weight:400}
+.A:lang(hi) h3,.A:lang(hi) .brand b,.A:lang(hi) .big,.A:lang(hi) .stat b{font-family:'Tiro Devanagari Hindi',serif}
+.A .hero{background:#b5482f url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36'%3E%3Cpath d='M18 0L36 18 18 36 0 18Z M18 8L28 18 18 28 8 18Z' fill='none' stroke='%23fff' stroke-opacity='.16'/%3E%3C/svg%3E");color:#fff6ea;padding:26px 18px 30px;border-bottom:6px solid var(--accent)}
+.dark .A .hero{background-color:#8e3320}
+.A .hero .lead{color:#ffe9d6}.A .hero .eyebrow{color:#ffd78a}
+.A .photo{border-radius:999px 999px 14px 14px;height:230px;border-color:#f0a92e;background:#0002;color:#ffe9d6;margin:14px 0}
+.A .btn{border-radius:10px;border-color:#fff6ea;color:#fff6ea}.A .btn.p{background:#f0a92e;color:#2b1d18;border-color:#f0a92e}
+.A .stat{background:var(--surface);border:1px solid var(--line);border-radius:60px 60px 10px 10px;padding-top:20px}.A .stat b{color:var(--primary)}
+.A .riico{background:var(--surface);border:1px solid var(--line);border-left:8px solid var(--primary);border-radius:6px;margin:0 18px;padding:22px 18px}
+.A .riico .big{color:var(--primary)}.A .riico .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
+.A .cta{background:var(--primary);color:var(--on-primary);text-align:center;margin:18px;border-radius:14px}.A .cta .btn{margin-top:12px;background:var(--accent);border-color:var(--accent);color:#2b1d18;border-radius:10px}
+/* ---------- B: Blue pottery, friendly ---------- */
+.B{--bg:#f6f1e4;--surface:#fffdf6;--ink:#13203f;--muted:#46526e;--primary:#1d4e9f;--on-primary:#fff;--accent:#b58a33;--tint:#e3ebf8;--line:#ddd6bf}
+.dark .B{--bg:#0d1630;--surface:#16244a;--ink:#f2eedd;--muted:#b8c2da;--primary:#8db0f2;--on-primary:#0d1630;--accent:#d8b15c;--tint:#1d2e5c;--line:#2b3c6e}
+.B{font-family:'DM Sans',sans-serif}.B:lang(hi){font-family:Mukta,sans-serif}
+.B h3,.B .brand b,.B .big,.B .stat b{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;letter-spacing:-.02em}
+.B:lang(hi) h3,.B:lang(hi) .brand b,.B:lang(hi) .big,.B:lang(hi) .stat b{font-family:Mukta,sans-serif;letter-spacing:0}
+.B .hero{padding:22px 18px 8px;text-align:center}
+.B .ring{width:230px;height:230px;margin:6px auto 14px;position:relative;display:grid;place-items:center}
+.B .ring svg{position:absolute;inset:0;width:100%;height:100%;color:var(--primary);opacity:.9}
+.B .photo{width:150px;height:150px;border-radius:50%;border-color:var(--primary);font-size:11px;position:relative;background:var(--tint)}
+.B .acts{text-align:left}.B .btn{border-radius:999px;border-width:2px}.B .btn.p{box-shadow:0 6px 16px color-mix(in srgb,var(--primary) 35%,transparent)}
+.B .stat{background:var(--tint);border-radius:22px}.B .stat b{color:var(--primary)}
+.B .riico{background:var(--primary);color:var(--on-primary);border-radius:28px;margin:6px 18px;padding:24px 20px;position:relative;overflow:hidden}
+.B .riico:after{content:"";position:absolute;right:-30px;top:-30px;width:130px;height:130px;border-radius:50%;border:14px dotted #fff3}
+.B .riico .big{font-size:44px;line-height:1.05}.B .riico .k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+.B .cta{background:var(--tint);border-radius:28px;margin:18px;text-align:center}.B .cta .btn{margin-top:12px;justify-content:center}
+/* ---------- C: Maroon, premium formal ---------- */
+.C{--bg:#fbf1ee;--surface:#fff9f7;--ink:#2a1218;--muted:#5e3f47;--primary:#6a1b38;--on-primary:#fff4f0;--accent:#b5832f;--accent-ink:#85601d;--line:#e8cfc8}
+.dark .C{--bg:#1b0c12;--surface:#281319;--ink:#f7e9e4;--muted:#cbafb0;--primary:#e8a5b8;--on-primary:#2a0e17;--accent:#d8b062;--accent-ink:#d8b062;--line:#4a2a34}
+.C{font-family:'Source Sans 3',sans-serif}.C:lang(hi){font-family:Hind,sans-serif}
+.C h3,.C .brand b,.C .big,.C .stat b{font-family:'Cormorant Garamond',serif;font-weight:600;letter-spacing:-.005em}
+.C:lang(hi) h3,.C:lang(hi) .brand b,.C:lang(hi) .big,.C:lang(hi) .stat b{font-family:Eczar,serif;font-weight:500}
+.C h3{font-size:36px}
+.C .hero{text-align:center;padding:30px 20px 10px}
+.C .orn{display:flex;align-items:center;gap:10px;justify-content:center;color:var(--accent);margin:14px 0}
+.C .orn:before,.C .orn:after{content:"";height:1px;background:var(--accent);flex:1;max-width:90px}
+.C .photo{height:220px;border:1px solid var(--accent);outline:1px solid var(--accent);outline-offset:6px;margin:14px 8px;background:var(--surface)}
+.C .btn{border-radius:2px;letter-spacing:.02em}
+.C .stats{border-top:1px solid var(--accent);border-bottom:1px solid var(--accent);gap:0;margin:0 18px}.C .stat{border-right:1px solid var(--line)}.C .stat:last-child{border:0}.C .stat b{color:var(--primary);font-size:34px}
+.C .riico{background:#6a1b38;color:#fbe9d0;padding:34px 22px;margin-top:26px;text-align:center}
+.dark .C .riico{background:#3b1424}
+.C .riico .k{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#e2bd72}.C .riico .big{color:#e2bd72;font-size:78px}.C .riico .org{color:#f3d9bd}
+.C .cta{text-align:center}.C .cta .btn{justify-content:center;margin-top:12px}
+/* ---------- D: Charcoal + sandstone, calm minimal ---------- */
+.D{--bg:#f2ede3;--surface:#faf7f1;--ink:#1e1b18;--muted:#55504a;--primary:#26221f;--on-primary:#f6f1e8;--accent:#b3673f;--accent-ink:#8b4b28;--line:#d8d0c2}
+.dark .D{--bg:#131110;--surface:#1d1a17;--ink:#f0e9dd;--muted:#b9b0a3;--primary:#efe8dc;--on-primary:#151311;--accent:#d9996f;--accent-ink:#d9996f;--line:#38322c}
+.D{font-family:Inter,sans-serif}.D:lang(hi){font-family:Hind,sans-serif}
+.D h3,.D .brand b,.D .big,.D .stat b{font-family:Newsreader,serif;font-weight:400;letter-spacing:-.02em}
+.D:lang(hi) h3,.D:lang(hi) .brand b,.D:lang(hi) .big,.D:lang(hi) .stat b{font-family:'Noto Serif Devanagari',serif;font-weight:500;letter-spacing:0}
+.D h3{font-size:38px;line-height:1.08}
+.D .hero{padding:26px 18px 6px}
+.D .eyebrow{font:500 11px/1.3 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-ink)}
+.D .photo{height:210px;border:1px solid var(--line);border-radius:0;margin:14px 0 0}
+.D .btn{border-radius:0;border-width:1px}.D .btn.p{border-color:var(--primary)}
+.D .stats{grid-template-columns:1fr;gap:0;border-top:1px solid var(--ink);margin:0}.D .stat{display:flex;gap:16px;align-items:baseline;text-align:left;border-bottom:1px solid var(--line);padding:14px 0}.D .stat b{font-size:44px;min-width:92px;color:var(--ink)}.D .stat span{font-size:14px;margin:0}
+.D .riico{margin:30px 18px 0;border-top:1px solid var(--ink)}
+.D .riico .k{font:500 11px Inter;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-ink);padding-top:10px}
+.D .riico .row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:10px 0;font-size:14px}.D .riico .row b{font-weight:500}
+.D .riico .big{font-size:84px;color:var(--accent-ink)}
+.D .cta{background:var(--accent-ink);color:#fff;margin:30px 0 0;padding:28px 18px}.D .cta h3{color:#fff;font-size:28px}.dark .D .cta{color:#1c120b}.dark .D .cta h3{color:#1c120b}
+.D .cta .btn{background:#1e1b18;border-color:#1e1b18;color:#f6f1e8;margin-top:12px}.dark .D .cta .btn{background:#131110;border-color:#131110;color:#efe8dc}
+.pick{margin-top:10px;font-size:14px;color:var(--mut)}
+@media (max-width:420px){.phone{border-width:6px;height:700px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+ <div>
+  <h1 class="board">Rajesh Homeo Home: choose a design direction</h1>
+  <p class="sub">Four directions, each with its own colour world, type and signature. Switch light/dark and English/Hindi, scroll inside each phone. Photo areas are placeholders: your real photos replace them. No green in any of them.</p>
+ </div>
+ <div class="ctrls">
+  <div class="seg" role="group" aria-label="Theme"><button data-theme="light" aria-pressed="true">Light</button><button data-theme="dark" aria-pressed="false">Dark</button></div>
+  <div class="seg" role="group" aria-label="Language"><button data-lang="en" aria-pressed="true">English</button><button data-lang="hi" aria-pressed="false">हिन्दी</button></div>
+ </div>
+</header>
+<div class="grid" id="grid"></div>
+<p class="pick">Tell me the letter you like (or mix, e.g. "A's colours with D's layout"). I will then redesign the whole site and show you the real pages before anything is final.</p>
+</div>
+
+<script>
+const T={
+ en:{name:"Rajesh Homeo Home",deg:"M.D. (Homoeopathy)",eyebrow:"Banipark, Jaipur",h:"Homeopathic care from Dr. Rama Mathur",lead:"31 years of clinical experience. Consultations in Hindi and English.",photo:"Real photo of the consultation room goes here",call:"Call",callN:"+91 94143 62499",wa:"WhatsApp",waN:"Ask about a visit",book:"Request an appointment",bookN:"Takes about a minute",
+  s1:"years of clinical experience",s2:"Homoeopathy, Rajasthan University, 2001",s3:"Hindi and English",s1b:"31",s2b:"M.D.",s3b:"2",
+  rk:"Service record",rt:"Empanelled homoeopathic doctor",ro:"RIICO (Rajasthan State Industrial Development & Investment Corporation Ltd), Jaipur",rn:"24",ry:"years of service",rr:"1999 to 2023",rd:"Retired as Deputy General Manager",
+  cta:"Ready to book a visit?",ctab:"Send your name, phone number and a preferred time.",addr:"202, 2nd Floor, Rajvilas Apartment, Meera Marg, Banipark, Jaipur",bk:"Book",rl:"Role",ry2:"Years",tl:"Term"},
+ hi:{name:"राजेश होम्यो होम",deg:"एम.डी. (होम्योपैथी)",eyebrow:"बनी पार्क, जयपुर",h:"डॉ. रमा माथुर की होम्योपैथिक देखभाल",lead:"31 वर्षों का क्लिनिकल अनुभव। हिंदी और अंग्रेज़ी में परामर्श।",photo:"परामर्श कक्ष की वास्तविक फ़ोटो यहाँ लगेगी",call:"कॉल करें",callN:"+91 94143 62499",wa:"व्हाट्सऐप",waN:"समय के बारे में पूछें",book:"अपॉइंटमेंट का अनुरोध करें",bookN:"लगभग एक मिनट",
+  s1:"वर्षों का क्लिनिकल अनुभव",s2:"होम्योपैथी, राजस्थान विश्वविद्यालय, 2001",s3:"हिंदी और अंग्रेज़ी",s1b:"31",s2b:"एम.डी.",s3b:"2",
+  rk:"सेवा विवरण",rt:"पैनलबद्ध होम्योपैथिक डॉक्टर",ro:"रीको (RIICO), राजस्थान राज्य औद्योगिक विकास एवं विनियोजन निगम लिमिटेड, जयपुर",rn:"24",ry:"वर्षों की सेवा",rr:"1999 से 2023",rd:"उप महाप्रबंधक के पद से सेवानिवृत्त",
+  cta:"क्या आप समय बुक करना चाहते हैं?",ctab:"अपना नाम, फ़ोन नंबर और पसंदीदा समय भेजें।",addr:"202, दूसरी मंज़िल, राजविलास अपार्टमेंट, मीरा मार्ग, बनी पार्क, जयपुर",bk:"बुक करें",rl:"भूमिका",ry2:"वर्ष",tl:"अवधि"}
+};
+const OPT=[
+ {k:"A",name:"Pink City Heritage",mood:"Warm, local, welcoming. Jaipur terracotta field, marigold, jaali lattice, arch (jharokha) photo frame.",sw:["#b5482f","#f0a92e","#fbf3e9","#2b1d18"],fonts:"Gloock + Tiro Devanagari Hindi, body Mukta"},
+ {k:"B",name:"Blue Pottery, Friendly",mood:"Soft, approachable, trustworthy. Cobalt on ivory, rounded shapes, a blue-pottery floral ring around the photo.",sw:["#1d4e9f","#e3ebf8","#f6f1e4","#b58a33"],fonts:"Bricolage Grotesque + Mukta, body DM Sans"},
+ {k:"C",name:"Maroon Premium",mood:"Formal, established, senior-doctor feel. Deep maroon, antique gold hairlines, double-framed photo, big serif.",sw:["#6a1b38","#b5832f","#fbf1ee","#2a1218"],fonts:"Cormorant Garamond + Eczar, body Source Sans 3 / Hind"},
+ {k:"D",name:"Charcoal & Sandstone",mood:"Calm, modern, editorial. Warm charcoal, sandstone, ruled record lines, oversized numerals, square corners.",sw:["#26221f","#b3673f","#f2ede3","#55504a"],fonts:"Newsreader + Noto Serif Devanagari, body Inter / Hind"}
+];
+const petals=()=>{let p="";for(let i=0;i<12;i++)p+=`<ellipse cx="100" cy="30" rx="9" ry="22" transform="rotate(${i*30} 100 100)" fill="none" stroke="currentColor" stroke-width="2"/>`;return `<svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="62" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="2 6"/>${p}<circle cx="100" cy="100" r="86" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>`};
+function screen(o,t){
+ const hero={
+  A:`<section class="hero"><div class="eyebrow">${t.eyebrow}</div><h3 class="h">${t.h}</h3><p class="lead">${t.lead}</p><div class="photo">${t.photo}</div><div class="acts"><div class="btn p"><span>${t.call}<small>${t.callN}</small></span><span>→</span></div><div class="btn"><span>${t.wa}<small>${t.waN}</small></span><span>→</span></div></div></section>`,
+  B:`<section class="hero"><div class="eyebrow">${t.eyebrow}</div><div class="ring">${petals()}<div class="photo">${t.photo}</div></div><h3 class="h">${t.h}</h3><p class="lead">${t.lead}</p><div class="acts"><div class="btn p"><span>${t.call}<small>${t.callN}</small></span><span>→</span></div><div class="btn"><span>${t.wa}<small>${t.waN}</small></span><span>→</span></div></div></section>`,
+  C:`<section class="hero"><div class="eyebrow">${t.eyebrow}</div><div class="orn">◆</div><h3 class="h">${t.h}</h3><p class="lead">${t.lead}</p><div class="photo">${t.photo}</div><div class="acts"><div class="btn p"><span>${t.call}<small>${t.callN}</small></span><span>→</span></div><div class="btn"><span>${t.wa}<small>${t.waN}</small></span><span>→</span></div></div></section>`,
+  D:`<section class="hero"><div class="eyebrow">${t.eyebrow}</div><h3 class="h">${t.h}</h3><p class="lead">${t.lead}</p><div class="acts"><div class="btn p"><span>${t.call}<small>${t.callN}</small></span><span>→</span></div><div class="btn"><span>${t.wa}<small>${t.waN}</small></span><span>→</span></div></div><div class="photo">${t.photo}</div></section>`
+ }[o.k];
+ const stats=`<section class="sec"><div class="stats"><div class="stat"><b>${t.s1b}</b><span>${t.s1}</span></div><div class="stat"><b>${t.s2b}</b><span>${t.s2}</span></div><div class="stat"><b>${t.s3b}</b><span>${t.s3}</span></div></div></section>`;
+ const riico={
+  A:`<section class="riico"><div class="k">${t.rk}</div><div class="big">${t.rn}</div><p><b>${t.ry}</b> · ${t.rr}</p><p>${t.rt}. ${t.rd}.</p><p class="org">${t.ro}</p></section>`,
+  B:`<section class="riico"><div class="k">${t.rk}</div><div class="big">${t.rn} ${t.ry}</div><p><b>${t.rt}</b></p><p>${t.rr} · ${t.rd}</p><p class="org">${t.ro}</p></section>`,
+  C:`<section class="riico"><div class="k">${t.rk}</div><div class="big">${t.rn}</div><p>${t.ry} · ${t.rr}</p><div class="orn" style="color:#e2bd72">◆</div><p><b>${t.rt}</b></p><p>${t.rd}</p><p class="org">${t.ro}</p></section>`,
+  D:`<section class="riico"><div class="k">${t.rk}</div><div class="big">${t.rn}</div><div class="row"><span>${t.rl}</span><b>${t.rt}</b></div><div class="row"><span>${t.tl}</span><b>${t.rr} · ${t.ry}</b></div><div class="row"><span>${t.rd}</span><b></b></div><p class="addr">${t.ro}</p></section>`
+ }[o.k];
+ const cta=`<section class="sec cta"><h3 class="h">${t.cta}</h3><p>${t.ctab}</p><div class="btn p"><span>${t.book}<small>${t.bookN}</small></span><span>→</span></div><p class="addr" style="color:inherit;opacity:.85">${t.addr}</p></section>`;
+ return `<div class="bar"><div class="brand"><b>${t.name}</b><small>${t.deg}</small></div><div class="pills"><span class="pill on">${state.lang==='en'?'EN':'EN'}</span><span class="pill">हिं</span></div></div>${hero}${stats}${riico}${cta}<div style="height:12px"></div><div class="sticky"><span>${t.call}</span><span>${t.wa}</span><span>${t.bk}</span></div>`;
+}
+const state={theme:'light',lang:'en'};
+function draw(){
+ document.documentElement.dataset.ui=state.theme;
+ const g=document.getElementById('grid');g.innerHTML='';
+ OPT.forEach(o=>{
+  const d=document.createElement('section');d.className='opt';
+  d.innerHTML=`<h2><b>${o.k}</b>${o.name}</h2><p class="mood">${o.mood}</p><div class="sw">${o.sw.map(c=>`<i style="background:${c}" title="${c}"></i>`).join('')}<span>${o.sw.join(' · ')}</span></div><div class="phone"><div class="screen ${o.k}" lang="${state.lang}" id="s${o.k}">${screen(o,T[state.lang])}</div></div><p class="fonts">Type: ${o.fonts}</p>`;
+  g.appendChild(d);
+  d.querySelector('.screen').closest('.phone').className='phone '+(state.theme==='dark'?'dark':'');
+ });
+}
+document.querySelectorAll('[data-theme]').forEach(b=>b.onclick=()=>{state.theme=b.dataset.theme;document.querySelectorAll('[data-theme]').forEach(x=>x.setAttribute('aria-pressed',x===b));draw()});
+document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>{state.lang=b.dataset.lang;document.querySelectorAll('[data-lang]').forEach(x=>x.setAttribute('aria-pressed',x===b));draw()});
+draw();
+</script>
+</body>
+</html>

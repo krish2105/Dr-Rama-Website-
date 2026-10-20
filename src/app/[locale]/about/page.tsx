@@ -3,7 +3,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getAbout } from "@/lib/content";
 import { CaseHead } from "@/components/ui/CaseHead";
 import { DevTodo } from "@/components/ui/DevTodo";
-import { Sprig } from "@/components/ui/Sprig";
+import { Rosette } from "@/components/ui/Motif";
+import Image from "next/image";
+import { portrait, altFor } from "@/lib/photos";
 import { ButtonLink } from "@/components/ui/Button";
 import { SITE } from "@/lib/site";
 
@@ -27,7 +29,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-14">
       <header className="relative">
-        <Sprig className="pointer-events-none absolute -right-4 -top-4 hidden h-60 text-sage opacity-40 md:block" />
+        <Rosette className="pointer-events-none absolute -end-10 -top-10 hidden h-64 w-64 text-primary opacity-[0.08] md:block" />
         <CaseHead as="h1" title={a.title} eyebrow={locale === "hi" ? SITE.doctor.degreeHi : SITE.doctor.degree} />
         <p className="mt-4 inline-block rounded-full bg-accent/15 px-3 py-1 text-sm font-semibold text-accentink">{c("draft")}</p>
         <div className="mt-6 grid gap-8 md:grid-cols-[1.4fr_1fr]">
@@ -35,7 +37,11 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             {a.intro.map((p) => <p key={p}>{p}</p>)}
           </div>
           <div>
-            {SITE.portraitPhoto ? null : <DevTodo>{t("portraitTodo")}</DevTodo>}
+            {portrait ? (
+              <div className="float-card relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[2rem] border-[6px] border-surface">
+                <Image src={portrait.src} alt={altFor(portrait, locale)} fill sizes="(min-width:768px) 384px, 90vw" className="object-cover" priority />
+              </div>
+            ) : <DevTodo>{t("portraitTodo")}</DevTodo>}
           </div>
         </div>
       </header>
@@ -45,7 +51,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <ul className="mt-8 grid gap-4 md:grid-cols-3">
           {a.qualifications.map((q) => (
             <li key={q.title} className="card p-5">
-              <p className="font-display text-2xl font-semibold text-primary">{q.title}</p>
+              <p className="font-display text-2xl font-bold text-primary">{q.title}</p>
               {q.org ? <p className="mt-1 text-muted">{q.org}</p> : null}
               <p className="mt-3 text-sm font-semibold uppercase tracking-wider text-wood">{q.when}</p>
             </li>
@@ -106,7 +112,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </ul>
       </section>
 
-      <div className="mt-16 rounded-3xl bg-primary px-6 py-10 text-center text-onprimary">
+      <div className="float-card mt-16 bg-primary px-6 py-10 text-center text-onprimary">
         <h2 className="text-2xl font-semibold">{home("ctaTitle")}</h2>
         <ButtonLink href="/book" variant="secondary" className="mt-5 !border-onprimary !text-onprimary hover:!bg-white/10">{c("book")}</ButtonLink>
       </div>

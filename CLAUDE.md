@@ -1,6 +1,8 @@
-# CLAUDE.md: Rajesh Homeo Clinic website (EN + HI)
+# CLAUDE.md: Rajesh Homeo Home website (EN + HI)
 
-Bilingual website for Dr. Rama Mathur, M.D. (Homoeopathy), Rajesh Homeo Clinic, Jaipur. Source of truth: `PROJECT-BRIEF.md`. Goal: turn a mobile visitor into a call, WhatsApp message or booking in under 30 seconds, and make her 31 years and qualifications easy to trust.
+**Name correction (owner, 2026-10-20): the name is "Rajesh Homeo Home", not "Rajesh Homeo Clinic" as written in PROJECT-BRIEF.md. Hindi: "राजेश होम्यो होम". Never write "Rajesh Homeo Clinic".**
+
+Bilingual website for Dr. Rama Mathur, M.D. (Homoeopathy), Rajesh Homeo Home, Jaipur. Source of truth: `PROJECT-BRIEF.md`. Goal: turn a mobile visitor into a call, WhatsApp message or booking in under 30 seconds, and make her 31 years and qualifications easy to trust.
 
 ## Rule 1: Never invent facts
 - Use only facts in `PROJECT-BRIEF.md` or `/source` (cv, photos, brand). Nothing from memory, the web or assumptions.
@@ -10,7 +12,8 @@ Bilingual website for Dr. Rama Mathur, M.D. (Homoeopathy), Rajesh Homeo Clinic, 
 ## Rule 2: Images
 - Anything showing the clinic or the doctor uses real photos from `/source/photos` only. Never generate, stylise or replace them.
 - Do not redraw, retype or alter certificates or plaques visible in photos.
-- Vector botanical decoration (leaf/sprig SVG) is allowed as decoration only, never as a stand-in for a clinic or doctor photo.
+- Vector decoration (rosettes, dot rules) is allowed as decoration only, never as a stand-in for a clinic or doctor photo.
+- Photo workflow: put real photos in `source/photos` (name the doctor portrait `doctor-...jpg`), run `npm run photos` (resizes, strips EXIF/GPS, writes `public/photos`, `content/gallery.json`, `content/site.json`), then write alt text in EN + HI. `npm run check-content` fails until alt text exists.
 - Every image has alt text in English and Hindi. Use `next/image`. Reserve dimensions (no layout shift).
 - No before/after images.
 
@@ -33,11 +36,13 @@ Date of birth, gender, nationality, hobbies, "personal objective", the declarati
 - Safe practice wording only: keeps detailed clinical notes and records for each patient; refers patients to other health practitioners when appropriate; communicates clearly with patients.
 
 ## Design
-- Concept: "Apothecary & case-notes". Calm, botanical, trustworthy, not a hospital template.
-- Tokens: cream `#FAF7F0`, deep green `#1F4D3A`, sage `#8FAE8B`, sandstone `#C8704F`, warm wood brown `#6B4A32` (secondary accent echoing her real furniture).
-- Fonts: Fraunces (headings), Inter (body), Noto Sans Devanagari (Hindi). Base text 17-18px, tap targets at least 48px.
-- Theme: Light / Dark / System toggle, no flash, WCAG AA in both.
-- Motion: gentle fade-ins only; respect `prefers-reduced-motion`. Mobile-first; check at 360px.
+- Direction chosen by the client (2026-10-20): **Option B, "Blue Pottery, Friendly"**. No green anywhere. Green from the brief was rejected.
+- Palette (tokens in `src/styles/globals.css`): ivory `#F6F1E4`, cobalt `#1D4E9F`, soft blue `#E3EBF8`, navy ink `#13203F`, brass `#B58A33` (ornament only; text uses `#85601D`). Dark: night `#0D1630`, light cobalt `#8DB0F2`, brass `#D8B15C`.
+- Fonts: Bricolage Grotesque (EN headings), DM Sans (EN body), Mukta (Hindi, self-hosted in `public/fonts`, preloaded on `/hi` only). Base text 17-18px, tap targets at least 48px.
+- Floating UI: floating glass pill header, floating contact dock on mobile (Call / WhatsApp / Book), floating round buttons on desktop, floating chips and cards around the portrait ring, tilted floating gallery cards. Gentle float only; respect `prefers-reduced-motion`.
+- Signature: blue-pottery rosette ring around the doctor's real portrait. Rosettes and dot rules are vector decoration only.
+- Theme: Light / Dark / System toggle, no flash, WCAG AA in both. Mobile-first; check at 360px.
+- RIICO service record has its own section on Home (full corporation name, 24 years, 1999 to 2023, retired as Deputy General Manager). Never publish her internal committee roles at RIICO.
 
 ## Stack
 Next.js App Router + TypeScript + Tailwind; next-intl (en, hi; `/en`, `/hi`); MDX blog; Supabase for bookings; Vercel. Secrets only in env vars (`.env.example` documents them).

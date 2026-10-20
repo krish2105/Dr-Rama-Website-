@@ -8,14 +8,14 @@ export function LangToggle() {
   const pathname = usePathname();
   const t = useTranslations("common");
   return (
-    <div role="group" aria-label={t("language")} className="inline-flex rounded-full border border-line bg-surface p-1 text-sm font-semibold">
+    <div role="group" aria-label={t("language")} className="inline-flex rounded-full bg-soft p-1 text-sm font-semibold">
       <Link
         href={pathname}
         locale="en"
         hrefLang="en"
         lang="en"
         aria-current={locale === "en" ? "true" : undefined}
-        className={`grid h-10 min-w-10 place-items-center rounded-full px-2 sm:min-w-12 sm:px-3 ${locale === "en" ? "bg-primary text-onprimary" : "text-muted hover:bg-soft"}`}
+        className={`grid h-10 min-w-10 place-items-center rounded-full px-2 sm:min-w-12 sm:px-3 ${locale === "en" ? "bg-primary text-onprimary" : "text-muted hover:bg-surface"}`}
       >
         EN
       </Link>
@@ -25,7 +25,7 @@ export function LangToggle() {
         hrefLang="hi"
         lang="hi"
         aria-current={locale === "hi" ? "true" : undefined}
-        className={`grid h-10 min-w-10 place-items-center rounded-full px-2 sm:min-w-12 sm:px-3 ${locale === "hi" ? "bg-primary text-onprimary" : "text-muted hover:bg-soft"}`}
+        className={`grid h-10 min-w-10 place-items-center rounded-full px-2 sm:min-w-12 sm:px-3 ${locale === "hi" ? "bg-primary text-onprimary" : "text-muted hover:bg-surface"}`}
       >
         हिं
       </Link>

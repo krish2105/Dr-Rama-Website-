@@ -1,7 +1,7 @@
 {
   "meta": {
-    "siteName": "Rajesh Homeo Clinic",
-    "defaultDescription": "Rajesh Homeo Clinic, Banipark, Jaipur. Homeopathic consultations with Dr. Rama Mathur, M.D. (Homoeopathy), 31 years of clinical experience. Hindi and English."
+    "siteName": "Rajesh Homeo Home",
+    "defaultDescription": "Rajesh Homeo Home, Banipark, Jaipur. Homeopathic consultations with Dr. Rama Mathur, M.D. (Homoeopathy), 31 years of clinical experience. Hindi and English."
   },
   "common": {
     "skip": "Skip to content",
@@ -23,7 +23,7 @@
     "phone": "Phone",
     "email": "Email",
     "photoPlaceholder": "Real clinic photo to be added",
-    "whatsappPrefill": "Hello, I would like to ask about an appointment at Rajesh Homeo Clinic."
+    "whatsappPrefill": "Hello, I would like to ask about an appointment at Rajesh Homeo Home."
   },
   "nav": {
     "home": "Home",
@@ -36,18 +36,19 @@
     "blog": "Blog",
     "faq": "FAQ",
     "contact": "Contact",
-    "privacy": "Privacy and disclaimer"
+    "privacy": "Privacy and disclaimer",
+    "aboutShort": "About"
   },
   "footer": {
     "disclaimer": "Homeopathic care does not replace emergency or specialist medical treatment.",
     "registration": "Registration",
-    "rights": "Rajesh Homeo Clinic",
+    "rights": "Rajesh Homeo Home",
     "explore": "Explore",
     "visit": "Visit",
     "dataNote": "To ask for your booking data to be deleted, email us."
   },
   "home": {
-    "eyebrow": "Rajesh Homeo Clinic · Banipark, Jaipur",
+    "eyebrow": "Rajesh Homeo Home · Banipark, Jaipur",
     "title": "Homeopathic care from Dr. Rama Mathur",
     "titleSub": "M.D. (Homoeopathy)",
     "lead": "31 years of clinical experience. Consultations in Hindi and English, in Banipark, Jaipur.",
@@ -78,10 +79,23 @@
     "galleryTitle": "The consultation room",
     "galleryNote": "Photos of the real clinic.",
     "visitTitle": "Visit the clinic",
-    "visitBody": "Rajesh Homeo Clinic is on the second floor of Rajvilas Apartment, Meera Marg, Banipark.",
+    "visitBody": "Rajesh Homeo Home is on the second floor of Rajvilas Apartment, Meera Marg, Banipark.",
     "timingsMissing": "Clinic timings will be shown here once confirmed.",
     "ctaTitle": "Ready to book a visit?",
-    "ctaBody": "Send your name, phone number and a preferred time. The clinic will get back to you."
+    "ctaBody": "Send your name, phone number and a preferred time. The clinic will get back to you.",
+    "chipYears": "years of clinical experience",
+    "chipDegree": "M.D. (Homoeopathy)",
+    "chipLanguages": "Hindi · English",
+    "portraitTodo": "Doctor portrait to be added",
+    "riicoKicker": "Service record",
+    "riicoTitle": "Empanelled homoeopathic doctor, RIICO",
+    "riicoOrg": "Rajasthan State Industrial Development & Investment Corporation Ltd (RIICO), Jaipur",
+    "riicoNum": "24",
+    "riicoYears": "years of service",
+    "riicoPeriod": "1999 to 2023",
+    "riicoRole": "Retired as Deputy General Manager",
+    "qualTitle": "Qualifications",
+    "visitTodoMap": "Map shows here once the link is supplied."
   },
   "book": {
     "title": "Book a visit",
@@ -113,7 +127,7 @@
     "slot_afternoon": "Afternoon",
     "slot_evening": "Evening",
     "slot_any": "Any time",
-    "successWhatsappMsg": "Hello, I have requested an appointment at Rajesh Homeo Clinic. Name: {name}. Preferred: {date}, {slot}."
+    "successWhatsappMsg": "Hello, I have requested an appointment at Rajesh Homeo Home. Name: {name}. Preferred: {date}, {slot}."
   },
   "pages": {
     "comingTitle": "Coming soon",
@@ -130,7 +144,7 @@
   },
   "services": {
     "title": "Services",
-    "lead": "Homeopathic consultation with Dr. Rama Mathur, M.D. (Homoeopathy), in Hindi or English, at Rajesh Homeo Clinic, Banipark, Jaipur.",
+    "lead": "Homeopathic consultation with Dr. Rama Mathur, M.D. (Homoeopathy), in Hindi or English, at Rajesh Homeo Home, Banipark, Jaipur.",
     "todo": "The detailed list of services needs the doctor's own wording (content/TODO.md).",
     "prod": "A fuller description of services is being prepared. To ask a question, please call or message the clinic."
   },

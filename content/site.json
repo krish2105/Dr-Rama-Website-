@@ -1,6 +1,6 @@
 {
   "_note": "Only facts from PROJECT-BRIEF.md. confirmed:false means the doctor has not yet confirmed it may be published. null means unknown (see content/TODO.md).",
-  "clinic": { "name": "Rajesh Homeo Clinic" },
+  "clinic": { "name": "Rajesh Homeo Home" },
   "doctor": {
     "name": "Dr. Rama Mathur",
     "nameHi": "डॉ. रमा माथुर",
