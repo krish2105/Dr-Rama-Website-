@@ -13,8 +13,6 @@ Nothing below may be invented. Placeholders show in development only; production
 - Confirmed by the owner on 21 Oct 2026: registration No. 3780 is current and valid (the site still states no validity date); hours as on the website; pin code 302016; WhatsApp is the same number; slot length 20 minutes with one patient per slot; consultation fee ₹800; payment by UPI or cash (no UPI ID is published); Dr. Mathur approved the site text
 
 ## 1. Needed from the doctor
-- [ ] **Approve the DRAFT pages:** About (EN + HI), Services, Care areas, the 3 blog posts, FAQ, Privacy. Native Hindi review of all Hindi text.
-- [ ] Care areas: the handout names diseases (several on the Drugs and Magic Remedies Act 1954 schedule). The site uses broad categories only. Decide whether to reprint the handout without disease claims.
 - [ ] Confirm the address line "Rajvilas Apartment I" (the card says "Appartment I", the registration slip omits the "I").
 - [ ] Localities patients come from (optional).
 - [ ] Doctor to confirm the current portrait (white coat; AI-assisted from a real photo) is a faithful likeness.
@@ -40,7 +38,6 @@ Nothing below may be invented. Placeholders show in development only; production
 - [ ] Real photo of the flat's entrance door and nameplate (Rajvilas Apartment, 2nd floor).
 - [ ] A studio-quality portrait (window light, plain wall) to replace the current one.
 - [ ] Logo. The business card uses a cross and an Om-swastika symbol, no wordmark. Until a logo is supplied the site uses a simple rosette mark.
-- [ ] Medical-camp photos (5) sit in `source/photos/_pending-consent/`. Each person shown must consent before any is published.
 - [ ] Patient experience stories with recorded consent (the page shows an empty state).
 
 ## 3. Accounts and launch
@@ -51,6 +48,7 @@ Nothing below may be invented. Placeholders show in development only; production
 - [ ] Decide how long booking data is kept and who handles deletion requests by email (the Privacy page shows a dev-only reminder).
 - [ ] Add Vercel Firewall rate limiting on `/api/booking`.
 - [ ] Run `npm run check-content -- --strict`, then Lighthouse on the live URL, then submit the sitemap in Search Console.
+- [ ] Native Hindi review of all Hindi text.
 - [ ] Create the Google Business Profile and upload `source/brand/google-business-profile-cover.png`.
 
 ## 4. Compliance review before launch
