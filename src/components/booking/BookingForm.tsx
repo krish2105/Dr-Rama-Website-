@@ -4,10 +4,10 @@ import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { bookingSchema, fieldErrors, TIME_SLOTS, type FieldKey } from "@/lib/booking";
-import { waHref } from "@/lib/site";
+import { telHref, waHref } from "@/lib/site";
 
 type Errors = Partial<Record<FieldKey, true>>;
-type Status = "idle" | "sending" | "done" | "error";
+type Status = "idle" | "sending" | "done" | "error" | "unavailable";
 
 const field =
   "mt-1 block min-h-12 w-full rounded-2xl border border-line bg-bg px-4 text-base text-ink placeholder:text-muted focus:border-primary";
@@ -52,6 +52,11 @@ export function BookingForm() {
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.ok) {
         if (data?.fields) setErrors(data.fields);
+        if (data?.error === "not_configured") {
+          setSummary({ name: parsed.data.name, date: parsed.data.date, time: parsed.data.time });
+          setStatus("unavailable");
+          return;
+        }
         setStatus("error");
         return;
       }
@@ -62,6 +67,21 @@ export function BookingForm() {
     } catch {
       setStatus("error");
     }
+  }
+
+  if (status === "unavailable") {
+    // No database yet: hand the visitor a ready WhatsApp message (name, date, slot only; never the reason).
+    const msg = t("unavailableMsg", { name: summary.name, date: summary.date, slot: t(`slot_${summary.time}`) });
+    return (
+      <div className="form-card" role="status">
+        <h2 className="text-xl text-primary">{t("unavailableTitle")}</h2>
+        <p className="mt-3 text-base">{t("unavailableBody")}</p>
+        <div className="mt-5 flex flex-wrap gap-3">
+          <a href={waHref(msg)} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center rounded-full bg-primary px-5 font-semibold text-onprimary">{t("unavailableWhatsapp")}</a>
+          <a href={telHref} className="inline-flex min-h-12 items-center rounded-full border border-primary/50 px-5 font-semibold text-primary">{t("unavailableCall")}</a>
+        </div>
+      </div>
+    );
   }
 
   if (status === "done") {

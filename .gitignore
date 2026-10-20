@@ -16,3 +16,7 @@ source/photos/_pending-consent/*
 # Large originals of generated artwork (optimised copies live in public/art)
 source/art/*
 !source/art/.gitkeep
+
+# Word files and lock files stay local (prompt packs are for the owner)
+*.docx
+~$*

@@ -8,7 +8,7 @@ import { routing } from "@/i18n/routing";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingContact } from "@/components/layout/FloatingContact";
-import { SITE_URL } from "@/lib/site";
+import { INDEXABLE, SITE_URL } from "@/lib/site";
 import { clinicSchema } from "@/lib/schema";
 import { Analytics } from "@/components/layout/Analytics";
 import "@/styles/globals.css";
@@ -32,6 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale, namespace: "meta" });
   return {
     metadataBase: new URL(SITE_URL),
+    ...(INDEXABLE ? {} : { robots: { index: false, follow: false } }),
     title: { default: t("siteName"), template: `%s | ${t("siteName")}` },
     description: t("defaultDescription"),
     alternates: { canonical: `/${locale}`, languages: { en: "/en", hi: "/hi", "x-default": "/en" } },

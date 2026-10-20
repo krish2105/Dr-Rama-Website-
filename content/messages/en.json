@@ -134,7 +134,12 @@
     "slot_evening": "Evening",
     "slot_any": "Any time",
     "successWhatsappMsg": "Hello, I have requested an appointment at Rajesh Homeo Home. Name: {name}. Preferred: {date}, {slot}.",
-    "appointmentNote": "Consultation is with a prior appointment. Send a request here, call or message on WhatsApp, and the clinic will confirm a time."
+    "appointmentNote": "Consultation is with a prior appointment. Send a request here, call or message on WhatsApp, and the clinic will confirm a time.",
+    "unavailableTitle": "Online booking is not switched on yet",
+    "unavailableBody": "Your request was not sent. Please send it on WhatsApp instead, or call the clinic. We have filled in the message for you.",
+    "unavailableWhatsapp": "Send on WhatsApp",
+    "unavailableCall": "Call the clinic",
+    "unavailableMsg": "Hello, I would like an appointment at Rajesh Homeo Home. Name: {name}. Preferred: {date}, {slot}."
   },
   "pages": {
     "comingTitle": "Coming soon",

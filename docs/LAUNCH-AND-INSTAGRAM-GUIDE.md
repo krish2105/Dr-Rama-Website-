@@ -48,7 +48,8 @@ Check that the pin sits on the right building.
 4. Resend: add and verify the sending domain; choose the clinic address that receives booking alerts.
 5. GA4: create a property, copy the measurement ID (G-XXXX). It only loads after a visitor accepts.
 6. Domain: in Vercel add rajeshhomoeohome.in and set the DNS records at the registrar.
-7. After launch: submit `https://rajeshhomoeohome.in/sitemap.xml` in Search Console and test a booking end to end.
+7. The site is blocked from search engines (robots.txt and noindex) until you set `NEXT_PUBLIC_INDEXABLE=true` in Vercel. Do that on launch day, together with the real domain in `NEXT_PUBLIC_SITE_URL`.
+8. After launch: submit `https://rajeshhomoeohome.in/sitemap.xml` in Search Console and test a booking end to end.
 
 **B7. Fees (once supplied):** tell me the amounts and payment methods; I add a row to Contact and an FAQ answer.
 

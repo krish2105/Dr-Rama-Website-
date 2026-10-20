@@ -2,7 +2,13 @@ import site from "../../content/site.json";
 
 export const SITE = site;
 export const isDev = process.env.NODE_ENV !== "production";
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+// Canonical origin: explicit env first, then the Vercel production URL, then localhost.
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000");
+
+// Search engines are blocked until NEXT_PUBLIC_INDEXABLE=true is set (do this at launch, with the real domain).
+export const INDEXABLE = process.env.NEXT_PUBLIC_INDEXABLE === "true";
 
 export const telHref = `tel:${site.phone.e164}`;
 
