@@ -38,7 +38,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           </div>
           <div>
             {portrait ? (
-              <div className="float-card relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[2rem] border-[6px] border-surface">
+              <div className="float-card relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden !rounded-[22px]">
                 <Image src={portrait.src} alt={altFor(portrait, locale)} fill sizes="(min-width:768px) 384px, 90vw" className="object-cover" priority />
               </div>
             ) : <DevTodo>{t("portraitTodo")}</DevTodo>}
@@ -51,7 +51,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <ul className="mt-8 grid gap-4 md:grid-cols-3">
           {a.qualifications.map((q) => (
             <li key={q.title} className="card p-5">
-              <p className="font-display text-2xl font-bold text-primary">{q.title}</p>
+              <p className="font-display text-xl font-semibold text-primary">{q.title}</p>
               {q.org ? <p className="mt-1 text-muted">{q.org}</p> : null}
               <p className="mt-3 text-sm font-semibold uppercase tracking-wider text-wood">{q.when}</p>
             </li>

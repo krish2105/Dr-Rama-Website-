@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, DM_Sans } from "next/font/google";
+import { DM_Sans, Newsreader } from "next/font/google";
 import { preload } from "react-dom";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
@@ -13,7 +13,7 @@ import { clinicSchema } from "@/lib/schema";
 import { Analytics } from "@/components/layout/Analytics";
 import "@/styles/globals.css";
 
-const display = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-display", display: "swap" });
+const display = Newsreader({ subsets: ["latin"], weight: ["500", "600"], variable: "--font-display", display: "swap" });
 const body = DM_Sans({ subsets: ["latin"], variable: "--font-body", display: "swap" });
 
 export function generateStaticParams() {

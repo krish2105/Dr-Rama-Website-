@@ -13,8 +13,8 @@ export function CaseHead({
 }) {
   return (
     <div className={className}>
-      {eyebrow ? <p className="marginalia mb-2">{eyebrow}</p> : null}
-      <Tag id={id} className="case-head text-[1.9rem] text-ink md:text-[2.4rem]">
+      {eyebrow ? <p className="t-eyebrow mb-2">{eyebrow}</p> : null}
+      <Tag id={id} className={`case-head ${Tag === "h1" ? "t-page" : "t-h2"}`}>
         {title}
       </Tag>
     </div>

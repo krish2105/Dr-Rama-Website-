@@ -44,7 +44,7 @@ export function ThemeToggle() {
   const labels: Record<Pref, string> = { light: t("themeLight"), dark: t("themeDark"), system: t("themeSystem") };
 
   return (
-    <div role="radiogroup" aria-label={t("theme")} className="inline-flex rounded-full bg-soft p-1">
+    <div role="radiogroup" aria-label={t("theme")} className="inline-flex rounded-xl bg-soft p-0.5">
       {(["light", "system", "dark"] as Pref[]).map((p) => (
         <button
           key={p}
@@ -54,7 +54,7 @@ export function ThemeToggle() {
           aria-label={labels[p]}
           title={labels[p]}
           onClick={() => choose(p)}
-          className={`grid h-10 w-10 place-items-center rounded-full transition-colors ${
+          className={`grid h-10 w-10 place-items-center rounded-[10px] transition-colors ${
             pref === p ? "bg-primary text-onprimary" : "text-muted hover:bg-surface"
           }`}
         >

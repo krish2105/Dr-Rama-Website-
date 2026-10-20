@@ -47,9 +47,9 @@ Date of birth, gender, nationality, hobbies, "personal objective", the declarati
 ## Design
 - Direction chosen by the client (2026-10-20): **Option B, "Blue Pottery, Friendly"**. No green anywhere. Green from the brief was rejected.
 - Palette (tokens in `src/styles/globals.css`): ivory `#F6F1E4`, cobalt `#1D4E9F`, soft blue `#E3EBF8`, navy ink `#13203F`, brass `#B58A33` (ornament only; text uses `#85601D`). Dark: night `#0D1630`, light cobalt `#8DB0F2`, brass `#D8B15C`.
-- Fonts: Bricolage Grotesque (EN headings), DM Sans (EN body), Mukta (Hindi, self-hosted in `public/fonts`, preloaded on `/hi` only). Base text 17-18px, tap targets at least 48px.
+- Fonts: Newsreader 500/600 (EN headings), DM Sans (EN body), Mukta (Hindi, self-hosted in `public/fonts`, preloaded on `/hi` only). Type scale (client said the first version was too large, 20 Oct 2026): body 16px (17px at 768+; Hindi 17 / 17.5px), h1 30 to 46px, h2 24 to 32px, headings weight 500 (Hindi 600). Use the `.t-h1 .t-page .t-h2 .t-lead .t-eyebrow` roles, not ad-hoc sizes. Tap targets stay at least 48px.
 - Floating UI: floating glass pill header, floating contact dock on mobile (Call / WhatsApp / Book), floating round buttons on desktop, floating chips and cards around the portrait ring, tilted floating gallery cards. Gentle float only; respect `prefers-reduced-motion`.
-- Signature: blue-pottery rosette ring around the doctor's real portrait. Rosettes and dot rules are vector decoration only.
+- Signature: a tall portrait card with a brass offset frame and a faint blue-pottery rosette. Rosettes and dot rules are vector decoration only.
 - Theme: Light / Dark / System toggle, no flash, WCAG AA in both. Mobile-first; check at 360px.
 - RIICO service record has its own section on Home (full corporation name, 24 years, 1999 to 2023, retired as Deputy General Manager). Never publish her internal committee roles at RIICO.
 

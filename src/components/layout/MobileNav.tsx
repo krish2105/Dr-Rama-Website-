@@ -40,7 +40,7 @@ export function MobileNav() {
         aria-expanded={open}
         aria-controls="mobile-menu"
         onClick={() => setOpen((o) => !o)}
-        className="grid h-12 w-12 place-items-center rounded-full bg-soft text-primary"
+        className="grid h-12 w-12 place-items-center rounded-xl text-ink hover:bg-soft"
         aria-label={open ? t("common.close") : t("common.menu")}
       >
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
@@ -48,14 +48,14 @@ export function MobileNav() {
         </svg>
       </button>
       {open ? (
-        <nav id="mobile-menu" aria-label={t("common.menu")} className="fixed inset-x-3 top-[5.5rem] bottom-24 z-40 overflow-y-auto rounded-[2rem] border border-line bg-surface p-4 shadow-[var(--shadow-float)]">
+        <nav id="mobile-menu" aria-label={t("common.menu")} className="fixed inset-x-3 top-[4.5rem] bottom-24 z-40 overflow-y-auto rounded-2xl border border-line bg-surface p-4 shadow-[var(--shadow-float)]">
           <ul className="mx-auto max-w-md">
             {ITEMS.map(([key, href]) => (
               <li key={key} className="border-b border-line">
                 <Link
                   href={href}
                   aria-current={pathname === href ? "page" : undefined}
-                  className="flex min-h-14 items-center justify-between font-display text-xl font-semibold text-ink"
+                  className="flex min-h-14 items-center justify-between font-display text-lg font-medium text-ink"
                 >
                   {t(`nav.${key}`)}
                   <span aria-hidden="true" className="text-accentink">→</span>

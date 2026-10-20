@@ -7,7 +7,7 @@ export function hasPhotos() {
   return clinicPhotos.length > 0;
 }
 
-const tilt = ["md:-rotate-[1.5deg]", "md:rotate-[1.2deg]", "md:-rotate-[0.8deg]", "md:rotate-[1.6deg]"];
+
 
 /** Real photos only, shown as floating cards. With none supplied: dev placeholder, nothing in production. */
 export function Gallery({ limit }: { limit?: number }) {
@@ -29,7 +29,7 @@ export function Gallery({ limit }: { limit?: number }) {
       {list.map((p, i) => (
         <li
           key={p.src}
-          className={`overflow-hidden rounded-[28px] border-[6px] border-surface bg-surface shadow-[var(--shadow-float)] transition-transform hover:-translate-y-1 ${tilt[i % tilt.length]} ${i === 0 && list.length >= 3 ? "lg:col-span-2 lg:row-span-2" : ""}`}
+          className={`overflow-hidden rounded-[18px] border border-line bg-surface shadow-[var(--shadow-float)] ${i === 0 && list.length >= 3 ? "lg:col-span-2 lg:row-span-2" : ""}`}
         >
           <div className={`relative h-full min-h-48 w-full ${single ? "aspect-[4/3] sm:aspect-[16/10]" : "aspect-[4/3]"}`}>
             <Image

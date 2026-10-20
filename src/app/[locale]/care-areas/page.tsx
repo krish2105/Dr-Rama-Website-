@@ -28,7 +28,7 @@ export default async function CareAreasPage({ params }: { params: Promise<{ loca
         {d.items.map((x) => (
           <li key={x} className="float-card flex min-h-24 items-center gap-3 p-5">
             <span aria-hidden="true" className="h-3 w-3 shrink-0 rounded-full bg-accent" />
-            <span className="font-display text-lg font-bold text-ink">{x}</span>
+            <span className="font-display text-lg font-semibold text-ink">{x}</span>
           </li>
         ))}
       </ul>
