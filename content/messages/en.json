@@ -351,6 +351,16 @@
     "fee": "Consultation fee",
     "pay": "Payment",
     "methods": "UPI or cash",
-    "line": "Consultation fee {amount}. Payment: UPI or cash."
+    "line": "Consultation fee {amount}. Payment: UPI or cash.",
+    "panelTitle": "Appointment details",
+    "upi": "UPI",
+    "cash": "Cash",
+    "nextTitle": "What happens next",
+    "next1": "Choose a time and send your request.",
+    "next2": "Dr. Mathur confirms the time with you.",
+    "next3": "Visit the clinic at the confirmed time.",
+    "goodTitle": "Good to know",
+    "byAppointment": "Consultation is by prior appointment. A time you pick here is a request until it is confirmed.",
+    "languages": "Dr. Mathur consults in Hindi and English."
   }
 }

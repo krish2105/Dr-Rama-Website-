@@ -7,6 +7,9 @@ const paths: Record<string, React.ReactNode> = {
   clock: <><circle cx="12" cy="12" r="9" /><path d="M12 7v5.2l3.2 2" /></>,
   directions: <path d="M4 11.5 20 4l-7.5 16-2.2-6.3L4 11.5Z" />,
   rupee: <><path d="M7 5.5h10M7 9.5h10" /><path d="M9 5.5c4.5 0 4.5 6 0 6H7.5l7 7" /></>,
+  cash: <><rect x="3" y="6.5" width="18" height="11" rx="2" /><circle cx="12" cy="12" r="2.6" /><path d="M6.5 9.5h.01M17.5 14.5h.01" /></>,
+  scan: <><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16" /><path d="M8 12h8" /></>,
+  globe: <><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.7 3.5 5.7 3.5 9s-1 6.3-3.5 9c-2.5-2.7-3.5-5.7-3.5-9s1-6.3 3.5-9Z" /></>,
   clipboard: <><rect x="5.5" y="4.5" width="13" height="16.5" rx="2.2" /><path d="M9 4.5V3.2h6v1.3" /><path d="M9 10h6M9 13.5h3" /></>,
   question: <><circle cx="12" cy="12" r="9" /><path d="M9.6 9.6a2.5 2.5 0 1 1 3.6 2.2c-.8.4-1.2.9-1.2 1.8" /><path d="M12 16.9h.01" /></>,
 };

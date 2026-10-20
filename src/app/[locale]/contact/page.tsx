@@ -6,7 +6,7 @@ import { DevTodo } from "@/components/ui/DevTodo";
 import { ExternalButton, ButtonLink } from "@/components/ui/Button";
 import { SITE, telHref, waHref, mapsDirectionsHref, mapsEmbedUrl } from "@/lib/site";
 import type { Timings } from "@/lib/openNow";
-import { IconBadge } from "@/components/ui/Icon";
+import { Icon, IconBadge } from "@/components/ui/Icon";
 import { feeLine } from "@/components/ui/FeeNote";
 import { OpenNow } from "@/components/sections/OpenNow";
 import { HoursList } from "@/components/sections/HoursList";
@@ -66,8 +66,11 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               <div className="flex items-center gap-3"><IconBadge name="rupee" /><p className="t-eyebrow">{fees("title")}</p></div>
               <dl className="mt-3 space-y-1 text-lg">
                 <div className="flex flex-wrap gap-x-2"><dt className="text-muted">{fees("fee")}:</dt><dd className="font-semibold text-ink">{SITE.fees.consultation.display}</dd></div>
-                <div className="flex flex-wrap gap-x-2"><dt className="text-muted">{fees("pay")}:</dt><dd>{fees("methods")}</dd></div>
               </dl>
+              <ul className="mt-3 flex flex-wrap gap-2" aria-label={fees("pay")}>
+                <li className="chip"><Icon name="scan" className="h-4 w-4 text-primary" />{fees("upi")}</li>
+                <li className="chip"><Icon name="cash" className="h-4 w-4 text-primary" />{fees("cash")}</li>
+              </ul>
             </div>
           ) : null}
           <ButtonLink href="/book">{c("book")}</ButtonLink>
