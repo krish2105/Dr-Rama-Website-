@@ -10,17 +10,15 @@ Nothing below may be invented. Placeholders show in development only; production
 - State council registration: Rajasthan Board of Homoeopathic Medicine, No. 3780 (shown in the footer and on About)
 - Portrait and consultation-room photo, approved blue-pottery artwork, share image
 - Social launch pack (Word) and templates in `social/templates/`
-- Confirmed by the owner on 21 Oct 2026: registration No. 3780 is current and valid (the site still states no validity date); hours as on the website; pin code 302016; WhatsApp is the same number; slot length 20 minutes with one patient per slot; consultation fee ₹800; payment by UPI or cash (no UPI ID is published); Dr. Mathur approved the site text
+- Confirmed by the owner on 21 Oct 2026: Dr. Mathur herself answers the phone and confirms booking requests; the address is written "Raj Vilas Apartment 1" (there is also an Apartment 2); registration No. 3780 is current and valid (the site still states no validity date); hours as on the website; pin code 302016; WhatsApp is the same number; slot length 20 minutes with one patient per slot; consultation fee ₹800; payment by UPI or cash (no UPI ID is published); Dr. Mathur approved the site text
 
 ## 1. Needed from the doctor
-- [ ] Confirm the address line "Rajvilas Apartment I" (the card says "Appartment I", the registration slip omits the "I").
 - [ ] Localities patients come from (optional).
 - [ ] Doctor to confirm the current portrait (white coat; AI-assisted from a real photo) is a faithful likeness.
 - [ ] Confirm the "Honoured by Rajasthan Patrika" line (2012) may be published.
 
 ### Booking v2 questions (Phase 1.5)
-- [ ] Who answers the phone and WhatsApp during clinic hours, and who confirms booking requests.
-- [ ] Landmark near Rajvilas Apartment I, parking, and whether there is a lift (How to reach page shows a dev-only note until supplied).
+- [ ] Landmark near Raj Vilas Apartment 1, parking, and whether there is a lift (How to reach page shows a dev-only note until supplied).
 - [ ] ABDM Healthcare Professional Registry ID, if the doctor has one (not shown until supplied).
 - [ ] Existing online listings (Google, Practo, Justdial, Facebook) so `profiles` can be filled in `content/site.json` for structured data.
 - [ ] After the real domain is live: run `SITE_URL=https://rajeshhomoeohome.in npm run pdfs`, commit, and only then print the QR poster.
@@ -35,7 +33,7 @@ Nothing below may be invented. Placeholders show in development only; production
 
 ## 2. Photos and brand
 - [ ] Real close-up photos: display cabinet, certificate and plaque wall (shoot list in Prompt Pack v3). The generated versions (07, 08) are not used because they invent certificate text. The room images on the site (05, 06) are AI-enhanced and carry a disclosure caption; replace them with real photos when available.
-- [ ] Real photo of the flat's entrance door and nameplate (Rajvilas Apartment, 2nd floor).
+- [ ] Real photo of the flat's entrance door and nameplate (Raj Vilas Apartment 1, 2nd floor).
 - [ ] A studio-quality portrait (window light, plain wall) to replace the current one.
 - [ ] Logo. The business card uses a cross and an Om-swastika symbol, no wordmark. Until a logo is supplied the site uses a simple rosette mark.
 - [ ] Patient experience stories with recorded consent (the page shows an empty state).

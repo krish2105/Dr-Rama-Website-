@@ -29,19 +29,20 @@ Bilingual website for Dr. Rama Mathur, M.D. (Homoeopathy), Rajesh Homeo Home, Ja
 - Not legal advice: recommend a qualified review before launch (Drugs and Magic Remedies Act 1954, DPDP Act 2023 / Rules 2025, council advertising rules).
 
 ## Added after the printed handout and photos (2026-10-20)
-- The practice is inside a flat (202, Rajvilas Apartment). No storefront or street-signboard imagery.
+- The practice is inside a flat (202, Raj Vilas Apartment 1). No storefront or street-signboard imagery.
 - `source/reference/` holds the printed handout and the original room photo. They are private and never published. The handout lists named diseases and says "इलाज"; do not copy that wording. Take only plain facts from it (hours, address, phone).
 - Named diseases are never published as treated conditions. Several (diabetes, blood pressure, menstrual flow disorders, kidney and gall stones) are on the schedule of the Drugs and Magic Remedies Act 1954. Care areas stay broad categories. `npm run check-content` fails on a list of named diseases.
 - Photos showing patients or other people stay in `source/photos/_pending-consent/` until each person consents. Never send such photos to an AI tool.
 - Hours come from the business card (daily 6:00 pm to 8:30 pm; Sunday 10:00 am to 2:30 pm), chosen by the owner over the handout. Consultation is by prior appointment. Registration: Rajasthan Board of Homoeopathic Medicine, No. 3780 (the slip we hold was valid only to 19/5/2020; never state a validity date).
 - The English name stays "Rajesh Homeo Home" (the owner's choice) although the card and domain spell "Homoeo"; "Rajesh Homoeo Home" is kept as `alternateName` in JSON-LD.
 - Experience is **35+ years of clinical experience, since 1991** (owner, 2026-10-20; earlier the CV said 31 and the handout 32). Always write "35+", never an exact figure.
-- Floor: the slip and card say 2nd floor; the handout's "1st" means Apartment I. Address reads "202, 2nd Floor, Rajvilas Apartment I".
+- Floor: the slip and card say 2nd floor; the handout's "1st" means Apartment I. Address reads "202, 2nd Floor, Raj Vilas Apartment 1" (owner, 21 Oct 2026: there is also a Raj Vilas Apartment 2, so write "Raj Vilas Apartment 1", Hindi "राज विलास अपार्टमेंट 1").
 - `source/reference/` also holds the business card and registration slip (private, never published; the slip names a family member).
 
 ## Confirmed 21 Oct 2026 (owner)
 - Consultation fee ₹800; payment by UPI or cash. Show them as plain facts (Contact, Home, Book, First visit, FAQ, schema). Never publish a UPI ID, QR code for payment, discounts or follow-up pricing unless supplied.
 - Registration No. 3780 is current and valid; still show the number only, no validity date. Hours as on the site. WhatsApp = the main number. Pin code 302016. Slot length 20 minutes, one patient per slot.
+- Dr. Mathur herself answers the phone and confirms booking requests.
 - Dr. Mathur approved the site text (reported by the owner); keep her written approval on file.
 
 ## Do NOT publish

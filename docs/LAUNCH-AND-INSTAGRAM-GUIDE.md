@@ -29,7 +29,7 @@ Written 20 Oct 2026. Open items are also in `content/TODO.md`. Nothing here is l
 ## B. How to add each missing item
 
 **B1. Google Maps link and map**
-1. Open google.com/maps on a computer and search the clinic (or the address). If the clinic is not listed yet, search "Rajvilas Apartment, Meera Marg, Bani Park, Jaipur" and click the exact building.
+1. Open google.com/maps on a computer and search the clinic (or the address). If the clinic is not listed yet, search "Raj Vilas Apartment 1, Meera Marg, Bani Park, Jaipur" and click the exact building.
 2. Click **Share**. Under **Send a link** copy the link. Paste it into `content/site.json` as `"mapsUrl"`. This makes the Get directions buttons open Google Maps.
 3. In the same Share box open **Embed a map**, copy the HTML, and take **only the address inside `src="..."`** (it starts with `https://www.google.com/maps/embed?pb=`). Paste it as `"mapsEmbedUrl"`.
 4. Reload the site. The dev-only reminder disappears and the map shows on Home (Visit the clinic) and Contact.

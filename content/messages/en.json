@@ -87,7 +87,7 @@
     "galleryTitle": "The consultation room",
     "galleryNote": "Photos of the real clinic.",
     "visitTitle": "Visit the clinic",
-    "visitBody": "Rajesh Homeo Home is on the second floor of Rajvilas Apartment, Meera Marg, Banipark.",
+    "visitBody": "Rajesh Homeo Home is on the second floor of Raj Vilas Apartment 1, Meera Marg, Banipark.",
     "timingsMissing": "Clinic timings will be shown here once confirmed.",
     "ctaTitle": "Ready to book a visit?",
     "ctaBody": "Send your name, phone number and a preferred time. The clinic will get back to you.",
@@ -105,7 +105,7 @@
     "visitHours": "Clinic hours",
     "bannerKicker": "Jaipur",
     "bannerTitle": "Find Dr. Mathur in Banipark",
-    "bannerBody": "Rajesh Homeo Home is at Rajvilas Apartment, Meera Marg, Banipark. Call ahead or send a booking request."
+    "bannerBody": "Rajesh Homeo Home is at Raj Vilas Apartment 1, Meera Marg, Banipark. Call ahead or send a booking request."
   },
   "book": {
     "title": "Book a visit",
@@ -300,7 +300,7 @@
     "lead": "The clinic is inside a flat in an apartment building in Banipark, Jaipur. Follow these steps, or call and we will guide you.",
     "stepsTitle": "Step by step",
     "s1": "Come to Meera Marg, Banipark, Jaipur.",
-    "s2": "Look for Rajvilas Apartment I.",
+    "s2": "Look for Raj Vilas Apartment 1.",
     "s3": "The clinic is flat 202, on the 2nd floor.",
     "s4": "If you cannot find it, call {phone} and we will guide you.",
     "addressTitle": "Address",

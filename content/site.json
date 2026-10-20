@@ -34,22 +34,22 @@
   },
   "address": {
     "lines": [
-      "202, 2nd Floor, Rajvilas Apartment I",
+      "202, 2nd Floor, Raj Vilas Apartment 1",
       "Meera Marg, Banipark",
       "Jaipur, Rajasthan 302016"
     ],
     "linesHi": [
-      "202, दूसरी मंज़िल, राजविलास अपार्टमेंट I",
+      "202, दूसरी मंज़िल, राज विलास अपार्टमेंट 1",
       "मीरा मार्ग, बनी पार्क",
       "जयपुर, राजस्थान 302016"
     ],
-    "street": "202, 2nd Floor, Rajvilas Apartment I, Meera Marg, Banipark",
+    "street": "202, 2nd Floor, Raj Vilas Apartment 1, Meera Marg, Banipark",
     "locality": "Jaipur",
     "region": "Rajasthan",
     "postalCode": "302016",
     "country": "IN",
     "confirmed": true,
-    "source": "Business card: 202, 2 Floor, Rajvilas Appartment I; registration slip: 202-II Floor. Pin code 302016 confirmed by the owner on 21 Oct 2026."
+    "source": "Business card: 202, 2 Floor, Rajvilas Appartment I (the owner confirmed on 21 Oct 2026 to write it as Raj Vilas Apartment 1, because there is also a Raj Vilas Apartment 2); registration slip: 202-II Floor. Pin code 302016 confirmed by the owner on 21 Oct 2026."
   },
   "registration": {
     "council": "Rajasthan Board of Homoeopathic Medicine",
@@ -138,8 +138,8 @@
   "alternateNames": [
     "Rajesh Homoeo Home"
   ],
-  "mapsEmbedUrl": "https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1sRajvilas+Apartment+I,+Meera+Marg,+Bani+Park,+Jaipur,+Rajasthan+302016",
-  "_mapsHelp": "mapsEmbedUrl currently searches the written address (not an exact pin). Check the pin sits on Rajvilas Apartment I; if not, paste the exact Share > Embed a map src from Google Maps. mapsUrl = the Google Maps Share link for Get directions (when null, directions search by address).",
+  "mapsEmbedUrl": "https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1sRaj+Vilas+Apartment+1,+Meera+Marg,+Bani+Park,+Jaipur,+Rajasthan+302016",
+  "_mapsHelp": "mapsEmbedUrl currently searches the written address (not an exact pin). Check the pin sits on Raj Vilas Apartment 1; if not, paste the exact Share > Embed a map src from Google Maps. mapsUrl = the Google Maps Share link for Get directions (when null, directions search by address).",
   "payment": {
     "methods": [
       "upi",
