@@ -1,7 +1,7 @@
 {
   "_note": "Facts come from PROJECT-BRIEF.md and the clinic's own printed documents (handout, business card). confirmed:true means it is printed on materials the clinic hands to the public. null means unknown (see content/TODO.md).",
   "clinic": {
-    "name": "Rajesh Homeo Home"
+    "name": "Raajesh Homeo Home"
   },
   "doctor": {
     "name": "Dr. Rama Mathur",
@@ -162,7 +162,9 @@
     "source": "Printed on the clinic business card"
   },
   "alternateNames": [
-    "Rajesh Homoeo Home"
+    "Rajesh Homeo Home",
+    "Rajesh Homoeo Home",
+    "Raajesh Homoeo Home"
   ],
   "mapsEmbedUrl": "https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1sRaj+Vilas+Apartment+1,+Meera+Marg,+Bani+Park,+Jaipur,+Rajasthan+302016",
   "_mapsHelp": "mapsEmbedUrl currently searches the written address (not an exact pin). Check the pin sits on Raj Vilas Apartment 1; if not, paste the exact Share > Embed a map src from Google Maps. mapsUrl = the Google Maps Share link for Get directions (when null, directions search by address).",

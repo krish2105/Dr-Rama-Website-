@@ -15,8 +15,9 @@ const BANNED_EN = ["cure", "cured", "cures", "curing", "guarantee", "guaranteed"
 const BANNED_HI = ["गारंटी", "चमत्कार", "सर्वश्रेष्ठ", "सबसे अच्छ", "100%", "पक्का इलाज", "जड़ से"];
 // Allowed only as a quote of a real honour (reported, not self-praise); review by hand.
 const REVIEW = ["outstanding", "उत्कृष्ट", "leading", "renowned"];
+// Diabetes and kidney stones were taken off this list on the owner's instruction (26 Oct 2026). Cancer, blood pressure and the rest stay blocked.
 // Named diseases must not appear as treated conditions (brief + Drugs and Magic Remedies Act 1954 schedule). Review by hand if one is needed.
-const NAMED_DISEASES = ["diabetes", "blood pressure", "hypertension", "cancer", "kidney stone", "gall stone", "epilepsy", "paralysis", "डायबिटीज", "डायबिटिज", "ब्लड प्रेशर", "कैंसर", "पथरी", "मिर्गी", "लकवा"];
+const NAMED_DISEASES = ["blood pressure", "hypertension", "cancer", "gall stone", "epilepsy", "paralysis", "ब्लड प्रेशर", "कैंसर", "मिर्गी", "लकवा"];
 // Brief: do not publish.
 const DO_NOT_PUBLISH = ["date of birth", "nationality", "hobbies", "personal objective", "declaration", "management skills", "harassment", "internal committee", "जन्म तिथि", "राष्ट्रीयता"];
 

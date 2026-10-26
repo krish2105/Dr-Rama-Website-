@@ -1,4 +1,4 @@
-# Rajesh Homeo Home website (English + Hindi)
+# Raajesh Homeo Home website (English + Hindi)
 
 Next.js 16 (App Router) + TypeScript + Tailwind 4 + next-intl + MDX. Facts and rules: `PROJECT-BRIEF.md`, `CLAUDE.md`. Open items: `content/TODO.md`.
 

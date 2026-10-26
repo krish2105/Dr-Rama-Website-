@@ -1,8 +1,8 @@
-# CLAUDE.md: Rajesh Homeo Home website (EN + HI)
+# CLAUDE.md: Raajesh Homeo Home website (EN + HI)
 
-**Name correction (owner, 2026-10-20): the name is "Rajesh Homeo Home", not "Rajesh Homeo Clinic" as written in PROJECT-BRIEF.md. Hindi: "राजेश होम्यो होम". Never write "Rajesh Homeo Clinic".**
+**Name (owner, 26 Oct 2026): the English name is "Raajesh Homeo Home" (double a). Earlier 20 Oct: not "Rajesh Homeo Clinic" as in PROJECT-BRIEF.md, and not "Rajesh Homeo Home". "Rajesh Homeo Home" and "Rajesh Homoeo Home" stay only as `alternateNames` in search data. Hindi: "राजेश होम्यो होम". Never write "Rajesh Homeo Clinic".**
 
-Bilingual website for Dr. Rama Mathur, M.D. (Homoeopathy), Rajesh Homeo Home, Jaipur. Source of truth: `PROJECT-BRIEF.md`. Goal: turn a mobile visitor into a call, WhatsApp message or booking in under 30 seconds, and make her 35+ years and qualifications easy to trust.
+Bilingual website for Dr. Rama Mathur, M.D. (Homoeopathy), Raajesh Homeo Home, Jaipur. Source of truth: `PROJECT-BRIEF.md`. Goal: turn a mobile visitor into a call, WhatsApp message or booking in under 30 seconds, and make her 35+ years and qualifications easy to trust.
 
 ## Rule 1: Never invent facts
 - Use only facts in `PROJECT-BRIEF.md` or `/source` (cv, photos, brand). Nothing from memory, the web or assumptions.
@@ -34,7 +34,7 @@ Bilingual website for Dr. Rama Mathur, M.D. (Homoeopathy), Rajesh Homeo Home, Ja
 - Named diseases are never published as treated conditions. Several (diabetes, blood pressure, menstrual flow disorders, kidney and gall stones) are on the schedule of the Drugs and Magic Remedies Act 1954. Care areas stay broad categories. `npm run check-content` fails on a list of named diseases.
 - Photos showing patients or other people stay in `source/photos/_pending-consent/` until each person consents. Never send such photos to an AI tool.
 - Hours (doctor's message, 26 Oct 2026, replaces the business card): Monday to Saturday 10:30 am to 2:00 pm and 6:00 pm to 8:30 pm; Sunday 10:30 am to 2:00 pm, evening off. Consultation is by prior appointment. Registration: Rajasthan Board of Homoeopathic Medicine, No. 3780 (the slip we hold was valid only to 19/5/2020; never state a validity date).
-- The English name stays "Rajesh Homeo Home" (the owner's choice) although the card and domain spell "Homoeo"; "Rajesh Homoeo Home" is kept as `alternateName` in JSON-LD.
+- The English name is "Raajesh Homeo Home" (owner, 26 Oct 2026) although the card and domain spell "Rajesh Homoeo"; the old spellings are kept as `alternateNames` in JSON-LD. The web address rajeshhomoeohome.in does not change.
 - Experience is **35+ years of clinical experience, since 1991** (owner, 2026-10-20; earlier the CV said 31 and the handout 32). Always write "35+", never an exact figure.
 - Floor: the slip and card say 2nd floor; the handout's "1st" means Apartment I. Address reads "202, 2nd Floor, Raj Vilas Apartment 1" (owner, 21 Oct 2026: there is also a Raj Vilas Apartment 2, so write "Raj Vilas Apartment 1", Hindi "राज विलास अपार्टमेंट 1").
 - `source/reference/` also holds the business card and registration slip (private, never published; the slip names a family member).
@@ -82,6 +82,12 @@ Date of birth, gender, nationality, hobbies, "personal objective", the declarati
 - Credentials line: M.D. (Homoeopathy), NDDY, Dietitian (owner, 26 Oct 2026: replaces "Nutritionist"; never add "Registered" unless she supplies proof of registration). The doctor also gives services at MRDC Satellite Hospital, Banipark, Jaipur (shown on the RIICO card and About).
 - Women's health (updated later the same day, doctor insisted) lists PCOS, endometriosis, uterine fibroids, menstrual disorders, pelvic inflammatory disease, menopause-related conditions, urinary tract infections and vaginal infections. Breast cancer and cervical cancer are still NOT listed. Earlier note: these were first held back: cancer, tumours (fibroids), diseases of the uterus, female diseases in general and disorders of menstrual flow are on the Schedule of the Drugs and Magic Remedies Act 1954 (section 3(d) bars suggesting a drug treats them). Add them only on a written opinion from a qualified lawyer or the regulator.
 - The conference count was removed. The Online consultation page and menu tab were removed (old links redirect to Book); online consultation is stated as "by prior booking and online payment" and is a visit type on the booking form.
+
+## Owner decisions, 26 Oct 2026 (third round)
+- **35+ years** is the highlighted item: the blue box on Home, the blue stat in the hero, and a highlighted point on Home, About and Care areas. **24 years (RIICO) and the MRDC line are plain, not highlighted.**
+- About opens with: "stalwart in the field of homeopathy" + M.D. thesis topic (menopausal syndrome), then "treats different types of acute and chronic diseases" (the owner chose her exact words despite the self-praise rule).
+- Care areas now also list: slip disc, skin blemishes, menorrhagia, disturbed behaviour, migraine, dental health, kidney and urinary health (including kidney stones), obesity management, diabetes management and physiotherapy; "Children's health" became "Children's and adult health". The owner chose to add Schedule items without any on-page flag. Cancers are still not listed. The content check no longer blocks "diabetes" or "kidney stone".
+- The urgent-care blog article's emergency section (and its 112 text) was removed at the owner's request; it is now about working with other doctors. 112 text remains in Privacy, FAQ and First visit unless the owner asks otherwise.
 
 ## Stack
 Next.js App Router + TypeScript + Tailwind; next-intl (en, hi; `/en`, `/hi`); MDX blog; Supabase for bookings; Vercel. Secrets only in env vars (`.env.example` documents them).

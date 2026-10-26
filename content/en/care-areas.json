@@ -16,6 +16,7 @@
       "concerns": [
         "Acne",
         "Pigmentation and freckles",
+        "Skin blemishes",
         "Moles and warts",
         "Eczema",
         "Ringworm",
@@ -27,6 +28,7 @@
       "title": "Joint, back and muscle pain",
       "concerns": [
         "Back pain",
+        "Slip disc",
         "Spondylitis",
         "Heel pain",
         "Knee pain",
@@ -41,6 +43,7 @@
         "Endometriosis",
         "Uterine fibroids",
         "Menstrual disorders",
+        "Menorrhagia (heavy periods)",
         "Pelvic inflammatory disease (PID)",
         "Menopause-related conditions",
         "Urinary tract infections (UTIs)",
@@ -48,12 +51,12 @@
       ]
     },
     {
-      "title": "Children's health",
+      "title": "Children's and adult health",
       "concerns": [
         "Colds and coughs",
         "Colic in infants",
         "Sleep difficulty",
-        "Allergies in children"
+        "Allergies in children and adults"
       ]
     },
     {
@@ -79,7 +82,8 @@
       "concerns": [
         "Stress",
         "Sleep difficulty",
-        "Worry and restlessness"
+        "Worry and restlessness",
+        "Disturbed behaviour"
       ]
     },
     {
@@ -89,6 +93,39 @@
         "Lingering cough",
         "Disturbed sleep",
         "Loss of appetite"
+      ]
+    },
+    {
+      "title": "Headache and migraine",
+      "concerns": [
+        "Migraine",
+        "Headaches"
+      ]
+    },
+    {
+      "title": "Dental health",
+      "concerns": [
+        "Toothache",
+        "Bleeding gums",
+        "Mouth ulcers",
+        "Sensitive teeth"
+      ]
+    },
+    {
+      "title": "Kidney and urinary health",
+      "concerns": [
+        "Kidney stones",
+        "Urinary tract infections",
+        "Burning during urination",
+        "Frequent urination"
+      ]
+    },
+    {
+      "title": "Weight, sugar and therapy",
+      "concerns": [
+        "Obesity management",
+        "Diabetes management",
+        "Physiotherapy"
       ]
     }
   ]

@@ -47,7 +47,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               {a.points.map((x) => (
                 <li key={x} className="flex gap-3">
                   <span aria-hidden="true" className="mt-3 h-2.5 w-2.5 shrink-0 rounded-full bg-accent" />
-                  {x}
+                  {x.includes("35+") ? <span className="hl">{x}</span> : x}
                 </li>
               ))}
             </ul>

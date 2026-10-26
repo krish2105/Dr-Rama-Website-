@@ -1,4 +1,4 @@
-# Rajesh Homeo Home: launch checklist, how to add what is missing, and Instagram guide
+# Raajesh Homeo Home: launch checklist, how to add what is missing, and Instagram guide
 
 Written 20 Oct 2026. Open items are also in `content/TODO.md`. Nothing here is legal advice: have a qualified person review the final copy and the social plan.
 
@@ -59,7 +59,7 @@ Check that the pin sits on the right building.
 
 1. **Account type.** Create a new account, then Settings > Account type and tools > **Switch to professional account > Business**, category **Doctor** (or Homeopath if offered). Use the clinic's email, not a personal one.
 2. **Handle.** Match the card and domain: `@rajeshhomoeohome`. If taken, `@rajeshhomoeohome.jaipur`. Keep the same name on Google, Facebook and WhatsApp.
-3. **Name field (searchable):** `Dr. Rama Mathur | Rajesh Homeo Home`.
+3. **Name field (searchable):** `Dr. Rama Mathur | Raajesh Homeo Home`.
 4. **Profile photo:** a square crop of the real portrait (face centred). A logo can replace it later.
 5. **Bio (about 150 characters), English and Hindi in one:**
    `Homeopathic consultations, Banipark, Jaipur. M.D. (Homoeopathy). Hindi & English. By appointment. होम्योपैथिक परामर्श`
@@ -67,7 +67,7 @@ Check that the pin sits on the right building.
 7. **Contact buttons:** add Call (+91 94143 62499), Email (rama_mathur@yahoo.com) and the address, so people can tap Call or Directions. Add a **Book** action button pointing to the link above if available.
 8. **Highlights (made from Stories, cover in the site's blue and ivory):** About, Hours and location, How to book, What to bring, FAQs.
 9. **Connect:** link a Facebook Page (needed for scheduling posts in Meta Business Suite) and the Google Business Profile.
-10. **WhatsApp Business app** (separate from Instagram): create a business profile with the same address, hours and greeting message ("Thank you for messaging Rajesh Homeo Home. Consultation is by prior appointment. Please share your name and preferred day, and the clinic will reply."). Do not collect health details on WhatsApp.
+10. **WhatsApp Business app** (separate from Instagram): create a business profile with the same address, hours and greeting message ("Thank you for messaging Raajesh Homeo Home. Consultation is by prior appointment. Please share your name and preferred day, and the clinic will reply."). Do not collect health details on WhatsApp.
 11. **Who runs it:** one named person posts; the doctor approves each post before it goes live; keep a simple list of what was posted.
 
 ## D. What to post

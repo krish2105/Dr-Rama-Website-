@@ -265,3 +265,6 @@ html:lang(hi)[data-textsize="large"] { font-size: 18.5px; } html:lang(hi)[data-t
 /* Decorative backdrops (ArtBackdrop): small file on phones, full file from tablet width up */
 .art-bg { background-repeat: no-repeat; background-size: cover; background-image: var(--bg-sm); }
 @media (min-width: 768px) { .art-bg { background-image: var(--bg); } }
+
+/* "35+ years" highlight (owner request): soft blue chip with cobalt text */
+.hl { background: var(--primary-soft); color: var(--primary); border-radius: .5rem; padding: .08em .45em; font-weight: 600; -webkit-box-decoration-break: clone; box-decoration-break: clone; }

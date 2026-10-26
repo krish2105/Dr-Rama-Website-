@@ -7,7 +7,7 @@ export function buildIcs(opts: { date: string; time: string; minutes: number; su
   const f = (x: Date) => x.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
   const esc = (t: string) => t.replace(/\\/g, "\\\\").replace(/\n/g, "\\n").replace(/,/g, "\\,").replace(/;/g, "\\;");
   return [
-    "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Rajesh Homeo Home//Booking//EN", "CALSCALE:GREGORIAN", "METHOD:PUBLISH", "BEGIN:VEVENT",
+    "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Raajesh Homeo Home//Booking//EN", "CALSCALE:GREGORIAN", "METHOD:PUBLISH", "BEGIN:VEVENT",
     `UID:${f(start)}-${Math.random().toString(36).slice(2, 10)}@rajesh-homeo-home`, `DTSTAMP:${f(new Date())}`, `DTSTART:${f(start)}`, `DTEND:${f(end)}`,
     `SUMMARY:${esc(opts.summary)}`, `LOCATION:${esc(opts.location)}`, `DESCRIPTION:${esc(opts.description)}`, "END:VEVENT", "END:VCALENDAR",
   ].join("\r\n");

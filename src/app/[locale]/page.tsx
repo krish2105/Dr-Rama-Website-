@@ -43,7 +43,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <p className="fade-in t-eyebrow">{t("eyebrow")}</p>
             <h1 className="t-h1 mt-3 max-w-xl">{t("title")}</h1>
             <p className="mt-3 text-lg font-medium text-primary">{t("titleSub")}</p>
-            <p className="t-lead mt-4 max-w-lg">{t("lead")}</p>
+            <p className="t-lead mt-4 max-w-lg"><strong className="hl">{t("leadYears")}</strong> {t("leadRest")}</p>
+            <p className="mt-2 font-medium text-ink">{t("acuteChronic")}</p>
 
             <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap" role="group" aria-label={t("actionsLabel")}>
               <a href={telHref} data-evt="click_call" className={buttonClass("primary", "w-full sm:w-auto")}>
@@ -63,9 +64,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <h2 className="sr-only">{t("credTitle")}</h2>
             <dl className="mt-9 grid max-w-xl grid-cols-3 divide-x divide-line border-t border-line pt-5">
               {[1, 2, 3].map((n) => (
-                <div key={n} className="px-3 first:ps-0 sm:px-5">
-                  <dt className="font-display text-2xl font-semibold text-primary sm:text-3xl">{t(`cred${n}Big`)}</dt>
-                  <dd className="mt-1 text-xs leading-snug text-muted sm:text-[0.8125rem]">{t(`cred${n}`)}</dd>
+                <div key={n} className={n === 1 ? "me-2 rounded-xl bg-primary px-3 py-2.5 text-onprimary sm:px-5" : "px-3 sm:px-5"}>
+                  <dt className={`font-display text-2xl font-semibold sm:text-3xl ${n === 1 ? "" : "text-primary"}`}>{t(`cred${n}Big`)}</dt>
+                  <dd className={`mt-1 text-xs leading-snug sm:text-[0.8125rem] ${n === 1 ? "opacity-90" : "text-muted"}`}>{t(`cred${n}`)}</dd>
                 </div>
               ))}
             </dl>
@@ -74,25 +75,36 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
-      {/* RIICO service record */}
-      <section aria-labelledby="riico" className="mx-auto mt-4 max-w-6xl px-4 sm:px-6 reveal">
+      {/* 35+ years: the highlighted blue box (owner request) */}
+      <section aria-labelledby="exp35" className="mx-auto mt-4 max-w-6xl px-4 sm:px-6 reveal">
         <div className="relative overflow-hidden rounded-2xl bg-primary px-6 py-8 text-onprimary sm:px-10 sm:py-10">
           <Rosette className="pointer-events-none absolute -bottom-16 -end-10 h-64 w-64 opacity-[0.1]" />
           <div className="relative grid items-center gap-6 md:grid-cols-[auto_1fr] md:gap-12">
             <div>
-              <p className="font-display text-6xl font-medium leading-none md:text-7xl"><CountUp value={24} /></p>
-              <p className="mt-2 text-sm font-semibold uppercase tracking-[0.1em] opacity-90">{t("riicoYears")}</p>
+              <p className="font-display text-6xl font-medium leading-none md:text-7xl"><CountUp value={35} suffix="+" /></p>
+              <p className="mt-2 text-sm font-semibold uppercase tracking-[0.1em] opacity-90">{t("yearsLabel")}</p>
             </div>
             <div className="md:border-s md:border-white/25 md:ps-12">
-              <h2 id="riico" className="text-2xl md:text-3xl">{t("riicoTitle")}</h2>
-              <p className="my-4 h-px w-16 bg-white/35" aria-hidden="true" />
-              <p className="font-display text-2xl leading-snug md:text-3xl">{t("riicoMrdc")}</p>
+              <h2 id="exp35" className="text-2xl md:text-3xl">{t("acuteChronic")}</h2>
             </div>
           </div>
         </div>
       </section>
 
-      {/* How she practises: wording from her CV only */}
+      {/* RIICO and MRDC: plain, not highlighted (owner request) */}
+      <section aria-labelledby="riico" className="mx-auto mt-8 max-w-6xl px-4 sm:px-6 reveal">
+        <div className="grid items-center gap-5 border-y border-line py-6 md:grid-cols-[auto_1fr] md:gap-10">
+          <div className="flex items-baseline gap-3 md:block">
+            <p className="font-display text-4xl font-medium leading-none text-ink md:text-5xl"><CountUp value={24} /></p>
+            <p className="text-xs font-semibold uppercase tracking-[0.1em] text-muted md:mt-2">{t("riicoYears")}</p>
+          </div>
+          <div className="md:border-s md:border-line md:ps-10">
+            <h2 id="riico" className="text-xl text-ink md:text-2xl">{t("riicoTitle")}</h2>
+            <p className="mt-2 text-lg text-muted md:text-xl">{t("riicoMrdc")}</p>
+          </div>
+        </div>
+      </section>
+
       <section aria-labelledby="practice" className="mx-auto mt-20 max-w-6xl px-4 sm:px-6 reveal">
         <CaseHead id="practice" eyebrow={t("practiceMargin")} title={t("practiceTitle")} />
         <ol className="mt-9 grid gap-5 md:grid-cols-3">
@@ -113,7 +125,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             {about.homePoints.map((x) => (
               <li key={x} className="flex gap-3 text-base">
                 <span aria-hidden="true" className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-accent" />
-                {x}
+                {x.includes("35+") ? <span className="hl">{x}</span> : x}
               </li>
             ))}
           </ul>

@@ -62,10 +62,10 @@ export default async function CareAreasPage({ params }: { params: Promise<{ loca
           <div>
             <h2 id="doc" className="t-h2">{t("aboutTitle")}</h2>
             <ul className="mt-4 space-y-2.5">
-              {(["f1", "f2", "f3", "f4", "f5", "f6"] as const).map((k) => (
+              {(["f1", "f7", "f2", "f3", "f4", "f5", "f6"] as const).map((k) => (
                 <li key={k} className="flex gap-3">
                   <span aria-hidden="true" className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-accent" />
-                  <span>{t(k)}</span>
+                  {t(k).includes("35+") ? <span className="hl">{t(k)}</span> : <span>{t(k)}</span>}
                 </li>
               ))}
             </ul>
