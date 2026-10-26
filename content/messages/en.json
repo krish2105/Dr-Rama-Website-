@@ -106,7 +106,12 @@
     "leadYears": "35+ years of clinical experience.",
     "leadRest": "Consultations in Hindi and English, in Banipark, Jaipur.",
     "acuteChronic": "Deals with acute and chronic diseases",
-    "yearsLabel": "years of clinical experience"
+    "yearsLabel": "years of clinical experience",
+    "acuteLabel": "Acute",
+    "acuteText": "Complaints that start suddenly, such as colds, coughs, sore throat and stomach upsets.",
+    "chronicLabel": "Chronic",
+    "chronicText": "Long-standing complaints, such as joint and back pain, skin concerns, allergies and digestive troubles.",
+    "careLink": "See care areas"
   },
   "book": {
     "title": "Book a visit",

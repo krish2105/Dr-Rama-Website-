@@ -86,21 +86,36 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </div>
             <div className="md:border-s md:border-white/25 md:ps-12">
               <h2 id="exp35" className="text-2xl md:text-3xl">{t("acuteChronic")}</h2>
+              <dl className="mt-5 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-xl bg-white/10 p-4">
+                  <dt className="text-xs font-semibold uppercase tracking-[0.12em] opacity-80">{t("acuteLabel")}</dt>
+                  <dd className="mt-1.5 text-base leading-snug opacity-95">{t("acuteText")}</dd>
+                </div>
+                <div className="rounded-xl bg-white/10 p-4">
+                  <dt className="text-xs font-semibold uppercase tracking-[0.12em] opacity-80">{t("chronicLabel")}</dt>
+                  <dd className="mt-1.5 text-base leading-snug opacity-95">{t("chronicText")}</dd>
+                </div>
+              </dl>
+              <Link href="/care-areas" className="press mt-5 inline-flex min-h-12 items-center rounded-full border border-white/50 px-5 text-[0.9375rem] font-semibold text-onprimary hover:bg-white/10">{t("careLink")}</Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* RIICO and MRDC: plain, not highlighted (owner request) */}
-      <section aria-labelledby="riico" className="mx-auto mt-8 max-w-6xl px-4 sm:px-6 reveal">
-        <div className="grid items-center gap-5 border-y border-line py-6 md:grid-cols-[auto_1fr] md:gap-10">
-          <div className="flex items-baseline gap-3 md:block">
-            <p className="font-display text-4xl font-medium leading-none text-ink md:text-5xl"><CountUp value={24} /></p>
-            <p className="text-xs font-semibold uppercase tracking-[0.1em] text-muted md:mt-2">{t("riicoYears")}</p>
-          </div>
-          <div className="md:border-s md:border-line md:ps-10">
-            <h2 id="riico" className="text-xl text-ink md:text-2xl">{t("riicoTitle")}</h2>
-            <p className="mt-2 text-lg text-muted md:text-xl">{t("riicoMrdc")}</p>
+      {/* RIICO and MRDC: second blue box, below the 35+ box */}
+      <section aria-labelledby="riico" className="mx-auto mt-4 max-w-6xl px-4 sm:px-6 reveal">
+        <div className="relative overflow-hidden rounded-2xl bg-primary px-6 py-8 text-onprimary sm:px-10 sm:py-10">
+          <Rosette className="pointer-events-none absolute -bottom-16 -start-10 h-64 w-64 opacity-[0.1]" />
+          <div className="relative grid items-center gap-6 md:grid-cols-[auto_1fr] md:gap-12">
+            <div>
+              <p className="font-display text-6xl font-medium leading-none md:text-7xl"><CountUp value={24} /></p>
+              <p className="mt-2 text-sm font-semibold uppercase tracking-[0.1em] opacity-90">{t("riicoYears")}</p>
+            </div>
+            <div className="md:border-s md:border-white/25 md:ps-12">
+              <h2 id="riico" className="text-2xl md:text-3xl">{t("riicoTitle")}</h2>
+              <p className="my-4 h-px w-16 bg-white/35" aria-hidden="true" />
+              <p className="font-display text-2xl leading-snug md:text-3xl">{t("riicoMrdc")}</p>
+            </div>
           </div>
         </div>
       </section>
