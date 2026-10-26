@@ -6,8 +6,8 @@
   "doctor": {
     "name": "Dr. Rama Mathur",
     "nameHi": "डॉ. रमा माथुर",
-    "degree": "M.D. (Homoeopathy)",
-    "degreeHi": "एम.डी. (होम्योपैथी)",
+    "degree": "M.D. (Homoeopathy), NDDY, Nutritionist",
+    "degreeHi": "एम.डी. (होम्योपैथी), NDDY, न्यूट्रिशनिस्ट",
     "experienceYears": 35,
     "languages": [
       "Hindi",
@@ -62,11 +62,19 @@
   "timings": {
     "mon": [
       [
+        "10:30",
+        "14:00"
+      ],
+      [
         "18:00",
         "20:30"
       ]
     ],
     "tue": [
+      [
+        "10:30",
+        "14:00"
+      ],
       [
         "18:00",
         "20:30"
@@ -74,11 +82,19 @@
     ],
     "wed": [
       [
+        "10:30",
+        "14:00"
+      ],
+      [
         "18:00",
         "20:30"
       ]
     ],
     "thu": [
+      [
+        "10:30",
+        "14:00"
+      ],
       [
         "18:00",
         "20:30"
@@ -86,11 +102,19 @@
     ],
     "fri": [
       [
+        "10:30",
+        "14:00"
+      ],
+      [
         "18:00",
         "20:30"
       ]
     ],
     "sat": [
+      [
+        "10:30",
+        "14:00"
+      ],
       [
         "18:00",
         "20:30"
@@ -98,8 +122,8 @@
     ],
     "sun": [
       [
-        "10:00",
-        "14:30"
+        "10:30",
+        "14:00"
       ]
     ]
   },
@@ -125,7 +149,7 @@
   },
   "logo": null,
   "timingsConfirmed": true,
-  "timingsSource": "Business card: daily 6:00 pm to 8:30 pm, Sunday 10:00 am to 2:30 pm. Confirmed by the owner on 21 Oct 2026.",
+  "timingsSource": "Doctor's message of 26 Oct 2026 (via the owner): Monday to Saturday 10:30 am to 2:00 pm and 6:00 pm to 8:30 pm; Sunday 10:30 am to 2:00 pm; Sunday evening off. Replaces the business-card hours.",
   "landline": {
     "display": "0141-2204095",
     "e164": "+911412204095",
@@ -150,5 +174,5 @@
     "confirmed": true,
     "source": "Owner, 21 Oct 2026: UPI and cash. No UPI ID is published."
   },
-  "contentApproval": "Owner reported on 21 Oct 2026 that Dr. Mathur approved the site text. Keep her written approval with the clinic's records."
+  "contentApproval": "Owner reported on 21 Oct 2026 that Dr. Rama Mathur approved the site text. Keep her written approval with the clinic's records."
 }

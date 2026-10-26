@@ -21,7 +21,7 @@ Bilingual website for Dr. Rama Mathur, M.D. (Homoeopathy), Rajesh Homeo Home, Ja
 ## Rule 3: Compliance (hard constraints)
 - Never promise or imply a cure, guaranteed result or success percentage. No cure claims for any named disease.
 - No superlatives or self-praise: best, exceptional, superior, strong, top, leading, miracle, permanent relief, 100%, guaranteed, cure/cured/curing (and Hindi equivalents).
-- Footer on every page, EN and HI: "Homeopathic care does not replace emergency or specialist medical treatment." Hindi version needs native review.
+- The footer disclaimer line was removed on the owner's instruction (26 Oct 2026). The Privacy page keeps the full disclaimer, and the FAQ and the urgent-care article keep their emergency guidance (hospital or 112). Do not re-add the footer line unless the owner asks.
 - Show the state council registration number once received (see TODO).
 - Collect minimum personal data. Booking: name, phone, preferred date/time, one-line reason, consent. Clear consent checkbox linked to the privacy page. Offer data deletion by email.
 - Patient stories only with recorded consent, about the care experience, never results.
@@ -33,7 +33,7 @@ Bilingual website for Dr. Rama Mathur, M.D. (Homoeopathy), Rajesh Homeo Home, Ja
 - `source/reference/` holds the printed handout and the original room photo. They are private and never published. The handout lists named diseases and says "इलाज"; do not copy that wording. Take only plain facts from it (hours, address, phone).
 - Named diseases are never published as treated conditions. Several (diabetes, blood pressure, menstrual flow disorders, kidney and gall stones) are on the schedule of the Drugs and Magic Remedies Act 1954. Care areas stay broad categories. `npm run check-content` fails on a list of named diseases.
 - Photos showing patients or other people stay in `source/photos/_pending-consent/` until each person consents. Never send such photos to an AI tool.
-- Hours come from the business card (daily 6:00 pm to 8:30 pm; Sunday 10:00 am to 2:30 pm), chosen by the owner over the handout. Consultation is by prior appointment. Registration: Rajasthan Board of Homoeopathic Medicine, No. 3780 (the slip we hold was valid only to 19/5/2020; never state a validity date).
+- Hours (doctor's message, 26 Oct 2026, replaces the business card): Monday to Saturday 10:30 am to 2:00 pm and 6:00 pm to 8:30 pm; Sunday 10:30 am to 2:00 pm, evening off. Consultation is by prior appointment. Registration: Rajasthan Board of Homoeopathic Medicine, No. 3780 (the slip we hold was valid only to 19/5/2020; never state a validity date).
 - The English name stays "Rajesh Homeo Home" (the owner's choice) although the card and domain spell "Homoeo"; "Rajesh Homoeo Home" is kept as `alternateName` in JSON-LD.
 - Experience is **35+ years of clinical experience, since 1991** (owner, 2026-10-20; earlier the CV said 31 and the handout 32). Always write "35+", never an exact figure.
 - Floor: the slip and card say 2nd floor; the handout's "1st" means Apartment I. Address reads "202, 2nd Floor, Raj Vilas Apartment 1" (owner, 21 Oct 2026: there is also a Raj Vilas Apartment 2, so write "Raj Vilas Apartment 1", Hindi "राज विलास अपार्टमेंट 1").
@@ -76,6 +76,12 @@ Date of birth, gender, nationality, hobbies, "personal objective", the declarati
 - **Qualification years** are not shown in the About points, Home card or hero. Degree order: M.D. (Homoeopathy), MBA (HR), NDDY.
 - **Testimonials:** never write or generate patient reviews or stories. Only real ones with recorded consent (Rule 3). The Experiences page stays empty until then.
 - **Map:** `mapsEmbedUrl` is a Google embed of the written address (not an exact pin). Verify the pin or replace it with the Share > Embed src.
+
+## Owner decisions, 26 Oct 2026 (from the doctor's message)
+- Always write the doctor as "Dr. Rama Mathur" (Hindi "डॉ. रमा माथुर"), never "Dr. Mathur" alone.
+- Credentials line: M.D. (Homoeopathy), NDDY, Nutritionist. The doctor also gives services at MRDC Satellite Hospital, Banipark, Jaipur (shown on the RIICO card and About).
+- Women's health lists only PCOS, menopause-related concerns, urinary tract infections and vaginal infections. The doctor also asked for breast cancer, cervical cancer, uterine fibroids, endometriosis, menstrual disorders and pelvic inflammatory disease; these were NOT added: cancer, tumours (fibroids), diseases of the uterus, female diseases in general and disorders of menstrual flow are on the Schedule of the Drugs and Magic Remedies Act 1954 (section 3(d) bars suggesting a drug treats them). Add them only on a written opinion from a qualified lawyer or the regulator.
+- The conference count and the "Online consultation" service card were removed.
 
 ## Stack
 Next.js App Router + TypeScript + Tailwind; next-intl (en, hi; `/en`, `/hi`); MDX blog; Supabase for bookings; Vercel. Secrets only in env vars (`.env.example` documents them).

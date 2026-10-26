@@ -26,7 +26,6 @@ export default async function FirstVisitPage({ params }: { params: Promise<{ loc
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "visit" });
   const c = await getTranslations({ locale, namespace: "common" });
-  const f = await getTranslations({ locale, namespace: "footer" });
   const fee = await feeLine(locale);
   const lines = locale === "hi" ? SITE.address.linesHi : SITE.address.lines;
   const timings = SITE.timings as Timings | null;
@@ -79,7 +78,6 @@ export default async function FirstVisitPage({ params }: { params: Promise<{ loc
         <section className="rounded-2xl border border-accent/40 bg-accent/10 p-6">
           <h2 className="text-xl text-ink">{t("emergencyTitle")}</h2>
           <p className="mt-1 text-lg">{t("emergencyText")}</p>
-          <p className="mt-2 text-sm font-semibold text-ink">{f("disclaimer")}</p>
         </section>
 
         <section className="card flex flex-wrap items-center gap-6 p-6">

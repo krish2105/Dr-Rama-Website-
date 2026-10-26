@@ -106,7 +106,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <CaseHead id="conf" title={t("conferences")} />
         <details className="card group mt-8 p-5">
           <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between font-display text-lg font-semibold text-primary">
-            {t("conferences")} ({a.conferences.length})
+            {t("conferences")}
             <span aria-hidden="true" className="text-accent transition-transform group-open:rotate-45">+</span>
           </summary>
           <ol className="mt-4 list-decimal space-y-2 ps-6 marker:text-wood">

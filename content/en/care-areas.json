@@ -36,7 +36,12 @@
     },
     {
       "title": "Women's health",
-      "concerns": []
+      "concerns": [
+        "PCOS (polycystic ovary syndrome)",
+        "Menopause-related concerns",
+        "Urinary tract infections",
+        "Vaginal infections"
+      ]
     },
     {
       "title": "Children's health",

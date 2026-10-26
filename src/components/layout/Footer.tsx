@@ -45,8 +45,7 @@ export function Footer() {
           </div>
         </div>
         <div className="relative border-t border-line px-6 py-5 text-sm text-muted sm:px-10">
-          <p className="font-semibold text-ink">{t("footer.disclaimer")}</p>
-          <p className="mt-1">© {new Date().getFullYear()} {t("footer.rights")}. {t("footer.dataNote")}</p>
+          <p>© {new Date().getFullYear()} {t("footer.rights")}. {t("footer.dataNote")}</p>
         </div>
       </div>
     </footer>

@@ -48,7 +48,6 @@
     "fees": "Fees and payment"
   },
   "footer": {
-    "disclaimer": "Homeopathic care does not replace emergency or specialist medical treatment.",
     "registration": "Registration",
     "rights": "Rajesh Homeo Home",
     "explore": "Explore",
@@ -59,7 +58,7 @@
   "home": {
     "eyebrow": "Rajesh Homeo Home · Banipark, Jaipur",
     "title": "Homeopathic care from Dr. Rama Mathur",
-    "titleSub": "M.D. (Homoeopathy)",
+    "titleSub": "M.D. (Homoeopathy), NDDY, Nutritionist",
     "lead": "35+ years of clinical experience. Consultations in Hindi and English, in Banipark, Jaipur.",
     "actionsLabel": "Reach the clinic",
     "actionCall": "Call the clinic",
@@ -77,7 +76,7 @@
     "cred3": "languages: Hindi and English",
     "cred4Big": "24",
     "cred4": "years as an empanelled homoeopathic doctor at RIICO, Jaipur",
-    "practiceTitle": "How Dr. Mathur practises",
+    "practiceTitle": "How Dr. Rama Mathur practises",
     "practiceMargin": "from her own record of practice",
     "practice1": "Keeps detailed clinical notes and records for each patient.",
     "practice2": "Refers patients to other health practitioners when appropriate.",
@@ -102,8 +101,9 @@
     "visitTodoMap": "Map shows here once the link is supplied.",
     "visitHours": "Clinic hours",
     "bannerKicker": "Jaipur",
-    "bannerTitle": "Find Dr. Mathur in Banipark",
-    "bannerBody": "Rajesh Homeo Home is at Raj Vilas Apartment 1, Meera Marg, Banipark. Call ahead or send a booking request."
+    "bannerTitle": "Find Dr. Rama Mathur in Banipark",
+    "bannerBody": "Rajesh Homeo Home is at Raj Vilas Apartment 1, Meera Marg, Banipark. Call ahead or send a booking request.",
+    "riicoMrdc": "Giving services at MRDC Satellite Hospital, Banipark, Jaipur"
   },
   "book": {
     "title": "Book a visit",
@@ -202,7 +202,7 @@
   },
   "care": {
     "title": "Care areas",
-    "lead": "This page will describe the areas of care Dr. Mathur works in.",
+    "lead": "This page will describe the areas of care Dr. Rama Mathur works in.",
     "todo": "Care areas must come from the doctor, with no outcome claims about any named disease (content/TODO.md).",
     "prod": "This page is being prepared. To ask whether the clinic can help with your concern, please call or message the clinic."
   },
@@ -271,9 +271,9 @@
   },
   "careAreas": {
     "title": "Care areas",
-    "lead": "Areas Dr. Mathur consults on. This list does not promise any result.",
-    "referral": "Dr. Mathur refers patients to other health practitioners when appropriate.",
-    "urgent": "Homeopathic care does not replace emergency or specialist medical treatment. For urgent symptoms, go to the nearest hospital or call 112.",
+    "lead": "Areas Dr. Rama Mathur consults on. This list does not promise any result.",
+    "referral": "Dr. Rama Mathur refers patients to other health practitioners when appropriate.",
+    "urgent": "For urgent symptoms, go to the nearest hospital or call 112.",
     "concernsLabel": "Common concerns people consult about"
   },
   "servicesPage": {
@@ -342,7 +342,7 @@
   },
   "camp": {
     "title": "Medical camps and events",
-    "lead": "Photographs from medical camps and events where Dr. Mathur has consulted and been honoured. The people shown have agreed to appear here."
+    "lead": "Photographs from medical camps and events where Dr. Rama Mathur has consulted and been honoured. The people shown have agreed to appear here."
   },
   "fees": {
     "title": "Fees and payment",
@@ -355,11 +355,11 @@
     "cash": "Cash",
     "nextTitle": "What happens next",
     "next1": "Choose a time and send your request.",
-    "next2": "Dr. Mathur confirms the time with you.",
+    "next2": "Dr. Rama Mathur confirms the time with you.",
     "next3": "Visit the clinic at the confirmed time.",
     "goodTitle": "Good to know",
     "byAppointment": "Consultation is by prior appointment. A time you pick here is a request until it is confirmed.",
-    "languages": "Dr. Mathur consults in Hindi and English."
+    "languages": "Dr. Rama Mathur consults in Hindi and English."
   },
   "notFound": {
     "title": "Page not found",

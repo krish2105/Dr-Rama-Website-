@@ -31,6 +31,12 @@ Nothing below may be invented. Placeholders show in development only; production
 - [ ] Check the **map pin** on Contact, Home and How to reach. It searches the written address; if the pin is off, paste the Share > Embed src into `mapsEmbedUrl`.
 - [ ] Patient testimonials: none exist. To add real ones, get a signed consent from each person for the exact words and keep results out of them. The Experiences page shows an empty state until then.
 
+### Added 26 Oct 2026 (doctor's message)
+- [ ] **Held back, needs a qualified legal opinion before listing:** breast cancer, cervical cancer, uterine fibroids, endometriosis, menstrual disorders, pelvic inflammatory disease. Most are on the Schedule of the Drugs and Magic Remedies Act 1954 (cancer; tumours; diseases of the uterus; female diseases in general; disorders of menstrual flow). Listing cancer as a condition a homoeopathy clinic treats is also a patient-safety risk. The site refers patients to specialists instead.
+- [ ] Nutritionist: send the course or institution if she wants it shown (the site currently says only "Nutritionist").
+- [ ] MRDC: send the full name of MRDC if she wants it spelled out (the site says "MRDC Satellite Hospital, Banipark, Jaipur").
+- [ ] New hours are live (Mon to Sat 10:30 am to 2:00 pm and 6:00 pm to 8:30 pm; Sunday 10:30 am to 2:00 pm). The Hinglish go-live guide, the Word launch pack and the Instagram templates still show the old hours and need a refresh.
+
 ## 2. Photos and brand
 - [ ] Real close-up photos: display cabinet, certificate and plaque wall (shoot list in Prompt Pack v3). The generated versions (07, 08) are not used because they invent certificate text. The room images on the site (05, 06) are AI-enhanced and carry a disclosure caption; replace them with real photos when available.
 - [ ] Real photo of the flat's entrance door and nameplate (Raj Vilas Apartment 1, 2nd floor).

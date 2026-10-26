@@ -8,7 +8,7 @@ Written 20 Oct 2026. Open items are also in `content/TODO.md`. Nothing here is l
 
 ### This week (needs the doctor or the owner, no developer)
 1. **Current registration renewal.** The slip we hold was valid to 19/5/2020. Get the latest renewal. Until then the site shows the number (3780) and no validity date.
-2. **Re-confirm the hours.** The site follows the business card (every day 6:00 to 8:30 pm, Sunday 10:00 am to 2:30 pm). The Hindi handout listed extra morning hours.
+2. **Hours.** The site follows the doctor's message of 26 Oct 2026 (Monday to Saturday 10:30 am to 2:00 pm and 6:00 pm to 8:30 pm; Sunday 10:30 am to 2:00 pm). The Hindi handout listed extra morning hours.
 3. **Doctor reads and approves the DRAFT text:** About, Services, Care areas, FAQ, Privacy, 3 blog posts. A native Hindi speaker checks the Hindi.
 4. **Fees and payment methods.** Not supplied, so nothing is shown. Send them and they go on Contact and FAQ.
 5. **Google Maps link** (see B1).

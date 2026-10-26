@@ -57,9 +57,7 @@ const kEn = new Set(keys(en)), kHi = new Set(keys(hi));
 for (const k of kEn) if (!kHi.has(k)) errors.push(`messages: "${k}" missing in hi`);
 for (const k of kHi) if (!kEn.has(k)) errors.push(`messages: "${k}" missing in en`);
 
-// Footer disclaimer present in both languages
-if (!en.footer?.disclaimer?.includes("does not replace emergency or specialist medical treatment")) errors.push("footer disclaimer (en) missing or changed");
-if (!hi.footer?.disclaimer) errors.push("footer disclaimer (hi) missing");
+// The footer disclaimer line was removed on the owner's instruction (26 Oct 2026); the Privacy page still carries the full disclaimer.
 
 // Blog parity
 const blogEn = walk(path.join(root, "content/blog/en")).map((f) => path.basename(f)).sort();

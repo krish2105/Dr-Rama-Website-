@@ -34,7 +34,8 @@ export default async function PosterPage({ params }: { params: Promise<{ locale:
           <p className="absolute inset-x-[14%] top-[60.3%] text-center font-display font-semibold leading-tight" style={{ fontSize: "5.2cqw" }}>{t("scan")}</p>
           <div className="absolute inset-x-[18%] top-[66%] text-center leading-snug">
             <p className="font-semibold" style={{ fontSize: "3.4cqw" }}>{m("siteName")}</p>
-            <p style={{ fontSize: "2.8cqw" }}>{hi ? SITE.doctor.nameHi : SITE.doctor.name}, {hi ? SITE.doctor.degreeHi : SITE.doctor.degree}</p>
+            <p style={{ fontSize: "2.8cqw" }}>{hi ? SITE.doctor.nameHi : SITE.doctor.name}</p>
+            <p style={{ fontSize: "2.3cqw" }}>{hi ? SITE.doctor.degreeHi : SITE.doctor.degree}</p>
             <p className="mt-[1cqw]" style={{ fontSize: "2.6cqw" }}>{t("sub")}</p>
             <p className="mt-[1cqw] font-semibold" style={{ fontSize: "3cqw" }}>{t("callLine")} {SITE.phone.display}</p>
           </div>

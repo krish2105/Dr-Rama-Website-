@@ -18,7 +18,7 @@ Next.js 16 (App Router) + TypeScript + Tailwind 4 + next-intl + MDX. Facts and r
 | `scripts/` | `npm run photos` (import photos) and `npm run check-content` (compliance check) |
 | `content/TODO.md` | Everything still open |
 
-Key facts on the site: Dr. Rama Mathur, M.D. (Homoeopathy), 35+ years of clinical experience (since 1991), Hindi and English, by prior appointment, hours from the clinic card (every day 6:00 to 8:30 pm, Sunday 10:00 am to 2:30 pm), Rajasthan Board of Homoeopathic Medicine registration No. 3780.
+Key facts on the site: Dr. Rama Mathur, M.D. (Homoeopathy), 35+ years of clinical experience (since 1991), Hindi and English, by prior appointment, hours (Mon to Sat 10:30 am to 2:00 pm and 6:00 pm to 8:30 pm; Sunday 10:30 am to 2:00 pm), Rajasthan Board of Homoeopathic Medicine registration No. 3780.
 
 ## Phase 1.5 (built from `docs/PHASE-1.5-FEATURE-PLAN.md`, no database needed)
 - **Booking v2** (`/book`): 3 steps (who is it for, pick a time, details), time chips grouped Morning / Afternoon / Evening, "Request a call back" tab, booking for a child or another person (guardian name + confirmation), visit type from a short list (no free-text health reason), `.ics` calendar file, WhatsApp confirm, how the visitor found the site (UTM, whitelist only). Slots are **requests** the clinic confirms; they come from `content/site.json` timings and `content/availability.json` (slot length, days ahead, blocked dates).
