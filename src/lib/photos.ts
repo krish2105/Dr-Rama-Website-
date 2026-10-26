@@ -11,4 +11,7 @@ export const clinicPhotos = (gallery.photos ?? []) as Photo[];
 /** Medical-camp photos. Shown only because the owner confirmed every person pictured agreed (see content/camp-gallery.json). */
 export const campPhotos = (camp.photos ?? []) as Photo[];
 
+/** The photo of Dr. Rama Mathur at her desk in the consultation room (shown on About). */
+export const deskPhoto = clinicPhotos.find((p) => p.src.includes("clinic-doctor-at-desk")) ?? null;
+
 export const altFor = (p: Photo, locale: string) => (locale === "hi" ? p.altHi : p.altEn);

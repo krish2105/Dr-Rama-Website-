@@ -2,13 +2,6 @@
   "_consent": "Owner confirmed in chat on 2026-10-20 that every person shown in these photos has agreed to appear on the public website. Keep the written consents with the clinic's records. If anyone withdraws, delete their photo here and from public/photos.",
   "photos": [
     {
-      "src": "/photos/camp-honour-handover.da8b2680.jpg",
-      "width": 1280,
-      "height": 849,
-      "altEn": "Dr. Rama Mathur receiving a gift from a guest at an event, with another guest standing beside them.",
-      "altHi": "एक कार्यक्रम में डॉ. रमा माथुर एक अतिथि से उपहार ग्रहण कर रही हैं; पास में एक और अतिथि खड़े हैं।"
-    },
-    {
       "src": "/photos/camp-consultation-1.3a3f8132.jpg",
       "width": 1280,
       "height": 849,
@@ -35,6 +28,13 @@
       "height": 960,
       "altEn": "Dr. Rama Mathur seated at a camp table with a woman who rests her hand near the doctor's wrist, with amber dropper bottles in front.",
       "altHi": "डॉ. रमा माथुर शिविर की मेज़ पर एक महिला के साथ बैठी हैं; सामने एम्बर रंग की ड्रॉपर बोतलें रखी हैं।"
+    },
+    {
+      "src": "/photos/camp-honour-handover.da8b2680.jpg",
+      "width": 1280,
+      "height": 849,
+      "altEn": "Dr. Rama Mathur receiving a gift from a guest at an event, with another guest standing beside them.",
+      "altHi": "एक कार्यक्रम में डॉ. रमा माथुर एक अतिथि से उपहार ग्रहण कर रही हैं; पास में एक और अतिथि खड़े हैं।"
     }
   ]
 }

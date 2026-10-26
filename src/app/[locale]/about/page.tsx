@@ -5,7 +5,7 @@ import { CaseHead } from "@/components/ui/CaseHead";
 import { DevTodo } from "@/components/ui/DevTodo";
 import { Rosette } from "@/components/ui/Motif";
 import Image from "next/image";
-import { portrait, altFor } from "@/lib/photos";
+import { portrait, deskPhoto, altFor } from "@/lib/photos";
 import { ButtonLink } from "@/components/ui/Button";
 import { SITE } from "@/lib/site";
 import { CampFloat } from "@/components/sections/CampFloat";
@@ -128,6 +128,17 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           ))}
         </ul>
       </section>
+
+      {deskPhoto ? (
+        <section aria-labelledby="room" className="mx-auto mt-16 max-w-3xl">
+          <CaseHead id="room" title={t("room")} />
+          <figure className="float-card mt-8 overflow-hidden !rounded-[22px]">
+            <div className="relative w-full" style={{ aspectRatio: `${deskPhoto.width} / ${deskPhoto.height}` }}>
+              <Image src={deskPhoto.src} alt={altFor(deskPhoto, locale)} fill sizes="(min-width:768px) 768px, 100vw" className="object-cover" />
+            </div>
+          </figure>
+        </section>
+      ) : null}
 
       <CampFloat headingId="camp" />
 

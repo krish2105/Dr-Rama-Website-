@@ -192,7 +192,8 @@
     "conferences": "Conferences attended",
     "community": "Community work",
     "portraitTodo": "Doctor portrait photo is missing (content/TODO.md).",
-    "registration": "Registration: {council}, No. {number}"
+    "registration": "Registration: {council}, No. {number}",
+    "room": "Consultation room"
   },
   "services": {
     "title": "Services",

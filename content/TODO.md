@@ -37,6 +37,9 @@ Nothing below may be invented. Placeholders show in development only; production
 - [ ] MRDC: send the full name of MRDC if she wants it spelled out (the site says "MRDC Satellite Hospital, Banipark, Jaipur").
 - [ ] New hours are live (Mon to Sat 10:30 am to 2:00 pm and 6:00 pm to 8:30 pm; Sunday 10:30 am to 2:00 pm). The Hinglish go-live guide, the Word launch pack and the Instagram templates still show the old hours and need a refresh.
 
+### Added 26 Oct 2026 (new photo)
+- [ ] The photo of Dr. Rama Mathur at her desk (Home "Visit the clinic" gallery and About "Consultation room") was supplied by the owner on 26 Oct 2026. Confirm it is a real photograph (or note if it is AI-enhanced) and that the doctor approves the likeness. The original sits in `source/photos/clinic-doctor-at-desk.webp`.
+
 ## 2. Photos and brand
 - [ ] Real close-up photos: display cabinet, certificate and plaque wall (shoot list in Prompt Pack v3). The generated versions (07, 08) are not used because they invent certificate text. The room images on the site (05, 06) are AI-enhanced and carry a disclosure caption; replace them with real photos when available.
 - [ ] Real photo of the flat's entrance door and nameplate (Raj Vilas Apartment 1, 2nd floor).

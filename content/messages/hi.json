@@ -192,7 +192,8 @@
     "conferences": "भाग लिए गए सम्मेलन",
     "community": "सामुदायिक कार्य",
     "portraitTodo": "डॉक्टर की पोर्ट्रेट फ़ोटो उपलब्ध नहीं है (content/TODO.md)।",
-    "registration": "पंजीकरण: {council}, क्रमांक {number}"
+    "registration": "पंजीकरण: {council}, क्रमांक {number}",
+    "room": "परामर्श कक्ष"
   },
   "services": {
     "title": "सेवाएँ",
