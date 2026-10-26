@@ -6,8 +6,8 @@
   "doctor": {
     "name": "Dr. Rama Mathur",
     "nameHi": "डॉ. रमा माथुर",
-    "degree": "M.D. (Homoeopathy), NDDY, Nutritionist",
-    "degreeHi": "एम.डी. (होम्योपैथी), NDDY, न्यूट्रिशनिस्ट",
+    "degree": "M.D. (Homoeopathy), NDDY, Dietitian",
+    "degreeHi": "एम.डी. (होम्योपैथी), NDDY, डायटीशियन",
     "experienceYears": 35,
     "languages": [
       "Hindi",

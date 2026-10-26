@@ -33,7 +33,7 @@ Nothing below may be invented. Placeholders show in development only; production
 
 ### Added 26 Oct 2026 (doctor's message)
 - [ ] **Held back, needs a qualified legal opinion before listing:** breast cancer, cervical cancer, uterine fibroids, endometriosis, menstrual disorders, pelvic inflammatory disease. Most are on the Schedule of the Drugs and Magic Remedies Act 1954 (cancer; tumours; diseases of the uterus; female diseases in general; disorders of menstrual flow). Listing cancer as a condition a homoeopathy clinic treats is also a patient-safety risk. The site refers patients to specialists instead.
-- [ ] Nutritionist: send the course or institution if she wants it shown (the site currently says only "Nutritionist").
+- [ ] Dietitian (replaced "Nutritionist" on the owner's instruction, 26 Oct 2026): confirm this is the right title for her qualification and send the course or institution if she wants it shown. The site says only "Dietitian"; it must not say "Registered Dietitian" (the Indian Dietetic Association's RD title) unless she supplies proof.
 - [ ] MRDC: send the full name of MRDC if she wants it spelled out (the site says "MRDC Satellite Hospital, Banipark, Jaipur").
 - [ ] New hours are live (Mon to Sat 10:30 am to 2:00 pm and 6:00 pm to 8:30 pm; Sunday 10:30 am to 2:00 pm). The Hinglish go-live guide, the Word launch pack and the Instagram templates still show the old hours and need a refresh.
 

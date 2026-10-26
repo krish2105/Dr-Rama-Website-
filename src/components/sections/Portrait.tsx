@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { Rosette } from "@/components/ui/Motif";
-import { altFor, clinicPhotos, portrait } from "@/lib/photos";
+import { altFor, clinicPhotos, deskPhoto, portrait } from "@/lib/photos";
 import { SITE, isDev } from "@/lib/site";
 
 /**
@@ -13,7 +13,8 @@ export function HeroVisual() {
   const locale = useLocale();
   const t = useTranslations("home");
   const c = useTranslations("common");
-  const clinic = clinicPhotos[0];
+  // The small card on the portrait shows the doctor at her desk (falls back to the first room photo).
+  const clinic = deskPhoto ?? clinicPhotos[0];
 
   return (
     <div className="relative mx-auto w-full max-w-[18rem] sm:max-w-[22rem] lg:max-w-[26rem]">
@@ -42,9 +43,9 @@ export function HeroVisual() {
         <p className="text-xs text-muted">{locale === "hi" ? SITE.doctor.degreeHi : SITE.doctor.degree}</p>
       </div>
       {clinic ? (
-        <div className="absolute -end-3 -top-4 hidden w-28 overflow-hidden rounded-2xl border-[3px] border-surface shadow-[var(--shadow-float)] sm:block sm:-end-6 md:w-32">
-          <div className="relative aspect-[4/3]">
-            <Image src={clinic.src} alt={altFor(clinic, locale)} fill sizes="128px" className="object-cover" style={clinic.focus ? { objectPosition: clinic.focus } : undefined} />
+        <div className="absolute -end-2 -top-4 w-24 overflow-hidden rounded-2xl border-[3px] border-surface shadow-[var(--shadow-float)] sm:-end-6 sm:w-28 md:w-36">
+          <div className="relative aspect-[1/1]">
+            <Image src={clinic.src} alt={altFor(clinic, locale)} fill sizes="144px" className="object-cover" style={clinic.focus ? { objectPosition: clinic.focus } : undefined} />
           </div>
         </div>
       ) : isDev ? (

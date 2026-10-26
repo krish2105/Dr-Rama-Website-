@@ -79,7 +79,7 @@ Date of birth, gender, nationality, hobbies, "personal objective", the declarati
 
 ## Owner decisions, 26 Oct 2026 (from the doctor's message)
 - Always write the doctor as "Dr. Rama Mathur" (Hindi "डॉ. रमा माथुर"), never "Dr. Mathur" alone.
-- Credentials line: M.D. (Homoeopathy), NDDY, Nutritionist. The doctor also gives services at MRDC Satellite Hospital, Banipark, Jaipur (shown on the RIICO card and About).
+- Credentials line: M.D. (Homoeopathy), NDDY, Dietitian (owner, 26 Oct 2026: replaces "Nutritionist"; never add "Registered" unless she supplies proof of registration). The doctor also gives services at MRDC Satellite Hospital, Banipark, Jaipur (shown on the RIICO card and About).
 - Women's health lists only PCOS, menopause-related concerns, urinary tract infections and vaginal infections. The doctor also asked for breast cancer, cervical cancer, uterine fibroids, endometriosis, menstrual disorders and pelvic inflammatory disease; these were NOT added: cancer, tumours (fibroids), diseases of the uterus, female diseases in general and disorders of menstrual flow are on the Schedule of the Drugs and Magic Remedies Act 1954 (section 3(d) bars suggesting a drug treats them). Add them only on a written opinion from a qualified lawyer or the regulator.
 - The conference count and the "Online consultation" service card were removed.
 
