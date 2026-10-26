@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
-import { altFor, clinicPhotos } from "@/lib/photos";
+import { altFor, clinicPhotos, insetOf } from "@/lib/photos";
 import { isDev } from "@/lib/site";
 
 export function hasPhotos() {
@@ -38,6 +38,23 @@ export function Gallery({ limit }: { limit?: number }) {
                 sizes="(min-width:1024px) 400px, (min-width:640px) 45vw, 100vw"
                 className="object-cover"
               />
+              {(() => {
+                const inset = insetOf(p);
+                if (!inset) return null;
+                return (
+                  <a
+                    href={inset.src}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${t("openPhoto")}: ${altFor(inset, locale)}`}
+                    className="press absolute bottom-2.5 end-2.5 w-[44%] rotate-[-2deg] overflow-hidden rounded-xl border-[3px] border-surface shadow-[var(--shadow-float)]"
+                  >
+                    <span className="relative block" style={{ aspectRatio: `${inset.width} / ${inset.height}` }}>
+                      <Image src={inset.src} alt="" fill sizes="(min-width:1024px) 180px, 45vw" className="object-cover" style={inset.focus ? { objectPosition: inset.focus } : undefined} />
+                    </span>
+                  </a>
+                );
+              })()}
             </div>
           </figure>
         </li>

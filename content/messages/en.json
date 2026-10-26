@@ -27,7 +27,8 @@
     "aiEnhanced": "Image enhanced with AI from a real photograph.",
     "print": "Print this page",
     "downloadPdf": "Download PDF",
-    "illustration": "Illustration"
+    "illustration": "Illustration",
+    "openPhoto": "Open larger photo"
   },
   "nav": {
     "home": "Home",

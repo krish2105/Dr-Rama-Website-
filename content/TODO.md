@@ -40,6 +40,9 @@ Nothing below may be invented. Placeholders show in development only; production
 ### Added 26 Oct 2026 (new photo)
 - [ ] The photo of Dr. Rama Mathur at her desk (Home "Visit the clinic" gallery and About "Consultation room") was supplied by the owner on 26 Oct 2026. Confirm it is a real photograph (or note if it is AI-enhanced) and that the doctor approves the likeness. The original sits in `source/photos/clinic-doctor-at-desk.webp`.
 
+### Added 26 Oct 2026 (second photo)
+- [ ] The Women's Day photo (Dr. Rama Mathur with a visitor handing her a bouquet) is shown as an inset on the Home "Visit the clinic" gallery. It shows another person; keep that person's consent on file, as for the camp photos. The original is `source/photos/clinic-womens-day.jpg` (cropped from a screenshot, the black border removed).
+
 ## 2. Photos and brand
 - [ ] Real close-up photos: display cabinet, certificate and plaque wall (shoot list in Prompt Pack v3). The generated versions (07, 08) are not used because they invent certificate text. The room images on the site (05, 06) are AI-enhanced and carry a disclosure caption; replace them with real photos when available.
 - [ ] Real photo of the flat's entrance door and nameplate (Raj Vilas Apartment 1, 2nd floor).

@@ -27,7 +27,8 @@
     "aiEnhanced": "वास्तविक फ़ोटो से AI की मदद से बेहतर की गई तस्वीर।",
     "print": "यह पृष्ठ प्रिंट करें",
     "downloadPdf": "PDF डाउनलोड करें",
-    "illustration": "चित्र"
+    "illustration": "चित्र",
+    "openPhoto": "बड़ी फ़ोटो खोलें"
   },
   "nav": {
     "home": "मुख्य पृष्ठ",
