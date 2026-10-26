@@ -16,7 +16,6 @@ import { ArtBackdrop } from "@/components/ui/ArtBackdrop";
 import { HeroTilt } from "@/components/ui/HeroTilt";
 import { CountUp } from "@/components/ui/CountUp";
 import { IconBadge } from "@/components/ui/Icon";
-import { OpenNow } from "@/components/sections/OpenNow";
 import { HoursList } from "@/components/sections/HoursList";
 import type { Timings } from "@/lib/openNow";
 
@@ -43,8 +42,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <p className="fade-in t-eyebrow">{t("eyebrow")}</p>
             <h1 className="t-h1 mt-3 max-w-xl">{t("title")}</h1>
             <p className="mt-3 text-lg font-medium text-primary">{t("titleSub")}</p>
-            <p className="t-lead mt-4 max-w-lg"><strong className="hl">{t("leadYears")}</strong> {t("leadRest")}</p>
-            <p className="mt-2 font-medium text-ink">{t("acuteChronic")}</p>
+            <p className="t-lead mt-4 max-w-lg">{t("leadRest")}</p>
 
             <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap" role="group" aria-label={t("actionsLabel")}>
               <a href={telHref} data-evt="click_call" className={buttonClass("primary", "w-full sm:w-auto")}>
@@ -59,14 +57,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 </Link>
               </div>
             </div>
-            {timings ? <div className="mt-5"><OpenNow timings={timings} /></div> : null}
 
             <h2 className="sr-only">{t("credTitle")}</h2>
-            <dl className="mt-9 grid max-w-xl grid-cols-3 divide-x divide-line border-t border-line pt-5">
-              {[1, 2, 3].map((n) => (
-                <div key={n} className={n === 1 ? "me-2 rounded-xl bg-primary px-3 py-2.5 text-onprimary sm:px-5" : "px-3 sm:px-5"}>
-                  <dt className={`font-display text-2xl font-semibold sm:text-3xl ${n === 1 ? "" : "text-primary"}`}>{t(`cred${n}Big`)}</dt>
-                  <dd className={`mt-1 text-xs leading-snug sm:text-[0.8125rem] ${n === 1 ? "opacity-90" : "text-muted"}`}>{t(`cred${n}`)}</dd>
+            <dl className="mt-9 grid max-w-md grid-cols-2 divide-x divide-line border-t border-line pt-5">
+              {[2, 3].map((n) => (
+                <div key={n} className="px-3 first:ps-0 sm:px-5">
+                  <dt className="font-display text-2xl font-semibold text-primary sm:text-3xl">{t(`cred${n}Big`)}</dt>
+                  <dd className="mt-1 text-xs leading-snug text-muted sm:text-[0.8125rem]">{t(`cred${n}`)}</dd>
                 </div>
               ))}
             </dl>
@@ -140,7 +137,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             {about.homePoints.map((x) => (
               <li key={x} className="flex gap-3 text-base">
                 <span aria-hidden="true" className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-accent" />
-                {x.includes("35+") ? <span className="hl">{x}</span> : x}
+                {x}
               </li>
             ))}
           </ul>

@@ -40,14 +40,15 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <JumpTo label={nav("jump")} items={[["quals", t("qualifications")], ["exp", t("experience")], ["mem", t("memberships")], ["conf", t("conferences")], ["comm", t("community")]].map(([id, label]) => ({ id, label }))} />
       <header className="relative">
         <Rosette className="pointer-events-none absolute -end-10 -top-10 hidden h-64 w-64 text-primary opacity-[0.08] md:block" />
-        <CaseHead as="h1" title={a.title} eyebrow={locale === "hi" ? SITE.doctor.degreeHi : SITE.doctor.degree} />
+        <CaseHead as="h1" title={a.title} />
+        <p className="t-eyebrow mt-4">{locale === "hi" ? SITE.doctor.degreeHi : SITE.doctor.degree}</p>
         <div className="mt-6 grid gap-8 md:grid-cols-[1.4fr_1fr]">
           <div className="space-y-4 text-lg">
             <ul className="space-y-3">
               {a.points.map((x) => (
                 <li key={x} className="flex gap-3">
                   <span aria-hidden="true" className="mt-3 h-2.5 w-2.5 shrink-0 rounded-full bg-accent" />
-                  {x.includes("35+") ? <span className="hl">{x}</span> : x}
+                  {x}
                 </li>
               ))}
             </ul>
