@@ -45,7 +45,12 @@
     },
     {
       "title": "Children's health",
-      "concerns": []
+      "concerns": [
+        "Colds and coughs",
+        "Colic in infants",
+        "Sleep difficulty",
+        "Allergies in children"
+      ]
     },
     {
       "title": "Digestive health",
@@ -58,15 +63,29 @@
     },
     {
       "title": "Seasonal illnesses",
-      "concerns": []
+      "concerns": [
+        "Cold and cough",
+        "Sore throat",
+        "Seasonal allergies",
+        "Body aches"
+      ]
     },
     {
       "title": "Mental and emotional wellbeing",
-      "concerns": []
+      "concerns": [
+        "Stress",
+        "Sleep difficulty",
+        "Worry and restlessness"
+      ]
     },
     {
       "title": "Care after COVID-19",
-      "concerns": []
+      "concerns": [
+        "Tiredness and weakness",
+        "Lingering cough",
+        "Disturbed sleep",
+        "Loss of appetite"
+      ]
     }
   ]
 }

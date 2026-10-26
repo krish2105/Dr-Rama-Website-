@@ -275,8 +275,15 @@
     "title": "Care areas",
     "lead": "Areas Dr. Rama Mathur consults on. This list does not promise any result.",
     "referral": "Dr. Rama Mathur refers patients to other health practitioners when appropriate.",
-    "urgent": "For urgent symptoms, go to the nearest hospital or call 112.",
-    "concernsLabel": "Common concerns people consult about"
+    "concernsLabel": "Common concerns people consult about",
+    "aboutTitle": "About Dr. Rama Mathur",
+    "f1": "35+ years of clinical experience in homoeopathy",
+    "f2": "Empanelled homoeopathic doctor at RIICO for 24 years",
+    "f3": "Consultations in Hindi and English",
+    "f4": "Founder and Chairperson, Abhilasha Women's Welfare Society, Jaipur",
+    "f5": "Honoured by Rajasthan Patrika at a medical camp",
+    "f6": "Giving services at MRDC Satellite Hospital, Banipark, Jaipur",
+    "more": "Read her full profile"
   },
   "servicesPage": {
     "title": "Services"

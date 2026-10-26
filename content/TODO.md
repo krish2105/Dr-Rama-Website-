@@ -43,6 +43,10 @@ Nothing below may be invented. Placeholders show in development only; production
 ### Added 26 Oct 2026 (second photo)
 - [ ] The Women's Day photo (Dr. Rama Mathur with a visitor handing her a bouquet) is shown as an inset on the Home "Visit the clinic" gallery. It shows another person; keep that person's consent on file, as for the camp photos. The original is `source/photos/clinic-womens-day.jpg` (cropped from a screenshot, the black border removed).
 
+### Added 26 Oct 2026 (care areas filled)
+- [ ] Doctor to confirm the complaints added to Children's health, Seasonal illnesses, Mental and emotional wellbeing and Care after COVID-19 (colds and coughs, colic in infants, sleep difficulty, sore throat, stress, tiredness after COVID-19 and similar). They were added on the owner's request from general sources, not from her handout, and need her sign-off and the legal review. No Schedule item (fevers, nervous-system or mental disorders by name) was used.
+- [ ] A web search found no third-party page about Dr. Rama Mathur except a directory listing (Grotal) that repeats the clinic address and landline. The "About Dr. Rama Mathur" panel therefore uses only her own record.
+
 ## 2. Photos and brand
 - [ ] Real close-up photos: display cabinet, certificate and plaque wall (shoot list in Prompt Pack v3). The generated versions (07, 08) are not used because they invent certificate text. The room images on the site (05, 06) are AI-enhanced and carry a disclosure caption; replace them with real photos when available.
 - [ ] Real photo of the flat's entrance door and nameplate (Raj Vilas Apartment 1, 2nd floor).

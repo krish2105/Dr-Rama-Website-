@@ -54,6 +54,8 @@ const existing = new Map<string, Photo>([...(gallery.photos ?? []), ...(camp.pho
     else photos.push(entry);
     console.log(`${isPortrait ? "portrait" : isCamp ? "camp    " : "gallery "} ${f} -> public${src} (${info.width}x${info.height})${entry.altEn && entry.altHi ? "" : "  alt text needed"}`);
   }
+  const rank = (p: Photo) => { const i = (gallery.photos ?? []).findIndex((o: Photo) => slugOf(o.src) === slugOf(p.src)); return i < 0 ? 999 : i; };
+  photos.sort((a, b) => rank(a) - rank(b));
   gallery.photos = photos;
   camp.photos = campPhotos;
   fs.writeFileSync(sitePath, JSON.stringify(site, null, 2) + "\n");
