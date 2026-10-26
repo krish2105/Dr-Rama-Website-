@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { SITE, telHref, waHref, mapsDirectionsHref, mapsEmbedUrl, isDev } from "@/lib/site";
@@ -14,10 +15,15 @@ import { CampFloat } from "@/components/sections/CampFloat";
 import Image from "next/image";
 import { ArtBackdrop } from "@/components/ui/ArtBackdrop";
 import { HeroTilt } from "@/components/ui/HeroTilt";
-import { CountUp } from "@/components/ui/CountUp";
 import { IconBadge } from "@/components/ui/Icon";
 import { HoursList } from "@/components/sections/HoursList";
 import type { Timings } from "@/lib/openNow";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const m = await getTranslations({ locale, namespace: "meta" });
+  return { title: { absolute: m("homeTitle") }, alternates: { canonical: `/${locale}`, languages: { en: "/en", hi: "/hi", "x-default": "/en" } } };
+}
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -42,7 +48,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <p className="fade-in t-eyebrow">{t("eyebrow")}</p>
             <h1 className="t-h1 mt-3 max-w-xl">{t("title")}</h1>
             <p className="mt-3 text-lg font-medium text-primary">{t("titleSub")}</p>
-            <p className="t-lead mt-4 max-w-lg">{t("leadRest")}</p>
 
             <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap" role="group" aria-label={t("actionsLabel")}>
               <a href={telHref} data-evt="click_call" className={buttonClass("primary", "w-full sm:w-auto")}>
@@ -58,15 +63,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               </div>
             </div>
 
-            <h2 className="sr-only">{t("credTitle")}</h2>
-            <dl className="mt-9 grid max-w-md grid-cols-2 divide-x divide-line border-t border-line pt-5">
-              {[2, 3].map((n) => (
-                <div key={n} className="px-3 first:ps-0 sm:px-5">
-                  <dt className="font-display text-2xl font-semibold text-primary sm:text-3xl">{t(`cred${n}Big`)}</dt>
-                  <dd className="mt-1 text-xs leading-snug text-muted sm:text-[0.8125rem]">{t(`cred${n}`)}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
           <div className="pb-4"><HeroTilt><HeroVisual /></HeroTilt></div>
         </div>
@@ -78,7 +74,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <Rosette className="pointer-events-none absolute -bottom-16 -end-10 h-64 w-64 opacity-[0.1]" />
           <div className="relative grid items-center gap-6 md:grid-cols-[auto_1fr] md:gap-12">
             <div>
-              <p className="font-display text-6xl font-medium leading-none md:text-7xl"><CountUp value={35} suffix="+" /></p>
+              <p className="font-display text-6xl font-medium leading-none md:text-7xl">35+</p>
               <p className="mt-2 text-sm font-semibold uppercase tracking-[0.1em] opacity-90">{t("yearsLabel")}</p>
             </div>
             <div className="md:border-s md:border-white/25 md:ps-12">
@@ -105,7 +101,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <Rosette className="pointer-events-none absolute -bottom-16 -start-10 h-64 w-64 opacity-[0.1]" />
           <div className="relative grid items-center gap-6 md:grid-cols-[auto_1fr] md:gap-12">
             <div>
-              <p className="font-display text-6xl font-medium leading-none md:text-7xl"><CountUp value={24} /></p>
+              <p className="font-display text-6xl font-medium leading-none md:text-7xl">24</p>
               <p className="mt-2 text-sm font-semibold uppercase tracking-[0.1em] opacity-90">{t("riicoYears")}</p>
             </div>
             <div className="md:border-s md:border-white/25 md:ps-12">
@@ -222,6 +218,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <GlobuleVial className="relative mx-auto mb-2 h-28 w-auto" />
           <h2 className="t-h2 relative">{t("ctaTitle")}</h2>
           <p className="t-lead relative mx-auto mt-3 max-w-xl">{t("ctaBody")}</p>
+          <ol className="relative mx-auto mt-6 grid max-w-2xl gap-3 text-start sm:grid-cols-3">
+            {(["next1", "next2", "next3"] as const).map((k, i) => (
+              <li key={k} className="flex gap-3 rounded-xl bg-surface/70 p-3">
+                <span aria-hidden="true" className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-primary text-sm font-semibold text-onprimary">{i + 1}</span>
+                <span className="text-sm leading-snug">{feeT(k)}</span>
+              </li>
+            ))}
+          </ol>
           <ButtonLink href="/book" className="relative mt-7">{c("book")}</ButtonLink>
         </div>
       </section>

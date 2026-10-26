@@ -4,6 +4,7 @@ import { getJson } from "@/lib/content";
 import { pageMeta } from "@/lib/meta";
 import { CaseHead } from "@/components/ui/CaseHead";
 import { ButtonLink } from "@/components/ui/Button";
+import { feeLine } from "@/components/ui/FeeNote";
 import { GlobuleVial } from "@/components/ui/HomeoArt";
 import { ArtBackdrop } from "@/components/ui/ArtBackdrop";
 
@@ -21,6 +22,8 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
   const d = getJson<Services>(locale, "services");
   const c = await getTranslations({ locale, namespace: "common" });
   const v = await getTranslations({ locale, namespace: "visit" });
+  const nav = await getTranslations({ locale, namespace: "nav" });
+  const fee = await feeLine(locale);
   return (
     <div className="relative">
       <ArtBackdrop src="/art/services-bg.webp" className="inset-x-0 -top-24 h-[28rem]" opacity={0.8} />
@@ -39,7 +42,11 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
         <GlobuleVial className="h-auto w-full" />
         <figcaption className="mt-1 text-center text-xs text-muted">{v("globulesCaption")}</figcaption>
       </figure>
-      <ButtonLink href="/book" className="mt-8">{c("book")}</ButtonLink>
+      {fee ? <p className="mt-8 rounded-xl border border-line bg-surface px-4 py-3 text-ink">{fee}</p> : null}
+      <div className="mt-6 flex flex-wrap gap-3">
+        <ButtonLink href="/book">{c("book")}</ButtonLink>
+        <ButtonLink href="/first-visit" variant="secondary">{nav("firstVisit")}</ButtonLink>
+      </div>
       </div>
     </div>
   );

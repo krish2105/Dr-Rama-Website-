@@ -4,7 +4,7 @@ import { getJson } from "@/lib/content";
 import { pageMeta } from "@/lib/meta";
 import { CaseHead } from "@/components/ui/CaseHead";
 import { DevTodo } from "@/components/ui/DevTodo";
-import { SITE } from "@/lib/site";
+import { SITE, isDev } from "@/lib/site";
 import { JumpTo } from "@/components/layout/JumpTo";
 import { PageBackdrop } from "@/components/ui/PageBackdrop";
 
@@ -18,7 +18,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const d = getJson<Priv>(locale, "privacy");
+  const raw = getJson<Priv>(locale, "privacy");
+  // A section that only holds the retention placeholder is hidden in production (never show a heading with nothing under it).
+  const d = { ...raw, sections: raw.sections.filter((s) => isDev || !(s.p.length === 1 && s.p[0] === "TODO_RETENTION")) };
   const t = await getTranslations({ locale, namespace: "privacy" });
   const nav = await getTranslations({ locale, namespace: "nav" });
   return (

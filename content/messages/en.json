@@ -1,13 +1,14 @@
 {
   "meta": {
     "siteName": "Raajesh Homeo Home",
-    "defaultDescription": "Raajesh Homeo Home, Banipark, Jaipur. Homeopathic consultations with Dr. Rama Mathur, M.D. (Homoeopathy), 35+ years of clinical experience. Hindi and English."
+    "defaultDescription": "Raajesh Homeo Home, Banipark, Jaipur. Homeopathic consultations with Dr. Rama Mathur, M.D. (Homoeopathy), 35+ years of clinical experience. Hindi and English.",
+    "homeTitle": "Raajesh Homeo Home | Homeopathic doctor in Banipark, Jaipur"
   },
   "common": {
     "skip": "Skip to content",
     "call": "Call",
     "whatsapp": "WhatsApp",
-    "book": "Book a visit",
+    "book": "Book an appointment",
     "bookShort": "Book",
     "menu": "Menu",
     "close": "Close",
@@ -272,7 +273,11 @@
       "sat": "Saturday",
       "sun": "Sunday"
     },
-    "byAppointment": "Consultation is with a prior appointment."
+    "byAppointment": "Consultation is with a prior appointment.",
+    "morning": "morning",
+    "afternoon": "afternoon",
+    "evening": "evening",
+    "eveningOff": "evening off"
   },
   "careAreas": {
     "title": "Care areas",

@@ -24,6 +24,13 @@
       ]
     },
     {
+      "h": "Services we use",
+      "p": [
+        "Booking details are stored with a database provider, and an email service sends the clinic an alert that contains no health details. Google Maps is shown on some pages. Google Analytics is used only if you accept it.",
+        "Details you send travel over an encrypted (HTTPS) connection."
+      ]
+    },
+    {
       "h": "How long we keep it",
       "p": [
         "TODO_RETENTION"
