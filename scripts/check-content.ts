@@ -60,6 +60,15 @@ for (const k of kHi) if (!kEn.has(k)) errors.push(`messages: "${k}" missing in e
 
 // The footer disclaimer line was removed on the owner's instruction (26 Oct 2026); the Privacy page still carries the full disclaimer.
 
+// Page content (content/en vs content/hi) must have the same shape: same sections, same number of list items
+const shape = (o: unknown): unknown => (Array.isArray(o) ? o.map(shape) : o && typeof o === "object" ? Object.fromEntries(Object.entries(o as Record<string, unknown>).filter(([k]) => !k.startsWith("_")).map(([k, v]) => [k, shape(v)])) : 0);
+for (const f of fs.readdirSync(path.join(root, "content/en")).filter((x) => x.endsWith(".json"))) {
+  const a = JSON.parse(fs.readFileSync(path.join(root, "content/en", f), "utf8"));
+  const hp = path.join(root, "content/hi", f);
+  if (!fs.existsSync(hp)) { errors.push(`content/hi/${f} missing`); continue; }
+  if (JSON.stringify(shape(a)) !== JSON.stringify(shape(JSON.parse(fs.readFileSync(hp, "utf8"))))) errors.push(`content/en/${f} and content/hi/${f} differ in structure (different number of items)`);
+}
+
 // Blog parity
 const blogEn = walk(path.join(root, "content/blog/en")).map((f) => path.basename(f)).sort();
 const blogHi = walk(path.join(root, "content/blog/hi")).map((f) => path.basename(f)).sort();

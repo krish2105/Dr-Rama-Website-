@@ -19,7 +19,7 @@ const sitePath = path.join(root, "content/site.json");
 const galleryPath = path.join(root, "content/gallery.json");
 const campPath = path.join(root, "content/camp-gallery.json");
 
-type Photo = { src: string; width: number; height: number; altEn: string; altHi: string; focus?: string; ai?: boolean; insetFor?: string };
+type Photo = { src: string; width: number; height: number; altEn: string; altHi: string; focus?: string; ai?: boolean; insetFor?: string; captionEn?: string; captionHi?: string };
 
 async function main() {
   fs.mkdirSync(outDir, { recursive: true });
@@ -48,7 +48,7 @@ const existing = new Map<string, Photo>([...(gallery.photos ?? []), ...(camp.pho
     fs.writeFileSync(path.join(outDir, outName), data);
     const src = `/photos/${outName}`;
     const prev = isPortrait ? site.portraitPhoto : existing.get(slug);
-    const entry: Photo = { src, width: info.width, height: info.height, altEn: prev?.altEn ?? "", altHi: prev?.altHi ?? "", ...(prev?.focus ? { focus: prev.focus } : {}), ...(prev?.ai ? { ai: true } : {}), ...(prev?.insetFor ? { insetFor: prev.insetFor } : {}) };
+    const entry: Photo = { src, width: info.width, height: info.height, altEn: prev?.altEn ?? "", altHi: prev?.altHi ?? "", ...(prev?.focus ? { focus: prev.focus } : {}), ...(prev?.ai ? { ai: true } : {}), ...(prev?.insetFor ? { insetFor: prev.insetFor } : {}), ...(prev?.captionEn ? { captionEn: prev.captionEn, captionHi: prev.captionHi } : {}) };
     if (isPortrait) site.portraitPhoto = entry;
     else if (isCamp) campPhotos.push(entry);
     else photos.push(entry);

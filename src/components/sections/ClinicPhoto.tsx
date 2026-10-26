@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
-import { altFor, clinicPhotos } from "@/lib/photos";
+import { altFor, captionFor, clinicPhotos } from "@/lib/photos";
 import { isDev } from "@/lib/site";
 
 export function hasPhotos() {
@@ -40,6 +40,7 @@ export function Gallery({ limit }: { limit?: number }) {
                 style={p.focus ? { objectPosition: p.focus } : undefined}
               />
             </div>
+            {captionFor(p, locale) ? <figcaption className="px-3 py-2 text-sm text-muted">{captionFor(p, locale)}</figcaption> : null}
           </figure>
         </li>
       ))}

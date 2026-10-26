@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
-import { altFor, campPhotos } from "@/lib/photos";
+import { altFor, captionFor, campPhotos } from "@/lib/photos";
 import { CaseHead } from "@/components/ui/CaseHead";
 
 // Gentle tilt and offset per card so the photos read as floating prints, not a grid.
@@ -23,6 +23,7 @@ export function CampFloat({ headingId = "camp" }: { headingId?: string }) {
               <div className="relative w-full overflow-hidden rounded-xl" style={{ aspectRatio: `${p.width} / ${p.height}` }}>
                 <Image src={p.src} alt={altFor(p, locale)} fill sizes="(min-width:768px) 31vw, 78vw" className="object-cover" />
               </div>
+              {captionFor(p, locale) ? <figcaption className="px-1 pb-0.5 pt-2 text-center text-sm text-muted">{captionFor(p, locale)}</figcaption> : null}
             </figure>
           </li>
         ))}

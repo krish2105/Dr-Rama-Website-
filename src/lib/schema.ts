@@ -35,6 +35,7 @@ export function clinicSchema(locale: string) {
     ...(SITE.email.confirmed ? { email: SITE.email.value } : {}),
     ...(address ? { address } : {}),
     availableLanguage: ["Hindi", "English"],
+    areaServed: { "@type": "City", name: "Jaipur" },
     ...(SITE.fees?.confirmed ? { priceRange: `INR ${SITE.fees.consultation.amount}` } : {}),
     ...(SITE.payment?.confirmed ? { paymentAccepted: "UPI, Cash", currenciesAccepted: "INR" } : {}),
     ...(SITE.timingsConfirmed && SITE.timings

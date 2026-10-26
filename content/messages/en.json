@@ -109,7 +109,19 @@
     "acuteText": "Complaints that start suddenly, such as colds, coughs, sore throat and stomach upsets.",
     "chronicLabel": "Chronic",
     "chronicText": "Long-standing complaints, such as joint and back pain, skin concerns, allergies and digestive troubles.",
-    "careLink": "See care areas"
+    "careLink": "See care areas",
+    "careStripTitle": "Care areas",
+    "careStripLead": "Common concerns people consult about. Tap an area to see the full list.",
+    "servicesTitle": "Consultation services",
+    "svc1": "In-clinic consultation",
+    "svc1t": "By prior appointment at Banipark, in Hindi or English.",
+    "svc2": "Online consultation",
+    "svc2t": "By prior booking and online payment.",
+    "svc3": "Your first visit",
+    "svc3t": "What to bring, fees and timings.",
+    "faqTitle": "Common questions",
+    "faqLink": "See all questions",
+    "locationNote": "Raajesh Homeo Home is a homoeopathic clinic in Banipark, Jaipur, on Meera Marg. Dr. Rama Mathur consults in Hindi and English, by prior appointment."
   },
   "book": {
     "title": "Book a visit",

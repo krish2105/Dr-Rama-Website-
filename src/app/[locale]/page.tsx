@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { SITE, telHref, waHref, mapsDirectionsHref, mapsEmbedUrl, isDev } from "@/lib/site";
-import { getAbout } from "@/lib/content";
+import { getAbout, getJson } from "@/lib/content";
 import { Rosette } from "@/components/ui/Motif";
 import { CaseHead } from "@/components/ui/CaseHead";
 import { ButtonLink, ExternalButton, buttonClass } from "@/components/ui/Button";
@@ -32,6 +32,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const c = await getTranslations({ locale, namespace: "common" });
   const h = await getTranslations({ locale, namespace: "hours" });
   const about = getAbout(locale);
+  const care = getJson<{ items: { title: string }[] }>(locale, "care-areas");
+  const faq = getJson<{ items: { q: string; a: string }[] }>(locale, "faq");
   const fee = await feeLine(locale);
   const feeT = await getTranslations({ locale, namespace: "fees" });
   const timings = SITE.timings as Timings | null;
@@ -113,6 +115,19 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
+      {/* Care areas at a glance */}
+      <section aria-labelledby="carestrip" className="mx-auto mt-16 max-w-6xl px-4 sm:px-6 reveal">
+        <CaseHead id="carestrip" title={t("careStripTitle")} />
+        <p className="mt-4 max-w-2xl text-muted">{t("careStripLead")}</p>
+        <ul className="mt-6 flex flex-wrap gap-2.5">
+          {care.items.map((i) => (
+            <li key={i.title}>
+              <Link href="/care-areas" className="press inline-flex min-h-11 items-center rounded-full border border-line bg-surface px-4 text-[0.9375rem] font-medium text-ink hover:border-primary/50 hover:bg-soft">{i.title}</Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section aria-labelledby="practice" className="mx-auto mt-20 max-w-6xl px-4 sm:px-6 reveal">
         <CaseHead id="practice" eyebrow={t("practiceMargin")} title={t("practiceTitle")} />
         <ol className="mt-9 grid gap-5 md:grid-cols-3">
@@ -142,6 +157,21 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
+      {/* Consultation services */}
+      <section aria-labelledby="svc" className="mx-auto mt-16 max-w-6xl px-4 sm:px-6 reveal">
+        <CaseHead id="svc" title={t("servicesTitle")} />
+        <ul className="mt-8 grid gap-4 md:grid-cols-3">
+          {([["svc1", "/services"], ["svc2", "/book"], ["svc3", "/first-visit"]] as const).map(([k, href]) => (
+            <li key={k}>
+              <Link href={href} className="float-card block h-full p-6 transition-transform hover:-translate-y-0.5">
+                <h3 className="font-display text-xl font-semibold text-ink">{t(k)}</h3>
+                <p className="mt-2 text-muted">{t(`${k}t`)}</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <div className="reveal"><CampFloat /></div>
 
       {/* Jaipur identity: one full-width visual break. Text is real HTML on the artwork's clean left side. */}
@@ -165,6 +195,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       {/* Visit the clinic: details with icons, then real photos only */}
       <section aria-labelledby="visit" className="mx-auto mt-20 max-w-6xl px-4 sm:px-6 reveal">
         <CaseHead id="visit" title={t("visitTitle")} />
+        <p className="mt-4 max-w-2xl text-muted">{t("locationNote")}</p>
         <div className="mt-9 grid gap-8 md:grid-cols-2">
           <ul className="space-y-6">
             <li className="flex gap-4">
@@ -208,6 +239,23 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </ExternalButton>
           </div>
         </div>
+      </section>
+
+      {/* Common questions */}
+      <section aria-labelledby="faqs" className="mx-auto mt-20 max-w-3xl px-4 sm:px-6 reveal">
+        <CaseHead id="faqs" title={t("faqTitle")} />
+        <div className="mt-8 space-y-3">
+          {faq.items.slice(0, 4).map((i) => (
+            <details key={i.q} className="card group p-5">
+              <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-semibold text-primary">
+                {i.q}
+                <span aria-hidden="true" className="text-accent transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <p className="mt-3 text-lg">{i.a}</p>
+            </details>
+          ))}
+        </div>
+        <ButtonLink href="/faq" variant="secondary" className="mt-6">{t("faqLink")}</ButtonLink>
       </section>
 
       {/* Book CTA */}

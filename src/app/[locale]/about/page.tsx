@@ -44,6 +44,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <p className="t-eyebrow mt-4">{locale === "hi" ? SITE.doctor.degreeHi : SITE.doctor.degree}</p>
         <div className="mt-6 grid gap-8 md:grid-cols-[1.4fr_1fr]">
           <div className="space-y-4 text-lg">
+            <p>{a.intro}</p>
             <ul className="space-y-3">
               {a.points.map((x) => (
                 <li key={x} className="flex gap-3">
