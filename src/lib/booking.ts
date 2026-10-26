@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const PATIENT_TYPES = ["self", "child", "other"] as const;
-export const VISIT_TYPES = ["first", "followup", "report", "notsure"] as const;
+export const VISIT_TYPES = ["first", "followup", "report", "online", "notsure"] as const;
 export const CALLBACK_WINDOWS = ["morning", "afternoon", "evening"] as const;
 export const SOURCES = ["instagram", "facebook", "google", "qr", "whatsapp", "direct", "other"] as const;
 

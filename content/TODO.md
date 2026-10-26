@@ -47,6 +47,11 @@ Nothing below may be invented. Placeholders show in development only; production
 - [ ] Doctor to confirm the complaints added to Children's health, Seasonal illnesses, Mental and emotional wellbeing and Care after COVID-19 (colds and coughs, colic in infants, sleep difficulty, sore throat, stress, tiredness after COVID-19 and similar). They were added on the owner's request from general sources, not from her handout, and need her sign-off and the legal review. No Schedule item (fevers, nervous-system or mental disorders by name) was used.
 - [ ] A web search found no third-party page about Dr. Rama Mathur except a directory listing (Grotal) that repeats the clinic address and landline. The "About Dr. Rama Mathur" panel therefore uses only her own record.
 
+### Added 26 Oct 2026 (second doctor message)
+- [ ] **Women's health now lists** PCOS, endometriosis, uterine fibroids, menstrual disorders, pelvic inflammatory disease, menopause-related conditions, urinary tract infections and vaginal infections, as the doctor asked. Several fall under entries of the Drugs and Magic Remedies Act 1954 Schedule ("tumours", "diseases and disorders of the uterus", "disorders of menstrual flow", "female diseases (in general)"). Listing them is the doctor's decision and her legal exposure; a qualified lawyer should review before launch.
+- [ ] **Breast cancer and cervical cancer are still NOT listed.** Cancer is on the Schedule by name, and a clinic page naming it risks patients delaying specialist care. Add only on written legal advice, and then framed as supportive care alongside specialist treatment.
+- [ ] Online consultation: the site says "available by prior booking and online payment" (FAQ, Services, Book, Contact, and an "Online consultation" visit type). Send the online consultation fee and any online payment charges and how payment is taken; none is stated yet.
+
 ## 2. Photos and brand
 - [ ] Real close-up photos: display cabinet, certificate and plaque wall (shoot list in Prompt Pack v3). The generated versions (07, 08) are not used because they invent certificate text. The room images on the site (05, 06) are AI-enhanced and carry a disclosure caption; replace them with real photos when available.
 - [ ] Real photo of the flat's entrance door and nameplate (Raj Vilas Apartment 1, 2nd floor).

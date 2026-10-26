@@ -8,7 +8,7 @@ import { DisplayControls } from "./DisplayControls";
 
 const ITEMS = [
   ["home", "/"], ["about", "/about"], ["services", "/services"], ["careAreas", "/care-areas"],
-  ["book", "/book"], ["reach", "/how-to-reach"], ["firstVisit", "/first-visit"], ["online", "/online-consultation"], ["experiences", "/experiences"],
+  ["book", "/book"], ["reach", "/how-to-reach"], ["firstVisit", "/first-visit"], ["experiences", "/experiences"],
   ["blog", "/blog"], ["faq", "/faq"], ["contact", "/contact"], ["privacy", "/privacy"],
 ] as const;
 

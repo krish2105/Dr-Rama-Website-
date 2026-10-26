@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   images: { formats: ["image/avif", "image/webp"], qualities: [70, 72, 75] },
+  async redirects() {
+    return [{ source: "/:locale(en|hi)/online-consultation", destination: "/:locale/book", permanent: true }];
+  },
   async headers() {
     return [
       { source: "/fonts/:file*", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] },

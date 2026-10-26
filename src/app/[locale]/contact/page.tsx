@@ -71,6 +71,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                 <li className="chip"><Icon name="scan" className="h-4 w-4 text-primary" />{fees("upi")}</li>
                 <li className="chip"><Icon name="cash" className="h-4 w-4 text-primary" />{fees("cash")}</li>
               </ul>
+              <p className="mt-3 text-sm text-muted">{fees("online")}</p>
             </div>
           ) : null}
           <ButtonLink href="/book">{c("book")}</ButtonLink>

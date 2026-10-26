@@ -4,7 +4,7 @@ import { SITE, telHref, mapsDirectionsHref } from "@/lib/site";
 import { DevTodo } from "@/components/ui/DevTodo";
 
 const LINKS: [string, string][] = [
-  ["about", "/about"], ["services", "/services"], ["careAreas", "/care-areas"], ["book", "/book"], ["reach", "/how-to-reach"], ["firstVisit", "/first-visit"], ["online", "/online-consultation"],
+  ["about", "/about"], ["services", "/services"], ["careAreas", "/care-areas"], ["book", "/book"], ["reach", "/how-to-reach"], ["firstVisit", "/first-visit"],
   ["experiences", "/experiences"], ["blog", "/blog"], ["faq", "/faq"], ["contact", "/contact"], ["privacy", "/privacy"],
 ];
 

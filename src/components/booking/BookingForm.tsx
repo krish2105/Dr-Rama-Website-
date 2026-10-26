@@ -16,7 +16,7 @@ import { mapsDirectionsHref, SITE, telHref, waHref } from "@/lib/site";
 type Errors = Partial<Record<FieldKey, true>>;
 type Status = "idle" | "sending" | "done" | "error" | "unavailable";
 type Tab = "book" | "call";
-type Summary = { name: string; date: string; time: string };
+type Summary = { name: string; date: string; time: string; online?: boolean };
 
 // Open request slots are computed once in the browser (India time); the server render shows a placeholder.
 let slotCache: SlotDay[] | null = null;
@@ -122,7 +122,7 @@ function Wizard() {
     setErrors({});
     setStatus("sending");
     const r = await send({ ...parsed.data, kind: "booking" });
-    setSum({ name: parsed.data.name, date, time });
+    setSum({ name: parsed.data.name, date, time, online: parsed.data.visitType === "online" });
     setMode(r.mode);
     if (r.status === "error" && r.fields) setErrors(r.fields);
     setStatus(r.status);
@@ -151,7 +151,7 @@ function Wizard() {
     const downloadIcs = () => {
       const ics = buildIcs({
         date: sum.date, time: sum.time, minutes: SLOT_MINUTES, summary: t("icsSummary"),
-        location: [...SITE.address.lines].join(", "), description: t("icsNote"),
+        location: sum.online ? "" : [...SITE.address.lines].join(", "), description: t("icsNote"),
       });
       const url = URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
       const a = document.createElement("a");
@@ -167,14 +167,14 @@ function Wizard() {
           <dt className="font-semibold text-ink">{t("yourRequest")}</dt>
           <dd>{sum.name}</dd>
           <dd>{when}</dd>
-          <dd className="text-muted">{SITE.address.lines.join(", ")}</dd>
+          <dd className="text-muted">{sum.online ? f("onlineNext") : SITE.address.lines.join(", ")}</dd>
         </dl>
         {SITE.fees?.confirmed && SITE.payment?.confirmed ? <p className="mt-3 text-sm text-muted">{f("line", { amount: SITE.fees.consultation.display })}</p> : null}
         {mode === "dev" ? <p className="dev-todo mt-4">{t("devNote")}</p> : null}
         <div className="mt-5 flex flex-wrap gap-3">
           <a href={waHref(msg)} target="_blank" rel="noopener noreferrer" className="press inline-flex min-h-12 items-center rounded-full bg-primary px-5 font-semibold text-onprimary">{t("successWhatsapp")}</a>
           <button type="button" onClick={downloadIcs} className="press inline-flex min-h-12 items-center rounded-full border border-primary/50 px-5 font-semibold text-primary">{t("addCalendar")}</button>
-          <a href={mapsDirectionsHref()} target="_blank" rel="noopener noreferrer" className="press inline-flex min-h-12 items-center rounded-full px-5 font-semibold text-primary underline">{c("directions")}</a>
+          {sum.online ? null : <a href={mapsDirectionsHref()} target="_blank" rel="noopener noreferrer" className="press inline-flex min-h-12 items-center rounded-full px-5 font-semibold text-primary underline">{c("directions")}</a>}
         </div>
       </div>
     );

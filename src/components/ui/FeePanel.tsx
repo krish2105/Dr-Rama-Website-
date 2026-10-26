@@ -60,6 +60,10 @@ export async function FeePanel({ locale }: { locale: string }) {
               <Icon name="globe" className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
               <span>{t("languages")}</span>
             </li>
+            <li className="flex gap-3">
+              <Icon name="phone" className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+              <span>{t("online")}</span>
+            </li>
             {timings ? (
               <li className="flex gap-3">
                 <Icon name="clock" className="mt-0.5 h-5 w-5 shrink-0 text-primary" />

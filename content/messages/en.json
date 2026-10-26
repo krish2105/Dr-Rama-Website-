@@ -36,7 +36,6 @@
     "services": "Services",
     "careAreas": "Care areas",
     "book": "Book",
-    "online": "Online consultation",
     "experiences": "Patient experiences",
     "blog": "Blog",
     "faq": "FAQ",
@@ -179,7 +178,8 @@
     "cbSubmit": "Request call back",
     "cbSuccessTitle": "Call back requested",
     "cbSuccessBody": "The clinic will call you in the time you chose.",
-    "cbUnavailableMsg": "Hello, please call me back. Name: {name}. Preferred time: {window}."
+    "cbUnavailableMsg": "Hello, please call me back. Name: {name}. Preferred time: {window}.",
+    "visit_online": "Online consultation"
   },
   "pages": {
     "comingTitle": "Coming soon",
@@ -194,7 +194,10 @@
     "community": "Community work",
     "portraitTodo": "Doctor portrait photo is missing (content/TODO.md).",
     "registration": "Registration: {council}, No. {number}",
-    "room": "Consultation room"
+    "room": "Consultation room",
+    "conferencesLead": "Dr. Rama Mathur has attended many national and international homoeopathy conferences across India.",
+    "conferencesSummary": "Has attended many homoeopathy conferences",
+    "conferencesTap": "Tap to see the list"
   },
   "services": {
     "title": "Services",
@@ -207,11 +210,6 @@
     "lead": "This page will describe the areas of care Dr. Rama Mathur works in.",
     "todo": "Care areas must come from the doctor, with no outcome claims about any named disease (content/TODO.md).",
     "prod": "This page is being prepared. To ask whether the clinic can help with your concern, please call or message the clinic."
-  },
-  "online": {
-    "title": "Online consultation",
-    "lead": "Online consultation is planned for a later phase and is not available yet.",
-    "body": "For now, you can book a visit at the clinic, call, or message on WhatsApp."
   },
   "experiences": {
     "title": "Patient experiences",
@@ -368,7 +366,9 @@
     "next3": "Visit the clinic at the confirmed time.",
     "goodTitle": "Good to know",
     "byAppointment": "Consultation is by prior appointment. A time you pick here is a request until it is confirmed.",
-    "languages": "Dr. Rama Mathur consults in Hindi and English."
+    "languages": "Dr. Rama Mathur consults in Hindi and English.",
+    "online": "Online consultation is available by prior booking and online payment.",
+    "onlineNext": "Dr. Rama Mathur will confirm the time and how to pay online."
   },
   "notFound": {
     "title": "Page not found",

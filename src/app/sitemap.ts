@@ -4,7 +4,7 @@ import { ALL_ROUTES, SITE_URL } from "@/lib/site";
 import { getPosts } from "@/lib/content";
 
 // Pages with no confirmed content yet are noindex and left out of the sitemap.
-const THIN = new Set(["/experiences", "/online-consultation"]); // empty pages stay out of the sitemap
+const THIN = new Set(["/experiences"]); // empty pages stay out of the sitemap
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];

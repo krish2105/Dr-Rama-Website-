@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getAbout } from "@/lib/content";
+import { Icon } from "@/components/ui/Icon";
 import { CaseHead } from "@/components/ui/CaseHead";
 import { DevTodo } from "@/components/ui/DevTodo";
 import { Rosette } from "@/components/ui/Motif";
@@ -104,16 +105,28 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
       <section aria-labelledby="conf" className="mt-16">
         <CaseHead id="conf" title={t("conferences")} />
-        <details className="card group mt-8 p-5">
-          <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between font-display text-lg font-semibold text-primary">
-            {t("conferences")}
-            <span aria-hidden="true" className="text-accent transition-transform group-open:rotate-45">+</span>
+        <p className="mt-4 max-w-2xl text-muted">{t("conferencesLead")}</p>
+        <details className="float-card group mt-6 overflow-hidden">
+          <summary className="flex min-h-16 cursor-pointer list-none items-center gap-4 px-5 py-4 sm:px-6">
+            <span aria-hidden="true" className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-primary/35 bg-soft text-primary">
+              <Icon name="calendar" />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block font-display text-lg font-semibold text-ink">{t("conferencesSummary")}</span>
+              <span className="block text-sm text-muted group-open:hidden">{t("conferencesTap")}</span>
+            </span>
+            <span aria-hidden="true" className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-soft text-primary transition-transform group-open:rotate-180">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+            </span>
           </summary>
-          <ol className="mt-4 list-decimal space-y-2 ps-6 marker:text-wood">
+          <ul className="grid gap-3 border-t border-line p-4 sm:grid-cols-2 sm:p-5">
             {a.conferences.map((cf) => (
-              <li key={cf.name + cf.where}>{cf.name}, {cf.where}</li>
+              <li key={cf.name + cf.where} className="rounded-xl bg-soft px-4 py-3">
+                <p className="font-medium text-ink">{cf.name}</p>
+                <p className="mt-0.5 flex items-center gap-1.5 text-sm text-muted"><Icon name="pin" className="h-3.5 w-3.5 shrink-0 text-primary" />{cf.where}</p>
+              </li>
             ))}
-          </ol>
+          </ul>
         </details>
       </section>
 

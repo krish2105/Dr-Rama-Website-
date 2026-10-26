@@ -47,7 +47,6 @@ export const ALL_ROUTES = [
   "/book",
   "/how-to-reach",
   "/first-visit",
-  "/online-consultation",
   "/experiences",
   "/blog",
   "/faq",

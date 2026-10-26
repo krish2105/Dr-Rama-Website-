@@ -23,6 +23,10 @@
       "a": "The consultation fee is ₹800. You can pay by UPI or cash."
     },
     {
+      "q": "Is online consultation available?",
+      "a": "Yes. Online consultation is available by prior booking and online payment. Choose \"Online consultation\" as the type of visit on the booking page, or call the clinic."
+    },
+    {
       "q": "Does homeopathic care replace emergency or specialist treatment?",
       "a": "No. Homeopathic care does not replace emergency or specialist medical treatment. In an emergency, go to the nearest hospital or call 112."
     },

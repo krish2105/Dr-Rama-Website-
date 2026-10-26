@@ -5,7 +5,7 @@ alter table public.bookings
   add column if not exists status text not null default 'requested' check (status in ('requested','confirmed','cancelled','visited','no_show')),
   add column if not exists patient_type text not null default 'self' check (patient_type in ('self','child','other')),
   add column if not exists guardian_name text,
-  add column if not exists visit_type text check (visit_type in ('first','followup','report','notsure')),
+  add column if not exists visit_type text check (visit_type in ('first','followup','report','online','notsure')),
   add column if not exists preferred_time_slot time,
   add column if not exists source text not null default 'direct',
   add column if not exists medium text,
